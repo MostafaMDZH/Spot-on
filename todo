@@ -1,2 +1,29 @@
-- animation on range inputs at load time
+# Todo:
+
+## Bug:
+- check the formula for distance and mileage
+- cannot put 0.X in range input
+- 0.00 in calc
+- if everything set to 0
+
+## Features:
+- if cost was negetive, change the title
+- about
+- lease
+
+## Design:
+- buttons background animation
+- modern scrollbar
+- selector scrollbar
+- responsive design
 - add blank shadow on loading
+
+## Animation:
+- animation on range inputs at load time
+
+## Publish:
+- sort imports
+- domain and publish
+- tests
+- styled components / css modules
+- redux / redux saga
