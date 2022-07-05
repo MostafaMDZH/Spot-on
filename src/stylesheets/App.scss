@@ -1,0 +1,162 @@
+@import "mixin";
+@import "classes";
+
+.App{
+    width: 100%;
+    > .window{
+        width: 100%;
+        max-width: 1950px;
+        height: 100%;
+        max-height: 900px;
+        padding: 60px 90px;
+        overflow: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 90px;
+        @extend .darkThinScrollbar;
+        > .headerFormWrapper{
+            flex: 1;
+        }
+        > .infoWrapper{
+            width: 480px;//checkIt
+        }
+    }
+}
+
+//responsive design:
+@media only screen and (min-width: 1450px){
+    .App{
+        > .window{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            @include transform(-50%, -50%);
+        }
+    }
+}
+
+@media only screen and (max-width: 1800px){
+    .App{
+        > .window{
+            padding-left: 80px;
+            padding-right: 65px;
+            gap: 70px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1650px){
+    .App{
+        > .window{
+            padding-left: 60px;
+            padding-right: 50px;
+            gap: 60px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1450px){//break to two columns
+    .App{
+        > .window{
+            max-height: unset;
+            padding-left: 110px;
+            padding-right: 110px;
+            gap: 110px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1400px){
+    .App{
+        > .window{
+            padding-left: 100px;
+            padding-right: 100px;
+            gap: 100px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1350px){
+    .App{
+        > .window{
+            padding-left: 90px;
+            padding-right: 90px;
+            gap: 90px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1250px){
+    .App{
+        > .window{
+            padding-left: 85px;
+            padding-right: 80px;
+            gap: 80px;
+        }
+    }
+}
+
+//height:
+@media only screen and (max-height: 700px){
+    .App{
+        > .window{
+            padding-top: 45px;
+            padding-bottom: 45px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 1550px){
+    @media only screen and (max-height: 720px){
+        // .App{
+        //     > .window{
+        //         top: 0;
+        //         @include transform(-50%, 0);
+        //         // > .headerFormWrapper{
+        //         //     flex: 1;
+        //         // }
+        //         // > .infoWrapper{
+        //         //     width: 480px;//checkIt
+        //         // }
+        //     }
+        // }
+    }
+}
+
+@media only screen and (max-width: 1550px){
+
+    // .App{
+    //     > .window{
+    //         position: sticky;
+    //         left: 0;
+    //         top: 0;
+    //         @include transform(0, 0);
+    //         // > .headerFormWrapper{
+    //         //     flex: 1;
+    //         // }
+    //         // > .infoWrapper{
+    //         //     width: 480px;//checkIt
+    //         // }
+    //     }
+    // }
+
+}

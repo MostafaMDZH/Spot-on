@@ -1,0 +1,86 @@
+// border raduis:
+@mixin borderRadius($value){
+    border-radius:         $value;
+    -webkit-border-radius: $value;
+    -moz-border-radius:    $value;
+    -ms-border-radius:     $value;
+}
+@mixin borderTopRadius($value){
+    @include borderTopLeftRadius($value);
+    @include borderTopRightRadius($value);
+}
+@mixin borderBottomRadius($value){
+    @include borderBottomLeftRadius($value);
+    @include borderBottomRightRadius($value);
+}
+@mixin borderLeftRadius($value){
+    @include borderTopLeftRadius($value);
+    @include borderBottomLeftRadius($value);
+}
+@mixin borderRightRadius($value){
+    @include borderTopRightRadius($value);
+    @include borderBottomRightRadius($value);
+}
+@mixin borderTopLeftRadius($value){
+    border-top-left-radius:             $value;
+    -webkit-border-top-left-radius:     $value;
+    -moz-border-top-left-radius:        $value;
+    -ms-border-top-left-radius:         $value;
+}
+@mixin borderTopRightRadius($value){
+    border-top-right-radius:            $value;
+    -webkit-border-top-right-radius:    $value;
+    -moz-border-top-right-radius:       $value;
+    -ms-border-top-right-radius:        $value;
+}
+@mixin borderBottomLeftRadius($value){
+    border-bottom-left-radius:          $value;
+    -webkit-border-bottom-left-radius:  $value;
+    -moz-border-bottom-left-radius:     $value;
+    -ms-border-bottom-left-radius:      $value;
+}
+@mixin borderBottomRightRadius($value){
+    border-bottom-right-radius:         $value;
+    -webkit-border-bottom-right-radius: $value;
+    -moz-border-bottom-right-radius:    $value;
+    -ms-border-bottom-right-radius:     $value;
+}
+
+// transform:
+@mixin transform($x, $y){
+    transform: translate($x, $y);
+    -ms-transform: translate($x, $y);
+    -moz-transform: translate($x, $y);
+    -webkit-transform: translate($x, $y);
+}
+
+// placeholder:
+@mixin optional-at-root($sel){
+    @at-root #{if(not &, $sel, selector-append(&, $sel))}{
+        @content;
+    }
+}
+@mixin placeholder{
+    @include optional-at-root('::-webkit-input-placeholder'){
+        @content;
+    }
+    @include optional-at-root(':-moz-placeholder'){
+        @content;
+    }
+    @include optional-at-root('::-moz-placeholder'){
+        @content;
+    }
+    @include optional-at-root(':-ms-input-placeholder'){
+        @content;
+    }
+}
+
+// blur filter:
+@mixin blur($value){
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -ms-filter: blur(10px);
+    -o-filter: blur(10px);
+    // filter: url(#svgBlur); //checkIt
+    filter: blur(10px);
+}

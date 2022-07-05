@@ -1,0 +1,242 @@
+$buttonLightHover: rgba(0, 0, 0, 0.025);
+$buttonLightFocuse: rgba(0, 0, 0, 0.035);
+$buttonLightActived: rgba(0, 0, 0, 0.045);
+
+// add underline on urls:
+.hrefUnderline:hover,
+.hrefUnderline:focus{
+    text-decoration: underline;
+}
+
+// change transparent background on events:
+.transBackActeffect{
+    transition: background-color 150ms;
+}
+.transBackActeffect:enabled:active{
+    background-color: $buttonLightHover !important;
+}
+@media (hover: hover) and (pointer: fine){
+    .transBackActeffect:enabled:hover{
+        background-color: $buttonLightHover !important;
+    }
+    .transBackActeffect:enabled:focus{
+        background-color: $buttonLightFocuse !important;
+    }
+    .transBackActeffect:enabled:active{
+        background-color: $buttonLightActived !important;
+    }
+}
+.transBackActeffect:disabled{
+     opacity: 0.5;
+     cursor: default;
+}
+
+// change colored background on events:
+.colorBackActeffect{
+    transition: filter 100ms;
+}
+.colorBackActeffect:active{
+    filter: brightness(95%);
+}
+@media (hover: hover) and (pointer: fine){
+    .colorBackActeffect:hover{
+        filter: brightness(95%);
+    }
+    .colorBackActeffect:focus{
+        filter: brightness(90%);
+    }
+    .colorBackActeffect:active{
+        filter: brightness(85%);
+    }
+}
+
+// end text overflow with three dots:
+.threeDotsOverflow{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+// not selectable text:
+.notSelectable{
+    -webkit-tap-highlight-color: transparent; // Android Chrome
+    -webkit-touch-callout:       none;        // iOS Safari
+    -webkit-user-select:         none;        // Safari
+    -khtml-user-select:          none;        // Konqueror HTML
+    -moz-user-select:            none;        // Firefox
+    -ms-user-select:             none;        // Internet Explorer/Edge
+    user-select:                 none;        // non-prefixed version, currently supported by Chrome and Opera
+}
+
+// selectable text:
+.selectableText{
+    -webkit-touch-callout:  default; // iOS Safari
+    -webkit-user-select:    text;    // Safari
+    -khtml-user-select:     text;    // Konqueror HTML
+    -moz-user-select:       text;    // Firefox
+    -ms-user-select:        text;    // Internet Explorer/Edge
+    user-select:            text;    // non-prefixed version, currently supported by Chrome and Opera
+    cursor:                 text;    // general
+}
+
+// custom scrollbar:
+.darkThinScrollbar::-webkit-scrollbar{
+    width: 7px;
+}
+.darkThinScrollbar::-webkit-scrollbar-track{
+    background: transparent;
+}
+.darkThinScrollbar::-webkit-scrollbar-thumb{
+    background: #c4c4c4;
+    border-radius: 20px;
+}
+// custom scrollbar:
+.darkUltraThinScrollbar::-webkit-scrollbar{
+    width: 4px;
+}
+.darkUltraThinScrollbar::-webkit-scrollbar-track{
+    background: transparent;
+}
+.darkUltraThinScrollbar::-webkit-scrollbar-thumb{
+    background: #ccc;
+    border-radius: 20px;
+}
+
+// none touch screen:
+.noneTouchScreen{
+    //light thin scrollbar:
+    .lightThinScrollbar::-webkit-scrollbar{
+        width: 3px;
+    }
+    .lightThinScrollbar::-webkit-scrollbar-track{
+        background: transparent;
+    }
+    .lightThinScrollbar::-webkit-scrollbar-thumb{
+        background: #CCC;
+        border-radius: 20px;
+    }
+    //light thick hidden scrollbar:
+    .lightThickHiddenScrollbar::-webkit-scrollbar{
+        width: 7px;
+        transition: all 200ms;
+    }
+    .lightThickHiddenScrollbar::-webkit-scrollbar-track{
+        background: transparent;
+    }
+    .lightThickHiddenScrollbar::-webkit-scrollbar-thumb{
+        background-color: transparent;
+        border-radius: 20px;
+    }
+    .lightThickHiddenScrollbar::-webkit-scrollbar-thumb:hover{
+        background-color: #CCC;
+    }
+    //dark thick scrollbar:
+    .darkThickScrollbar::-webkit-scrollbar{
+        width: 6px;
+    }
+    .darkThickScrollbar::-webkit-scrollbar-track{
+        background: transparent;
+    }
+    .darkThickScrollbar::-webkit-scrollbar-thumb{
+        background: #C2C2C2;
+        border-radius: 20px;
+    }
+    //dark super thin scrollbar:
+    .darkSuperThinScrollbar::-webkit-scrollbar{
+        width: 1px;
+    }
+    .darkSuperThinScrollbar::-webkit-scrollbar-track{
+        background: transparent;
+    }
+    .darkSuperThinScrollbar::-webkit-scrollbar-thumb{
+        background: #BBB;
+        border-radius: 20px;
+    }
+}
+
+// no scrollbar:
+.noScrollbar::-webkit-scrollbar{
+    width: 0;
+}
+
+//custom range input:
+.customRange{
+    width: 100%;
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    width: 100%; /* Specific width is required for Firefox. */
+    background: transparent; /* Otherwise white in Chrome */
+    border: none
+}
+.customRange:focus{
+    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+.customRange::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    background-color: white;
+    border: 2px solid #027;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -7px; // you need to specify a margin in Chrome, but in Firefox and IE it is automatic
+}
+.customRange::-moz-range-thumb{
+    height: 12px;
+    width: 12px;
+    background-color: white;
+    border: 2px solid #027;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.customRange::-ms-thumb{
+    height: 16px;
+    width: 16px;
+    background-color: white;
+    border: 2px solid #027;
+    border-radius: 50%;
+    cursor: pointer;
+}
+// the track:
+.customRange::-webkit-slider-runnable-track{
+    width: 100%;
+    height: 12px;
+    cursor: pointer;
+    border-top: solid 5px white;
+    border-bottom: solid 5px white;
+    margin-top: -1px;
+    margin-bottom: -1px;
+}
+.customRange::-moz-range-track{
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    background: transparent;
+    border-top: solid 8px white;
+    border-bottom: solid 8px white;
+}
+.customRange::-ms-track{
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    background: transparent;
+    border-top: solid 5px white;
+    border-bottom: solid 5px white;
+    border-color: transparent;
+    color: transparent;
+}
+.customRange::-ms-fill-lower{
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    background: transparent;
+    border-top: solid 5px white;
+    border-bottom: solid 5px white;
+}
+.customRange::-ms-fill-upper{
+    width: 100%;
+    height: 2px;
+    cursor: pointer;
+    background: transparent;
+    border-top: solid 5px white;
+    border-bottom: solid 5px white;
+}

@@ -1,0 +1,60 @@
+@import "fonts";
+@import "colors";
+@import "classes";
+
+html{
+    font-size: 0.625rem;
+}
+
+body{
+    direction:ltr;
+    background-color: white;
+    font-family: Ubuntu_Regular, serif;
+    text-align: start;
+    cursor:default;
+    margin: 0;
+    @extend .darkThinScrollbar;
+    *{
+        box-sizing: border-box;
+    }
+    a, p, input, button, select{
+        font-family: Ubuntu_Regular, serif;
+    }
+    a::-moz-focus-inner,
+    input::-moz-focus-inner,
+    button::-moz-focus-inner{
+        border:0;
+        padding:0;
+    }
+    a{
+        text-decoration:none;
+        outline:none;
+    }
+    input, button, select{
+        border:none;
+        outline:none;
+    }
+    input[type="button"], button, select{
+        cursor: pointer;
+    }
+    input:required,
+    input:invalid{
+        box-shadow:none;
+    }
+    input[type="button"], button{
+        padding:0;
+        background:none;
+    }
+    h1, h2, h3, h4, a, p,
+    input[type="button"],
+    button{
+        @extend .notSelectable;
+    }
+}
+
+//noneTouchScreen
+.noneTouchScreen{
+    *{
+        @extend .darkThinScrollbar;
+    }
+}
