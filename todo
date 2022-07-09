@@ -1,29 +1,25 @@
 # Todo:
 
 ## Bug:
-- check the formula for distance and mileage
 - cannot put 0.X in range input
-- 0.00 in calc
-- if everything set to 0
+- in touch screen cannot hover over the chart columns
 
 ## Features:
-- if cost was negetive, change the title
-- about
-- lease
+- cookie acknowledgement
 
 ## Design:
-- buttons background animation
-- modern scrollbar
-- selector scrollbar
-- responsive design
-- add blank shadow on loading
+- responsive + mobile design
 
 ## Animation:
 - animation on range inputs at load time
 
 ## Publish:
-- sort imports
 - domain and publish
 - tests
 - styled components / css modules
 - redux / redux saga
+
+## Future:
+- gray cover on loading
+- bookmark
+- comparison
