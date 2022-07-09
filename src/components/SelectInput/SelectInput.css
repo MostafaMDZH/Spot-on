@@ -1,0 +1,410 @@
+.hrefUnderline:hover,
+.hrefUnderline:focus {
+  text-decoration: underline;
+}
+
+.transBackActeffect {
+  -webkit-transition: background-color 150ms;
+  transition: background-color 150ms;
+}
+
+.transBackActeffect:enabled:active {
+  background-color: rgba(0, 0, 0, 0.025) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .transBackActeffect:enabled:hover {
+    background-color: rgba(0, 0, 0, 0.025) !important;
+  }
+  .transBackActeffect:enabled:focus {
+    background-color: rgba(0, 0, 0, 0.035) !important;
+  }
+  .transBackActeffect:enabled:active {
+    background-color: rgba(0, 0, 0, 0.045) !important;
+  }
+}
+
+.transBackActeffect:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.colorBackActeffect {
+  -webkit-transition: -webkit-filter 100ms;
+  transition: -webkit-filter 100ms;
+  transition: filter 100ms;
+  transition: filter 100ms, -webkit-filter 100ms;
+}
+
+.colorBackActeffect:active {
+  -webkit-filter: brightness(95%);
+          filter: brightness(95%);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .colorBackActeffect:hover {
+    -webkit-filter: brightness(95%);
+            filter: brightness(95%);
+  }
+  .colorBackActeffect:focus {
+    -webkit-filter: brightness(90%);
+            filter: brightness(90%);
+  }
+  .colorBackActeffect:active {
+    -webkit-filter: brightness(85%);
+            filter: brightness(85%);
+  }
+}
+
+.threeDotsOverflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.notSelectable {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.selectableText {
+  -webkit-touch-callout: default;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  cursor: text;
+}
+
+.darkThinScrollbar::-webkit-scrollbar {
+  width: 7px;
+}
+
+.darkThinScrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.darkThinScrollbar::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 20px;
+}
+
+.darkUltraThinScrollbar::-webkit-scrollbar, .SelectInput > div > .selectWrapper > .select::-webkit-scrollbar {
+  width: 4px;
+}
+
+.darkUltraThinScrollbar::-webkit-scrollbar-track, .SelectInput > div > .selectWrapper > .select::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.darkUltraThinScrollbar::-webkit-scrollbar-thumb, .SelectInput > div > .selectWrapper > .select::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 20px;
+}
+
+.noneTouchScreen .lightThinScrollbar::-webkit-scrollbar {
+  width: 3px;
+}
+
+.noneTouchScreen .lightThinScrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.noneTouchScreen .lightThinScrollbar::-webkit-scrollbar-thumb {
+  background: #CCC;
+  border-radius: 20px;
+}
+
+.noneTouchScreen .lightThickHiddenScrollbar::-webkit-scrollbar {
+  width: 7px;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+}
+
+.noneTouchScreen .lightThickHiddenScrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.noneTouchScreen .lightThickHiddenScrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 20px;
+}
+
+.noneTouchScreen .lightThickHiddenScrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #CCC;
+}
+
+.noneTouchScreen .darkThickScrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.noneTouchScreen .darkThickScrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.noneTouchScreen .darkThickScrollbar::-webkit-scrollbar-thumb {
+  background: #C2C2C2;
+  border-radius: 20px;
+}
+
+.noneTouchScreen .darkSuperThinScrollbar::-webkit-scrollbar {
+  width: 1px;
+}
+
+.noneTouchScreen .darkSuperThinScrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.noneTouchScreen .darkSuperThinScrollbar::-webkit-scrollbar-thumb {
+  background: #BBB;
+  border-radius: 20px;
+}
+
+.noScrollbar::-webkit-scrollbar {
+  width: 0;
+}
+
+.customRange {
+  width: 100%;
+  -webkit-appearance: none;
+  /* Hides the slider so that custom slider can be made */
+  width: 100%;
+  /* Specific width is required for Firefox. */
+  background: transparent;
+  /* Otherwise white in Chrome */
+  border: none;
+}
+
+.customRange:focus {
+  outline: none;
+  /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+.customRange::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  background-color: white;
+  border: 2px solid #027;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -7px;
+}
+
+.customRange::-moz-range-thumb {
+  height: 12px;
+  width: 12px;
+  background-color: white;
+  border: 2px solid #027;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.customRange::-ms-thumb {
+  height: 16px;
+  width: 16px;
+  background-color: white;
+  border: 2px solid #027;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.customRange::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 12px;
+  cursor: pointer;
+  border-top: solid 5px white;
+  border-bottom: solid 5px white;
+  margin-top: -1px;
+  margin-bottom: -1px;
+}
+
+.customRange::-moz-range-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: transparent;
+  border-top: solid 8px white;
+  border-bottom: solid 8px white;
+}
+
+.customRange::-ms-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: transparent;
+  border-top: solid 5px white;
+  border-bottom: solid 5px white;
+  border-color: transparent;
+  color: transparent;
+}
+
+.customRange::-ms-fill-lower {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: transparent;
+  border-top: solid 5px white;
+  border-bottom: solid 5px white;
+}
+
+.customRange::-ms-fill-upper {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: transparent;
+  border-top: solid 5px white;
+  border-bottom: solid 5px white;
+}
+
+.SelectInput {
+  width: 50%;
+  min-height: 131px;
+  padding-top: 35px;
+}
+
+.SelectInput > .title {
+  font-size: 1.5rem;
+  color: #aaa;
+  display: block;
+}
+
+.SelectInput > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 20px;
+}
+
+.SelectInput > div > .selectWrapper {
+  background-color: #f5f5f5;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+}
+
+.SelectInput > div > .selectWrapper > .select {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  width: auto;
+  height: 51px;
+  border-right: solid 10px transparent;
+  border-left: solid 10px transparent;
+  padding-right: 3px;
+  padding-left: 2px;
+  background: transparent;
+  text-align: center;
+  font-size: 2.8rem;
+  color: #027;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+}
+
+.SelectInput > div > .comment {
+  font-size: 1.5rem;
+  color: #aaa;
+  margin-left: 10px;
+  margin-top: 15px;
+}
+
+.SelectInput.disable {
+  pointer-events: none;
+}
+
+.SelectInput.inline {
+  width: auto;
+  min-height: unset;
+}
+
+.SelectInput.inline > .title {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 1.5rem;
+  color: #99a;
+  display: unset;
+  float: left;
+  margin-top: 7px;
+}
+
+.SelectInput.inline > div {
+  display: unset;
+  float: left;
+  margin-top: 0;
+  margin-left: -2px;
+}
+
+.SelectInput.inline > div > .selectWrapper {
+  float: left;
+  background-color: transparent;
+}
+
+.SelectInput.inline > div > .selectWrapper > .select {
+  height: 25px;
+  border: none;
+  padding-right: 0;
+  padding-bottom: 2px;
+  font-size: 1.6rem;
+}
+
+.SelectInput.inline > div > .comment {
+  float: left;
+  margin-left: 4px;
+  margin-top: 7px;
+}
+
+.SelectInput.settings {
+  width: 100%;
+  min-height: unset;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0;
+  margin-top: 8px;
+}
+
+.SelectInput.settings > .title {
+  font-size: 1.6rem;
+  line-height: 25px;
+  color: #292929;
+  display: unset;
+}
+
+.SelectInput.settings > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 0;
+}
+
+.SelectInput.settings > div > .selectWrapper {
+  background-color: transparent;
+}
+
+.SelectInput.settings > div > .selectWrapper > .select {
+  min-width: 45px;
+  height: 25px;
+  padding-right: 5px;
+  border: none;
+  padding-bottom: 2px;
+  font-size: 1.6rem;
+  text-align: right;
+}
+
+.SelectInput.settings > div > .comment {
+  margin-left: 3px;
+  margin-top: 0;
+  line-height: 25px;
+  color: #292929;
+}
+/*# sourceMappingURL=SelectInput.css.map */

@@ -1,0 +1,73 @@
+@import '../../stylesheets/mixin';
+
+.Info{
+    width: 480px;
+    padding: 50px 70px 50px 70px;
+    @include borderRadius(20px);
+    box-shadow: 3px 10px 35px #DDD;
+    position: fixed;
+    top:50%;
+    // right: 100px;
+    @include transform(0, -50%);
+    > .costs{
+        > .title{
+            font-size: 1.6rem;
+            color: #aaa;
+        }
+        > .distanceWrapper{
+            display: flex;
+            margin-top: 20px;
+            > .unit{
+                font-size: 3rem;
+                color: #04b;
+                margin-top: 12px;
+                font-weight: bold;
+            }
+            > .ammount{
+                font-size: 10.5rem;
+                line-height: 100%;
+                letter-spacing: 0.1rem;
+                color: #04b;
+                margin-left: 12px;
+            }
+            > .period{
+                font-size: 1.6rem;
+                color: #aaa;
+                margin-left: 17px;
+                margin-top: 75px;
+            }
+        }
+        > .timeWrapper{
+            width: 100%;
+            max-width: 305px;
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            > .timeCostWrapper{
+                > .period{
+                    font-size: 1.45rem;
+                    color: #aaa;
+                    display: block;
+                }
+                > .ammountWrapper{
+                    margin-top: 5px;
+                    display: flex;
+                    > a{
+                        font-weight: bold;
+                        color: #666;
+                        display: block;
+                    }
+                    > .currency{
+                        font-size: 2.2rem;
+                    }
+                    > .ammount{
+                        margin-left: 1px;
+                        font-size: 2.2rem;
+                    }
+                }
+            }
+        }
+    }
+
+
+}

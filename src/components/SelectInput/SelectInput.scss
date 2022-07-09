@@ -1,0 +1,121 @@
+@import "../../stylesheets/classes";
+@import "../../stylesheets/mixin";
+
+.SelectInput{
+    width: 50%;
+    min-height: 131px;
+    padding-top: 35px;
+    > .title{
+        font-size: 1.5rem;
+        color: #aaa;
+        display: block;
+    }
+    > div{
+        display: flex;
+        margin-top: 20px;
+        > .selectWrapper{
+            background-color: #f5f5f5;
+            @include borderRadius(7px);
+            > .select{
+                box-sizing: content-box;
+                width: auto;
+                height: 51px;
+                border-right: solid 10px transparent;
+                border-left: solid 10px transparent;
+                padding-right: 3px;
+                padding-left: 2px;
+                background: transparent;
+                text-align: center;
+                font-size: 2.8rem;
+                color: #027;
+                @include borderRadius(7px);
+                @extend .darkUltraThinScrollbar;
+            }
+        }
+        > .comment{
+            font-size: 1.5rem;
+            color: #aaa;
+            margin-left: 10px;
+            margin-top: 15px;
+        }
+    }
+}
+
+//disable:
+.SelectInput.disable{
+    pointer-events: none;
+}
+
+// in range input:
+.SelectInput.inline{
+    width: auto;
+    min-height: unset;
+    > .title{
+        display: inline-flex;
+        font-size: 1.5rem;
+        color: #99a;
+        display: unset;
+        float: left;
+        margin-top: 7px;
+    }
+    > div{
+        display: unset;
+        float: left;
+        margin-top: 0;
+        margin-left: -2px;
+        > .selectWrapper{
+            float: left;
+            background-color: transparent;
+            > .select{
+                height: 25px;
+                border: none;
+                padding-right: 0;
+                padding-bottom: 2px;
+                font-size: 1.6rem;
+            }
+        }
+        > .comment{
+            float: left;
+            margin-left: 4px;
+            margin-top: 7px;
+        }
+    }
+}
+
+// in settings:
+.SelectInput.settings{
+    width: 100%;
+    min-height: unset;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin-top: 8px;
+    > .title{
+        font-size: 1.6rem;
+        line-height: 25px;
+        color: #292929;
+        display: unset;
+    }
+    > div{
+        display: flex;
+        margin-top: 0;
+        > .selectWrapper{
+            background-color: transparent;
+            > .select{
+                min-width: 45px;
+                height: 25px;
+                padding-right: 5px;
+                border: none;
+                padding-bottom: 2px;
+                font-size: 1.6rem;
+                text-align: right;
+            }
+        }
+        > .comment{
+            margin-left: 3px;
+            margin-top: 0;
+            line-height: 25px;
+            color: #292929;
+        }
+    }
+}

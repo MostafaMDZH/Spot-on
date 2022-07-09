@@ -1,0 +1,57 @@
+@import '../../stylesheets/mixin';
+
+.Chart{
+    width: 100%;
+    max-width: 330px;
+    height: 195px;
+    margin-top: 65px;
+    display: flex;
+    > .verticalColum{
+        height: 100%;
+        padding-right: 22px;
+        padding-bottom: 23px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        > a{
+            display: block;
+            color: #bbb;
+            font-size: 1.4rem;
+        }
+    }
+    > .columsWrapper{
+        height: 100%;
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        > .barWrapper{
+            width: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            > a{
+                width: 100%;
+                text-align: center;
+                font-size: 1.4rem;
+                color: #bbb;
+                display: flex;
+                justify-content: center;
+                > span{
+                    width: 27px;
+                    padding-top: 5px;
+                    @include borderRadius(5px);
+                    background-color: #e8e8e8;
+                }
+                > span.tallest{
+                    background-color: #a25;
+                }
+            }
+            > a:nth-child(2){
+                display: block;
+                text-align: center;
+                padding-top: 9px;
+                overflow: hidden;
+            }
+        }
+    }
+}
