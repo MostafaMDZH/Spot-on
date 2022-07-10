@@ -1,17 +1,23 @@
 # Todo:
+vs code spell check
 
 ## Bug:
-- cannot put 0.X in range input
-- in touch screen cannot hover over the chart columns
-
-## Features:
-- cookie acknowledgement
+- num >= 1000 , ...
+- maintinance range input step to 100 
 
 ## Design:
-- responsive + mobile design
-
-## Animation:
+- info top-1%
+- selector input comment margin
+- hide animation on range field at buy option
+- better name(+move description from home link to its title and page title)
+- mobile design
+- hiding header on scroll?
 - animation on range inputs at load time
+- more menu(about, source code, info(add to ablut?), contact)
+- bigger and bold font size for main cost?
+- info vertical spacing
+- better font for numbers
+- gray cover on loading
 
 ## Publish:
 - domain and publish
@@ -19,7 +25,7 @@
 - styled components / css modules
 - redux / redux saga
 
-## Future:
-- gray cover on loading
+## Features:
 - bookmark
 - comparison
+- login
