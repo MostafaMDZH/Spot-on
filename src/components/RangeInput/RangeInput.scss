@@ -29,7 +29,7 @@
         }
         > .comment{
             position: absolute;
-            bottom: 0;
+            bottom: 1px;
             right: 0;
             min-height: 20px;
             font-size: 1.5rem;
@@ -70,6 +70,7 @@
     }
 }
 
+//in two cloumns format:
 @media only screen and (max-width: 1450px){
     .RangeInput.disable{
         display: none;
@@ -103,7 +104,7 @@
             position: static;
             font-size: 1.6rem;
             text-align: right;
-            line-height: 25px;
+            line-height: 26px;
         }
     }
     > .rangeInput{
