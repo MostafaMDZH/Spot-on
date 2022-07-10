@@ -14,8 +14,8 @@ export default function App(){
     //setDefaultcookies:
     const setDefaultCookies = () => {
         //settings:
-        cookies.set('Currency'             , [DV.CURRENCY.name,         DV.CURRENCY.symbol]         , { path: '/' });
-        cookies.set('Distance'             , [DV.DISTANCE.name,         DV.DISTANCE.symbol]         , { path: '/' });
+        cookies.set('Currency'             , [DV.CURRENCY.name,         DV.CURRENCY.symbol        ] , { path: '/' });
+        cookies.set('Distance'             , [DV.DISTANCE.name,         DV.DISTANCE.symbol        ] , { path: '/' });
         cookies.set('Fuel Measurement'     , [DV.FUEL_MEASUREMENT.name, DV.FUEL_MEASUREMENT.symbol] , { path: '/' });
         cookies.set('Fuel Cost'            , DV.FUEL_COST                                           , { path: '/' });
         //form:
@@ -84,22 +84,30 @@ export default function App(){
     return (
         <div className={'App' + (isTouchScreenDevice() ? '' : ' notTouchScreen')}>
             <div className='window'>
-                <div className='headerFormWrapper'>
-                    <Header onMenuClick = {()=>setSettingsVisibility(true)}/>
-                    <Form
-                        currency        = {currency}
-                        distance        = {distance}
-                        fuelMeasurement = {fuelMeasurement}
-                        fuelCost        = {fuelCost}
-                        onCalculate     = {(data)=>setData(data)}
-                    />
+                <div className='main'>
+                    <div className='headerWrapper'>
+                        <Header onMenuClick = {()=>setSettingsVisibility(true)}/>
+                    </div>
+                    <div className='formWrapper'>
+                        <div className='formContainer'>
+                            <Form
+                                currency        = {currency}
+                                distance        = {distance}
+                                fuelMeasurement = {fuelMeasurement}
+                                fuelCost        = {fuelCost}
+                                onCalculate     = {(data)=>setData(data)}
+                            />
+                        </div>
+                    </div>
                 </div>
                 <div className='infoWrapper'>
-                    <Info
-                        currency = {currency}
-                        distance = {distance}
-                        data     = {data}
-                    />
+                    <div className='infoContainer'>
+                        <Info
+                            currency        = {currency}
+                            distance        = {distance}
+                            data            = {data}
+                        />
+                    </div>
                 </div>
             </div>
             <Settings
