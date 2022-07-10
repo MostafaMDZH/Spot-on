@@ -1,4 +1,4 @@
-// border raduis:
+//border raduis:
 @mixin borderRadius($value){
     border-radius:         $value;
     -webkit-border-radius: $value;
@@ -46,7 +46,7 @@
     -ms-border-bottom-right-radius:     $value;
 }
 
-// transform:
+//transform:
 @mixin transform($x, $y){
     transform: translate($x, $y);
     -ms-transform: translate($x, $y);
@@ -54,7 +54,7 @@
     -webkit-transform: translate($x, $y);
 }
 
-// placeholder:
+//placeholder:
 @mixin optional-at-root($sel){
     @at-root #{if(not &, $sel, selector-append(&, $sel))}{
         @content;
@@ -75,12 +75,12 @@
     }
 }
 
-// blur filter:
+//blur filter:
 @mixin blur($value){
     -webkit-filter: blur(10px);
     -moz-filter: blur(10px);
     -ms-filter: blur(10px);
     -o-filter: blur(10px);
-    // filter: url(#svgBlur); //checkIt
+    //filter: url(#svgBlur); //checkIt
     filter: blur(10px);
 }
