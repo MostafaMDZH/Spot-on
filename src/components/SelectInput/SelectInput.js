@@ -32,7 +32,7 @@ export default function SelectInput({
                         Object.keys(options).map((key) => {
                             return (
                                 <option key={key}
-                                    value={(typeof options[key] === 'string' ? options[key] : (options[key][1] || options[key]))}>
+                                    value={(typeof options[key] === 'string' ? options[key] : (options[key][0] || options[key]))}>
                                     {(typeof options[key] === 'string' ? options[key] : (options[key][1] || options[key]))}
                                 </option>
                             );
