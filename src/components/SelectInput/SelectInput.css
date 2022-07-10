@@ -80,15 +80,15 @@
   cursor: text;
 }
 
-.darkThinScrollbar::-webkit-scrollbar {
+.darkThinScrollbar::-webkit-scrollbar, .notTouchScreen::-webkit-scrollbar, .notTouchScreen ::-webkit-scrollbar {
   width: 7px;
 }
 
-.darkThinScrollbar::-webkit-scrollbar-track {
+.darkThinScrollbar::-webkit-scrollbar-track, .notTouchScreen::-webkit-scrollbar-track, .notTouchScreen ::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.darkThinScrollbar::-webkit-scrollbar-thumb {
+.darkThinScrollbar::-webkit-scrollbar-thumb, .notTouchScreen::-webkit-scrollbar-thumb, .notTouchScreen ::-webkit-scrollbar-thumb {
   background: #c4c4c4;
   border-radius: 20px;
 }
@@ -106,64 +106,6 @@
   border-radius: 20px;
 }
 
-.noneTouchScreen .lightThinScrollbar::-webkit-scrollbar {
-  width: 3px;
-}
-
-.noneTouchScreen .lightThinScrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.noneTouchScreen .lightThinScrollbar::-webkit-scrollbar-thumb {
-  background: #CCC;
-  border-radius: 20px;
-}
-
-.noneTouchScreen .lightThickHiddenScrollbar::-webkit-scrollbar {
-  width: 7px;
-  -webkit-transition: all 200ms;
-  transition: all 200ms;
-}
-
-.noneTouchScreen .lightThickHiddenScrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.noneTouchScreen .lightThickHiddenScrollbar::-webkit-scrollbar-thumb {
-  background-color: transparent;
-  border-radius: 20px;
-}
-
-.noneTouchScreen .lightThickHiddenScrollbar::-webkit-scrollbar-thumb:hover {
-  background-color: #CCC;
-}
-
-.noneTouchScreen .darkThickScrollbar::-webkit-scrollbar {
-  width: 6px;
-}
-
-.noneTouchScreen .darkThickScrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.noneTouchScreen .darkThickScrollbar::-webkit-scrollbar-thumb {
-  background: #C2C2C2;
-  border-radius: 20px;
-}
-
-.noneTouchScreen .darkSuperThinScrollbar::-webkit-scrollbar {
-  width: 1px;
-}
-
-.noneTouchScreen .darkSuperThinScrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.noneTouchScreen .darkSuperThinScrollbar::-webkit-scrollbar-thumb {
-  background: #BBB;
-  border-radius: 20px;
-}
-
 .noScrollbar::-webkit-scrollbar {
   width: 0;
 }
@@ -171,17 +113,13 @@
 .customRange {
   width: 100%;
   -webkit-appearance: none;
-  /* Hides the slider so that custom slider can be made */
   width: 100%;
-  /* Specific width is required for Firefox. */
   background: transparent;
-  /* Otherwise white in Chrome */
   border: none;
 }
 
 .customRange:focus {
   outline: none;
-  /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
 }
 
 .customRange::-webkit-slider-thumb {
@@ -402,9 +340,6 @@
 }
 
 .SelectInput.settings > div > .comment {
-  margin-left: 3px;
-  margin-top: 0;
-  line-height: 25px;
-  color: #292929;
+  display: none;
 }
 /*# sourceMappingURL=SelectInput.css.map */

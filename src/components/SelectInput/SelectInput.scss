@@ -46,7 +46,7 @@
     pointer-events: none;
 }
 
-// in range input:
+//in range input:
 .SelectInput.inline{
     width: auto;
     min-height: unset;
@@ -82,7 +82,7 @@
     }
 }
 
-// in settings:
+//in settings:
 .SelectInput.settings{
     width: 100%;
     min-height: unset;
@@ -112,10 +112,7 @@
             }
         }
         > .comment{
-            margin-left: 3px;
-            margin-top: 0;
-            line-height: 25px;
-            color: #292929;
+            display: none;
         }
     }
 }

@@ -1,10 +1,9 @@
-import React from "react";
 import { useEffect, useState } from 'react'
-import Cookies from 'universal-cookie';
-import RangeInput from "../RangeInput/RangeInput";
-import SelectInput from "../SelectInput/SelectInput";
+import Cookies     from 'universal-cookie';
+import DV          from '../../DefaultValues'
+import RangeInput  from '../RangeInput/RangeInput';
+import SelectInput from '../SelectInput/SelectInput';
 import './Form.css';
-
 
 export default function Form({
         currency,
@@ -19,23 +18,26 @@ export default function Form({
     let updateTime;
 
     //states:
-    const [typeOfOwnership          , setTypeOfOwnership          ] = useState(cookies.get('Type of Ownership'           ));
-    const [purchasePrice          , setPurchasePrice          ] = useState(cookies.get('Purchase Price'           ));
-    const [yearsofOwnership       , setYearsofOwnership       ] = useState(cookies.get('Years of Ownership'       ));
-    const [roadTax                , setRoadTax                ] = useState(cookies.get('Road Tax'                 ));
-    const [instalment             , setInstalment             ] = useState(cookies.get('Instalment'               ));
-    const [insurance              , setInsurance              ] = useState(cookies.get('Insurance'                ));
-    const [warranty               , setWarranty               ] = useState(cookies.get('Warranty'                 ));
-    const [maintenance            , setMaintenance            ] = useState(cookies.get('Maintenance'              ));
-    const [mileage                , setMileage                ] = useState(cookies.get('Mileage'                  ));
-    const [fuelConsubtion         , setFuelConsubtion         ] = useState(cookies.get('Fuel Consubtion'          ));
-    const [serviceAverageCost     , setServiceAverageCost     ] = useState(cookies.get('Service Average Cost'     ));
-    const [serviceMileage         , setServiceMileage         ] = useState(cookies.get('Service Mileage'          ));
-    const [askingPrice            , setAskingPrice            ] = useState(cookies.get('Asking Price'             ));
+    const [typeOfOwnership    , setTypeOfOwnership    ] = useState(cookies.get('Type of Ownership'    ) || DV.TYPE_OF_OWNERSHIP    );
+    const [purchasePrice      , setPurchasePrice      ] = useState(cookies.get('Purchase Price'       ) || DV.PURCHASE_PRICE       );
+    const [yearsofOwnership   , setYearsofOwnership   ] = useState(cookies.get('Years of Ownership'   ) || DV.YEARS_OF_OWNERSHIP   );
+    const [roadTax            , setRoadTax            ] = useState(cookies.get('Road Tax'             ) || DV.ROAD_TAX             );
+    const [instalment         , setInstalment         ] = useState(cookies.get('Instalment'           ) || DV.INSTALMENT           );
+    const [insurance          , setInsurance          ] = useState(cookies.get('Insurance'            ) || DV.INSURANCE            );
+    const [warranty           , setWarranty           ] = useState(cookies.get('Warranty'             ) || DV.WARRANTY             );
+    const [maintenance        , setMaintenance        ] = useState(cookies.get('Maintenance'          ) || DV.MAINTENANCE          );
+    const [mileage            , setMileage            ] = useState(cookies.get('Mileage'              ) || DV.MILEAGE              );
+    const [fuelConsubtion     , setFuelConsubtion     ] = useState(cookies.get('Fuel Consubtion'      ) || DV.FUEL_CONSUBTION      );
+    const [serviceAverageCost , setServiceAverageCost ] = useState(cookies.get('Service Average Cost' ) || DV.SERVICE_AVERAGE_COST );
+    const [serviceMileage     , setServiceMileage     ] = useState(cookies.get('Service Mileage'      ) || DV.SERVICE_MILEAGE      );
+    const [askingPrice        , setAskingPrice        ] = useState(cookies.get('Asking Price'         ) || DV.ASKING_PRICE         );
 
     //calcDepreciation:
     const calcDepreciation = () => {
-        return (purchasePrice - askingPrice) / yearsofOwnership;
+        let totalInstalment = 0;
+        if(typeOfOwnership === 'Lease')
+            totalInstalment = instalment * yearsofOwnership * 12;
+        return (purchasePrice - askingPrice + totalInstalment) / yearsofOwnership;
     }
     
     //calcTaxAndInsurance:
@@ -45,49 +47,67 @@ export default function Form({
     
     //calcTotalServiceCost:
     const calcTotalServiceCost = () => {
+        if(serviceMileage === 0) return 0;
         return (mileage / serviceMileage) * serviceAverageCost;
     }
     
     //calcTotalFuelCost:
     const calcTotalFuelCost = () => {
-        if(fuelMeasurement[0] === 'MPG')
-            return (mileage / fuelConsubtion) * fuelCost;
-        return (mileage / 100) * fuelConsubtion * fuelCost;
+        if(fuelConsubtion === 0) return 0;
+        if(fuelMeasurement[0] === 'MPG'){
+            let convertMK = 1;
+            if(distance['Km'])
+                convertMK = 1.60934;
+            return ((mileage / convertMK) / fuelConsubtion) * fuelCost;
+        }else{
+            let convertMK = 1;
+            if(distance['Mile'])
+                convertMK = 1.60934;
+            return ((mileage * convertMK) / 100) * fuelConsubtion * fuelCost;
+        }
     }
     
     //calcCosts:
     const calcCosts = () => {
 
-        // //calc:
-        // let depreciation    = calcDepreciation();
-        // let taxAndInsurance = calcTaxAndInsurance();
-        // let serviceCost     = calcTotalServiceCost();
-        // let fuelCost        = calcTotalFuelCost();
+        //calc:
+        let depreciation    = calcDepreciation();
+        let taxAndInsurance = calcTaxAndInsurance();
+        let serviceCost     = calcTotalServiceCost();
+        let fuelCost        = calcTotalFuelCost();
 
-        // //total:
-        // let total = (
-        //     1*depreciation           +
-        //     1*taxAndInsurance        +
-        //     1*warrantyAndMaintenance +
-        //     1*serviceCost            +
-        //     1*fuelCost
-        // );
+        //total per year:
+        let total = (
+            1*depreciation    +
+            1*taxAndInsurance +
+            1*warranty        +
+            1*maintenance     +
+            1*serviceCost     +
+            1*fuelCost
+        );
 
-        // //return:
-        // let data = {
-        //     perDistance: (Math.round((total / mileage) * 100) / 100),
-        //     daily:       (Math.round((total / 365) * 10) / 10),
-        //     monthly:      Math.round((total / 12)),
-        //     yearly:       Math.round(total),
-        //     chart: [
-        //         { name: 'Dep', title: 'Depreciation'           , value: Math.round(depreciation           )},
-        //         { name: 'T&I', title: 'Tax & Insurance'        , value: Math.round(taxAndInsurance        )},
-        //         { name: 'W&M', title: 'Warranty & Maintenance' , value: Math.round(warrantyAndMaintenance )},
-        //         { name: 'Ser', title: 'Servce'                 , value: Math.round(serviceCost            )},
-        //         { name: 'Fue', title: 'Fuel'                   , value: Math.round(fuelCost               )},
-        //     ]
-        // }
-        // onCalculate(data);
+        //per distance:
+        let perDistance = 0;
+        if(mileage > 0)
+            perDistance = (Math.round((total / mileage) * 100) / 100)
+
+        //return:
+        let data = {
+            perDistance: perDistance,
+            daily:       (Math.round((total / 365) * 10) / 10),
+            monthly:      Math.round((total / 12)),
+            yearly:       Math.round(total),
+            chart: [
+                { name: 'Dpr', title: 'Depreciation'    , value: Math.round(depreciation    )},
+                { name: 'T&I', title: 'Tax & Insurance' , value: Math.round(taxAndInsurance )},
+                { name: 'Wrt', title: 'Warranty'        , value: Math.round(warranty        )},
+                { name: 'Mtn', title: 'Maintenance'     , value: Math.round(maintenance     )},
+                { name: 'Svc', title: 'Servce'          , value: Math.round(serviceCost     )},
+                { name: 'Ful', title: 'Fuel'            , value: Math.round(fuelCost        )},
+            ]
+        }
+        onCalculate(data);
+
     }
 
     //onChange:
@@ -108,9 +128,11 @@ export default function Form({
         distance,
         fuelMeasurement,
         fuelCost,
+        typeOfOwnership,
         purchasePrice,
         yearsofOwnership,
         roadTax,
+        instalment,
         insurance,
         warranty,
         maintenance,
@@ -123,8 +145,8 @@ export default function Form({
 
     //render:
     return (
-        <div className="Form">
-            <div className="column">
+        <div className='Form'>
+            <div className='column'>
                 <RangeInput 
                     name         = {'Purchase Price'}
                     title        = {typeOfOwnership === 'Lease' ? 'Down Payment' : 'Purchase Price'}
@@ -146,7 +168,7 @@ export default function Form({
                         />
                     }
                 />
-                <div className="selectorsWrapper">
+                <div className='selectorsWrapper'>
                     <SelectInput
                         name          = {'Years of Ownership'}
                         title         = {typeOfOwnership === 'Lease' ? 'Lease Term' : 'Years of Ownership'}
@@ -169,7 +191,7 @@ export default function Form({
                     title        = {'Instalment'}
                     defaultValue = {instalment}
                     rangeWidth   = {3000}
-                    step         = {100}
+                    step         = {50}
                     unit         = {currency[1]}
                     minMaxUnit   = {currency[1]}
                     comment      = {'per month'}
@@ -197,11 +219,11 @@ export default function Form({
                     onChange     = {(name, value) => onChange(name, value, () => setWarranty(value))}
                 />
             </div>
-            <div className="column">
+            <div className='column'>
                 <RangeInput
                     title        = {'Maintenance'}
                     defaultValue = {maintenance}
-                    rangeWidth   = {50000}
+                    rangeWidth   = {5000}
                     step         = {500}
                     unit         = {currency[1]}
                     minMaxUnit   = {currency[1]}

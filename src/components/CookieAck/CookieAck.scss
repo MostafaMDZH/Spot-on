@@ -1,0 +1,149 @@
+@import '../../stylesheets/mixin';
+@import '../../stylesheets/classes';
+
+.CookieAck{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left: 0;
+    background-color: rgba(0,0,0,0.75);
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0.2s ease, opacity 0.2s ease;
+    > .window{
+        width: 90%;
+        max-width: 390px;
+        height: 90%;
+        max-height: 540px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        @include transform(-50%, -50%);
+        @include borderRadius(10px);
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        transition: bottom 0.2s ease;
+        > .container{
+            width: 100%;
+            max-width: 330px;
+            height: 100%;
+            max-height: 460px;
+            display: flex;
+            flex-direction: column;
+            > .imageWrapper{
+                width: 100%;
+                flex: 1.25;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                > .image{
+                    width: 100%;
+                    max-width: 225px;
+                    height: 100%;
+                    max-height: 225px;
+                    background: transparent url(/src/icons/cookie.svg) no-repeat center / 100% 100%;
+                }
+            }
+            > .bottomArea{
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                > .textsWrapper{
+                    width: 100%;
+                    > .massage{
+                        width: 100%;
+                        margin: 10px 0 5px 0;
+                        text-align: center;
+                        font-size: 2.2rem;
+                        font-weight: normal;
+                    }
+                    > .description{
+                        width: 100%;
+                        text-align: center;
+                        font-size: 1.5rem;
+                        line-height: 2.2rem;
+                        font-weight: normal;
+                        color: #999;
+                    }
+                }
+                > .buttonWrapper{
+                    width: 100%;
+                    margin-top: 8px;
+                    display: flex;
+                    justify-content: center;
+                    > .acceptButton{
+                        width: 150px;
+                        height: 50px;
+                        background-color: rgba(10, 100, 10, 0.2);
+                        color: rgb(10, 100, 10);
+                        font-size: 1.6rem;
+                        @include borderRadius(7px);
+                        transition: background-color 100ms ease;
+                    }
+                    > .acceptButton:hover,
+                    > .acceptButton:focus{
+                        background-color: rgba(10, 100, 10, 0.3);
+                    }
+                    > .acceptButton:active{
+                        background-color: rgba(10, 100, 10, 0.4);
+                    }
+                }
+            }
+        }
+    }
+}
+
+//show:
+.CookieAck.visible{
+    visibility: visible;
+    opacity: 1;
+    > .window{
+        bottom: 0;
+    }
+}
+
+//responsive design:
+@media only screen and (max-width: 1200px){
+    .Settings{
+        > .window{
+            > .containerwrapper{
+                left: 50%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 750px){
+    .Settings{
+        > .window{
+            height: 80%;
+            max-height: unset;
+            > .closeButton{
+                box-shadow: 1px 1px 8px #ddd;
+                z-index: 10;
+                top: unset;
+                right: 20px;
+                bottom: 20px;
+            }
+            > .containerwrapper{
+                max-height: unset;
+                padding: 0 25px 40px 25px;
+                left: 0;
+                top: 25px;
+                @include transform(0, 0);
+                flex-direction: column;
+                justify-content: start;
+                gap: 25px;
+                > .container{
+                    width: 100%;
+                    max-width: unset;
+                }
+            }
+        }
+    }
+}

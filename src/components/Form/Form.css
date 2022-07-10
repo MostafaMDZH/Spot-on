@@ -1,13 +1,10 @@
 .Form {
   width: 100%;
-  padding-top: 10px;
-  padding-bottom: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  gap: 65px;
 }
 
 .Form > .column {
@@ -23,8 +20,9 @@
   width: 100%;
 }
 
-@media only screen and (max-width: 1450px) {
+@media only screen and (max-width: 4920px) {
   .Form {
+    padding-bottom: 50px;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;

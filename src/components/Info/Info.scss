@@ -1,18 +1,19 @@
 @import '../../stylesheets/mixin';
+@import '../../stylesheets/classes';
 
 .Info{
-    width: 480px;
-    padding: 50px 70px 50px 70px;
-    @include borderRadius(20px);
-    box-shadow: 3px 10px 35px #DDD;
-    position: fixed;
-    top:50%;
-    // right: 100px;
-    @include transform(0, -50%);
+    width: 100%;
     > .costs{
         > .title{
+            margin: 0;
             font-size: 1.6rem;
+            font-weight: normal;
             color: #aaa;
+            > .benefits{
+                color: #292;
+                font-weight: bold;
+                margin-right: 1px;
+            }
         }
         > .distanceWrapper{
             display: flex;
@@ -29,20 +30,26 @@
                 letter-spacing: 0.1rem;
                 color: #04b;
                 margin-left: 12px;
+                @extend .threeDotsOverflow;
             }
             > .period{
                 font-size: 1.6rem;
+                white-space: nowrap;
                 color: #aaa;
                 margin-left: 17px;
                 margin-top: 75px;
             }
         }
         > .timeWrapper{
-            width: 100%;
-            max-width: 305px;
+            width: fit-content;
+            max-width: 100%;
+            min-width: 305px;
+            overflow: auto;
             margin-top: 40px;
             display: flex;
             justify-content: space-between;
+            gap: 15px;
+            padding-bottom: 5px;
             > .timeCostWrapper{
                 > .period{
                     font-size: 1.45rem;
@@ -63,11 +70,17 @@
                     > .ammount{
                         margin-left: 1px;
                         font-size: 2.2rem;
+                        @extend .threeDotsOverflow;
                     }
                 }
             }
         }
     }
-
-
 }
+
+// //responsive design:
+// @media only screen and (max-height: 900px){
+//     .Info{
+        
+//     }
+// }

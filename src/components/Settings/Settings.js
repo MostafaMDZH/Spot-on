@@ -1,7 +1,7 @@
 import Cookies     from 'universal-cookie';
-import SelectInput from "../SelectInput/SelectInput";
-import RangeInput  from "../RangeInput/RangeInput";
-import "./Settings.css";
+import RangeInput  from '../RangeInput/RangeInput';
+import SelectInput from '../SelectInput/SelectInput';
+import './Settings.css';
 
 export default function Settings({
         isVisible,
@@ -13,7 +13,7 @@ export default function Settings({
         onClose
     }){
 
-    //handle change:
+    //handleChange:
     const handleChange = (title, value) => {
         const cookies = new Cookies();
         cookies.set(title, value, { path: '/' });
@@ -22,65 +22,76 @@ export default function Settings({
 
     //return:
     return (
-        <div className="Settings" onClick={onClose} style={{display: (isVisible === true ? "block": "none")}}>
-            <div className="window" onClick={(e)=>e.stopPropagation()}>
-                <div className="header">
-                    <a>Settings</a>
-                    <input type="button" onClick={onClose}/>
+        <div className={'Settings' + (isVisible === true ? ' visible': '')} onClick={onClose}>
+            <div className='window' onClick={(e)=>e.stopPropagation()}>
+                <input type='button' className='closeButton' onClick={onClose}/>
+                <div className='containerwrapper'>
+                    <div className='container settings'>
+                        <a className='title'>Settings</a>
+                        <div className='section'>
+                            <a className='name'>Units</a>
+                            <SelectInput
+                                title         = {'Currency'}
+                                value         = {currency.join(',')}
+                                options       = {[
+                                    [['Euro' , '€'], 'Euro' ],
+                                    [['Pound', '£'], 'Pound'],
+                                    [['USD'  , '$'], 'USD'  ]
+                                ]}
+                                comment       = {''}
+                                customClasses = {'settings'}
+                                onChange      = {handleChange}
+                            />
+                            <SelectInput
+                                title         = {'Distance'}
+                                value         = {distance.join(',')}
+                                options       = {[
+                                    [['Km'  , 'Km' ], 'Km'  ],
+                                    [['Mile', 'ml.'], 'Mile']
+                                ]}
+                                comment       = {''}
+                                customClasses = {'settings'}
+                                onChange      = {handleChange}
+                            />
+                            <SelectInput
+                                name          = {'Fuel Measurement'}
+                                title         = {'Fuel Consubtion'}
+                                value         = {fuelMeasurement.join(',')}
+                                options       = {[
+                                    [['L/100Km', 'L'], 'L/100Km'],
+                                    [['MPG'    , 'G'], 'MPG'    ]
+                                ]}
+                                comment       = {''}
+                                customClasses = {'settings'}
+                                onChange      = {handleChange}
+                            />
+                        </div>
+                        <div className='section' id='prices'>
+                            <a className='name'>Prices</a>
+                            <RangeInput
+                                title         = {'Fuel Cost'}
+                                defaultValue  = {fuelCost}
+                                rangeWidth    = {10}
+                                step          = {1}
+                                unit          = {currency[1]}
+                                minMaxUnit    = {currency[1]}
+                                comment       = {'per ' + fuelMeasurement[1]}
+                                customClasses = {'settings'}
+                                onChange      = {handleChange}
+                            />
+                        </div>
+                    </div>
+                    <div className='container about'>
+                        <a className='title'>About</a>
+                        <h2 className='madeBy'>Made with ❤️ by <a className='link' href='https://github.com/MostafaMDZH'>Mostafa Mohammadzadeh</a></h2>
+                        <p className='version'>Version 1.0.0</p>
+                        <a className='sectionTitle'>Contact</a>
+                        <p className='email'><a className='link' href = "mailto: mostafa.mdzh@gmail.com">mostafa.mdzh@gmail.com</a></p>
+                        <a className='sectionTitle'>Copy Left :)</a>
+                        <p>Released under the <a className='link' href='https://en.wikipedia.org/wiki/MIT_License'>MIT License</a></p>
+                        <p>View the source on <a className='link' href='https://github.com/MostafaMDZH/Depreciation-Calculator'>Github</a></p>
+                    </div>
                 </div>
-                <div className="section">
-                    <a className="name">Units</a>
-                    <SelectInput
-                        title         = {'Currency'}
-                        value         = {currency.join(',')}
-                        options       = {[
-                            [['Euro' , '€'], 'Euro' ],
-                            [['Pound', '£'], 'Pound'],
-                            [['USD'  , '$'], 'USD'  ]
-                        ]}
-                        comment       = {''}
-                        customClasses = {'settings'}
-                        onChange      = {handleChange}
-                    />
-                    <SelectInput
-                        title         = {'Distance'}
-                        value         = {distance.join(',')}
-                        options       = {[
-                            [['Km'  , 'Km' ], 'Km'  ],
-                            [['Mile', 'ml.'], 'Mile']
-                        ]}
-                        comment       = {''}
-                        customClasses = {'settings'}
-                        onChange      = {handleChange}
-                    />
-                    <SelectInput
-                        name          = {'Fuel Measurement'}
-                        title         = {'Fuel Consubtion'}
-                        value         = {fuelMeasurement.join(',')}
-                        options       = {[
-                            [['L/100Km', 'L'], 'L/100Km'],
-                            [['MPG'    , 'G'], 'MPG'    ]
-                        ]}
-                        comment       = {''}
-                        customClasses = {'settings'}
-                        onChange      = {handleChange}
-                    />
-                </div>
-                <div className="section" id="prices">
-                    <a className="name">Prices</a>
-                    <RangeInput
-                        title         = {'Fuel Cost'}
-                        defaultValue  = {fuelCost}
-                        rangeWidth    = {10}
-                        step          = {1}
-                        unit          = {currency[1]}
-                        minMaxUnit    = {currency[1]}
-                        comment       = {'per ' + fuelMeasurement[1]}
-                        customClasses = {'settings'}
-                        onChange      = {handleChange}
-                    />
-                </div>
-                <input type="button" className="saveButton" value="Save" onClick={onClose}/>
             </div>
         </div>
     )

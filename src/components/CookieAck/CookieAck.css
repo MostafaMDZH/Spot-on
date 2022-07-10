@@ -3,28 +3,28 @@
   text-decoration: underline;
 }
 
-.transBackActeffect, .Settings > .window > .closeButton {
+.transBackActeffect {
   -webkit-transition: background-color 150ms;
   transition: background-color 150ms;
 }
 
-.transBackActeffect:enabled:active, .Settings > .window > .closeButton:enabled:active {
+.transBackActeffect:enabled:active {
   background-color: rgba(0, 0, 0, 0.025) !important;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .transBackActeffect:enabled:hover, .Settings > .window > .closeButton:enabled:hover {
+  .transBackActeffect:enabled:hover {
     background-color: rgba(0, 0, 0, 0.025) !important;
   }
-  .transBackActeffect:enabled:focus, .Settings > .window > .closeButton:enabled:focus {
+  .transBackActeffect:enabled:focus {
     background-color: rgba(0, 0, 0, 0.035) !important;
   }
-  .transBackActeffect:enabled:active, .Settings > .window > .closeButton:enabled:active {
+  .transBackActeffect:enabled:active {
     background-color: rgba(0, 0, 0, 0.045) !important;
   }
 }
 
-.transBackActeffect:disabled, .Settings > .window > .closeButton:disabled {
+.transBackActeffect:disabled {
   opacity: 0.5;
   cursor: default;
 }
@@ -71,7 +71,7 @@
   user-select: none;
 }
 
-.selectableText, .Settings > .window > .containerwrapper > .about * {
+.selectableText {
   -webkit-touch-callout: default;
   -webkit-user-select: text;
   -moz-user-select: text;
@@ -199,7 +199,7 @@
   border-bottom: solid 5px white;
 }
 
-.Settings {
+.CookieAck {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -212,137 +212,152 @@
   transition: visibility 0.2s ease, opacity 0.2s ease;
 }
 
-.Settings > .window {
-  width: 100%;
-  max-width: 1400px;
-  height: 450px;
+.CookieAck > .window {
+  width: 90%;
+  max-width: 390px;
+  height: 90%;
+  max-height: 540px;
   position: absolute;
   left: 50%;
-  bottom: -100%;
-  transform: translate(-50%, 0);
-  -ms-transform: translate(-50%, 0);
-  -moz-transform: translate(-50%, 0);
-  -webkit-transform: translate(-50%, 0);
-  border-top-left-radius: 17px;
-  -webkit-border-top-left-radius: 17px;
-  -moz-border-top-left-radius: 17px;
-  -ms-border-top-left-radius: 17px;
-  border-top-right-radius: 17px;
-  -webkit-border-top-right-radius: 17px;
-  -moz-border-top-right-radius: 17px;
-  -ms-border-top-right-radius: 17px;
-  background-color: white;
-  -webkit-transition: bottom 0.2s ease;
-  transition: bottom 0.2s ease;
-}
-
-.Settings > .window > .closeButton {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: transparent url(/src/icons/down.svg) no-repeat center/20px auto;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-}
-
-.Settings > .window > .containerwrapper {
-  width: 100%;
-  max-width: 940px;
-  height: 100%;
-  max-height: 350px;
-  padding: 40px;
-  overflow: auto;
-  position: absolute;
-  left: 49%;
   top: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  -webkit-transition: bottom 0.2s ease;
+  transition: bottom 0.2s ease;
+}
+
+.CookieAck > .window > .container {
+  width: 100%;
+  max-width: 330px;
+  height: 100%;
+  max-height: 460px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  gap: 50px;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.Settings > .window > .containerwrapper > .container {
-  width: 50%;
-  max-width: 360px;
+.CookieAck > .window > .container > .imageWrapper {
+  width: 100%;
+  -webkit-box-flex: 1.25;
+      -ms-flex: 1.25;
+          flex: 1.25;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.Settings > .window > .containerwrapper > .container > .title {
-  display: block;
-  margin-bottom: 27px;
-  font-size: 2.8rem;
-  line-height: 40px;
-  color: #222;
+.CookieAck > .window > .container > .imageWrapper > .image {
+  width: 100%;
+  max-width: 225px;
+  height: 100%;
+  max-height: 225px;
+  background: transparent url(/src/icons/cookie.svg) no-repeat center/100% 100%;
 }
 
-.Settings > .window > .containerwrapper > .settings > .section {
-  margin-top: 18px;
-  margin-bottom: 4px;
-}
-
-.Settings > .window > .containerwrapper > .settings > .section > .name {
-  font-size: 1.2rem;
-  color: #aaa;
-}
-
-.Settings > .window > .containerwrapper > .about > #prices {
+.CookieAck > .window > .container > .bottomArea {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.Settings > .window > .containerwrapper > .about > .madeBy {
-  margin-top: 16px;
-  font-size: 1.6rem;
+.CookieAck > .window > .container > .bottomArea > .textsWrapper {
+  width: 100%;
+}
+
+.CookieAck > .window > .container > .bottomArea > .textsWrapper > .massage {
+  width: 100%;
+  margin: 10px 0 5px 0;
+  text-align: center;
+  font-size: 2.2rem;
   font-weight: normal;
 }
 
-.Settings > .window > .containerwrapper > .about > .version {
-  font-size: 1.4rem;
+.CookieAck > .window > .container > .bottomArea > .textsWrapper > .description {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+  font-weight: normal;
+  color: #999;
 }
 
-.Settings > .window > .containerwrapper > .about > .sectionTitle {
-  margin: 27px 0 0 0;
-  display: block;
-  font-size: 1.2rem;
-  color: #aaa;
+.CookieAck > .window > .container > .bottomArea > .buttonWrapper {
+  width: 100%;
+  margin-top: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.Settings > .window > .containerwrapper > .about > p {
-  font-size: 1.4rem;
+.CookieAck > .window > .container > .bottomArea > .buttonWrapper > .acceptButton {
+  width: 150px;
+  height: 50px;
+  background-color: rgba(10, 100, 10, 0.2);
+  color: #0a640a;
+  font-size: 1.6rem;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -webkit-transition: background-color 100ms ease;
+  transition: background-color 100ms ease;
 }
 
-.Settings > .window > .containerwrapper > .about .link {
-  font-style: italic;
-  color: #027;
+.CookieAck > .window > .container > .bottomArea > .buttonWrapper > .acceptButton:hover,
+.CookieAck > .window > .container > .bottomArea > .buttonWrapper > .acceptButton:focus {
+  background-color: rgba(10, 100, 10, 0.3);
 }
 
-.Settings > .window > .containerwrapper > .about .link:hover,
-.Settings > .window > .containerwrapper > .about .link:focus {
-  text-decoration: underline;
-  cursor: pointer;
+.CookieAck > .window > .container > .bottomArea > .buttonWrapper > .acceptButton:active {
+  background-color: rgba(10, 100, 10, 0.4);
 }
 
-.Settings.visible {
+.CookieAck.visible {
   visibility: visible;
   opacity: 1;
 }
 
-.Settings.visible > .window {
+.CookieAck.visible > .window {
   bottom: 0;
 }
 
@@ -388,4 +403,4 @@
     max-width: unset;
   }
 }
-/*# sourceMappingURL=Settings.css.map */
+/*# sourceMappingURL=CookieAck.css.map */

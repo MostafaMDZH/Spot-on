@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react"
-import "./Chart.css";
+import { useEffect, useState } from 'react'
+import './Chart.css';
 
 export default function Chart({
     currency,
@@ -7,13 +7,13 @@ export default function Chart({
 }){
 
     //barMaxHeight:
-    let barMaxHeight = 195 // total height
-                     - 23  // columns name
-                     - 5;  // bar padding
+    let barMaxHeight = 195 //total height
+                     - 23  //columns name
+                     - 5;  //bar padding
 
     //numberWithCommas:
     const numberWithCommas = (number) => {
-        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     }
 
     //getMaxValue:
@@ -35,19 +35,33 @@ export default function Chart({
             numMult = numMult / 10;
             k++;
         }
-        numMult = (Math.ceil((numMult + 5) / 10) * 10) - 5;
-        let barFirstFloorMul = Math.ceil(numMult / 3);
-        let barCiel = barFirstFloorMul * 3 * Math.pow(10, k);
+        numMult = (Math.ceil((numMult + 10) / 10) * 10) - 10;
+        let barFirstFloorMul = Math.ceil(numMult);
+        let barCiel = barFirstFloorMul * Math.pow(10, k);
         return barCiel;
     }
 
     //addSign:
     const addSign = (number) => {
         if(number > 1000000)
-            return (number / 1000000) + 'M';
+            number = (number / 1000000) + 'M';
         if(number > 1000)
-            return (number / 1000   ) + 'K';
+            number = (number / 1000   ) + 'K';
+        if(number.length > 4)
+            return number.substring(0, 2) + number.substring(4);
         return number;
+    }
+
+    //createLabel:
+    const createLabel = (number, floor) => {
+        switch(floor){
+            case 3:
+                return addSign(number);
+            case 2:
+                return addSign(Math.ceil(((barCiel / 3) * 2) / 100) * 100);
+            case 1:
+                return addSign(Math.ceil(((barCiel / 3) * 1) / 100) * 100);
+        }
     }
 
     //createColumns:
@@ -60,6 +74,7 @@ export default function Chart({
             else isT = false;
             let hei = (val / barCiel) * barMaxHeight;
             hei = Math.round(hei);
+            if(hei < 0) hei = 0;
             columns.push({...data[key], height: hei, isTallest: isT});
         });
         return columns;
@@ -68,38 +83,38 @@ export default function Chart({
     //states:
     let maxValue = getMaxValue(data);
     let barCiel  = calcBarCiel(maxValue);
-    let [barThirdFloor  , setBarThirdFloor ] = useState(addSign( barCiel                     ));
-    let [barSecondFloor , setBarSecondFloor] = useState(addSign((barCiel / 3) * 2            ));
-    let [barFirstFloor  , setBarFirstFloor ] = useState(addSign( barCiel / 3                 ));
-    let [columns        , setColumns       ] = useState(createColumns(data, maxValue, barCiel));
+    let [bar3thFloor , setBar3thFloor ] = useState(createLabel(barCiel, 3));
+    let [bar2thFloor , setBar2thFloor ] = useState(createLabel(barCiel, 2));
+    let [bar1stFloor , setBar1stFloor ] = useState(createLabel(barCiel, 1));
+    let [columns     , setColumns     ] = useState(createColumns(data, maxValue, barCiel));
 
     //state change:
     useEffect(()=>{
         let maxValue = getMaxValue(data);
         let barCiel  = calcBarCiel(maxValue);
-        setBarThirdFloor(addSign(  barCiel              ));
-        setBarSecondFloor(addSign((barCiel / 3) * 2     ));
-        setBarFirstFloor(addSign(  barCiel / 3          ));
+        setBar3thFloor(createLabel(barCiel, 3));
+        setBar2thFloor(createLabel(barCiel, 2));
+        setBar1stFloor(createLabel(barCiel, 1));
         setColumns(createColumns(data, maxValue, barCiel));
     },[data]);
 
     //return:
     return (
-        <div className="Chart">
-            <div className="verticalColum">
-                <a>{barThirdFloor }</a>
-                <a>{barSecondFloor}</a>
-                <a>{barFirstFloor }</a>
+        <div className='Chart'>
+            <div className='verticalColum'>
+                <a title={bar3thFloor}>{bar3thFloor}</a>
+                <a title={bar2thFloor}>{bar2thFloor}</a>
+                <a title={bar1stFloor}>{bar1stFloor}</a>
                 <a>0</a>
             </div>
-            <div className="columsWrapper">{
+            <div className='columsWrapper'>{
                 Object.keys(columns).map((key) => {
                     return (
-                        <div className="barWrapper" key={key}>
+                        <div className='barWrapper' key={key}>
                             <a><span
-                                className={columns[key].isTallest ? "tallest" : ""}
+                                className={columns[key].isTallest ? 'tallest' : ''}
                                 style={{height: (columns[key].height + 'px')}}
-                                title={currency[1] + numberWithCommas(columns[key].value) + " per year"}
+                                title={currency[1] + numberWithCommas(columns[key].value) + ' per year'}
                             ></span></a>
                             <a title={columns[key].title}>{columns[key].name}</a>
                         </div>
