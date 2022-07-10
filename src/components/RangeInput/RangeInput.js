@@ -49,8 +49,12 @@ export default function RangeInput({
     
     //onTextInputChage:
     const onTextInputChage = (val) => {
+        if(val === '0.'){
+            setValue(val);
+            return;
+        }
         val = val.replace(/,/g, '');
-        val = val.replace(/^0+/, '');
+        // val = val.replace(/^0+/, '');
         if(val === '') val = '0';
         if(!isNaN(val)){
             let valInt = parseInt(val, 10);
