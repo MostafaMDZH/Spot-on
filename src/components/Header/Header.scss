@@ -1,0 +1,47 @@
+@import "../../stylesheets/classes";
+@import "../../stylesheets/mixin";
+
+.Header{
+    display: flex;
+    justify-content: space-between;
+    > .logoWrapper{
+        display: flex;
+        > .logo{
+            width: 38px;
+            height: 38px;
+            padding-right: 20px;
+            background: #027 url(/src/icons/logo.svg) no-repeat center / 25px auto;
+            @include borderRadius(6px);
+        }
+        > .titleWrapper{
+            > .title{
+                margin: 0;
+                font-size: 3.2rem;
+                font-weight: normal;
+                > a{
+                    display: inline-block;
+                    height: 38px;;
+                    padding-left: 16px;
+                    padding-right: 10px;
+                    line-height: 38px;;
+                    color: #027;
+                }
+            }
+            > .description{
+                padding-left: 16px;
+                font-size: 1.6rem;
+                font-weight: normal;
+                color: #999;
+                margin: 5px 0 0 0;
+            }
+        }
+    }
+    > .menuButton{
+        width: 50px;
+        height: 50px;
+        margin-right: -8px;
+        @include borderRadius(50%);
+        background: transparent url(/src/icons/menu.svg) no-repeat center / 27px auto;
+        @extend .transBackActeffect;
+    }
+}

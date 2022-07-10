@@ -1,29 +1,31 @@
 # Todo:
+vs code spell check
 
 ## Bug:
-- check the formula for distance and mileage
-- cannot put 0.X in range input
-- 0.00 in calc
-- if everything set to 0
-
-## Features:
-- if cost was negetive, change the title
-- about
-- lease
+- num >= 1000 , ...
+- maintinance range input step to 100 
 
 ## Design:
-- buttons background animation
-- modern scrollbar
-- selector scrollbar
-- responsive design
-- add blank shadow on loading
-
-## Animation:
+- info top-1%
+- selector input comment margin
+- hide animation on range field at buy option
+- better name(+move description from home link to its title and page title)
+- mobile design
+- hiding header on scroll?
 - animation on range inputs at load time
+- more menu(about, source code, info(add to ablut?), contact)
+- bigger and bold font size for main cost?
+- info vertical spacing
+- better font for numbers
+- gray cover on loading
 
 ## Publish:
-- sort imports
 - domain and publish
 - tests
 - styled components / css modules
 - redux / redux saga
+
+## Features:
+- bookmark
+- comparison
+- login
