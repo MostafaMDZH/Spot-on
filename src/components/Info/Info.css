@@ -1,23 +1,219 @@
-.Info {
-  width: 480px;
-  padding: 50px 70px 50px 70px;
+.hrefUnderline:hover,
+.hrefUnderline:focus {
+  text-decoration: underline;
+}
+
+.transBackActeffect {
+  -webkit-transition: background-color 150ms;
+  transition: background-color 150ms;
+}
+
+.transBackActeffect:enabled:active {
+  background-color: rgba(0, 0, 0, 0.025) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .transBackActeffect:enabled:hover {
+    background-color: rgba(0, 0, 0, 0.025) !important;
+  }
+  .transBackActeffect:enabled:focus {
+    background-color: rgba(0, 0, 0, 0.035) !important;
+  }
+  .transBackActeffect:enabled:active {
+    background-color: rgba(0, 0, 0, 0.045) !important;
+  }
+}
+
+.transBackActeffect:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.colorBackActeffect {
+  -webkit-transition: -webkit-filter 100ms;
+  transition: -webkit-filter 100ms;
+  transition: filter 100ms;
+  transition: filter 100ms, -webkit-filter 100ms;
+}
+
+.colorBackActeffect:active {
+  -webkit-filter: brightness(95%);
+          filter: brightness(95%);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .colorBackActeffect:hover {
+    -webkit-filter: brightness(95%);
+            filter: brightness(95%);
+  }
+  .colorBackActeffect:focus {
+    -webkit-filter: brightness(90%);
+            filter: brightness(90%);
+  }
+  .colorBackActeffect:active {
+    -webkit-filter: brightness(85%);
+            filter: brightness(85%);
+  }
+}
+
+.threeDotsOverflow, .Info > .costs > .distanceWrapper > .ammount, .Info > .costs > .timeWrapper > .timeCostWrapper > .ammountWrapper > .ammount {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.notSelectable {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.selectableText {
+  -webkit-touch-callout: default;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  cursor: text;
+}
+
+.darkThinScrollbar::-webkit-scrollbar, .notTouchScreen::-webkit-scrollbar, .notTouchScreen ::-webkit-scrollbar {
+  width: 7px;
+}
+
+.darkThinScrollbar::-webkit-scrollbar-track, .notTouchScreen::-webkit-scrollbar-track, .notTouchScreen ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.darkThinScrollbar::-webkit-scrollbar-thumb, .notTouchScreen::-webkit-scrollbar-thumb, .notTouchScreen ::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
   border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -webkit-box-shadow: 3px 10px 35px #DDD;
-          box-shadow: 3px 10px 35px #DDD;
-  position: fixed;
-  top: 50%;
-  transform: translate(0, -50%);
-  -ms-transform: translate(0, -50%);
-  -moz-transform: translate(0, -50%);
-  -webkit-transform: translate(0, -50%);
+}
+
+.darkUltraThinScrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.darkUltraThinScrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.darkUltraThinScrollbar::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 20px;
+}
+
+.noScrollbar::-webkit-scrollbar {
+  width: 0;
+}
+
+.customRange {
+  width: 100%;
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+  border: none;
+}
+
+.customRange:focus {
+  outline: none;
+}
+
+.customRange::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  background-color: white;
+  border: 2px solid #027;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -7px;
+}
+
+.customRange::-moz-range-thumb {
+  height: 12px;
+  width: 12px;
+  background-color: white;
+  border: 2px solid #027;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.customRange::-ms-thumb {
+  height: 16px;
+  width: 16px;
+  background-color: white;
+  border: 2px solid #027;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.customRange::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 12px;
+  cursor: pointer;
+  border-top: solid 5px white;
+  border-bottom: solid 5px white;
+  margin-top: -1px;
+  margin-bottom: -1px;
+}
+
+.customRange::-moz-range-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: transparent;
+  border-top: solid 8px white;
+  border-bottom: solid 8px white;
+}
+
+.customRange::-ms-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: transparent;
+  border-top: solid 5px white;
+  border-bottom: solid 5px white;
+  border-color: transparent;
+  color: transparent;
+}
+
+.customRange::-ms-fill-lower {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: transparent;
+  border-top: solid 5px white;
+  border-bottom: solid 5px white;
+}
+
+.customRange::-ms-fill-upper {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: transparent;
+  border-top: solid 5px white;
+  border-bottom: solid 5px white;
+}
+
+.Info {
+  width: 100%;
 }
 
 .Info > .costs > .title {
+  margin: 0;
   font-size: 1.6rem;
+  font-weight: normal;
   color: #aaa;
+}
+
+.Info > .costs > .title > .benefits {
+  color: #292;
+  font-weight: bold;
+  margin-right: 1px;
 }
 
 .Info > .costs > .distanceWrapper {
@@ -44,14 +240,19 @@
 
 .Info > .costs > .distanceWrapper > .period {
   font-size: 1.6rem;
+  white-space: nowrap;
   color: #aaa;
   margin-left: 17px;
   margin-top: 75px;
 }
 
 .Info > .costs > .timeWrapper {
-  width: 100%;
-  max-width: 305px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 100%;
+  min-width: 305px;
+  overflow: auto;
   margin-top: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -59,6 +260,8 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  gap: 15px;
+  padding-bottom: 5px;
 }
 
 .Info > .costs > .timeWrapper > .timeCostWrapper > .period {
