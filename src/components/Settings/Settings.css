@@ -3,28 +3,28 @@
   text-decoration: underline;
 }
 
-.transBackActeffect, .Settings > .window > .header > input {
+.transBackActeffect, .Settings > .window > .closeButton {
   -webkit-transition: background-color 150ms;
   transition: background-color 150ms;
 }
 
-.transBackActeffect:enabled:active, .Settings > .window > .header > input:enabled:active {
+.transBackActeffect:enabled:active, .Settings > .window > .closeButton:enabled:active {
   background-color: rgba(0, 0, 0, 0.025) !important;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .transBackActeffect:enabled:hover, .Settings > .window > .header > input:enabled:hover {
+  .transBackActeffect:enabled:hover, .Settings > .window > .closeButton:enabled:hover {
     background-color: rgba(0, 0, 0, 0.025) !important;
   }
-  .transBackActeffect:enabled:focus, .Settings > .window > .header > input:enabled:focus {
+  .transBackActeffect:enabled:focus, .Settings > .window > .closeButton:enabled:focus {
     background-color: rgba(0, 0, 0, 0.035) !important;
   }
-  .transBackActeffect:enabled:active, .Settings > .window > .header > input:enabled:active {
+  .transBackActeffect:enabled:active, .Settings > .window > .closeButton:enabled:active {
     background-color: rgba(0, 0, 0, 0.045) !important;
   }
 }
 
-.transBackActeffect:disabled, .Settings > .window > .header > input:disabled {
+.transBackActeffect:disabled, .Settings > .window > .closeButton:disabled {
   opacity: 0.5;
   cursor: default;
 }
@@ -71,7 +71,7 @@
   user-select: none;
 }
 
-.selectableText {
+.selectableText, .Settings > .window > .containerwrapper > .about * {
   -webkit-touch-callout: default;
   -webkit-user-select: text;
   -moz-user-select: text;
@@ -80,15 +80,15 @@
   cursor: text;
 }
 
-.darkThinScrollbar::-webkit-scrollbar {
+.darkThinScrollbar::-webkit-scrollbar, .notTouchScreen::-webkit-scrollbar, .notTouchScreen ::-webkit-scrollbar {
   width: 7px;
 }
 
-.darkThinScrollbar::-webkit-scrollbar-track {
+.darkThinScrollbar::-webkit-scrollbar-track, .notTouchScreen::-webkit-scrollbar-track, .notTouchScreen ::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.darkThinScrollbar::-webkit-scrollbar-thumb {
+.darkThinScrollbar::-webkit-scrollbar-thumb, .notTouchScreen::-webkit-scrollbar-thumb, .notTouchScreen ::-webkit-scrollbar-thumb {
   background: #c4c4c4;
   border-radius: 20px;
 }
@@ -106,64 +106,6 @@
   border-radius: 20px;
 }
 
-.noneTouchScreen .lightThinScrollbar::-webkit-scrollbar {
-  width: 3px;
-}
-
-.noneTouchScreen .lightThinScrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.noneTouchScreen .lightThinScrollbar::-webkit-scrollbar-thumb {
-  background: #CCC;
-  border-radius: 20px;
-}
-
-.noneTouchScreen .lightThickHiddenScrollbar::-webkit-scrollbar {
-  width: 7px;
-  -webkit-transition: all 200ms;
-  transition: all 200ms;
-}
-
-.noneTouchScreen .lightThickHiddenScrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.noneTouchScreen .lightThickHiddenScrollbar::-webkit-scrollbar-thumb {
-  background-color: transparent;
-  border-radius: 20px;
-}
-
-.noneTouchScreen .lightThickHiddenScrollbar::-webkit-scrollbar-thumb:hover {
-  background-color: #CCC;
-}
-
-.noneTouchScreen .darkThickScrollbar::-webkit-scrollbar {
-  width: 6px;
-}
-
-.noneTouchScreen .darkThickScrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.noneTouchScreen .darkThickScrollbar::-webkit-scrollbar-thumb {
-  background: #C2C2C2;
-  border-radius: 20px;
-}
-
-.noneTouchScreen .darkSuperThinScrollbar::-webkit-scrollbar {
-  width: 1px;
-}
-
-.noneTouchScreen .darkSuperThinScrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.noneTouchScreen .darkSuperThinScrollbar::-webkit-scrollbar-thumb {
-  background: #BBB;
-  border-radius: 20px;
-}
-
 .noScrollbar::-webkit-scrollbar {
   width: 0;
 }
@@ -171,17 +113,13 @@
 .customRange {
   width: 100%;
   -webkit-appearance: none;
-  /* Hides the slider so that custom slider can be made */
   width: 100%;
-  /* Specific width is required for Firefox. */
   background: transparent;
-  /* Otherwise white in Chrome */
   border: none;
 }
 
 .customRange:focus {
   outline: none;
-  /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
 }
 
 .customRange::-webkit-slider-thumb {
@@ -267,89 +205,187 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: visibility 0.2s ease, opacity 0.2s ease;
+  transition: visibility 0.2s ease, opacity 0.2s ease;
 }
 
 .Settings > .window {
   width: 100%;
-  max-width: 370px;
-  height: 85%;
-  max-height: 600px;
+  max-width: 1400px;
+  height: 450px;
   position: absolute;
-  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding: 18px 22px 17px 22px;
+  bottom: -100%;
+  transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -moz-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  border-top-left-radius: 17px;
+  -webkit-border-top-left-radius: 17px;
+  -moz-border-top-left-radius: 17px;
+  -ms-border-top-left-radius: 17px;
+  border-top-right-radius: 17px;
+  -webkit-border-top-right-radius: 17px;
+  -moz-border-top-right-radius: 17px;
+  -ms-border-top-right-radius: 17px;
   background-color: white;
+  -webkit-transition: bottom 0.2s ease;
+  transition: bottom 0.2s ease;
 }
 
-.Settings > .window > .header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.Settings > .window > .header > a {
-  font-size: 2.4rem;
-  line-height: 40px;
-  color: #222;
-}
-
-.Settings > .window > .header > input {
-  width: 45px;
-  height: 45px;
-  margin-right: -5px;
-  margin-top: -2px;
-  background: transparent url(/src/icons/close.svg) no-repeat center/20px auto;
+.Settings > .window > .closeButton {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent url(/src/icons/down.svg) no-repeat center/20px auto;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
 }
 
-.Settings > .window > .section {
+.Settings > .window > .containerwrapper {
+  width: 100%;
+  max-width: 940px;
+  height: 100%;
+  max-height: 350px;
+  padding: 40px;
+  overflow: auto;
+  position: absolute;
+  left: 49%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 50px;
+}
+
+.Settings > .window > .containerwrapper > .container {
+  width: 50%;
+  max-width: 360px;
+}
+
+.Settings > .window > .containerwrapper > .container > .title {
+  display: block;
+  margin-bottom: 27px;
+  font-size: 2.8rem;
+  line-height: 40px;
+  color: #222;
+}
+
+.Settings > .window > .containerwrapper > .settings > .section {
   margin-top: 18px;
   margin-bottom: 4px;
 }
 
-.Settings > .window > .section > .name {
+.Settings > .window > .containerwrapper > .settings > .section > .name {
   font-size: 1.2rem;
   color: #aaa;
 }
 
-.Settings > .window > #prices {
+.Settings > .window > .containerwrapper > .about > #prices {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-.Settings > .window > .saveButton {
-  width: calc(100% + 10px);
-  height: 55px;
-  margin-left: -5px;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  font-size: 1.9rem;
-  background-color: #d55;
-  color: #fafafa;
+.Settings > .window > .containerwrapper > .about > .madeBy {
+  margin-top: 16px;
+  font-size: 1.6rem;
+  font-weight: normal;
+}
+
+.Settings > .window > .containerwrapper > .about > .version {
+  font-size: 1.4rem;
+}
+
+.Settings > .window > .containerwrapper > .about > .sectionTitle {
+  margin: 27px 0 0 0;
+  display: block;
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+.Settings > .window > .containerwrapper > .about > p {
+  font-size: 1.4rem;
+}
+
+.Settings > .window > .containerwrapper > .about .link {
+  font-style: italic;
+  color: #027;
+}
+
+.Settings > .window > .containerwrapper > .about .link:hover,
+.Settings > .window > .containerwrapper > .about .link:focus {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.Settings.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.Settings.visible > .window {
+  bottom: 0;
+}
+
+@media only screen and (max-width: 1200px) {
+  .Settings > .window > .containerwrapper {
+    left: 50%;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .Settings > .window {
+    height: 80%;
+    max-height: unset;
+  }
+  .Settings > .window > .closeButton {
+    -webkit-box-shadow: 1px 1px 8px #ddd;
+            box-shadow: 1px 1px 8px #ddd;
+    z-index: 10;
+    top: unset;
+    right: 20px;
+    bottom: 20px;
+  }
+  .Settings > .window > .containerwrapper {
+    max-height: unset;
+    padding: 0 25px 40px 25px;
+    left: 0;
+    top: 25px;
+    transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    gap: 25px;
+  }
+  .Settings > .window > .containerwrapper > .container {
+    width: 100%;
+    max-width: unset;
+  }
 }
 /*# sourceMappingURL=Settings.css.map */

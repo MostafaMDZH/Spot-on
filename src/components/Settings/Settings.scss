@@ -7,58 +7,151 @@
     position: fixed;
     top:0;
     left: 0;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.75);
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0.2s ease, opacity 0.2s ease;
     > .window{
         width: 100%;
-        max-width: 370px;
-        height: 85%;
-        max-height: 600px;
+        max-width: 1400px;
+        height: 450px;
         position: absolute;
-        top: 50%;
         left: 50%;
-        @include transform(-50%, -50%);
-        @include borderRadius(10px);
-        display: flex;
-        flex-direction: column;
-        padding: 18px 22px 17px 22px;
+        bottom: -100%;
+        @include transform(-50%, 0);
+        @include borderTopRadius(17px);
         background-color: white;
-        > .header{
+        transition: bottom 0.2s ease;
+        > .closeButton{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: transparent url(/src/icons/down.svg) no-repeat center / 20px auto;
+            @include borderRadius(50%);
+            @extend .transBackActeffect;
+        }
+        > .containerwrapper{
+            width: 100%;
+            max-width: 940px;
+            height: 100%;
+            max-height: 350px;
+            padding: 40px;
+            overflow: auto;
+            position: absolute;
+            left: 49%;
+            top: 50%;
+            @include transform(-50%, -50%);
             display: flex;
+            flex-direction: row;
             justify-content: space-between;
-            > a{
-                font-size: 2.4rem;
-                line-height: 40px;
-                color: #222;
+            gap: 50px;
+            > .container{
+                width: 50%;
+                max-width: 360px;
+                > .title{
+                    display: block;
+                    margin-bottom: 27px;
+                    font-size: 2.8rem;
+                    line-height: 40px;
+                    color: #222;
+                }
             }
-            > input{
-                width: 45px;
-                height: 45px;
-                margin-right: -5px;
-                margin-top: -2px;
-                background: transparent url(/src/icons/close.svg) no-repeat center / 20px auto;
-                @include borderRadius(50%);
-                @extend .transBackActeffect;
+            > .settings{
+                > .section{
+                    margin-top: 18px;
+                    margin-bottom: 4px;
+                    > .name{
+                        font-size: 1.2rem;
+                        color: #aaa;
+                    }
+                }
+            }
+            > .about{
+                *{
+                    @extend .selectableText;
+                }
+                > #prices{
+                    flex: 1;
+                }
+                > .madeBy{
+                    margin-top: 16px;
+                    font-size: 1.6rem;
+                    font-weight: normal;
+                }
+                > .version{
+                    font-size: 1.4rem;
+                }
+                > .sectionTitle{
+                    margin: 27px 0 0 0;
+                    display: block;
+                    font-size: 1.2rem;
+                    color: #aaa;
+                }
+                > p{
+                    font-size: 1.4rem;
+                }
+                .link{
+                    font-style: italic;
+                    color: #027;
+                }
+                .link:hover,
+                .link:focus{
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
             }
         }
-        > .section{
-            margin-top: 18px;
-            margin-bottom: 4px;
-            > .name{
-                font-size: 1.2rem;
-                color: #aaa;
+    }
+}
+
+//show:
+.Settings.visible{
+    visibility: visible;
+    opacity: 1;
+    > .window{
+        bottom: 0;
+    }
+}
+
+//responsive design:
+@media only screen and (max-width: 1200px){
+    .Settings{
+        > .window{
+            > .containerwrapper{
+                left: 50%;
             }
         }
-        > #prices{
-            flex: 1;
-        }
-        > .saveButton{
-            width: calc(100% + 10px);
-            height: 55px;
-            margin-left: -5px;
-            @include borderRadius(5px);
-            font-size: 1.9rem;
-            background-color: #d55;
-            color: #fafafa;
+    }
+}
+
+@media only screen and (max-width: 750px){
+    .Settings{
+        > .window{
+            height: 80%;
+            max-height: unset;
+            > .closeButton{
+                box-shadow: 1px 1px 8px #ddd;
+                z-index: 10;
+                top: unset;
+                right: 20px;
+                bottom: 20px;
+            }
+            > .containerwrapper{
+                max-height: unset;
+                padding: 0 25px 40px 25px;
+                left: 0;
+                top: 25px;
+                @include transform(0, 0);
+                flex-direction: column;
+                justify-content: start;
+                gap: 25px;
+                > .container{
+                    width: 100%;
+                    max-width: unset;
+                }
+            }
         }
     }
 }
