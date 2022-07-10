@@ -1,360 +1,173 @@
-.hrefUnderline:hover,
-.hrefUnderline:focus {
-  text-decoration: underline;
-}
-
-.transBackActeffect {
-  -webkit-transition: background-color 150ms;
-  transition: background-color 150ms;
-}
-
-.transBackActeffect:enabled:active {
-  background-color: rgba(0, 0, 0, 0.025) !important;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .transBackActeffect:enabled:hover {
-    background-color: rgba(0, 0, 0, 0.025) !important;
-  }
-  .transBackActeffect:enabled:focus {
-    background-color: rgba(0, 0, 0, 0.035) !important;
-  }
-  .transBackActeffect:enabled:active {
-    background-color: rgba(0, 0, 0, 0.045) !important;
-  }
-}
-
-.transBackActeffect:disabled {
-  opacity: 0.5;
-  cursor: default;
-}
-
-.colorBackActeffect {
-  -webkit-transition: -webkit-filter 100ms;
-  transition: -webkit-filter 100ms;
-  transition: filter 100ms;
-  transition: filter 100ms, -webkit-filter 100ms;
-}
-
-.colorBackActeffect:active {
-  -webkit-filter: brightness(95%);
-          filter: brightness(95%);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .colorBackActeffect:hover {
-    -webkit-filter: brightness(95%);
-            filter: brightness(95%);
-  }
-  .colorBackActeffect:focus {
-    -webkit-filter: brightness(90%);
-            filter: brightness(90%);
-  }
-  .colorBackActeffect:active {
-    -webkit-filter: brightness(85%);
-            filter: brightness(85%);
-  }
-}
-
-.threeDotsOverflow {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.notSelectable {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.selectableText {
-  -webkit-touch-callout: default;
-  -webkit-user-select: text;
-  -moz-user-select: text;
-  -ms-user-select: text;
-  user-select: text;
-  cursor: text;
-}
-
-.darkThinScrollbar::-webkit-scrollbar, .App > .window::-webkit-scrollbar {
-  width: 7px;
-}
-
-.darkThinScrollbar::-webkit-scrollbar-track, .App > .window::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.darkThinScrollbar::-webkit-scrollbar-thumb, .App > .window::-webkit-scrollbar-thumb {
-  background: #c4c4c4;
-  border-radius: 20px;
-}
-
-.darkUltraThinScrollbar::-webkit-scrollbar {
-  width: 4px;
-}
-
-.darkUltraThinScrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.darkUltraThinScrollbar::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 20px;
-}
-
-.noneTouchScreen .lightThinScrollbar::-webkit-scrollbar {
-  width: 3px;
-}
-
-.noneTouchScreen .lightThinScrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.noneTouchScreen .lightThinScrollbar::-webkit-scrollbar-thumb {
-  background: #CCC;
-  border-radius: 20px;
-}
-
-.noneTouchScreen .lightThickHiddenScrollbar::-webkit-scrollbar {
-  width: 7px;
-  -webkit-transition: all 200ms;
-  transition: all 200ms;
-}
-
-.noneTouchScreen .lightThickHiddenScrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.noneTouchScreen .lightThickHiddenScrollbar::-webkit-scrollbar-thumb {
-  background-color: transparent;
-  border-radius: 20px;
-}
-
-.noneTouchScreen .lightThickHiddenScrollbar::-webkit-scrollbar-thumb:hover {
-  background-color: #CCC;
-}
-
-.noneTouchScreen .darkThickScrollbar::-webkit-scrollbar {
-  width: 6px;
-}
-
-.noneTouchScreen .darkThickScrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.noneTouchScreen .darkThickScrollbar::-webkit-scrollbar-thumb {
-  background: #C2C2C2;
-  border-radius: 20px;
-}
-
-.noneTouchScreen .darkSuperThinScrollbar::-webkit-scrollbar {
-  width: 1px;
-}
-
-.noneTouchScreen .darkSuperThinScrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.noneTouchScreen .darkSuperThinScrollbar::-webkit-scrollbar-thumb {
-  background: #BBB;
-  border-radius: 20px;
-}
-
-.noScrollbar::-webkit-scrollbar {
-  width: 0;
-}
-
-.customRange {
-  width: 100%;
-  -webkit-appearance: none;
-  /* Hides the slider so that custom slider can be made */
-  width: 100%;
-  /* Specific width is required for Firefox. */
-  background: transparent;
-  /* Otherwise white in Chrome */
-  border: none;
-}
-
-.customRange:focus {
-  outline: none;
-  /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
-}
-
-.customRange::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  height: 16px;
-  width: 16px;
-  background-color: white;
-  border: 2px solid #027;
-  border-radius: 50%;
-  cursor: pointer;
-  margin-top: -7px;
-}
-
-.customRange::-moz-range-thumb {
-  height: 12px;
-  width: 12px;
-  background-color: white;
-  border: 2px solid #027;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.customRange::-ms-thumb {
-  height: 16px;
-  width: 16px;
-  background-color: white;
-  border: 2px solid #027;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.customRange::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 12px;
-  cursor: pointer;
-  border-top: solid 5px white;
-  border-bottom: solid 5px white;
-  margin-top: -1px;
-  margin-bottom: -1px;
-}
-
-.customRange::-moz-range-track {
-  width: 100%;
-  height: 2px;
-  cursor: pointer;
-  background: transparent;
-  border-top: solid 8px white;
-  border-bottom: solid 8px white;
-}
-
-.customRange::-ms-track {
-  width: 100%;
-  height: 2px;
-  cursor: pointer;
-  background: transparent;
-  border-top: solid 5px white;
-  border-bottom: solid 5px white;
-  border-color: transparent;
-  color: transparent;
-}
-
-.customRange::-ms-fill-lower {
-  width: 100%;
-  height: 2px;
-  cursor: pointer;
-  background: transparent;
-  border-top: solid 5px white;
-  border-bottom: solid 5px white;
-}
-
-.customRange::-ms-fill-upper {
-  width: 100%;
-  height: 2px;
-  cursor: pointer;
-  background: transparent;
-  border-top: solid 5px white;
-  border-bottom: solid 5px white;
-}
-
 .App {
   width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  overflow: auto;
 }
 
 .App > .window {
   width: 100%;
-  max-width: 1950px;
-  height: 100%;
-  max-height: 900px;
-  padding: 60px 90px;
-  overflow: auto;
+  max-width: 1650px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 60px 105px 40px 115px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 90px;
+  gap: 110px;
 }
 
-.App > .window > .headerFormWrapper {
+.App > .window > .main {
+  width: 100%;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.App > .window > .main > .headerWrapper {
+  width: calc(100% + 110px + 600px);
+}
+
+.App > .window > .main > .formWrapper {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-top: 30px;
 }
 
 .App > .window > .infoWrapper {
-  width: 480px;
+  width: 600px;
+  position: relative;
 }
 
-@media only screen and (min-width: 1450px) {
-  .App > .window {
-    position: absolute;
-    left: 50%;
+.App > .window > .infoWrapper > .infoContainer {
+  width: 600px;
+  padding: 80px 125px 80px 100px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -webkit-box-shadow: 3px 10px 35px #DDD;
+          box-shadow: 3px 10px 35px #DDD;
+  position: fixed;
+  top: 53%;
+  transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+}
+
+@media only screen and (max-height: 950px) {
+  .App > .window > .infoWrapper > .infoContainer {
+    top: 55%;
+  }
+}
+
+@media only screen and (max-height: 850px) {
+  .App > .window > .main > .headerWrapper {
+    width: calc(100% + 12px);
+  }
+  .App > .window > .infoWrapper > .infoContainer {
     top: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
   }
 }
 
-@media only screen and (max-width: 1800px) {
+@media only screen and (max-height: 780px) {
+  .App > .window > .main > .formWrapper {
+    margin-top: 25px;
+  }
+  .App > .window > .infoWrapper > .infoContainer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+@media only screen and (max-height: 710px) {
   .App > .window {
+    padding-top: 50px;
+  }
+  .App > .window > .main > .formWrapper {
+    margin-top: 20px;
+  }
+  .App > .window > .infoWrapper > .infoContainer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+@media only screen and (max-height: 680px) {
+  .App > .window {
+    padding-top: 40px;
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  .App > .window > .infoWrapper {
+    width: 560px;
+  }
+  .App > .window > .infoWrapper > .infoContainer {
+    width: 560px;
     padding-left: 80px;
-    padding-right: 65px;
-    gap: 70px;
+    padding-right: 100px;
   }
 }
 
-@media only screen and (max-width: 1650px) {
-  .App > .window {
-    padding-left: 60px;
-    padding-right: 50px;
-    gap: 60px;
+@media only screen and (max-width: 1500px) {
+  .App > .window > .infoWrapper {
+    width: 540px;
+  }
+  .App > .window > .infoWrapper > .infoContainer {
+    width: 540px;
+    padding-left: 70px;
+    padding-right: 90px;
   }
 }
 
-@media only screen and (max-width: 1450px) {
-  .App > .window {
-    max-height: unset;
-    padding-left: 110px;
-    padding-right: 110px;
-    gap: 110px;
-  }
-}
-
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1430px) {
   .App > .window {
     padding-left: 100px;
-    padding-right: 100px;
-    gap: 100px;
-  }
-}
-
-@media only screen and (max-width: 1350px) {
-  .App > .window {
-    padding-left: 90px;
-    padding-right: 90px;
+    padding-right: 85px;
     gap: 90px;
   }
-}
-
-@media only screen and (max-width: 1250px) {
-  .App > .window {
-    padding-left: 85px;
-    padding-right: 80px;
-    gap: 80px;
+  .App > .window > .infoWrapper {
+    width: 520px;
+  }
+  .App > .window > .infoWrapper > .infoContainer {
+    width: 520px;
+    padding-left: 65px;
+    padding-right: 85px;
   }
 }
 
-@media only screen and (max-height: 700px) {
+@media only screen and (max-width: 1360px) {
   .App > .window {
-    padding-top: 45px;
-    padding-bottom: 45px;
+    padding-left: 90px;
+    padding-right: 75px;
+    gap: 80px;
+  }
+  .App > .window > .infoWrapper {
+    width: 505px;
+  }
+  .App > .window > .infoWrapper > .infoContainer {
+    width: 505px;
+    padding-left: 65px;
+    padding-right: 80px;
   }
 }
 /*# sourceMappingURL=App.css.map */
