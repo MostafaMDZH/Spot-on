@@ -1,0 +1,406 @@
+.hrefUnderline:hover,
+.hrefUnderline:focus {
+  text-decoration: underline;
+}
+
+.transBackActeffect {
+  -webkit-transition: background-color 150ms;
+  transition: background-color 150ms;
+}
+
+.transBackActeffect:enabled:active {
+  background-color: rgba(0, 0, 0, 0.025) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .transBackActeffect:enabled:hover {
+    background-color: rgba(0, 0, 0, 0.025) !important;
+  }
+  .transBackActeffect:enabled:focus {
+    background-color: rgba(0, 0, 0, 0.035) !important;
+  }
+  .transBackActeffect:enabled:active {
+    background-color: rgba(0, 0, 0, 0.045) !important;
+  }
+}
+
+.transBackActeffect:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.colorBackActeffect {
+  -webkit-transition: -webkit-filter 100ms;
+  transition: -webkit-filter 100ms;
+  transition: filter 100ms;
+  transition: filter 100ms, -webkit-filter 100ms;
+}
+
+.colorBackActeffect:active {
+  -webkit-filter: brightness(95%);
+          filter: brightness(95%);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .colorBackActeffect:hover {
+    -webkit-filter: brightness(95%);
+            filter: brightness(95%);
+  }
+  .colorBackActeffect:focus {
+    -webkit-filter: brightness(90%);
+            filter: brightness(90%);
+  }
+  .colorBackActeffect:active {
+    -webkit-filter: brightness(85%);
+            filter: brightness(85%);
+  }
+}
+
+.threeDotsOverflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.notSelectable {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.selectableText {
+  -webkit-touch-callout: default;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  cursor: text;
+}
+
+.darkThinScrollbar::-webkit-scrollbar, .notTouchScreen::-webkit-scrollbar, .notTouchScreen ::-webkit-scrollbar {
+  width: 7px;
+}
+
+.darkThinScrollbar::-webkit-scrollbar-track, .notTouchScreen::-webkit-scrollbar-track, .notTouchScreen ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.darkThinScrollbar::-webkit-scrollbar-thumb, .notTouchScreen::-webkit-scrollbar-thumb, .notTouchScreen ::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 20px;
+}
+
+.darkUltraThinScrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.darkUltraThinScrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.darkUltraThinScrollbar::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 20px;
+}
+
+.noScrollbar::-webkit-scrollbar {
+  width: 0;
+}
+
+.customRange {
+  width: 100%;
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+  border: none;
+}
+
+.customRange:focus {
+  outline: none;
+}
+
+.customRange::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  background-color: white;
+  border: 2px solid #027;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -7px;
+}
+
+.customRange::-moz-range-thumb {
+  height: 12px;
+  width: 12px;
+  background-color: white;
+  border: 2px solid #027;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.customRange::-ms-thumb {
+  height: 16px;
+  width: 16px;
+  background-color: white;
+  border: 2px solid #027;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.customRange::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 12px;
+  cursor: pointer;
+  border-top: solid 5px white;
+  border-bottom: solid 5px white;
+  margin-top: -1px;
+  margin-bottom: -1px;
+}
+
+.customRange::-moz-range-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: transparent;
+  border-top: solid 8px white;
+  border-bottom: solid 8px white;
+}
+
+.customRange::-ms-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: transparent;
+  border-top: solid 5px white;
+  border-bottom: solid 5px white;
+  border-color: transparent;
+  color: transparent;
+}
+
+.customRange::-ms-fill-lower {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: transparent;
+  border-top: solid 5px white;
+  border-bottom: solid 5px white;
+}
+
+.customRange::-ms-fill-upper {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: transparent;
+  border-top: solid 5px white;
+  border-bottom: solid 5px white;
+}
+
+.CookieAck {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: visibility 0.2s ease, opacity 0.2s ease;
+  transition: visibility 0.2s ease, opacity 0.2s ease;
+}
+
+.CookieAck > .window {
+  width: 90%;
+  max-width: 390px;
+  height: 90%;
+  max-height: 540px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: white;
+  -webkit-transition: bottom 0.2s ease;
+  transition: bottom 0.2s ease;
+}
+
+.CookieAck > .window > .container {
+  width: 100%;
+  max-width: 330px;
+  height: 100%;
+  max-height: 460px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.CookieAck > .window > .container > .imageWrapper {
+  width: 100%;
+  -webkit-box-flex: 1.25;
+      -ms-flex: 1.25;
+          flex: 1.25;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.CookieAck > .window > .container > .imageWrapper > .image {
+  width: 100%;
+  max-width: 225px;
+  height: 100%;
+  max-height: 225px;
+  background: transparent url(/src/icons/cookie.svg) no-repeat center/100% 100%;
+}
+
+.CookieAck > .window > .container > .bottomArea {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.CookieAck > .window > .container > .bottomArea > .textsWrapper {
+  width: 100%;
+}
+
+.CookieAck > .window > .container > .bottomArea > .textsWrapper > .massage {
+  width: 100%;
+  margin: 10px 0 5px 0;
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: normal;
+}
+
+.CookieAck > .window > .container > .bottomArea > .textsWrapper > .description {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+  font-weight: normal;
+  color: #999;
+}
+
+.CookieAck > .window > .container > .bottomArea > .buttonWrapper {
+  width: 100%;
+  margin-top: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.CookieAck > .window > .container > .bottomArea > .buttonWrapper > .acceptButton {
+  width: 150px;
+  height: 50px;
+  background-color: rgba(10, 100, 10, 0.2);
+  color: #0a640a;
+  font-size: 1.6rem;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -webkit-transition: background-color 100ms ease;
+  transition: background-color 100ms ease;
+}
+
+.CookieAck > .window > .container > .bottomArea > .buttonWrapper > .acceptButton:hover,
+.CookieAck > .window > .container > .bottomArea > .buttonWrapper > .acceptButton:focus {
+  background-color: rgba(10, 100, 10, 0.3);
+}
+
+.CookieAck > .window > .container > .bottomArea > .buttonWrapper > .acceptButton:active {
+  background-color: rgba(10, 100, 10, 0.4);
+}
+
+.CookieAck.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.CookieAck.visible > .window {
+  bottom: 0;
+}
+
+@media only screen and (max-width: 1200px) {
+  .Settings > .window > .containerwrapper {
+    left: 50%;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .Settings > .window {
+    height: 80%;
+    max-height: unset;
+  }
+  .Settings > .window > .closeButton {
+    -webkit-box-shadow: 1px 1px 8px #ddd;
+            box-shadow: 1px 1px 8px #ddd;
+    z-index: 10;
+    top: unset;
+    right: 20px;
+    bottom: 20px;
+  }
+  .Settings > .window > .containerwrapper {
+    max-height: unset;
+    padding: 0 25px 40px 25px;
+    left: 0;
+    top: 25px;
+    transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    gap: 25px;
+  }
+  .Settings > .window > .containerwrapper > .container {
+    width: 100%;
+    max-width: unset;
+  }
+}
+/*# sourceMappingURL=CookieAck.css.map */
