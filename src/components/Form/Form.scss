@@ -1,20 +1,32 @@
 .Form{
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    > .column{
-        flex: 1;
-        .selectorsWrapper{
+    flex-direction: column;
+    > .inputsContainer{
+        > .RangeInput:first-child{
+            margin-top: 0;
+        }
+        > .selectorsWrapper{
             display: flex;
             width: 100%;
         }
     }
-}
-
-@media only screen and (max-width: 4920px){
-    .Form{
-        padding-bottom: 50px;
-        flex-direction: column;
-        gap: 0;
+    > .calcButtonWrapper{
+        width: 60px;
+        height: 60px;
+        box-shadow: 2px 3px 10px #ccc;
+        border-radius: 50%;
+        position: fixed;
+        left: calc(50% - 30px);
+        bottom: 3%;
+        z-index: 1;
+        display: none;
+        > .calcButton{
+            width: 60px;
+            height: 60px;
+            background: #027 url(/src/icons/logo.svg) no-repeat center / 24px auto;
+            border-radius: 50%;
+            transition: all 100ms ease-in-out;
+        }
     }
 }

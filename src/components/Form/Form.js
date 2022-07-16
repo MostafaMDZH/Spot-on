@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
-import Cookies     from 'universal-cookie';
-import DV          from '../../DefaultValues'
-import RangeInput  from '../RangeInput/RangeInput';
-import SelectInput from '../SelectInput/SelectInput';
+import Cookies             from 'universal-cookie';
+import useWindowDimensions from '../../tools/useWindowDimensions'
+import DV                  from '../../DefaultValues'
+import RangeInput          from '../RangeInput/RangeInput';
+import SelectInput         from '../SelectInput/SelectInput';
 import './Form.css';
 
 export default function Form({
@@ -10,24 +11,26 @@ export default function Form({
         distance,
         fuelMeasurement,
         fuelCost,
-        onCalculate
+        onCalculate,
+        onScrollToInfo
     }){
 
-    //cookie:
+    //init:
+    const { height, width } = useWindowDimensions();
     const cookies = new Cookies();
     let updateTime;
 
     //states:
     const [typeOfOwnership    , setTypeOfOwnership    ] = useState(cookies.get('Type of Ownership'    ) || DV.TYPE_OF_OWNERSHIP    );
     const [purchasePrice      , setPurchasePrice      ] = useState(cookies.get('Purchase Price'       ) || DV.PURCHASE_PRICE       );
-    const [yearsofOwnership   , setYearsofOwnership   ] = useState(cookies.get('Years of Ownership'   ) || DV.YEARS_OF_OWNERSHIP   );
+    const [yearsOfOwnership   , setYearsOfOwnership   ] = useState(cookies.get('Years of Ownership'   ) || DV.YEARS_OF_OWNERSHIP   );
     const [roadTax            , setRoadTax            ] = useState(cookies.get('Road Tax'             ) || DV.ROAD_TAX             );
     const [instalment         , setInstalment         ] = useState(cookies.get('Instalment'           ) || DV.INSTALMENT           );
     const [insurance          , setInsurance          ] = useState(cookies.get('Insurance'            ) || DV.INSURANCE            );
     const [warranty           , setWarranty           ] = useState(cookies.get('Warranty'             ) || DV.WARRANTY             );
     const [maintenance        , setMaintenance        ] = useState(cookies.get('Maintenance'          ) || DV.MAINTENANCE          );
     const [mileage            , setMileage            ] = useState(cookies.get('Mileage'              ) || DV.MILEAGE              );
-    const [fuelConsubtion     , setFuelConsubtion     ] = useState(cookies.get('Fuel Consubtion'      ) || DV.FUEL_CONSUBTION      );
+    const [fuelConsumption    , setFuelConsumption    ] = useState(cookies.get('Fuel Consumption'     ) || DV.FUEL_CONSUMPTION     );
     const [serviceAverageCost , setServiceAverageCost ] = useState(cookies.get('Service Average Cost' ) || DV.SERVICE_AVERAGE_COST );
     const [serviceMileage     , setServiceMileage     ] = useState(cookies.get('Service Mileage'      ) || DV.SERVICE_MILEAGE      );
     const [askingPrice        , setAskingPrice        ] = useState(cookies.get('Asking Price'         ) || DV.ASKING_PRICE         );
@@ -36,8 +39,13 @@ export default function Form({
     const calcDepreciation = () => {
         let totalInstalment = 0;
         if(typeOfOwnership === 'Lease')
-            totalInstalment = instalment * yearsofOwnership * 12;
-        return (purchasePrice - askingPrice + totalInstalment) / yearsofOwnership;
+            totalInstalment = instalment * yearsOfOwnership * 12;
+        return (purchasePrice - askingPrice + totalInstalment) / yearsOfOwnership;
+    }
+
+    //numberWithCommas:
+    const numberWithCommas = (number) => {
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
     
     //calcTaxAndInsurance:
@@ -53,17 +61,17 @@ export default function Form({
     
     //calcTotalFuelCost:
     const calcTotalFuelCost = () => {
-        if(fuelConsubtion === 0) return 0;
+        if(fuelConsumption === 0) return 0;
         if(fuelMeasurement[0] === 'MPG'){
             let convertMK = 1;
             if(distance['Km'])
                 convertMK = 1.60934;
-            return ((mileage / convertMK) / fuelConsubtion) * fuelCost;
+            return ((mileage / convertMK) / fuelConsumption) * fuelCost;
         }else{
             let convertMK = 1;
             if(distance['Mile'])
                 convertMK = 1.60934;
-            return ((mileage * convertMK) / 100) * fuelConsubtion * fuelCost;
+            return ((mileage * convertMK) / 100) * fuelConsumption * fuelCost;
         }
     }
     
@@ -102,7 +110,7 @@ export default function Form({
                 { name: 'T&I', title: 'Tax & Insurance' , value: Math.round(taxAndInsurance )},
                 { name: 'Wrt', title: 'Warranty'        , value: Math.round(warranty        )},
                 { name: 'Mtn', title: 'Maintenance'     , value: Math.round(maintenance     )},
-                { name: 'Svc', title: 'Servce'          , value: Math.round(serviceCost     )},
+                { name: 'Svc', title: 'Service'         , value: Math.round(serviceCost     )},
                 { name: 'Ful', title: 'Fuel'            , value: Math.round(fuelCost        )},
             ]
         }
@@ -115,29 +123,30 @@ export default function Form({
         updateTime = Date.now();
         setTimeout(() => {
             let currentTime = Date.now();
-            if(currentTime >= (updateTime + 500)){
+            if(currentTime >= (updateTime + 300)){
                 cookies.set(name, value, { path: '/' });
                 stateUpdater();
             }
-        }, 500);
+        }, 300);
     };
 
-    useEffect(()=>{
-        calcCosts();
+    useEffect(() => {
+        if(width > 1000)
+            calcCosts();
     }, [
         distance,
         fuelMeasurement,
         fuelCost,
         typeOfOwnership,
         purchasePrice,
-        yearsofOwnership,
+        yearsOfOwnership,
         roadTax,
         instalment,
         insurance,
         warranty,
         maintenance,
         mileage,
-        fuelConsubtion,
+        fuelConsumption,
         serviceAverageCost,
         serviceMileage,
         askingPrice
@@ -146,7 +155,7 @@ export default function Form({
     //render:
     return (
         <div className='Form'>
-            <div className='column'>
+            <div className='inputsContainer'>
                 <RangeInput 
                     name         = {'Purchase Price'}
                     title        = {typeOfOwnership === 'Lease' ? 'Down Payment' : 'Purchase Price'}
@@ -172,11 +181,11 @@ export default function Form({
                     <SelectInput
                         name          = {'Years of Ownership'}
                         title         = {typeOfOwnership === 'Lease' ? 'Lease Term' : 'Years of Ownership'}
-                        value         = {yearsofOwnership}
+                        value         = {yearsOfOwnership}
                         options       = {[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]}
                         comment       = {'years'}
                         customClasses = {''}
-                        onChange      = {(name, value) => onChange(name, value, ()=>setYearsofOwnership(value))}
+                        onChange      = {(name, value) => onChange(name, value, ()=>setYearsOfOwnership(value))}
                     />
                     <SelectInput
                         title         = {'Road Tax'}
@@ -218,13 +227,11 @@ export default function Form({
                     comment      = {'per year'}
                     onChange     = {(name, value) => onChange(name, value, () => setWarranty(value))}
                 />
-            </div>
-            <div className='column'>
                 <RangeInput
                     title        = {'Maintenance'}
                     defaultValue = {maintenance}
                     rangeWidth   = {5000}
-                    step         = {500}
+                    step         = {100}
                     unit         = {currency[1]}
                     minMaxUnit   = {currency[1]}
                     comment      = {'per year'}
@@ -241,14 +248,14 @@ export default function Form({
                     onChange     = {(name, value) => onChange(name, value, () => setMileage(value))}
                 />
                 <RangeInput
-                    title        = {'Fuel Consubtion'}
-                    defaultValue = {fuelConsubtion}
+                    title        = {'Fuel Consumption'}
+                    defaultValue = {fuelConsumption}
                     rangeWidth   = {fuelMeasurement[0] === 'MPG' ? 50 : 20}
                     step         = {1}
                     unit         = {fuelMeasurement[1]}
                     minMaxUnit   = {''}
                     comment      = {fuelMeasurement[0]}
-                    onChange     = {(name, value) => onChange(name, value, () => setFuelConsubtion(value))}
+                    onChange     = {(name, value) => onChange(name, value, () => setFuelConsumption(value))}
                 />
                 <RangeInput 
                     title        = {'Service Average Cost'}
@@ -278,10 +285,18 @@ export default function Form({
                     step         = {1000}
                     unit         = {currency[1]}
                     minMaxUnit   = {currency[1]}
-                    comment      = {'after ' + yearsofOwnership + ' year' + (yearsofOwnership > 1 ? 's' : '') + ' and '
-                                 + (mileage * yearsofOwnership) + ' ' + distance[0].toLowerCase() + (distance[0] === 'Mile' ? 's' : '')}
+                    comment      = {'after ' + yearsOfOwnership + ' year' + (yearsOfOwnership > 1 ? 's' : '') + ' and '
+                                + numberWithCommas((mileage * yearsOfOwnership)) + ' ' + distance[0].toLowerCase() + (distance[0] === 'Mile' ? 's' : '')}
                     onChange     = {(name, value) => onChange(name, value, () => setAskingPrice(value))}
                 />
+            </div>
+            <div className='calcButtonWrapper'>
+                <input type='button' className='calcButton' onClick={() => {
+                    onScrollToInfo();
+                    setTimeout(() => {
+                        calcCosts();
+                    }, 400)
+                }}/>
             </div>
         </div>
     );

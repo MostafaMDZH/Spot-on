@@ -3,31 +3,42 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.Form > .column {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+.Form > .inputsContainer > .RangeInput:first-child {
+  margin-top: 0;
 }
 
-.Form > .column .selectorsWrapper {
+.Form > .inputsContainer > .selectorsWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
 }
 
-@media only screen and (max-width: 4920px) {
-  .Form {
-    padding-bottom: 50px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    gap: 0;
-  }
+.Form > .calcButtonWrapper {
+  width: 60px;
+  height: 60px;
+  -webkit-box-shadow: 2px 3px 10px #ccc;
+          box-shadow: 2px 3px 10px #ccc;
+  border-radius: 50%;
+  position: fixed;
+  left: calc(50% - 30px);
+  bottom: 3%;
+  z-index: 1;
+  display: none;
+}
+
+.Form > .calcButtonWrapper > .calcButton {
+  width: 60px;
+  height: 60px;
+  background: #027 url(/src/icons/logo.svg) no-repeat center/24px auto;
+  border-radius: 50%;
+  -webkit-transition: all 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
 }
 /*# sourceMappingURL=Form.css.map */
