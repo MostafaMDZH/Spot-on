@@ -3,60 +3,60 @@
   text-decoration: underline;
 }
 
-.transBackActeffect {
+.transBackActEffect {
   -webkit-transition: background-color 150ms;
   transition: background-color 150ms;
 }
 
-.transBackActeffect:enabled:active {
+.transBackActEffect:enabled:active {
   background-color: rgba(0, 0, 0, 0.025) !important;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .transBackActeffect:enabled:hover {
+  .transBackActEffect:enabled:hover {
     background-color: rgba(0, 0, 0, 0.025) !important;
   }
-  .transBackActeffect:enabled:focus {
+  .transBackActEffect:enabled:focus {
     background-color: rgba(0, 0, 0, 0.035) !important;
   }
-  .transBackActeffect:enabled:active {
+  .transBackActEffect:enabled:active {
     background-color: rgba(0, 0, 0, 0.045) !important;
   }
 }
 
-.transBackActeffect:disabled {
+.transBackActEffect:disabled {
   opacity: 0.5;
   cursor: default;
 }
 
-.colorBackActeffect {
+.colorBackActEffect {
   -webkit-transition: -webkit-filter 100ms;
   transition: -webkit-filter 100ms;
   transition: filter 100ms;
   transition: filter 100ms, -webkit-filter 100ms;
 }
 
-.colorBackActeffect:active {
+.colorBackActEffect:active {
   -webkit-filter: brightness(95%);
           filter: brightness(95%);
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .colorBackActeffect:hover {
+  .colorBackActEffect:hover {
     -webkit-filter: brightness(95%);
             filter: brightness(95%);
   }
-  .colorBackActeffect:focus {
+  .colorBackActEffect:focus {
     -webkit-filter: brightness(90%);
             filter: brightness(90%);
   }
-  .colorBackActeffect:active {
+  .colorBackActEffect:active {
     -webkit-filter: brightness(85%);
             filter: brightness(85%);
   }
 }
 
-.threeDotsOverflow, .Info > .costs > .distanceWrapper > .ammount, .Info > .costs > .timeWrapper > .timeCostWrapper > .ammountWrapper > .ammount {
+.threeDotsOverflow, .Info > .container > .perTimeWrapper > .timeCostWrapper > .amountWrapper > .amount {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -201,59 +201,130 @@
 
 .Info {
   width: 100%;
+  height: 100%;
+  -webkit-box-shadow: 3px 10px 35px #DDD;
+          box-shadow: 3px 10px 35px #DDD;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.Info > .costs > .title {
-  margin: 0;
+.Info > .container {
+  width: 100%;
+  max-width: 470px;
+  height: 100%;
+  max-height: 630px;
+  padding: 45px;
+  overflow: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.Info > .container > .titleWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+}
+
+.Info > .container > .titleWrapper > .smallText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 4px;
+}
+
+.Info > .container > .titleWrapper > .smallText > .your,
+.Info > .container > .titleWrapper > .smallText > .ownership {
   font-size: 1.6rem;
   font-weight: normal;
   color: #aaa;
 }
 
-.Info > .costs > .title > .benefits {
+.Info > .container > .titleWrapper > .smallText > .ownership {
+  display: none;
+}
+
+.Info > .container > .titleWrapper > .bigText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 4px;
+}
+
+.Info > .container > .titleWrapper > .bigText > .costs,
+.Info > .container > .titleWrapper > .bigText > .willBe {
+  font-size: 1.6rem;
+  font-weight: normal;
+  color: #aaa;
+}
+
+.Info > .container > .titleWrapper > .bigText > .benefits {
   color: #292;
   font-weight: bold;
   margin-right: 1px;
 }
 
-.Info > .costs > .distanceWrapper {
+.Info > .container > .perDistanceWrapper {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 20px;
+  gap: 12px;
 }
 
-.Info > .costs > .distanceWrapper > .unit {
+.Info > .container > .perDistanceWrapper > .unit {
   font-size: 3rem;
-  color: #04b;
-  margin-top: 12px;
   font-weight: bold;
+  color: #04b;
+  margin-top: 15px;
 }
 
-.Info > .costs > .distanceWrapper > .ammount {
-  font-size: 10.5rem;
+.Info > .container > .perDistanceWrapper > .amount {
+  font-size: 12rem;
   line-height: 100%;
   letter-spacing: 0.1rem;
   color: #04b;
-  margin-left: 12px;
 }
 
-.Info > .costs > .distanceWrapper > .period {
+.Info > .container > .perDistanceWrapper > .period {
   font-size: 1.6rem;
   white-space: nowrap;
   color: #aaa;
-  margin-left: 17px;
-  margin-top: 75px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-bottom: 15px;
 }
 
-.Info > .costs > .timeWrapper {
+.Info > .container > .perTimeWrapper {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   max-width: 100%;
   min-width: 305px;
-  overflow: auto;
-  margin-top: 40px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -261,33 +332,33 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   gap: 15px;
-  padding-bottom: 5px;
+  padding-bottom: 25px;
 }
 
-.Info > .costs > .timeWrapper > .timeCostWrapper > .period {
+.Info > .container > .perTimeWrapper > .timeCostWrapper > .period {
   font-size: 1.45rem;
   color: #aaa;
   display: block;
 }
 
-.Info > .costs > .timeWrapper > .timeCostWrapper > .ammountWrapper {
+.Info > .container > .perTimeWrapper > .timeCostWrapper > .amountWrapper {
   margin-top: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.Info > .costs > .timeWrapper > .timeCostWrapper > .ammountWrapper > a {
+.Info > .container > .perTimeWrapper > .timeCostWrapper > .amountWrapper > a {
   font-weight: bold;
-  color: #666;
+  color: #555;
   display: block;
 }
 
-.Info > .costs > .timeWrapper > .timeCostWrapper > .ammountWrapper > .currency {
+.Info > .container > .perTimeWrapper > .timeCostWrapper > .amountWrapper > .currency {
   font-size: 2.2rem;
 }
 
-.Info > .costs > .timeWrapper > .timeCostWrapper > .ammountWrapper > .ammount {
+.Info > .container > .perTimeWrapper > .timeCostWrapper > .amountWrapper > .amount {
   margin-left: 1px;
   font-size: 2.2rem;
 }
