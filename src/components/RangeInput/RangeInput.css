@@ -3,54 +3,54 @@
   text-decoration: underline;
 }
 
-.transBackActeffect {
+.transBackActEffect {
   -webkit-transition: background-color 150ms;
   transition: background-color 150ms;
 }
 
-.transBackActeffect:enabled:active {
+.transBackActEffect:enabled:active {
   background-color: rgba(0, 0, 0, 0.025) !important;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .transBackActeffect:enabled:hover {
+  .transBackActEffect:enabled:hover {
     background-color: rgba(0, 0, 0, 0.025) !important;
   }
-  .transBackActeffect:enabled:focus {
+  .transBackActEffect:enabled:focus {
     background-color: rgba(0, 0, 0, 0.035) !important;
   }
-  .transBackActeffect:enabled:active {
+  .transBackActEffect:enabled:active {
     background-color: rgba(0, 0, 0, 0.045) !important;
   }
 }
 
-.transBackActeffect:disabled {
+.transBackActEffect:disabled {
   opacity: 0.5;
   cursor: default;
 }
 
-.colorBackActeffect {
+.colorBackActEffect {
   -webkit-transition: -webkit-filter 100ms;
   transition: -webkit-filter 100ms;
   transition: filter 100ms;
   transition: filter 100ms, -webkit-filter 100ms;
 }
 
-.colorBackActeffect:active {
+.colorBackActEffect:active {
   -webkit-filter: brightness(95%);
           filter: brightness(95%);
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .colorBackActeffect:hover {
+  .colorBackActEffect:hover {
     -webkit-filter: brightness(95%);
             filter: brightness(95%);
   }
-  .colorBackActeffect:focus {
+  .colorBackActEffect:focus {
     -webkit-filter: brightness(90%);
             filter: brightness(90%);
   }
-  .colorBackActeffect:active {
+  .colorBackActEffect:active {
     -webkit-filter: brightness(85%);
             filter: brightness(85%);
   }
@@ -110,7 +110,7 @@
   width: 0;
 }
 
-.customRange, .RangeInput > .rangeInput {
+.customRange, .RangeInput > .content > .rangeInput {
   width: 100%;
   -webkit-appearance: none;
   width: 100%;
@@ -118,11 +118,11 @@
   border: none;
 }
 
-.customRange:focus, .RangeInput > .rangeInput:focus {
+.customRange:focus, .RangeInput > .content > .rangeInput:focus {
   outline: none;
 }
 
-.customRange::-webkit-slider-thumb, .RangeInput > .rangeInput::-webkit-slider-thumb {
+.customRange::-webkit-slider-thumb, .RangeInput > .content > .rangeInput::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 16px;
   width: 16px;
@@ -133,7 +133,7 @@
   margin-top: -7px;
 }
 
-.customRange::-moz-range-thumb, .RangeInput > .rangeInput::-moz-range-thumb {
+.customRange::-moz-range-thumb, .RangeInput > .content > .rangeInput::-moz-range-thumb {
   height: 12px;
   width: 12px;
   background-color: white;
@@ -142,7 +142,7 @@
   cursor: pointer;
 }
 
-.customRange::-ms-thumb, .RangeInput > .rangeInput::-ms-thumb {
+.customRange::-ms-thumb, .RangeInput > .content > .rangeInput::-ms-thumb {
   height: 16px;
   width: 16px;
   background-color: white;
@@ -151,7 +151,7 @@
   cursor: pointer;
 }
 
-.customRange::-webkit-slider-runnable-track, .RangeInput > .rangeInput::-webkit-slider-runnable-track {
+.customRange::-webkit-slider-runnable-track, .RangeInput > .content > .rangeInput::-webkit-slider-runnable-track {
   width: 100%;
   height: 12px;
   cursor: pointer;
@@ -161,7 +161,7 @@
   margin-bottom: -1px;
 }
 
-.customRange::-moz-range-track, .RangeInput > .rangeInput::-moz-range-track {
+.customRange::-moz-range-track, .RangeInput > .content > .rangeInput::-moz-range-track {
   width: 100%;
   height: 2px;
   cursor: pointer;
@@ -170,7 +170,7 @@
   border-bottom: solid 8px white;
 }
 
-.customRange::-ms-track, .RangeInput > .rangeInput::-ms-track {
+.customRange::-ms-track, .RangeInput > .content > .rangeInput::-ms-track {
   width: 100%;
   height: 2px;
   cursor: pointer;
@@ -181,7 +181,7 @@
   color: transparent;
 }
 
-.customRange::-ms-fill-lower, .RangeInput > .rangeInput::-ms-fill-lower {
+.customRange::-ms-fill-lower, .RangeInput > .content > .rangeInput::-ms-fill-lower {
   width: 100%;
   height: 2px;
   cursor: pointer;
@@ -190,7 +190,7 @@
   border-bottom: solid 5px white;
 }
 
-.customRange::-ms-fill-upper, .RangeInput > .rangeInput::-ms-fill-upper {
+.customRange::-ms-fill-upper, .RangeInput > .content > .rangeInput::-ms-fill-upper {
   width: 100%;
   height: 2px;
   cursor: pointer;
@@ -202,16 +202,40 @@
 .RangeInput {
   width: 100%;
   height: auto;
-  padding-top: 35px;
+  max-height: 100px;
+  margin-top: 35px;
   position: relative;
+  overflow: hidden;
+  -webkit-transition: all 350ms ease-in-out;
+  transition: all 350ms ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.RangeInput > .title {
+.RangeInput > .content {
+  width: 100%;
+  opacity: 1;
+  -webkit-transition: opacity 350ms ease-in-out;
+  transition: opacity 350ms ease-in-out;
+}
+
+.RangeInput > .content > .title {
   font-size: 1.5rem;
   color: #aaa;
 }
 
-.RangeInput > .valueWrapper {
+.RangeInput > .content > .valueWrapper {
   position: relative;
   margin-top: 12px;
   margin-bottom: 3px;
@@ -220,14 +244,14 @@
   display: flex;
 }
 
-.RangeInput > .valueWrapper > .unit {
+.RangeInput > .content > .valueWrapper > .unit {
   padding-right: 3px;
   padding-top: 5px;
   color: #027;
   font-size: 1.8rem;
 }
 
-.RangeInput > .valueWrapper > .textInput {
+.RangeInput > .content > .valueWrapper > .textInput {
   width: 100px;
   background-color: transparent;
   font-size: 3.1rem;
@@ -237,21 +261,22 @@
           flex: 1;
 }
 
-.RangeInput > .valueWrapper > .comment {
+.RangeInput > .content > .valueWrapper > .comment {
+  max-width: 200px;
+  text-align: right;
   position: absolute;
   bottom: 1px;
   right: 0;
   min-height: 20px;
   font-size: 1.5rem;
   color: #aaa;
-  white-space: nowrap;
 }
 
-.RangeInput > .rangeInput {
+.RangeInput > .content > .rangeInput {
   margin: 0;
 }
 
-.RangeInput > .rangeInfoWrapper {
+.RangeInput > .content > .rangeInfoWrapper {
   width: 100%;
   padding-top: 3px;
   display: -webkit-box;
@@ -262,68 +287,60 @@
           justify-content: space-between;
 }
 
-.RangeInput > .rangeInfoWrapper > a {
+.RangeInput > .content > .rangeInfoWrapper > a {
   font-size: 1.3rem;
   color: #bbb;
 }
 
-.RangeInput > .disableCover {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(255, 255, 255, 0.65);
-  display: none;
-}
-
 .RangeInput.disable {
-  pointer-events: none;
+  max-height: 0;
+  margin-top: 0;
 }
 
-.RangeInput.disable > .disableCover {
-  display: block;
-}
-
-@media only screen and (max-width: 1450px) {
-  .RangeInput.disable {
-    display: none;
-  }
+.RangeInput.disable > .content {
+  opacity: 0;
 }
 
 .RangeInput.settings {
-  padding-top: 8px;
+  margin-top: 8px;
+}
+
+.RangeInput.settings > .content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
 
-.RangeInput.settings > .title {
+.RangeInput.settings > .content > .title {
   font-size: 1.6rem;
   line-height: 25px;
   color: #292929;
 }
 
-.RangeInput.settings > .valueWrapper {
+.RangeInput.settings > .content > .valueWrapper {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.RangeInput.settings > .valueWrapper > .unit {
+.RangeInput.settings > .content > .valueWrapper > .unit {
   padding-right: 2px;
   padding-top: 3px;
   font-size: 1.4rem;
 }
 
-.RangeInput.settings > .valueWrapper > .textInput {
+.RangeInput.settings > .content > .valueWrapper > .textInput {
   width: 50px;
   font-size: 2.1rem;
 }
 
-.RangeInput.settings > .valueWrapper > .comment {
+.RangeInput.settings > .content > .valueWrapper > .comment {
   min-width: 40px;
   position: static;
   font-size: 1.6rem;
@@ -331,11 +348,17 @@
   line-height: 26px;
 }
 
-.RangeInput.settings > .rangeInput {
+.RangeInput.settings > .content > .rangeInput {
   display: none;
 }
 
-.RangeInput.settings > .rangeInfoWrapper {
+.RangeInput.settings > .content > .rangeInfoWrapper {
   display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .RangeInput > .content > .valueWrapper > .textInput {
+    font-size: 2.9rem;
+  }
 }
 /*# sourceMappingURL=RangeInput.css.map */

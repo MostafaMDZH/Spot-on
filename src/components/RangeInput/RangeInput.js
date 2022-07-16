@@ -47,8 +47,8 @@ export default function RangeInput({
         return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
     
-    //onTextInputChage:
-    const onTextInputChage = (val) => {
+    //onTextInputChange:
+    const onTextInputChange = (val) => {
         if(val === '0.'){
             setValue(val);
             return;
@@ -105,23 +105,24 @@ export default function RangeInput({
     //return:
     return (
         <div className={"RangeInput " + (isDisable ? 'disable ': '') + (customClasses || "")}>
-            <a className="title">{title}</a>
-            <div className="valueWrapper">
-                <a className="unit">{unit}</a>
-                <input type="text" className="textInput" value={numberWithCommas(value)} placeholder="0"
-                    onChange={(e) => onTextInputChage(e.target.value)}//todo: also change with keyUp & keyDown
+            <div className='content'>
+                <a className="title">{title}</a>
+                <div className="valueWrapper">
+                    <a className="unit">{unit}</a>
+                    <input type="text" className="textInput" value={numberWithCommas(value)} placeholder="0"
+                        onChange={(e) => onTextInputChange(e.target.value)}//todo: also change with keyUp & keyDown
+                        />
+                    <div className="comment">{comment}</div>
+                </div>
+                <input type="range" className="rangeInput" value={value} min={min} max={max} step={step}
+                    onChange={(e) => onRangeInputChange(e.target.value)}
+                    style={{background: 'linear-gradient(to right, #039 0%, #039 ' + percentage + '%, #ddd ' + percentage + '%, #ddd 100%)'}}
                     />
-                <div className="comment">{comment}</div>
+                <div className="rangeInfoWrapper">
+                    <a>{minMaxUnit + numberWithCommas(min)}</a>
+                    <a>{minMaxUnit + numberWithCommas(max)}</a>
+                </div>
             </div>
-            <input type="range" className="rangeInput" value={value} min={min} max={max} step={step}
-                onChange={(e) => onRangeInputChange(e.target.value)}
-                style={{background: 'linear-gradient(to right, #039 0%, #039 ' + percentage + '%, #ddd ' + percentage + '%, #ddd 100%)'}}
-                />
-            <div className="rangeInfoWrapper">
-                <a>{minMaxUnit + numberWithCommas(min)}</a>
-                <a>{minMaxUnit + numberWithCommas(max)}</a>
-            </div>
-            <div className='disableCover'></div>
         </div>
     )
 
