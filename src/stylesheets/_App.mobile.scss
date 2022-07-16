@@ -1,0 +1,474 @@
+/*
+    mobile / tablet in portrait
+*/
+
+@media only screen and (max-width: 1000px){
+    body{
+        overflow: hidden;
+    }
+    .App{
+        justify-content: start;
+        overflow: hidden;
+        > .window{
+            max-width: unset;
+            height: 100%;
+            padding: 0;
+            display: block;
+            gap: 0;
+            > .leftSide,
+            > .rightSide{
+                padding: 60px 100px calc(7% + 60px) 100px;
+            }
+            > .leftSide{
+                height: 100%;
+                overflow-y: auto;
+                overflow-x: hidden;
+                .Header{
+                    .menu{
+                        display: block;
+                    }
+                }
+                > .formWrapper{
+                    > .formContainer{
+                        > .Form{
+                            > .inputsContainer{
+                                opacity: 1;
+                                transition: opacity 200ms linear;
+                            }
+                            > .calcButtonWrapper{
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+            > .rightSide{
+                width: 100%;
+                height: 100%;
+                overflow-y: auto;
+                overflow-x: hidden;
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                .Header{
+                    .appNameWrapper{
+                        display: none;
+                    }
+                    .menu{
+                        justify-content: space-between;
+                        flex: 1;
+                        .backButton{
+                            display: block;
+                        }
+                    }
+                }
+                > .infoWrapper{
+                    width: 100%;
+                    max-width: unset;
+                    height: 100%;
+                    max-height: unset;
+                    position: static;
+                    @include transform(0, 0);
+                    opacity: 0;
+                    transition: opacity 200ms linear;
+                    .Info{
+                        box-shadow: none;
+                        > .container{
+                            width: fit-content;
+                            max-width: unset;
+                            margin-top: -60px;
+                            padding: 8px 0 15px 0;
+                            max-height: 600px;
+                            gap: 30px;
+                            > .titleWrapper{
+                                flex-direction: column;
+                                > .smallText{
+                                    > .your,
+                                    > .ownership{
+                                        display: block;
+                                    }
+                                }
+                                > .bigText{
+                                    gap: 8px;
+                                    > .costs,
+                                    > .willBe{
+                                        font-size: 3.4rem;
+                                        color: #555;
+                                    }
+                                    > .benefits{
+                                        font-weight: normal;
+                                        color: #282;
+                                    }
+                                }
+                            }
+                            > .perDistanceWrapper,
+                            > .perTimeWrapper{
+                                align-self: center;
+                            }
+                            > .chartWrapper{
+                                align-self: center;
+                                width: 340px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //result mode:
+    .App.scrollToInfo{
+        > .window{
+            > .leftSide{
+                > .formWrapper{
+                    > .formContainer{
+                        > .Form{
+                            > .inputsContainer{
+                                opacity: 0;
+                            }
+                            > .calcButtonWrapper{
+                                > .calcButton{
+                                    background-image: url(/src/icons/down_fff.svg);
+                                    background-size: 27px auto;
+                                    transform: rotate(360deg);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            > .rightSide{
+                top: 0;
+                > .infoWrapper{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+}
+
+//w800:
+@media only screen and (max-width: 800px){
+    .App{
+        .window{
+            > .leftSide,
+            > .rightSide{
+                padding-top: 55px;
+                padding-left: 80px;
+                padding-right: 80px;
+            }
+        }
+    }
+}
+
+//w750:
+@media only screen and (max-width: 700px){
+    .App{
+        .window{
+            > .leftSide,
+            > .rightSide{
+                padding-top: 45px;
+                padding-left: 65px;
+                padding-right: 65px;
+            }
+        }
+    }
+}
+
+//w600:
+@media only screen and (max-width: 600px){
+    .App{
+        .window{
+            > .leftSide,
+            > .rightSide{
+                padding-top: 40px;
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+            > .leftSide{
+                gap: 35px;
+            }
+        }
+    }
+}
+
+//w550:
+@media only screen and (max-width: 550px){
+    .App{
+        .window{
+            > .leftSide,
+            > .rightSide{
+                padding-top: 30px;
+                padding-left: 43px;
+                padding-right: 43px;
+                .Header{
+                    .description{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* mobile */
+
+//w500:
+@media only screen and (max-width: 500px){
+    .App{
+        .window{
+            > .leftSide,
+            > .rightSide{
+                padding-top: 28px;
+                padding-left: 40px;
+                padding-right: 40px;
+            }
+            > .leftSide{
+                gap: 25px;
+            }
+            > .rightSide{
+                > .infoWrapper{
+                    > .Info{
+                        > .container{
+                            width: 100%;
+                            > .perDistanceWrapper,
+                            > .perTimeWrapper,
+                            > .chartWrapper{
+                                align-self: unset;
+                            }
+                            > .perDistanceWrapper{
+                                gap: 8px;
+                                .amount{
+                                    font-size: 11rem;
+                                    letter-spacing: -2px;
+                                }
+                            }
+                            > .perTimeWrapper{
+                                width: 100%;
+                                min-width: unset;
+                                gap: 10px;
+                            }
+                            > .chartWrapper{
+                                width: 100%;
+                                max-width: 360px;
+                                min-width: unset;
+                                .verticalColum{
+                                    padding-right: 2px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// w400:
+@media only screen and (max-width: 400px){
+    .App{
+        .window{
+            > .leftSide,
+            > .rightSide{
+                padding-top: 25px;
+                padding-left: 36px;
+                padding-right: 36px;
+            }
+        }
+    }
+}
+
+// w380:
+@media only screen and (max-width: 380px){
+    .App{
+        .window{
+            > .leftSide,
+            > .rightSide{
+                padding-top: 20px;
+            }
+            > .rightSide{
+                > .infoWrapper{
+                    > .Info{
+                        > .container{
+                            > .titleWrapper{
+                                > .bigText{
+                                    > .costs,
+                                    > .willBe{
+                                        font-size: 3.1rem;
+                                    }
+                                }
+                            }
+                            > .perDistanceWrapper{
+                                > .unit{
+                                    margin-top: 10px;
+                                }
+                                > .amount{
+                                    font-size: 9.5rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// w360:
+@media only screen and (max-width: 360px){
+    .App{
+        .window{
+            > .leftSide,
+            > .rightSide{
+                padding-top: 16px;
+                padding-left: 29px;
+                padding-right: 29px;
+            }
+            > .leftSide{
+                gap: 20px;
+            }
+            > .rightSide{
+                > .infoWrapper{
+                    > .Info{
+                        > .container{
+                            > .titleWrapper{
+                                > .bigText{
+                                    > .costs,
+                                    > .willBe{
+                                        font-size: 3rem;
+                                    }
+                                }
+                            }
+                            > .perTimeWrapper{
+                                > .timeCostWrapper{
+                                    > .amountWrapper{
+                                        > .currency,
+                                        > .amount{
+                                            font-size: 2.1rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .menu{
+                .endButtonsContainer{
+                    gap: 8px;
+                }
+            }
+        }
+    }
+}
+
+
+// w345:
+@media only screen and (max-width: 345px){
+    .App{
+        .window{
+            > .leftSide,
+            > .rightSide{
+                padding-top: 14px;
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+            > .rightSide{
+                > .infoWrapper{
+                    > .Info{
+                        .Chart{
+                            .columnsWrapper{
+                                .barWrapper{
+                                    width: 26px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* height */
+
+//h1000
+@media only screen and (max-height: 1000px){
+    .App{
+        > .window{
+            > .rightSide{
+                > .infoWrapper{
+                    > .Info{
+                        > .container{
+                            margin-top: -20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//h900
+@media only screen and (max-height: 900px){
+    .App{
+        > .window{
+            > .rightSide{
+                > .infoWrapper{
+                    > .Info{
+                        > .container{
+                            margin-top: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* exception */
+
+@media only screen and (max-width: 1000px){
+
+    //h900
+    @media only screen and (max-height: 700px){
+        .App{
+            > .window{
+                > .rightSide{
+                    > .infoWrapper{
+                        > .Info{
+                            height: fit-content;
+                            padding-bottom: 85px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //landscape:
+    @media only screen and (orientation: landscape){
+        .App{
+            .window{
+                > .leftSide,
+                > .rightSide{
+                    padding-top: 22px;
+                }
+                > .leftSide{
+                    gap: 30px;
+                    .calcButtonWrapper{
+                        left: unset;
+                        right: 45px;
+                        bottom: 30px;
+                    }
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,206 @@
+/*
+    desktop
+    from 1450 down to 1000 pixels width
+*/
+
+@media only screen and (min-width: 1001px){
+
+    @media only screen and (max-height: 950px){//exception
+        .App{
+            > .window{
+                > .leftSide{
+                    .Header{
+                        .menu{
+                            display: block;
+                        }
+                    }
+                }
+                > .rightSide{
+                    .Header{
+                        display: none;
+                    }
+                    > .infoWrapper{
+                        top:50%;
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1450px){
+        .App{
+            > .window{
+                padding-top: 50px;
+                gap: 80px;
+                > .rightSide{
+                    width: 540px;
+                    > .infoWrapper{
+                        width: 540px;
+                        max-height: 650px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1400px){
+        .App{
+            > .window{
+                padding-top: 45px;
+                > .rightSide{
+                    width: 522px;
+                    > .infoWrapper{
+                        width: 522px;
+                        max-height: 630px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1360px){
+        .App{
+            > .window{
+                padding-top: 40px;
+                padding-bottom: 70px;
+                > .leftSide{
+                    gap: 40px;
+                }
+                > .rightSide{
+                    width: 500px;
+                    > .infoWrapper{
+                        width: 500px;
+                        max-height: 600px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1330px){
+        .App{
+            > .window{
+                padding-top: 35px;
+                > .rightSide{
+                    width: 498px;
+                    > .infoWrapper{
+                        width: 498px;
+                        max-height: 590px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1300px){
+        .App{
+            > .window{
+                padding-bottom: 60px;
+                > .rightSide{
+                    width: 475px;
+                    > .infoWrapper{
+                        width: 475px;
+                        max-height: 570px;
+                        .amount{
+                            font-size: 11rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1250px){
+        .App{
+            > .window{
+                padding-left: 80px;
+                padding-right: 75px;
+                gap: 75px;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1200px){
+        .App{
+            > .window{
+                padding-left: 75px;
+                padding-right: 70px;
+                gap: 70px;
+                > .rightSide{
+                    width: 470px;
+                    > .infoWrapper{
+                        width: 470px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1150px){
+        .App{
+            > .window{
+                padding-left: 70px;
+                padding-right: 65px;
+                gap: 65px;
+                > .rightSide{
+                    width: 460px;
+                    > .infoWrapper{
+                        width: 460px;
+                        max-height: 565px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1120px){
+        .App{
+            > .window{
+                padding-left: 65px;
+                padding-right: 60px;
+                gap: 60px;
+                > .rightSide{
+                    width: 450px;
+                    > .infoWrapper{
+                        width: 450px;
+                        max-height: 560px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1080px){
+        .App{
+            > .window{
+                padding-left: 60px;
+                padding-right: 55px;
+                gap: 55px;
+                > .rightSide{
+                    width: 440px;
+                    > .infoWrapper{
+                        width: 440px;
+                        max-height: 545px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1050px){
+        .App{
+            > .window{
+                padding-left: 50px;
+                padding-right: 50px;
+                gap: 50px;
+                > .rightSide{
+                    width: 430px;
+                    > .infoWrapper{
+                        width: 430px;
+                        max-height: 535px;
+                    }
+                }
+            }
+        }
+    }
+}

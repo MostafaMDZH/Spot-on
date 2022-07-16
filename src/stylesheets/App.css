@@ -1,3 +1,204 @@
+.hrefUnderline:hover,
+.hrefUnderline:focus {
+  text-decoration: underline;
+}
+
+.transBackActEffect {
+  -webkit-transition: background-color 150ms;
+  transition: background-color 150ms;
+}
+
+.transBackActEffect:enabled:active {
+  background-color: rgba(0, 0, 0, 0.025) !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .transBackActEffect:enabled:hover {
+    background-color: rgba(0, 0, 0, 0.025) !important;
+  }
+  .transBackActEffect:enabled:focus {
+    background-color: rgba(0, 0, 0, 0.035) !important;
+  }
+  .transBackActEffect:enabled:active {
+    background-color: rgba(0, 0, 0, 0.045) !important;
+  }
+}
+
+.transBackActEffect:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.colorBackActEffect {
+  -webkit-transition: -webkit-filter 100ms;
+  transition: -webkit-filter 100ms;
+  transition: filter 100ms;
+  transition: filter 100ms, -webkit-filter 100ms;
+}
+
+.colorBackActEffect:active {
+  -webkit-filter: brightness(95%);
+          filter: brightness(95%);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .colorBackActEffect:hover {
+    -webkit-filter: brightness(95%);
+            filter: brightness(95%);
+  }
+  .colorBackActEffect:focus {
+    -webkit-filter: brightness(90%);
+            filter: brightness(90%);
+  }
+  .colorBackActEffect:active {
+    -webkit-filter: brightness(85%);
+            filter: brightness(85%);
+  }
+}
+
+.threeDotsOverflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.notSelectable {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.selectableText {
+  -webkit-touch-callout: default;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  cursor: text;
+}
+
+.darkThinScrollbar::-webkit-scrollbar, .notTouchScreen::-webkit-scrollbar, .notTouchScreen ::-webkit-scrollbar {
+  width: 7px;
+}
+
+.darkThinScrollbar::-webkit-scrollbar-track, .notTouchScreen::-webkit-scrollbar-track, .notTouchScreen ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.darkThinScrollbar::-webkit-scrollbar-thumb, .notTouchScreen::-webkit-scrollbar-thumb, .notTouchScreen ::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  border-radius: 20px;
+}
+
+.darkUltraThinScrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.darkUltraThinScrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.darkUltraThinScrollbar::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 20px;
+}
+
+.noScrollbar::-webkit-scrollbar {
+  width: 0;
+}
+
+.customRange {
+  width: 100%;
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+  border: none;
+}
+
+.customRange:focus {
+  outline: none;
+}
+
+.customRange::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  background-color: white;
+  border: 2px solid #027;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -7px;
+}
+
+.customRange::-moz-range-thumb {
+  height: 12px;
+  width: 12px;
+  background-color: white;
+  border: 2px solid #027;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.customRange::-ms-thumb {
+  height: 16px;
+  width: 16px;
+  background-color: white;
+  border: 2px solid #027;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.customRange::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 12px;
+  cursor: pointer;
+  border-top: solid 5px white;
+  border-bottom: solid 5px white;
+  margin-top: -1px;
+  margin-bottom: -1px;
+}
+
+.customRange::-moz-range-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: transparent;
+  border-top: solid 8px white;
+  border-bottom: solid 8px white;
+}
+
+.customRange::-ms-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: transparent;
+  border-top: solid 5px white;
+  border-bottom: solid 5px white;
+  border-color: transparent;
+  color: transparent;
+}
+
+.customRange::-ms-fill-lower {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: transparent;
+  border-top: solid 5px white;
+  border-bottom: solid 5px white;
+}
+
+.customRange::-ms-fill-upper {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: transparent;
+  border-top: solid 5px white;
+  border-bottom: solid 5px white;
+}
+
 .App {
   width: 100%;
   height: 100%;
@@ -15,19 +216,21 @@
 
 .App > .window {
   width: 100%;
-  max-width: 1650px;
+  max-width: 1500px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  padding: 60px 105px 40px 115px;
+  padding: 60px 85px 90px 90px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 110px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 100px;
 }
 
-.App > .window > .main {
-  width: 100%;
+.App > .window > .leftSide {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -38,33 +241,37 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  gap: 45px;
+  -webkit-transition: 200ms width 150ms ease-in-out, 200ms height 150ms ease-in-out, 200ms padding 150ms ease-in-out;
+  transition: 200ms width 150ms ease-in-out, 200ms height 150ms ease-in-out, 200ms padding 150ms ease-in-out;
 }
 
-.App > .window > .main > .headerWrapper {
-  width: calc(100% + 110px + 600px);
+.App > .window > .leftSide .Header .menu {
+  display: none;
 }
 
-.App > .window > .main > .formWrapper {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  margin-top: 30px;
-}
-
-.App > .window > .infoWrapper {
-  width: 600px;
+.App > .window > .rightSide {
+  width: 570px;
+  background-color: white;
   position: relative;
+  -webkit-transition: 200ms width 150ms ease-in-out, 200ms height 150ms ease-in-out, 200ms padding 150ms ease-in-out;
+  transition: 200ms width 150ms ease-in-out, 200ms height 150ms ease-in-out, 200ms padding 150ms ease-in-out;
 }
 
-.App > .window > .infoWrapper > .infoContainer {
-  width: 600px;
-  padding: 80px 125px 80px 100px;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -webkit-box-shadow: 3px 10px 35px #DDD;
-          box-shadow: 3px 10px 35px #DDD;
+.App > .window > .rightSide .Header {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.App > .window > .rightSide .Header .appNameWrapper {
+  display: none;
+}
+
+.App > .window > .rightSide > .infoWrapper {
+  width: 570px;
+  height: calc(100% - 40px);
+  max-height: 680px;
   position: fixed;
   top: 53%;
   transform: translate(0, -50%);
@@ -73,101 +280,507 @@
   -webkit-transform: translate(0, -50%);
 }
 
-@media only screen and (max-height: 950px) {
-  .App > .window > .infoWrapper > .infoContainer {
-    top: 55%;
+/*
+    desktop
+    from 1450 down to 1000 pixels width
+*/
+@media only screen and (min-width: 1001px) and (max-height: 950px) {
+  .App > .window > .leftSide .Header .menu {
+    display: block;
   }
-}
-
-@media only screen and (max-height: 850px) {
-  .App > .window > .main > .headerWrapper {
-    width: calc(100% + 12px);
+  .App > .window > .rightSide .Header {
+    display: none;
   }
-  .App > .window > .infoWrapper > .infoContainer {
+  .App > .window > .rightSide > .infoWrapper {
     top: 50%;
   }
 }
 
-@media only screen and (max-height: 780px) {
-  .App > .window > .main > .formWrapper {
-    margin-top: 25px;
-  }
-  .App > .window > .infoWrapper > .infoContainer {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
-}
-
-@media only screen and (max-height: 710px) {
+@media only screen and (min-width: 1001px) and (max-width: 1450px) {
   .App > .window {
     padding-top: 50px;
-  }
-  .App > .window > .main > .formWrapper {
-    margin-top: 20px;
-  }
-  .App > .window > .infoWrapper > .infoContainer {
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-}
-
-@media only screen and (max-height: 680px) {
-  .App > .window {
-    padding-top: 40px;
-  }
-}
-
-@media only screen and (max-width: 1600px) {
-  .App > .window > .infoWrapper {
-    width: 560px;
-  }
-  .App > .window > .infoWrapper > .infoContainer {
-    width: 560px;
-    padding-left: 80px;
-    padding-right: 100px;
-  }
-}
-
-@media only screen and (max-width: 1500px) {
-  .App > .window > .infoWrapper {
-    width: 540px;
-  }
-  .App > .window > .infoWrapper > .infoContainer {
-    width: 540px;
-    padding-left: 70px;
-    padding-right: 90px;
-  }
-}
-
-@media only screen and (max-width: 1430px) {
-  .App > .window {
-    padding-left: 100px;
-    padding-right: 85px;
-    gap: 90px;
-  }
-  .App > .window > .infoWrapper {
-    width: 520px;
-  }
-  .App > .window > .infoWrapper > .infoContainer {
-    width: 520px;
-    padding-left: 65px;
-    padding-right: 85px;
-  }
-}
-
-@media only screen and (max-width: 1360px) {
-  .App > .window {
-    padding-left: 90px;
-    padding-right: 75px;
     gap: 80px;
   }
-  .App > .window > .infoWrapper {
-    width: 505px;
+  .App > .window > .rightSide {
+    width: 540px;
   }
-  .App > .window > .infoWrapper > .infoContainer {
-    width: 505px;
+  .App > .window > .rightSide > .infoWrapper {
+    width: 540px;
+    max-height: 650px;
+  }
+}
+
+@media only screen and (min-width: 1001px) and (max-width: 1400px) {
+  .App > .window {
+    padding-top: 45px;
+  }
+  .App > .window > .rightSide {
+    width: 522px;
+  }
+  .App > .window > .rightSide > .infoWrapper {
+    width: 522px;
+    max-height: 630px;
+  }
+}
+
+@media only screen and (min-width: 1001px) and (max-width: 1360px) {
+  .App > .window {
+    padding-top: 40px;
+    padding-bottom: 70px;
+  }
+  .App > .window > .leftSide {
+    gap: 40px;
+  }
+  .App > .window > .rightSide {
+    width: 500px;
+  }
+  .App > .window > .rightSide > .infoWrapper {
+    width: 500px;
+    max-height: 600px;
+  }
+}
+
+@media only screen and (min-width: 1001px) and (max-width: 1330px) {
+  .App > .window {
+    padding-top: 35px;
+  }
+  .App > .window > .rightSide {
+    width: 498px;
+  }
+  .App > .window > .rightSide > .infoWrapper {
+    width: 498px;
+    max-height: 590px;
+  }
+}
+
+@media only screen and (min-width: 1001px) and (max-width: 1300px) {
+  .App > .window {
+    padding-bottom: 60px;
+  }
+  .App > .window > .rightSide {
+    width: 475px;
+  }
+  .App > .window > .rightSide > .infoWrapper {
+    width: 475px;
+    max-height: 570px;
+  }
+  .App > .window > .rightSide > .infoWrapper .amount {
+    font-size: 11rem;
+  }
+}
+
+@media only screen and (min-width: 1001px) and (max-width: 1250px) {
+  .App > .window {
+    padding-left: 80px;
+    padding-right: 75px;
+    gap: 75px;
+  }
+}
+
+@media only screen and (min-width: 1001px) and (max-width: 1200px) {
+  .App > .window {
+    padding-left: 75px;
+    padding-right: 70px;
+    gap: 70px;
+  }
+  .App > .window > .rightSide {
+    width: 470px;
+  }
+  .App > .window > .rightSide > .infoWrapper {
+    width: 470px;
+  }
+}
+
+@media only screen and (min-width: 1001px) and (max-width: 1150px) {
+  .App > .window {
+    padding-left: 70px;
+    padding-right: 65px;
+    gap: 65px;
+  }
+  .App > .window > .rightSide {
+    width: 460px;
+  }
+  .App > .window > .rightSide > .infoWrapper {
+    width: 460px;
+    max-height: 565px;
+  }
+}
+
+@media only screen and (min-width: 1001px) and (max-width: 1120px) {
+  .App > .window {
     padding-left: 65px;
+    padding-right: 60px;
+    gap: 60px;
+  }
+  .App > .window > .rightSide {
+    width: 450px;
+  }
+  .App > .window > .rightSide > .infoWrapper {
+    width: 450px;
+    max-height: 560px;
+  }
+}
+
+@media only screen and (min-width: 1001px) and (max-width: 1080px) {
+  .App > .window {
+    padding-left: 60px;
+    padding-right: 55px;
+    gap: 55px;
+  }
+  .App > .window > .rightSide {
+    width: 440px;
+  }
+  .App > .window > .rightSide > .infoWrapper {
+    width: 440px;
+    max-height: 545px;
+  }
+}
+
+@media only screen and (min-width: 1001px) and (max-width: 1050px) {
+  .App > .window {
+    padding-left: 50px;
+    padding-right: 50px;
+    gap: 50px;
+  }
+  .App > .window > .rightSide {
+    width: 430px;
+  }
+  .App > .window > .rightSide > .infoWrapper {
+    width: 430px;
+    max-height: 535px;
+  }
+}
+
+/*
+    mobile / tablet in portrait
+*/
+@media only screen and (max-width: 1000px) {
+  body {
+    overflow: hidden;
+  }
+  .App {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    overflow: hidden;
+  }
+  .App > .window {
+    max-width: unset;
+    height: 100%;
+    padding: 0;
+    display: block;
+    gap: 0;
+  }
+  .App > .window > .leftSide,
+  .App > .window > .rightSide {
+    padding: 60px 100px calc(7% + 60px) 100px;
+  }
+  .App > .window > .leftSide {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .App > .window > .leftSide .Header .menu {
+    display: block;
+  }
+  .App > .window > .leftSide > .formWrapper > .formContainer > .Form > .inputsContainer {
+    opacity: 1;
+    -webkit-transition: opacity 200ms linear;
+    transition: opacity 200ms linear;
+  }
+  .App > .window > .leftSide > .formWrapper > .formContainer > .Form > .calcButtonWrapper {
+    display: block;
+  }
+  .App > .window > .rightSide {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: absolute;
+    top: 100%;
+  }
+  .App > .window > .rightSide .Header .appNameWrapper {
+    display: none;
+  }
+  .App > .window > .rightSide .Header .menu {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .App > .window > .rightSide .Header .menu .backButton {
+    display: block;
+  }
+  .App > .window > .rightSide > .infoWrapper {
+    width: 100%;
+    max-width: unset;
+    height: 100%;
+    max-height: unset;
+    position: static;
+    transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    opacity: 0;
+    -webkit-transition: opacity 200ms linear;
+    transition: opacity 200ms linear;
+  }
+  .App > .window > .rightSide > .infoWrapper .Info {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  .App > .window > .rightSide > .infoWrapper .Info > .container {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    max-width: unset;
+    margin-top: -60px;
+    padding: 8px 0 15px 0;
+    max-height: 600px;
+    gap: 30px;
+  }
+  .App > .window > .rightSide > .infoWrapper .Info > .container > .titleWrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .App > .window > .rightSide > .infoWrapper .Info > .container > .titleWrapper > .smallText > .your,
+  .App > .window > .rightSide > .infoWrapper .Info > .container > .titleWrapper > .smallText > .ownership {
+    display: block;
+  }
+  .App > .window > .rightSide > .infoWrapper .Info > .container > .titleWrapper > .bigText {
+    gap: 8px;
+  }
+  .App > .window > .rightSide > .infoWrapper .Info > .container > .titleWrapper > .bigText > .costs,
+  .App > .window > .rightSide > .infoWrapper .Info > .container > .titleWrapper > .bigText > .willBe {
+    font-size: 3.4rem;
+    color: #555;
+  }
+  .App > .window > .rightSide > .infoWrapper .Info > .container > .titleWrapper > .bigText > .benefits {
+    font-weight: normal;
+    color: #282;
+  }
+  .App > .window > .rightSide > .infoWrapper .Info > .container > .perDistanceWrapper,
+  .App > .window > .rightSide > .infoWrapper .Info > .container > .perTimeWrapper {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .App > .window > .rightSide > .infoWrapper .Info > .container > .chartWrapper {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    width: 340px;
+  }
+  .App.scrollToInfo > .window > .leftSide > .formWrapper > .formContainer > .Form > .inputsContainer {
+    opacity: 0;
+  }
+  .App.scrollToInfo > .window > .leftSide > .formWrapper > .formContainer > .Form > .calcButtonWrapper > .calcButton {
+    background-image: url(/src/icons/down_fff.svg);
+    background-size: 27px auto;
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  .App.scrollToInfo > .window > .rightSide {
+    top: 0;
+  }
+  .App.scrollToInfo > .window > .rightSide > .infoWrapper {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .App .window > .leftSide,
+  .App .window > .rightSide {
+    padding-top: 55px;
+    padding-left: 80px;
     padding-right: 80px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .App .window > .leftSide,
+  .App .window > .rightSide {
+    padding-top: 45px;
+    padding-left: 65px;
+    padding-right: 65px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .App .window > .leftSide,
+  .App .window > .rightSide {
+    padding-top: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .App .window > .leftSide {
+    gap: 35px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .App .window > .leftSide,
+  .App .window > .rightSide {
+    padding-top: 30px;
+    padding-left: 43px;
+    padding-right: 43px;
+  }
+  .App .window > .leftSide .Header .description,
+  .App .window > .rightSide .Header .description {
+    display: none;
+  }
+}
+
+/* mobile */
+@media only screen and (max-width: 500px) {
+  .App .window > .leftSide,
+  .App .window > .rightSide {
+    padding-top: 28px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .App .window > .leftSide {
+    gap: 25px;
+  }
+  .App .window > .rightSide > .infoWrapper > .Info > .container {
+    width: 100%;
+  }
+  .App .window > .rightSide > .infoWrapper > .Info > .container > .perDistanceWrapper,
+  .App .window > .rightSide > .infoWrapper > .Info > .container > .perTimeWrapper,
+  .App .window > .rightSide > .infoWrapper > .Info > .container > .chartWrapper {
+    -ms-flex-item-align: unset;
+        -ms-grid-row-align: unset;
+        align-self: unset;
+  }
+  .App .window > .rightSide > .infoWrapper > .Info > .container > .perDistanceWrapper {
+    gap: 8px;
+  }
+  .App .window > .rightSide > .infoWrapper > .Info > .container > .perDistanceWrapper .amount {
+    font-size: 11rem;
+    letter-spacing: -2px;
+  }
+  .App .window > .rightSide > .infoWrapper > .Info > .container > .perTimeWrapper {
+    width: 100%;
+    min-width: unset;
+    gap: 10px;
+  }
+  .App .window > .rightSide > .infoWrapper > .Info > .container > .chartWrapper {
+    width: 100%;
+    max-width: 360px;
+    min-width: unset;
+  }
+  .App .window > .rightSide > .infoWrapper > .Info > .container > .chartWrapper .verticalColum {
+    padding-right: 2px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .App .window > .leftSide,
+  .App .window > .rightSide {
+    padding-top: 25px;
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .App .window > .leftSide,
+  .App .window > .rightSide {
+    padding-top: 20px;
+  }
+  .App .window > .rightSide > .infoWrapper > .Info > .container > .titleWrapper > .bigText > .costs,
+  .App .window > .rightSide > .infoWrapper > .Info > .container > .titleWrapper > .bigText > .willBe {
+    font-size: 3.1rem;
+  }
+  .App .window > .rightSide > .infoWrapper > .Info > .container > .perDistanceWrapper > .unit {
+    margin-top: 10px;
+  }
+  .App .window > .rightSide > .infoWrapper > .Info > .container > .perDistanceWrapper > .amount {
+    font-size: 9.5rem;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .App .window > .leftSide,
+  .App .window > .rightSide {
+    padding-top: 16px;
+    padding-left: 29px;
+    padding-right: 29px;
+  }
+  .App .window > .leftSide {
+    gap: 20px;
+  }
+  .App .window > .rightSide > .infoWrapper > .Info > .container > .titleWrapper > .bigText > .costs,
+  .App .window > .rightSide > .infoWrapper > .Info > .container > .titleWrapper > .bigText > .willBe {
+    font-size: 3rem;
+  }
+  .App .window > .rightSide > .infoWrapper > .Info > .container > .perTimeWrapper > .timeCostWrapper > .amountWrapper > .currency,
+  .App .window > .rightSide > .infoWrapper > .Info > .container > .perTimeWrapper > .timeCostWrapper > .amountWrapper > .amount {
+    font-size: 2.1rem;
+  }
+  .App .window .menu .endButtonsContainer {
+    gap: 8px;
+  }
+}
+
+@media only screen and (max-width: 345px) {
+  .App .window > .leftSide,
+  .App .window > .rightSide {
+    padding-top: 14px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .App .window > .rightSide > .infoWrapper > .Info .Chart .columnsWrapper .barWrapper {
+    width: 26px;
+  }
+}
+
+/* height */
+@media only screen and (max-height: 1000px) {
+  .App > .window > .rightSide > .infoWrapper > .Info > .container {
+    margin-top: -20px;
+  }
+}
+
+@media only screen and (max-height: 900px) {
+  .App > .window > .rightSide > .infoWrapper > .Info > .container {
+    margin-top: 0;
+  }
+}
+
+/* exception */
+@media only screen and (max-width: 1000px) and (max-height: 700px) {
+  .App > .window > .rightSide > .infoWrapper > .Info {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding-bottom: 85px;
+  }
+}
+
+@media only screen and (max-width: 1000px) and (orientation: landscape) {
+  .App .window > .leftSide,
+  .App .window > .rightSide {
+    padding-top: 22px;
+  }
+  .App .window > .leftSide {
+    gap: 30px;
+  }
+  .App .window > .leftSide .calcButtonWrapper {
+    left: unset;
+    right: 45px;
+    bottom: 30px;
   }
 }
 /*# sourceMappingURL=App.css.map */

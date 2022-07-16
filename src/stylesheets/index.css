@@ -13,54 +13,54 @@
   text-decoration: underline;
 }
 
-.transBackActeffect {
+.transBackActEffect {
   -webkit-transition: background-color 150ms;
   transition: background-color 150ms;
 }
 
-.transBackActeffect:enabled:active {
+.transBackActEffect:enabled:active {
   background-color: rgba(0, 0, 0, 0.025) !important;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .transBackActeffect:enabled:hover {
+  .transBackActEffect:enabled:hover {
     background-color: rgba(0, 0, 0, 0.025) !important;
   }
-  .transBackActeffect:enabled:focus {
+  .transBackActEffect:enabled:focus {
     background-color: rgba(0, 0, 0, 0.035) !important;
   }
-  .transBackActeffect:enabled:active {
+  .transBackActEffect:enabled:active {
     background-color: rgba(0, 0, 0, 0.045) !important;
   }
 }
 
-.transBackActeffect:disabled {
+.transBackActEffect:disabled {
   opacity: 0.5;
   cursor: default;
 }
 
-.colorBackActeffect {
+.colorBackActEffect {
   -webkit-transition: -webkit-filter 100ms;
   transition: -webkit-filter 100ms;
   transition: filter 100ms;
   transition: filter 100ms, -webkit-filter 100ms;
 }
 
-.colorBackActeffect:active {
+.colorBackActEffect:active {
   -webkit-filter: brightness(95%);
           filter: brightness(95%);
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .colorBackActeffect:hover {
+  .colorBackActEffect:hover {
     -webkit-filter: brightness(95%);
             filter: brightness(95%);
   }
-  .colorBackActeffect:focus {
+  .colorBackActEffect:focus {
     -webkit-filter: brightness(90%);
             filter: brightness(90%);
   }
-  .colorBackActeffect:active {
+  .colorBackActEffect:active {
     -webkit-filter: brightness(85%);
             filter: brightness(85%);
   }
