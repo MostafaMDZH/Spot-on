@@ -7,8 +7,8 @@ export default function Chart({
 }){
 
     //barMaxHeight:
-    let barMaxHeight = 195 //total height
-                     - 23  //columns name
+    let barMaxHeight = 200 //total height
+                     - 25  //column name
                      - 5;  //bar padding
 
     //numberWithCommas:
@@ -27,25 +27,25 @@ export default function Chart({
         return maxValue;
     }
 
-    //calcBarCiel:
-    const calcBarCiel = (maxValue) => {
-        let numMult = maxValue;
+    //calcBarCeil:
+    const calcBarCeil = (maxValue) => {
+        let numMlt = maxValue;
         let k = 0;
-        while(numMult > 100){
-            numMult = numMult / 10;
+        while(numMlt > 100){
+            numMlt = numMlt / 10;
             k++;
         }
-        numMult = (Math.ceil((numMult + 10) / 10) * 10) - 10;
-        let barFirstFloorMul = Math.ceil(numMult);
-        let barCiel = barFirstFloorMul * Math.pow(10, k);
-        return barCiel;
+        numMlt = (Math.ceil((numMlt + 10) / 10) * 10) - 10;
+        let barFirstFloorMul = Math.ceil(numMlt);
+        let barCeil = barFirstFloorMul * Math.pow(10, k);
+        return barCeil;
     }
 
     //addSign:
     const addSign = (number) => {
-        if(number > 1000000)
+        if(number >= 1000000)
             number = (number / 1000000) + 'M';
-        if(number > 1000)
+        if(number >= 1000)
             number = (number / 1000   ) + 'K';
         if(number.length > 4)
             return number.substring(0, 2) + number.substring(4);
@@ -58,21 +58,21 @@ export default function Chart({
             case 3:
                 return addSign(number);
             case 2:
-                return addSign(Math.ceil(((barCiel / 3) * 2) / 100) * 100);
+                return addSign(Math.ceil(((barCeil / 3) * 2) / 100) * 100);
             case 1:
-                return addSign(Math.ceil(((barCiel / 3) * 1) / 100) * 100);
+                return addSign(Math.ceil(((barCeil / 3) * 1) / 100) * 100);
         }
     }
 
     //createColumns:
-    const createColumns = (data, maxValue, barCiel) => {
+    const createColumns = (data, maxValue, barCeil) => {
         let columns = [];
         let isT;
         Object.keys(data).map((key) => {
             let val = data[key].value;
             if(val === maxValue && val > 0) isT = true;
             else isT = false;
-            let hei = (val / barCiel) * barMaxHeight;
+            let hei = (val / barCeil) * barMaxHeight;
             hei = Math.round(hei);
             if(hei < 0) hei = 0;
             columns.push({...data[key], height: hei, isTallest: isT});
@@ -82,20 +82,20 @@ export default function Chart({
     
     //states:
     let maxValue = getMaxValue(data);
-    let barCiel  = calcBarCiel(maxValue);
-    let [bar3thFloor , setBar3thFloor ] = useState(createLabel(barCiel, 3));
-    let [bar2thFloor , setBar2thFloor ] = useState(createLabel(barCiel, 2));
-    let [bar1stFloor , setBar1stFloor ] = useState(createLabel(barCiel, 1));
-    let [columns     , setColumns     ] = useState(createColumns(data, maxValue, barCiel));
+    let barCeil  = calcBarCeil(maxValue);
+    let [bar3thFloor , setBar3thFloor ] = useState(createLabel(barCeil, 3));
+    let [bar2thFloor , setBar2thFloor ] = useState(createLabel(barCeil, 2));
+    let [bar1stFloor , setBar1stFloor ] = useState(createLabel(barCeil, 1));
+    let [columns     , setColumns     ] = useState(createColumns(data, maxValue, barCeil));
 
     //state change:
-    useEffect(()=>{
+    useEffect(() => {
         let maxValue = getMaxValue(data);
-        let barCiel  = calcBarCiel(maxValue);
-        setBar3thFloor(createLabel(barCiel, 3));
-        setBar2thFloor(createLabel(barCiel, 2));
-        setBar1stFloor(createLabel(barCiel, 1));
-        setColumns(createColumns(data, maxValue, barCiel));
+        let barCeil  = calcBarCeil(maxValue);
+        setBar3thFloor(createLabel(barCeil, 3));
+        setBar2thFloor(createLabel(barCeil, 2));
+        setBar1stFloor(createLabel(barCeil, 1));
+        setColumns(createColumns(data, maxValue, barCeil));
     },[data]);
 
     //return:
@@ -107,7 +107,7 @@ export default function Chart({
                 <a title={bar1stFloor}>{bar1stFloor}</a>
                 <a>0</a>
             </div>
-            <div className='columsWrapper'>{
+            <div className='columnsWrapper'>{
                 Object.keys(columns).map((key) => {
                     return (
                         <div className='barWrapper' key={key}>
