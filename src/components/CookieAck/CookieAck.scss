@@ -11,6 +11,7 @@
     opacity: 0;
     visibility: hidden;
     transition: visibility 0.2s ease, opacity 0.2s ease;
+    z-index: 10;
     > .window{
         width: 90%;
         max-width: 390px;
@@ -104,46 +105,5 @@
     opacity: 1;
     > .window{
         bottom: 0;
-    }
-}
-
-//responsive design:
-@media only screen and (max-width: 1200px){
-    .Settings{
-        > .window{
-            > .containerwrapper{
-                left: 50%;
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 750px){
-    .Settings{
-        > .window{
-            height: 80%;
-            max-height: unset;
-            > .closeButton{
-                box-shadow: 1px 1px 8px #ddd;
-                z-index: 10;
-                top: unset;
-                right: 20px;
-                bottom: 20px;
-            }
-            > .containerwrapper{
-                max-height: unset;
-                padding: 0 25px 40px 25px;
-                left: 0;
-                top: 25px;
-                @include transform(0, 0);
-                flex-direction: column;
-                justify-content: start;
-                gap: 25px;
-                > .container{
-                    width: 100%;
-                    max-width: unset;
-                }
-            }
-        }
     }
 }

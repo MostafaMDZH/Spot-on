@@ -3,54 +3,54 @@
   text-decoration: underline;
 }
 
-.transBackActeffect {
+.transBackActEffect {
   -webkit-transition: background-color 150ms;
   transition: background-color 150ms;
 }
 
-.transBackActeffect:enabled:active {
+.transBackActEffect:enabled:active {
   background-color: rgba(0, 0, 0, 0.025) !important;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .transBackActeffect:enabled:hover {
+  .transBackActEffect:enabled:hover {
     background-color: rgba(0, 0, 0, 0.025) !important;
   }
-  .transBackActeffect:enabled:focus {
+  .transBackActEffect:enabled:focus {
     background-color: rgba(0, 0, 0, 0.035) !important;
   }
-  .transBackActeffect:enabled:active {
+  .transBackActEffect:enabled:active {
     background-color: rgba(0, 0, 0, 0.045) !important;
   }
 }
 
-.transBackActeffect:disabled {
+.transBackActEffect:disabled {
   opacity: 0.5;
   cursor: default;
 }
 
-.colorBackActeffect {
+.colorBackActEffect {
   -webkit-transition: -webkit-filter 100ms;
   transition: -webkit-filter 100ms;
   transition: filter 100ms;
   transition: filter 100ms, -webkit-filter 100ms;
 }
 
-.colorBackActeffect:active {
+.colorBackActEffect:active {
   -webkit-filter: brightness(95%);
           filter: brightness(95%);
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .colorBackActeffect:hover {
+  .colorBackActEffect:hover {
     -webkit-filter: brightness(95%);
             filter: brightness(95%);
   }
-  .colorBackActeffect:focus {
+  .colorBackActEffect:focus {
     -webkit-filter: brightness(90%);
             filter: brightness(90%);
   }
-  .colorBackActeffect:active {
+  .colorBackActEffect:active {
     -webkit-filter: brightness(85%);
             filter: brightness(85%);
   }
@@ -210,6 +210,7 @@
   visibility: hidden;
   -webkit-transition: visibility 0.2s ease, opacity 0.2s ease;
   transition: visibility 0.2s ease, opacity 0.2s ease;
+  z-index: 10;
 }
 
 .CookieAck > .window {
@@ -359,48 +360,5 @@
 
 .CookieAck.visible > .window {
   bottom: 0;
-}
-
-@media only screen and (max-width: 1200px) {
-  .Settings > .window > .containerwrapper {
-    left: 50%;
-  }
-}
-
-@media only screen and (max-width: 750px) {
-  .Settings > .window {
-    height: 80%;
-    max-height: unset;
-  }
-  .Settings > .window > .closeButton {
-    -webkit-box-shadow: 1px 1px 8px #ddd;
-            box-shadow: 1px 1px 8px #ddd;
-    z-index: 10;
-    top: unset;
-    right: 20px;
-    bottom: 20px;
-  }
-  .Settings > .window > .containerwrapper {
-    max-height: unset;
-    padding: 0 25px 40px 25px;
-    left: 0;
-    top: 25px;
-    transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    -moz-transform: translate(0, 0);
-    -webkit-transform: translate(0, 0);
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: start;
-    gap: 25px;
-  }
-  .Settings > .window > .containerwrapper > .container {
-    width: 100%;
-    max-width: unset;
-  }
 }
 /*# sourceMappingURL=CookieAck.css.map */
