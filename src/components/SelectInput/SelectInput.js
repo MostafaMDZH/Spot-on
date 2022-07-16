@@ -15,7 +15,7 @@ export default function SelectInput({
     if(name === undefined)
         name = title;
 
-    //onChage:
+    //onChange:
     const onSelect = (val) => {
         if(val.indexOf(',') >= 0)
             val = val.split(',');
