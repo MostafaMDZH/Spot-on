@@ -11,6 +11,7 @@
     opacity: 0;
     visibility: hidden;
     transition: visibility 0.2s ease, opacity 0.2s ease;
+    z-index: 10;
     > .window{
         width: 100%;
         max-width: 1400px;
@@ -28,11 +29,11 @@
             position: absolute;
             top: 15px;
             right: 15px;
-            background: transparent url(/src/icons/down.svg) no-repeat center / 20px auto;
+            background: transparent url(/src/icons/down_111.svg) no-repeat center / 22px auto;
             @include borderRadius(50%);
-            @extend .transBackActeffect;
+            @extend .transBackActEffect;
         }
-        > .containerwrapper{
+        > .containerWrapper{
             width: 100%;
             max-width: 940px;
             height: 100%;
@@ -119,7 +120,7 @@
 @media only screen and (max-width: 1200px){
     .Settings{
         > .window{
-            > .containerwrapper{
+            > .containerWrapper{
                 left: 50%;
             }
         }
@@ -130,15 +131,14 @@
     .Settings{
         > .window{
             height: 80%;
-            max-height: unset;
+            max-height: 630px;
             > .closeButton{
-                box-shadow: 1px 1px 8px #ddd;
-                z-index: 10;
-                top: unset;
+                top: 20px;
                 right: 20px;
-                bottom: 20px;
+                background-color: white;
+                z-index: 10;
             }
-            > .containerwrapper{
+            > .containerWrapper{
                 max-height: unset;
                 padding: 0 25px 40px 25px;
                 left: 0;

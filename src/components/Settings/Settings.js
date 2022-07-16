@@ -25,7 +25,7 @@ export default function Settings({
         <div className={'Settings' + (isVisible === true ? ' visible': '')} onClick={onClose}>
             <div className='window' onClick={(e)=>e.stopPropagation()}>
                 <input type='button' className='closeButton' onClick={onClose}/>
-                <div className='containerwrapper'>
+                <div className='containerWrapper'>
                     <div className='container settings'>
                         <a className='title'>Settings</a>
                         <div className='section'>
@@ -55,7 +55,7 @@ export default function Settings({
                             />
                             <SelectInput
                                 name          = {'Fuel Measurement'}
-                                title         = {'Fuel Consubtion'}
+                                title         = {'Fuel Consumption'}
                                 value         = {fuelMeasurement.join(',')}
                                 options       = {[
                                     [['L/100Km', 'L'], 'L/100Km'],
