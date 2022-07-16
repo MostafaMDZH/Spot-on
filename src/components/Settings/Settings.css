@@ -3,54 +3,54 @@
   text-decoration: underline;
 }
 
-.transBackActeffect, .Settings > .window > .closeButton {
+.transBackActEffect, .Settings > .window > .closeButton {
   -webkit-transition: background-color 150ms;
   transition: background-color 150ms;
 }
 
-.transBackActeffect:enabled:active, .Settings > .window > .closeButton:enabled:active {
+.transBackActEffect:enabled:active, .Settings > .window > .closeButton:enabled:active {
   background-color: rgba(0, 0, 0, 0.025) !important;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .transBackActeffect:enabled:hover, .Settings > .window > .closeButton:enabled:hover {
+  .transBackActEffect:enabled:hover, .Settings > .window > .closeButton:enabled:hover {
     background-color: rgba(0, 0, 0, 0.025) !important;
   }
-  .transBackActeffect:enabled:focus, .Settings > .window > .closeButton:enabled:focus {
+  .transBackActEffect:enabled:focus, .Settings > .window > .closeButton:enabled:focus {
     background-color: rgba(0, 0, 0, 0.035) !important;
   }
-  .transBackActeffect:enabled:active, .Settings > .window > .closeButton:enabled:active {
+  .transBackActEffect:enabled:active, .Settings > .window > .closeButton:enabled:active {
     background-color: rgba(0, 0, 0, 0.045) !important;
   }
 }
 
-.transBackActeffect:disabled, .Settings > .window > .closeButton:disabled {
+.transBackActEffect:disabled, .Settings > .window > .closeButton:disabled {
   opacity: 0.5;
   cursor: default;
 }
 
-.colorBackActeffect {
+.colorBackActEffect {
   -webkit-transition: -webkit-filter 100ms;
   transition: -webkit-filter 100ms;
   transition: filter 100ms;
   transition: filter 100ms, -webkit-filter 100ms;
 }
 
-.colorBackActeffect:active {
+.colorBackActEffect:active {
   -webkit-filter: brightness(95%);
           filter: brightness(95%);
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .colorBackActeffect:hover {
+  .colorBackActEffect:hover {
     -webkit-filter: brightness(95%);
             filter: brightness(95%);
   }
-  .colorBackActeffect:focus {
+  .colorBackActEffect:focus {
     -webkit-filter: brightness(90%);
             filter: brightness(90%);
   }
-  .colorBackActeffect:active {
+  .colorBackActEffect:active {
     -webkit-filter: brightness(85%);
             filter: brightness(85%);
   }
@@ -71,7 +71,7 @@
   user-select: none;
 }
 
-.selectableText, .Settings > .window > .containerwrapper > .about * {
+.selectableText, .Settings > .window > .containerWrapper > .about * {
   -webkit-touch-callout: default;
   -webkit-user-select: text;
   -moz-user-select: text;
@@ -210,6 +210,7 @@
   visibility: hidden;
   -webkit-transition: visibility 0.2s ease, opacity 0.2s ease;
   transition: visibility 0.2s ease, opacity 0.2s ease;
+  z-index: 10;
 }
 
 .Settings > .window {
@@ -242,14 +243,14 @@
   position: absolute;
   top: 15px;
   right: 15px;
-  background: transparent url(/src/icons/down.svg) no-repeat center/20px auto;
+  background: transparent url(/src/icons/down_111.svg) no-repeat center/22px auto;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
 }
 
-.Settings > .window > .containerwrapper {
+.Settings > .window > .containerWrapper {
   width: 100%;
   max-width: 940px;
   height: 100%;
@@ -276,12 +277,12 @@
   gap: 50px;
 }
 
-.Settings > .window > .containerwrapper > .container {
+.Settings > .window > .containerWrapper > .container {
   width: 50%;
   max-width: 360px;
 }
 
-.Settings > .window > .containerwrapper > .container > .title {
+.Settings > .window > .containerWrapper > .container > .title {
   display: block;
   margin-bottom: 27px;
   font-size: 2.8rem;
@@ -289,50 +290,50 @@
   color: #222;
 }
 
-.Settings > .window > .containerwrapper > .settings > .section {
+.Settings > .window > .containerWrapper > .settings > .section {
   margin-top: 18px;
   margin-bottom: 4px;
 }
 
-.Settings > .window > .containerwrapper > .settings > .section > .name {
+.Settings > .window > .containerWrapper > .settings > .section > .name {
   font-size: 1.2rem;
   color: #aaa;
 }
 
-.Settings > .window > .containerwrapper > .about > #prices {
+.Settings > .window > .containerWrapper > .about > #prices {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-.Settings > .window > .containerwrapper > .about > .madeBy {
+.Settings > .window > .containerWrapper > .about > .madeBy {
   margin-top: 16px;
   font-size: 1.6rem;
   font-weight: normal;
 }
 
-.Settings > .window > .containerwrapper > .about > .version {
+.Settings > .window > .containerWrapper > .about > .version {
   font-size: 1.4rem;
 }
 
-.Settings > .window > .containerwrapper > .about > .sectionTitle {
+.Settings > .window > .containerWrapper > .about > .sectionTitle {
   margin: 27px 0 0 0;
   display: block;
   font-size: 1.2rem;
   color: #aaa;
 }
 
-.Settings > .window > .containerwrapper > .about > p {
+.Settings > .window > .containerWrapper > .about > p {
   font-size: 1.4rem;
 }
 
-.Settings > .window > .containerwrapper > .about .link {
+.Settings > .window > .containerWrapper > .about .link {
   font-style: italic;
   color: #027;
 }
 
-.Settings > .window > .containerwrapper > .about .link:hover,
-.Settings > .window > .containerwrapper > .about .link:focus {
+.Settings > .window > .containerWrapper > .about .link:hover,
+.Settings > .window > .containerWrapper > .about .link:focus {
   text-decoration: underline;
   cursor: pointer;
 }
@@ -347,7 +348,7 @@
 }
 
 @media only screen and (max-width: 1200px) {
-  .Settings > .window > .containerwrapper {
+  .Settings > .window > .containerWrapper {
     left: 50%;
   }
 }
@@ -355,17 +356,15 @@
 @media only screen and (max-width: 750px) {
   .Settings > .window {
     height: 80%;
-    max-height: unset;
+    max-height: 630px;
   }
   .Settings > .window > .closeButton {
-    -webkit-box-shadow: 1px 1px 8px #ddd;
-            box-shadow: 1px 1px 8px #ddd;
-    z-index: 10;
-    top: unset;
+    top: 20px;
     right: 20px;
-    bottom: 20px;
+    background-color: white;
+    z-index: 10;
   }
-  .Settings > .window > .containerwrapper {
+  .Settings > .window > .containerWrapper {
     max-height: unset;
     padding: 0 25px 40px 25px;
     left: 0;
@@ -383,7 +382,7 @@
             justify-content: start;
     gap: 25px;
   }
-  .Settings > .window > .containerwrapper > .container {
+  .Settings > .window > .containerWrapper > .container {
     width: 100%;
     max-width: unset;
   }

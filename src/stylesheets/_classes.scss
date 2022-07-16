@@ -1,6 +1,6 @@
 $buttonLightHover: rgba(0, 0, 0, 0.025);
-$buttonLightFocuse: rgba(0, 0, 0, 0.035);
-$buttonLightActived: rgba(0, 0, 0, 0.045);
+$buttonLightFocus: rgba(0, 0, 0, 0.035);
+$buttonLightActivated: rgba(0, 0, 0, 0.045);
 
 //add underline on urls:
 .hrefUnderline:hover,
@@ -9,43 +9,43 @@ $buttonLightActived: rgba(0, 0, 0, 0.045);
 }
 
 //change transparent background on events:
-.transBackActeffect{
+.transBackActEffect{
     transition: background-color 150ms;
 }
-.transBackActeffect:enabled:active{
+.transBackActEffect:enabled:active{
     background-color: $buttonLightHover !important;
 }
 @media (hover: hover) and (pointer: fine){
-    .transBackActeffect:enabled:hover{
+    .transBackActEffect:enabled:hover{
         background-color: $buttonLightHover !important;
     }
-    .transBackActeffect:enabled:focus{
-        background-color: $buttonLightFocuse !important;
+    .transBackActEffect:enabled:focus{
+        background-color: $buttonLightFocus !important;
     }
-    .transBackActeffect:enabled:active{
-        background-color: $buttonLightActived !important;
+    .transBackActEffect:enabled:active{
+        background-color: $buttonLightActivated !important;
     }
 }
-.transBackActeffect:disabled{
+.transBackActEffect:disabled{
      opacity: 0.5;
      cursor: default;
 }
 
 //change colored background on events:
-.colorBackActeffect{
+.colorBackActEffect{
     transition: filter 100ms;
 }
-.colorBackActeffect:active{
+.colorBackActEffect:active{
     filter: brightness(95%);
 }
 @media (hover: hover) and (pointer: fine){
-    .colorBackActeffect:hover{
+    .colorBackActEffect:hover{
         filter: brightness(95%);
     }
-    .colorBackActeffect:focus{
+    .colorBackActEffect:focus{
         filter: brightness(90%);
     }
-    .colorBackActeffect:active{
+    .colorBackActEffect:active{
         filter: brightness(85%);
     }
 }
@@ -82,7 +82,6 @@ $buttonLightActived: rgba(0, 0, 0, 0.045);
 //custom scrollbar:
 .darkThinScrollbar::-webkit-scrollbar{
     width: 7px;
-    // height: 7px;
 }
 .darkThinScrollbar::-webkit-scrollbar-track{
     background: transparent;

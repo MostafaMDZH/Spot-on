@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Cookies   from 'universal-cookie';
 import DV        from './DefaultValues'
 import Header    from './components/Header/Header';
@@ -8,16 +8,16 @@ import Settings  from './components/Settings/Settings';
 import CookieAck from './components/CookieAck/CookieAck';
 import './stylesheets/App.css';
 
-
 export default function App(){
 
-    //setDefaultcookies:
+    //setDefaultCookies:
     const setDefaultCookies = () => {
         //settings:
         cookies.set('Currency'             , [DV.CURRENCY.name,         DV.CURRENCY.symbol        ] , { path: '/' });
         cookies.set('Distance'             , [DV.DISTANCE.name,         DV.DISTANCE.symbol        ] , { path: '/' });
         cookies.set('Fuel Measurement'     , [DV.FUEL_MEASUREMENT.name, DV.FUEL_MEASUREMENT.symbol] , { path: '/' });
         cookies.set('Fuel Cost'            , DV.FUEL_COST                                           , { path: '/' });
+        cookies.set('Is Dark Mode'         , DV.IS_DARK_MODE                                        , { path: '/' });
         //form:
         cookies.set('Type of Ownership'    , DV.TYPE_OF_OWNERSHIP                                   , { path: '/' });
         cookies.set('Purchase Price'       , DV.PURCHASE_PRICE                                      , { path: '/' });
@@ -28,7 +28,7 @@ export default function App(){
         cookies.set('Warranty'             , DV.WARRANTY                                            , { path: '/' });
         cookies.set('Maintenance'          , DV.MAINTENANCE                                         , { path: '/' });
         cookies.set('Mileage'              , DV.MILEAGE                                             , { path: '/' });
-        cookies.set('Fuel Consubtion'      , DV.FUEL_CONSUBTION                                     , { path: '/' });
+        cookies.set('Fuel CONSUMPTION'     , DV.FUEL_CONSUMPTION                                    , { path: '/' });
         cookies.set('Service Average Cost' , DV.SERVICE_AVERAGE_COST                                , { path: '/' });
         cookies.set('Service Mileage'      , DV.SERVICE_MILEAGE                                     , { path: '/' });
         cookies.set('Asking Price'         , DV.ASKING_PRICE                                        , { path: '/' });
@@ -64,29 +64,35 @@ export default function App(){
     
     //states:
     const cookies = new Cookies();
-    const [isCookieAckVisible , setCookieAckVisibility ] = useState(false                                                   );
-    const [isSettingsVisible  , setSettingsVisibility  ] = useState(false                                                   );
-    const [currency           , setCurrency            ] = useState(cookies.get('Currency'         ) || [DV.CURRENCY.name, DV.CURRENCY.symbol]);
-    const [distance           , setDistance            ] = useState(cookies.get('Distance'         ) || [DV.DISTANCE.name, DV.DISTANCE.symbol]);
-    const [fuelMeasurement    , setFuelMeasurement     ] = useState(cookies.get('Fuel Measurement' ) || [DV.FUEL_MEASUREMENT.name, DV.FUEL_MEASUREMENT.symbol]);
-    const [fuelCost           , setFuelCost            ] = useState(cookies.get('Fuel Cost'        ) || DV.FUEL_COST        );
-    const [data               , setData                ] = useState(null);
+    const [doScrollToInfo     , setScrollToInfo       ] = useState(false                                             );
+    const [isCookieAckVisible , setCookieAckVisibility] = useState(false                                             );
+    const [isSettingsVisible  , setSettingsVisibility ] = useState(false                                             );
+    const [isDarkMode         , setDarkMode           ] = useState(cookies.get('Is Dark Mode'    ) || DV.IS_DARK_MODE);
+    const [currency           , setCurrency           ] = useState(cookies.get('Currency'        ) || [DV.CURRENCY.name, DV.CURRENCY.symbol                ]);
+    const [distance           , setDistance           ] = useState(cookies.get('Distance'        ) || [DV.DISTANCE.name, DV.DISTANCE.symbol                ]);
+    const [fuelMeasurement    , setFuelMeasurement    ] = useState(cookies.get('Fuel Measurement') || [DV.FUEL_MEASUREMENT.name, DV.FUEL_MEASUREMENT.symbol]);
+    const [fuelCost           , setFuelCost           ] = useState(cookies.get('Fuel Cost'       ) || DV.FUEL_COST   );
+    const [data               , setData               ] = useState(null);
 
-    //state listenner:
+    //state listener:
     useEffect(() => {
-        if(cookies.get('Purchase Price') === undefined)
+        if(cookies.get('Asking Price') == undefined)
             setTimeout(() => {
                 setCookieAckVisibility(true);
-            }, 2000);
+            }, 1000);
     }, [isCookieAckVisible]);
 
     //render:
     return (
-        <div className={'App' + (isTouchScreenDevice() ? '' : ' notTouchScreen')}>
+        <div className={'App' + (isTouchScreenDevice() ? '' : ' notTouchScreen') + (doScrollToInfo ? ' scrollToInfo' : '')}>
             <div className='window'>
-                <div className='main'>
+                <div className='leftSide'>
                     <div className='headerWrapper'>
-                        <Header onMenuClick = {()=>setSettingsVisibility(true)}/>
+                        <Header
+                            isDarkMode   = {isDarkMode}
+                            onThemeClick = {(isDarkMode)=>setDarkMode(isDarkMode)}
+                            onMenuClick  = {()=>setSettingsVisibility(true)}
+                        />
                     </div>
                     <div className='formWrapper'>
                         <div className='formContainer'>
@@ -96,16 +102,25 @@ export default function App(){
                                 fuelMeasurement = {fuelMeasurement}
                                 fuelCost        = {fuelCost}
                                 onCalculate     = {(data)=>setData(data)}
+                                onScrollToInfo  = {()=>setScrollToInfo(!doScrollToInfo)}
                             />
                         </div>
                     </div>
                 </div>
-                <div className='infoWrapper'>
-                    <div className='infoContainer'>
+                <div className='rightSide'>
+                    <div className='headerWrapper'>
+                        <Header
+                            isDarkMode   = {isDarkMode}
+                            onThemeClick = {(isDarkMode)=>setDarkMode(isDarkMode)}
+                            onMenuClick  = {()=>setSettingsVisibility(true)}
+                            onBackClick  = {()=>setScrollToInfo(false)}
+                        />
+                    </div>
+                    <div className='infoWrapper'>
                         <Info
-                            currency        = {currency}
-                            distance        = {distance}
-                            data            = {data}
+                            currency = {currency}
+                            distance = {distance}
+                            data     = {data}
                         />
                     </div>
                 </div>

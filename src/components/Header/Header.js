@@ -1,20 +1,55 @@
+import Cookies from 'universal-cookie';
 import './Header.css';
 
 export default function Header({
-        onMenuClick
-    }){
+    isDarkMode,
+    onThemeClick,
+    onMenuClick,
+    onBackClick
+}){
+
+    //init:
+    const cookies = new Cookies();
+
+    //handleThemeClick:
+    const handleThemeClick = () => {
+        if(isDarkMode === 'No'){
+            onThemeClick('Yes');
+            cookies.set('Is Dark Mode', 'Yes', { path: '/' });
+        }else{
+            onThemeClick('No');
+            cookies.set('Is Dark Mode', 'No', { path: '/' });
+        }
+    }
 
     //return:
     return (
-        <header className="Header">
-            <div className="logoWrapper">
-                <a className="logo" href="/"></a>
-                <div className="titleWrapper">
-                    <h1 className="title"><a href="/">True Cost</a></h1>
-                    <h2 className="description">Calulate the acctual ownership cost of your car</h2>
+        <header className='Header'>
+            <a className='appNameWrapper' href='/'>
+                <h1 className='name'>spot-on</h1>
+                <h2 className='description'>The car ownership cost calculator</h2>
+            </a>
+            <menu className='menu'>
+                <input
+                    type='button'
+                    className='backButton'
+                    onClick={onBackClick}
+                />
+                <div className='endButtonsContainer'>
+                    <input
+                        type='button'
+                        className={isDarkMode === 'Yes' ? 'lightButton' : 'darkButton'}
+                        title= {isDarkMode === 'Yes' ? 'Switch to light theme' : 'Switch to dark theme'}
+                        onClick={()=>handleThemeClick()}
+                    />
+                    <input
+                        type='button'
+                        className='menuButton'
+                        title='Menu'
+                        onClick={onMenuClick}
+                    />
                 </div>
-            </div>
-            <input type="button" className="menuButton" onClick={onMenuClick}/>
+            </menu>
         </header>
     )
 

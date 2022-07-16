@@ -1,4 +1,5 @@
-@import "mixin";
+@import 'mixin';
+@import 'classes';
 
 .App{
     width: 100%;
@@ -9,178 +10,54 @@
     overflow: auto;
     > .window{
         width: 100%;
-        max-width: 1650px;
+        max-width: 1500px;
         height: fit-content;
-        padding: 60px 105px 40px 115px;
+        padding: 60px 85px 90px 90px;
         display: flex;
-        gap: 110px;
-        > .main{
-            width: 100%;
+        justify-content: space-between;
+        gap: 100px;
+        > .leftSide{
             flex: 1;
             display: flex;
             flex-direction: column;
-            > .headerWrapper{
-                width: calc(100% + 110px + 600px);
-            }
-            > .formWrapper{
-                flex: 1;
-                margin-top: 30px;
+            gap: 45px;
+            transition:
+                200ms width 150ms ease-in-out,
+                200ms height 150ms ease-in-out,
+                200ms padding 150ms ease-in-out;
+            .Header{
+                .menu{
+                    display: none;
+                }
             }
         }
-        > .infoWrapper{
-            width: 600px;
+        > .rightSide{
+            width: 570px;
+            background-color: white;
             position: relative;
-            > .infoContainer{
-                width: 600px;
-                padding: 80px 125px 80px 100px;
-                @include borderRadius(20px);
-                box-shadow: 3px 10px 35px #DDD;
+            transition:
+                200ms width 150ms ease-in-out,
+                200ms height 150ms ease-in-out,
+                200ms padding 150ms ease-in-out;
+            .Header{
+                justify-content: end;
+                .appNameWrapper{
+                    display: none;
+                }
+            }
+            > .infoWrapper{
+                width: 570px;
+                height: calc(100% - 40px);
+                max-height: 680px;
                 position: fixed;
                 top: 53%;
                 @include transform(0, -50%);
             }
         }
     }
+
 }
 
-//height:
-@media only screen and (max-height: 950px){
-    .App{
-        > .window{
-            > .infoWrapper{
-                > .infoContainer{
-                    top: 55%;
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (max-height: 850px){
-    .App{
-        > .window{
-            > .main{
-                > .headerWrapper{
-                    width: calc(100% + 12px);
-                }
-            }
-            > .infoWrapper{
-                > .infoContainer{
-                    top: 50%;
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (max-height: 780px){
-    .App{
-        > .window{
-            > .main{
-                > .formWrapper{
-                    margin-top: 25px;
-                }
-            }
-            > .infoWrapper{
-                > .infoContainer{
-                    padding-top: 60px;
-                    padding-bottom: 60px;
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (max-height: 710px){
-    .App{
-        > .window{
-            padding-top: 50px;
-            > .main{
-                > .formWrapper{
-                    margin-top: 20px;
-                }
-            }
-            > .infoWrapper{
-                > .infoContainer{
-                    padding-top: 40px;
-                    padding-bottom: 40px;
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (max-height: 680px){
-    .App{
-        > .window{
-            padding-top: 40px;
-        }
-    }
-}
-
-//width:
-@media only screen and (max-width: 1600px){
-    .App{
-        > .window{
-            > .infoWrapper{
-                width: 560px;
-                > .infoContainer{
-                    width: 560px;
-                    padding-left: 80px;
-                    padding-right: 100px;
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 1500px){
-    .App{
-        > .window{
-            > .infoWrapper{
-                width: 540px;
-                > .infoContainer{
-                    width: 540px;
-                    padding-left: 70px;
-                    padding-right: 90px;
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 1430px){
-    .App{
-        > .window{
-            padding-left: 100px;
-            padding-right: 85px;
-            gap: 90px;
-            > .infoWrapper{
-                width: 520px;
-                > .infoContainer{
-                    width: 520px;
-                    padding-left: 65px;
-                    padding-right: 85px;
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 1360px){
-    .App{
-        > .window{
-            padding-left: 90px;
-            padding-right: 75px;
-            gap: 80px;
-            > .infoWrapper{
-                width: 505px;
-                > .infoContainer{
-                    width: 505px;
-                    padding-left: 65px;
-                    padding-right: 80px;
-                }
-            }
-        }
-    }
-}
+//responsive design:
+@import 'App.desktop';
+@import 'App.mobile';

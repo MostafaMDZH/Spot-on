@@ -2,46 +2,71 @@
 @import "../../stylesheets/mixin";
 
 .Header{
+    height: 58px;
     display: flex;
     justify-content: space-between;
-    > .logoWrapper{
+    align-items: center;
+    > .appNameWrapper{
+        padding-right: 8px;
         display: flex;
-        > .logo{
-            width: 38px;
-            height: 38px;
-            padding-right: 20px;
-            background: #027 url(/src/icons/logo.svg) no-repeat center / 25px auto;
-            @include borderRadius(6px);
+        align-items: center;
+        > .name{
+            padding-bottom: 8px;
+            font-size: 4.4rem;
+            font-weight: normal;
+            color: #027;
+            margin: 0;
         }
-        > .titleWrapper{
-            > .title{
-                margin: 0;
-                font-size: 3.2rem;
-                font-weight: normal;
-                > a{
-                    display: inline-block;
-                    height: 38px;;
-                    padding-left: 16px;
-                    padding-right: 10px;
-                    line-height: 38px;;
-                    color: #027;
-                }
-            }
-            > .description{
-                padding-left: 16px;
-                font-size: 1.6rem;
-                font-weight: normal;
-                color: #999;
-                margin: 5px 0 0 0;
-            }
+        > .description{
+            width: 130px;
+            padding: 0 0 0 12px;
+            border-left: solid 2px #cacaca;
+            font-size: 1.4rem;
+            line-height: 20px;
+            font-weight: normal;
+            color: #999;
+            margin: 0 0 0 14px;
         }
     }
-    > .menuButton{
-        width: 50px;
-        height: 50px;
-        margin-right: -8px;
-        @include borderRadius(50%);
-        background: transparent url(/src/icons/menu.svg) no-repeat center / 27px auto;
-        @extend .transBackActeffect;
+    > .menu{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: end;
+        flex: 0;
+        input{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: transparent;
+            background-repeat: no-repeat;
+            background-position: center;
+            @extend .transBackActEffect;
+        }
+        > .backButton{
+            margin-left: -17px;
+            background-image: url(/src/icons/left_111.svg);
+            background-size: 27px auto;
+            display: none;
+        }
+        > .endButtonsContainer{
+            display: flex;
+            gap: 15px;
+            > .lightButton{
+                background-image: url(/src/icons/lightMode_fff.svg);
+                background-size: 24px auto;
+                display: none;
+            }
+            > .darkButton{
+                background-image: url(/src/icons/moon_111.svg );
+                background-size: 24px auto;
+                display: none;
+            }
+            > .menuButton{
+                margin-right: -13px;
+                background-image: url(/src/icons/menu_222.svg);
+                background-size: 28px;
+            }
+        }
     }
 }
