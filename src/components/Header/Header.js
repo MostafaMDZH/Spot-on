@@ -38,7 +38,7 @@ export default function Header({
                 <div className='endButtonsContainer'>
                     <input
                         type='button'
-                        className={isDarkMode === 'Yes' ? 'lightButton' : 'darkButton'}
+                        className='themeButton'
                         title= {isDarkMode === 'Yes' ? 'Switch to light theme' : 'Switch to dark theme'}
                         onClick={()=>handleThemeClick()}
                     />
