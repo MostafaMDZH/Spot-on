@@ -1,5 +1,4 @@
 @import "../../stylesheets/classes";
-@import "../../stylesheets/mixin";
 
 .SelectInput{
     width: 50%;
@@ -17,7 +16,7 @@
         gap: 10px;
         > .selectWrapper{
             background-color: #f5f5f5;
-            @include borderRadius(7px);
+            border-radius: 7px;
             > .select{
                 box-sizing: content-box;
                 width: auto;
@@ -30,8 +29,8 @@
                 text-align: center;
                 font-size: 2.8rem;
                 color: #027;
-                @include borderRadius(7px);
-                @extend .darkUltraThinScrollbar;
+                border-radius: 7px;
+                @extend .ultraThinScrollbar_light;
             }
         }
         > .comment{
@@ -71,7 +70,7 @@
                 border: none;
                 padding-right: 0;
                 padding-bottom: 2px;
-                font-size: 1.6rem;
+                font-size: 1.6rem !important;
             }
         }
         > .comment{
@@ -113,6 +112,58 @@
         }
         > .comment{
             display: none;
+        }
+    }
+}
+
+//dark mode:
+.darkMode{
+    .SelectInput{
+        > .title{
+            color: #afafaf;
+        }
+        > div{
+            > .selectWrapper{
+                background-color: #072037;
+                > .select{
+                    color: #efefef;
+                    background-color: #072037;
+                    @extend .ultraThinScrollbar_dark;
+                }
+            }
+        }
+    }
+    //in range input:
+    .SelectInput.inline{
+        > .title{
+            color: #afafaf;
+        }
+        > div{
+            > .selectWrapper{
+                background-color: #000b23;
+                > .select{
+                    color: #ddd;
+                    background-color: #000b23;
+                }
+            }
+            > .comment{
+                color: #afafaf;
+            }
+        }
+    }
+    //in settings:
+    .SelectInput.settings{
+        > .title{
+            color: #ddd;
+        }
+        > div{
+            > .selectWrapper{
+                background-color: #012;
+                > .select{
+                    background-color: #012;
+                    color: #ddd;
+                }
+            }
         }
     }
 }
