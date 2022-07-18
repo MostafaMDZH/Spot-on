@@ -1,202 +1,100 @@
-.hrefUnderline:hover,
-.hrefUnderline:focus {
-  text-decoration: underline;
-}
-
-.transBackActEffect {
+/*
+    Background:
+*/
+.lightTransparentBackground {
   -webkit-transition: background-color 150ms;
   transition: background-color 150ms;
 }
 
-.transBackActEffect:enabled:active {
-  background-color: rgba(0, 0, 0, 0.025) !important;
+.lightTransparentBackground:enabled:active {
+  background-color: rgba(0, 0, 0, 0.035) !important;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .transBackActEffect:enabled:hover {
-    background-color: rgba(0, 0, 0, 0.025) !important;
-  }
-  .transBackActEffect:enabled:focus {
+  .lightTransparentBackground:enabled:hover {
     background-color: rgba(0, 0, 0, 0.035) !important;
   }
-  .transBackActEffect:enabled:active {
+  .lightTransparentBackground:enabled:focus {
     background-color: rgba(0, 0, 0, 0.045) !important;
+  }
+  .lightTransparentBackground:enabled:active {
+    background-color: rgba(0, 0, 0, 0.055) !important;
   }
 }
 
-.transBackActEffect:disabled {
+.lightTransparentBackground:disabled {
   opacity: 0.5;
   cursor: default;
 }
 
-.colorBackActEffect {
-  -webkit-transition: -webkit-filter 100ms;
-  transition: -webkit-filter 100ms;
-  transition: filter 100ms;
-  transition: filter 100ms, -webkit-filter 100ms;
+.darkTransparentBackground {
+  -webkit-transition: background-color 200ms ease-in-out;
+  transition: background-color 200ms ease-in-out;
 }
 
-.colorBackActEffect:active {
-  -webkit-filter: brightness(95%);
-          filter: brightness(95%);
+.darkTransparentBackground:enabled:active {
+  background-color: rgba(255, 255, 255, 0.15) !important;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .colorBackActEffect:hover {
-    -webkit-filter: brightness(95%);
-            filter: brightness(95%);
+  .darkTransparentBackground:enabled:hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
   }
-  .colorBackActEffect:focus {
-    -webkit-filter: brightness(90%);
-            filter: brightness(90%);
+  .darkTransparentBackground:enabled:focus {
+    background-color: rgba(255, 255, 255, 0.2) !important;
   }
-  .colorBackActEffect:active {
-    -webkit-filter: brightness(85%);
-            filter: brightness(85%);
+  .darkTransparentBackground:enabled:active {
+    background-color: rgba(255, 255, 255, 0.25) !important;
   }
 }
 
-.threeDotsOverflow {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.darkTransparentBackground:disabled {
+  opacity: 0.5;
+  cursor: default;
 }
 
-.notSelectable {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.selectableText {
-  -webkit-touch-callout: default;
-  -webkit-user-select: text;
-  -moz-user-select: text;
-  -ms-user-select: text;
-  user-select: text;
-  cursor: text;
-}
-
-.darkThinScrollbar::-webkit-scrollbar, .notTouchScreen::-webkit-scrollbar, .notTouchScreen ::-webkit-scrollbar {
+/*
+    custom scrollbar
+*/
+.thinScrollbar_light::-webkit-scrollbar, .thinScrollbar_dark::-webkit-scrollbar, .darkMode.notTouchScreen::-webkit-scrollbar, .darkMode.notTouchScreen ::-webkit-scrollbar, .notTouchScreen::-webkit-scrollbar, .notTouchScreen ::-webkit-scrollbar {
   width: 7px;
+  height: 4px;
 }
 
-.darkThinScrollbar::-webkit-scrollbar-track, .notTouchScreen::-webkit-scrollbar-track, .notTouchScreen ::-webkit-scrollbar-track {
+.thinScrollbar_light::-webkit-scrollbar-track, .thinScrollbar_dark::-webkit-scrollbar-track, .darkMode.notTouchScreen::-webkit-scrollbar-track, .darkMode.notTouchScreen ::-webkit-scrollbar-track, .notTouchScreen::-webkit-scrollbar-track, .notTouchScreen ::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.darkThinScrollbar::-webkit-scrollbar-thumb, .notTouchScreen::-webkit-scrollbar-thumb, .notTouchScreen ::-webkit-scrollbar-thumb {
+.thinScrollbar_light::-webkit-scrollbar-thumb, .thinScrollbar_dark::-webkit-scrollbar-thumb, .darkMode.notTouchScreen::-webkit-scrollbar-thumb, .darkMode.notTouchScreen ::-webkit-scrollbar-thumb, .notTouchScreen::-webkit-scrollbar-thumb, .notTouchScreen ::-webkit-scrollbar-thumb {
   background: #c4c4c4;
   border-radius: 20px;
 }
 
-.darkUltraThinScrollbar::-webkit-scrollbar {
-  width: 4px;
+.thinScrollbar_dark::-webkit-scrollbar, .darkMode.notTouchScreen::-webkit-scrollbar, .darkMode.notTouchScreen ::-webkit-scrollbar {
+  width: 6px;
+  height: 4px;
 }
 
-.darkUltraThinScrollbar::-webkit-scrollbar-track {
+.thinScrollbar_dark::-webkit-scrollbar-thumb, .darkMode.notTouchScreen::-webkit-scrollbar-thumb, .darkMode.notTouchScreen ::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.ultraThinScrollbar_light::-webkit-scrollbar, .ultraThinScrollbar_dark::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.ultraThinScrollbar_light::-webkit-scrollbar-track, .ultraThinScrollbar_dark::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.darkUltraThinScrollbar::-webkit-scrollbar-thumb {
+.ultraThinScrollbar_light::-webkit-scrollbar-thumb, .ultraThinScrollbar_dark::-webkit-scrollbar-thumb {
   background: #ccc;
   border-radius: 20px;
 }
 
-.noScrollbar::-webkit-scrollbar {
-  width: 0;
-}
-
-.customRange, .RangeInput > .content > .rangeInput {
-  width: 100%;
-  -webkit-appearance: none;
-  width: 100%;
-  background: transparent;
-  border: none;
-}
-
-.customRange:focus, .RangeInput > .content > .rangeInput:focus {
-  outline: none;
-}
-
-.customRange::-webkit-slider-thumb, .RangeInput > .content > .rangeInput::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  height: 16px;
-  width: 16px;
-  background-color: white;
-  border: 2px solid #027;
-  border-radius: 50%;
-  cursor: pointer;
-  margin-top: -7px;
-}
-
-.customRange::-moz-range-thumb, .RangeInput > .content > .rangeInput::-moz-range-thumb {
-  height: 12px;
-  width: 12px;
-  background-color: white;
-  border: 2px solid #027;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.customRange::-ms-thumb, .RangeInput > .content > .rangeInput::-ms-thumb {
-  height: 16px;
-  width: 16px;
-  background-color: white;
-  border: 2px solid #027;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.customRange::-webkit-slider-runnable-track, .RangeInput > .content > .rangeInput::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 12px;
-  cursor: pointer;
-  border-top: solid 5px white;
-  border-bottom: solid 5px white;
-  margin-top: -1px;
-  margin-bottom: -1px;
-}
-
-.customRange::-moz-range-track, .RangeInput > .content > .rangeInput::-moz-range-track {
-  width: 100%;
-  height: 2px;
-  cursor: pointer;
-  background: transparent;
-  border-top: solid 8px white;
-  border-bottom: solid 8px white;
-}
-
-.customRange::-ms-track, .RangeInput > .content > .rangeInput::-ms-track {
-  width: 100%;
-  height: 2px;
-  cursor: pointer;
-  background: transparent;
-  border-top: solid 5px white;
-  border-bottom: solid 5px white;
-  border-color: transparent;
-  color: transparent;
-}
-
-.customRange::-ms-fill-lower, .RangeInput > .content > .rangeInput::-ms-fill-lower {
-  width: 100%;
-  height: 2px;
-  cursor: pointer;
-  background: transparent;
-  border-top: solid 5px white;
-  border-bottom: solid 5px white;
-}
-
-.customRange::-ms-fill-upper, .RangeInput > .content > .rangeInput::-ms-fill-upper {
-  width: 100%;
-  height: 2px;
-  cursor: pointer;
-  background: transparent;
-  border-top: solid 5px white;
-  border-bottom: solid 5px white;
+.ultraThinScrollbar_dark::-webkit-scrollbar-thumb {
+  background: #8a8a8a;
 }
 
 .RangeInput {
@@ -356,9 +254,184 @@
   display: none;
 }
 
-@media screen and (max-width: 1000px) {
-  .RangeInput > .content > .valueWrapper > .textInput {
-    font-size: 2.9rem;
-  }
+.darkMode .RangeInput > .content > .title {
+  color: #afafaf;
+}
+
+.darkMode .RangeInput > .content > .valueWrapper > .unit {
+  color: #ddd;
+}
+
+.darkMode .RangeInput > .content > .valueWrapper > .textInput {
+  color: #ddd;
+}
+
+.darkMode .RangeInput > .content > .valueWrapper > .comment {
+  color: #afafaf;
+}
+
+.darkMode .RangeInput > .content > .rangeInput {
+  margin: 0;
+}
+
+.darkMode .RangeInput > .content > .rangeInfoWrapper {
+  width: 100%;
+  padding-top: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.darkMode .RangeInput > .content > .rangeInfoWrapper > a {
+  font-size: 1.3rem;
+  color: #bbb;
+}
+
+.darkMode .RangeInput.settings > .content > .title {
+  color: #ddd;
+}
+
+.darkMode .RangeInput.settings > .content > .valueWrapper > .textInput {
+  width: 50px;
+  font-size: 2.1rem;
+}
+
+.darkMode .RangeInput.settings > .content > .rangeInfoWrapper {
+  display: none;
+}
+
+/*
+    custom range input:
+*/
+.customRange_light, .RangeInput > .content > .rangeInput, .customRange_dark, .darkMode .RangeInput > .content > .rangeInput {
+  width: 100%;
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+  border: none;
+}
+
+.customRange_light:focus, .RangeInput > .content > .rangeInput:focus, .customRange_dark:focus, .darkMode .RangeInput > .content > .rangeInput:focus {
+  outline: none;
+}
+
+.customRange_light::-webkit-slider-thumb, .RangeInput > .content > .rangeInput::-webkit-slider-thumb, .customRange_dark::-webkit-slider-thumb, .darkMode .RangeInput > .content > .rangeInput::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  background-color: white;
+  border: 2px solid #027;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -7px;
+}
+
+.customRange_light::-moz-range-thumb, .RangeInput > .content > .rangeInput::-moz-range-thumb, .customRange_dark::-moz-range-thumb, .darkMode .RangeInput > .content > .rangeInput::-moz-range-thumb {
+  height: 12px;
+  width: 12px;
+  background-color: white;
+  border: 2px solid #027;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.customRange_light::-ms-thumb, .RangeInput > .content > .rangeInput::-ms-thumb, .customRange_dark::-ms-thumb, .darkMode .RangeInput > .content > .rangeInput::-ms-thumb {
+  height: 16px;
+  width: 16px;
+  background-color: white;
+  border: 2px solid #027;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.customRange_light::-webkit-slider-runnable-track, .RangeInput > .content > .rangeInput::-webkit-slider-runnable-track, .customRange_dark::-webkit-slider-runnable-track, .darkMode .RangeInput > .content > .rangeInput::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 12px;
+  cursor: pointer;
+  border-top: solid 5px white;
+  border-bottom: solid 5px white;
+  margin-top: -1px;
+  margin-bottom: -1px;
+}
+
+.customRange_light::-moz-range-track, .RangeInput > .content > .rangeInput::-moz-range-track, .customRange_dark::-moz-range-track, .darkMode .RangeInput > .content > .rangeInput::-moz-range-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: transparent;
+  border-top: solid 8px white;
+  border-bottom: solid 8px white;
+}
+
+.customRange_light::-ms-track, .RangeInput > .content > .rangeInput::-ms-track, .customRange_dark::-ms-track, .darkMode .RangeInput > .content > .rangeInput::-ms-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: transparent;
+  border-top: solid 5px white;
+  border-bottom: solid 5px white;
+  border-color: transparent;
+  color: transparent;
+}
+
+.customRange_light::-ms-fill-lower, .RangeInput > .content > .rangeInput::-ms-fill-lower, .customRange_dark::-ms-fill-lower, .darkMode .RangeInput > .content > .rangeInput::-ms-fill-lower {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: transparent;
+  border-top: solid 5px white;
+  border-bottom: solid 5px white;
+}
+
+.customRange_light::-ms-fill-upper, .RangeInput > .content > .rangeInput::-ms-fill-upper, .customRange_dark::-ms-fill-upper, .darkMode .RangeInput > .content > .rangeInput::-ms-fill-upper {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: transparent;
+  border-top: solid 5px white;
+  border-bottom: solid 5px white;
+}
+
+.customRange_dark::-webkit-slider-thumb, .darkMode .RangeInput > .content > .rangeInput::-webkit-slider-thumb {
+  background-color: #000b23;
+  border: 2px solid #ddd;
+}
+
+.customRange_dark::-moz-range-thumb, .darkMode .RangeInput > .content > .rangeInput::-moz-range-thumb {
+  background-color: #000b23;
+  border: 2px solid #027;
+}
+
+.customRange_dark::-ms-thumb, .darkMode .RangeInput > .content > .rangeInput::-ms-thumb {
+  background-color: #000b23;
+  border: 2px solid #ddd;
+}
+
+.customRange_dark::-webkit-slider-runnable-track, .darkMode .RangeInput > .content > .rangeInput::-webkit-slider-runnable-track {
+  border-top: solid 5px #000b23;
+  border-bottom: solid 5px #000b23;
+}
+
+.customRange_dark::-moz-range-track, .darkMode .RangeInput > .content > .rangeInput::-moz-range-track {
+  border-top: solid 8px #000b23;
+  border-bottom: solid 8px #000b23;
+}
+
+.customRange_dark::-ms-track, .darkMode .RangeInput > .content > .rangeInput::-ms-track {
+  border-top: solid 5px #000b23;
+  border-bottom: solid 5px #000b23;
+}
+
+.customRange_dark::-ms-fill-lower, .darkMode .RangeInput > .content > .rangeInput::-ms-fill-lower {
+  border-top: solid 5px #000b23;
+  border-bottom: solid 5px #000b23;
+}
+
+.customRange_dark::-ms-fill-upper, .darkMode .RangeInput > .content > .rangeInput::-ms-fill-upper {
+  border-top: solid 5px #000b23;
+  border-bottom: solid 5px #000b23;
 }
 /*# sourceMappingURL=RangeInput.css.map */
