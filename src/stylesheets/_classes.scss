@@ -49,30 +49,12 @@
      cursor: default;
 }
 
-//not selectable text:
-.notSelectable{
-    -webkit-tap-highlight-color: transparent; // Android Chrome
-    -webkit-touch-callout:       none;        // iOS Safari
-    -webkit-user-select:         none;        // Safari
-    -khtml-user-select:          none;        // Konqueror HTML
-    -moz-user-select:            none;        // Firefox
-    -ms-user-select:             none;        // Internet Explorer/Edge
-    user-select:                 none;        // non-prefixed version, currently supported by Chrome and Opera
-}
+/*
+    custom scrollbar
+*/
 
-//selectable text:
-.selectableText{
-    -webkit-touch-callout:  default; // iOS Safari
-    -webkit-user-select:    text;    // Safari
-    -khtml-user-select:     text;    // Konqueror HTML
-    -moz-user-select:       text;    // Firefox
-    -ms-user-select:        text;    // Internet Explorer/Edge
-    user-select:            text;    // non-prefixed version, currently supported by Chrome and Opera
-    cursor:                 text;    // general
-}
-
-//custom scrollbar:
-.darkThinScrollbar::-webkit-scrollbar{
+//thinScrollbar_light:
+.thinScrollbar_light::-webkit-scrollbar{
     width: 7px;
 }
 .darkThinScrollbar::-webkit-scrollbar-track{
