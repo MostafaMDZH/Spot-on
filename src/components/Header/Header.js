@@ -3,6 +3,7 @@ import './Header.css';
 
 export default function Header({
     isDarkMode,
+    isMenuRotate,
     onThemeClick,
     onMenuClick,
     onBackClick
@@ -44,7 +45,7 @@ export default function Header({
                     />
                     <input
                         type='button'
-                        className='menuButton'
+                        className={'menuButton' + (isMenuRotate ? ' rotate': '')}
                         title='Menu'
                         onClick={onMenuClick}
                     />
