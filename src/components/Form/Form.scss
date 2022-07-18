@@ -24,9 +24,21 @@
         > .calcButton{
             width: 60px;
             height: 60px;
-            background: #027 url(/src/icons/logo.svg) no-repeat center / 24px auto;
+            background: #027 url(/src/icons/logo_fff.svg) no-repeat center / 24px auto;
             border-radius: 50%;
             transition: all 100ms ease-in-out;
+        }
+    }
+}
+
+//dark mode:
+.darkMode{
+    .Form{
+        > .calcButtonWrapper{
+            box-shadow: 3px 4px 20px #030303;
+            > .calcButton{
+                background-color: #27d;
+            }
         }
     }
 }
