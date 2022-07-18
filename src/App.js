@@ -78,6 +78,9 @@ export default function App(){
             window.location.hash = 'settings';
         else
             window.location.hash = '';
+        setTimeout(() => {
+            setMenuRotate(true);
+        }, 200);
     }
 
     //handleInfoVisibility:
@@ -101,6 +104,7 @@ export default function App(){
     const cookies = new Cookies();
     const [isCookieAckVisible , setCookieAckVisibility] = useState(false                                             );
     const [isSettingsVisible  , setSettingsVisibility ] = useState(false                                             );
+    const [isMenuRotate       , setMenuRotate         ] = useState(cookies.get('Asking Price') !== undefined         );
     const [isInfoVisible      , setInfoVisibility     ] = useState(false                                             );
     const [isDarkMode         , setDarkMode           ] = useState(cookies.get('Is Dark Mode'    ) || DV.IS_DARK_MODE);
     const [currency           , setCurrency           ] = useState(cookies.get('Currency'        ) || [DV.CURRENCY.name, DV.CURRENCY.symbol                ]);
@@ -130,6 +134,7 @@ export default function App(){
                     <div className='headerWrapper'>
                         <Header
                             isDarkMode   = {isDarkMode}
+                            isMenuRotate = {isMenuRotate}
                             onThemeClick = {(isDarkMode)=>setDarkMode(isDarkMode)}
                             onMenuClick  = {()=>handleSettingsVisibility(true)}
                         />
@@ -152,6 +157,7 @@ export default function App(){
                     <div className='headerWrapper'>
                         <Header
                             isDarkMode   = {isDarkMode}
+                            isMenuRotate = {isMenuRotate}
                             onThemeClick = {(isDarkMode)=>setDarkMode(isDarkMode)}
                             onMenuClick  = {()=>handleSettingsVisibility(true)}
                             onBackClick  = {()=>handleInfoVisibility(false)}
