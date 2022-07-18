@@ -1,204 +1,3 @@
-.hrefUnderline:hover,
-.hrefUnderline:focus {
-  text-decoration: underline;
-}
-
-.transBackActEffect {
-  -webkit-transition: background-color 150ms;
-  transition: background-color 150ms;
-}
-
-.transBackActEffect:enabled:active {
-  background-color: rgba(0, 0, 0, 0.025) !important;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .transBackActEffect:enabled:hover {
-    background-color: rgba(0, 0, 0, 0.025) !important;
-  }
-  .transBackActEffect:enabled:focus {
-    background-color: rgba(0, 0, 0, 0.035) !important;
-  }
-  .transBackActEffect:enabled:active {
-    background-color: rgba(0, 0, 0, 0.045) !important;
-  }
-}
-
-.transBackActEffect:disabled {
-  opacity: 0.5;
-  cursor: default;
-}
-
-.colorBackActEffect {
-  -webkit-transition: -webkit-filter 100ms;
-  transition: -webkit-filter 100ms;
-  transition: filter 100ms;
-  transition: filter 100ms, -webkit-filter 100ms;
-}
-
-.colorBackActEffect:active {
-  -webkit-filter: brightness(95%);
-          filter: brightness(95%);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .colorBackActEffect:hover {
-    -webkit-filter: brightness(95%);
-            filter: brightness(95%);
-  }
-  .colorBackActEffect:focus {
-    -webkit-filter: brightness(90%);
-            filter: brightness(90%);
-  }
-  .colorBackActEffect:active {
-    -webkit-filter: brightness(85%);
-            filter: brightness(85%);
-  }
-}
-
-.threeDotsOverflow {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.notSelectable {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.selectableText {
-  -webkit-touch-callout: default;
-  -webkit-user-select: text;
-  -moz-user-select: text;
-  -ms-user-select: text;
-  user-select: text;
-  cursor: text;
-}
-
-.darkThinScrollbar::-webkit-scrollbar, .notTouchScreen::-webkit-scrollbar, .notTouchScreen ::-webkit-scrollbar {
-  width: 7px;
-}
-
-.darkThinScrollbar::-webkit-scrollbar-track, .notTouchScreen::-webkit-scrollbar-track, .notTouchScreen ::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.darkThinScrollbar::-webkit-scrollbar-thumb, .notTouchScreen::-webkit-scrollbar-thumb, .notTouchScreen ::-webkit-scrollbar-thumb {
-  background: #c4c4c4;
-  border-radius: 20px;
-}
-
-.darkUltraThinScrollbar::-webkit-scrollbar {
-  width: 4px;
-}
-
-.darkUltraThinScrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.darkUltraThinScrollbar::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 20px;
-}
-
-.noScrollbar::-webkit-scrollbar {
-  width: 0;
-}
-
-.customRange {
-  width: 100%;
-  -webkit-appearance: none;
-  width: 100%;
-  background: transparent;
-  border: none;
-}
-
-.customRange:focus {
-  outline: none;
-}
-
-.customRange::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  height: 16px;
-  width: 16px;
-  background-color: white;
-  border: 2px solid #027;
-  border-radius: 50%;
-  cursor: pointer;
-  margin-top: -7px;
-}
-
-.customRange::-moz-range-thumb {
-  height: 12px;
-  width: 12px;
-  background-color: white;
-  border: 2px solid #027;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.customRange::-ms-thumb {
-  height: 16px;
-  width: 16px;
-  background-color: white;
-  border: 2px solid #027;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.customRange::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 12px;
-  cursor: pointer;
-  border-top: solid 5px white;
-  border-bottom: solid 5px white;
-  margin-top: -1px;
-  margin-bottom: -1px;
-}
-
-.customRange::-moz-range-track {
-  width: 100%;
-  height: 2px;
-  cursor: pointer;
-  background: transparent;
-  border-top: solid 8px white;
-  border-bottom: solid 8px white;
-}
-
-.customRange::-ms-track {
-  width: 100%;
-  height: 2px;
-  cursor: pointer;
-  background: transparent;
-  border-top: solid 5px white;
-  border-bottom: solid 5px white;
-  border-color: transparent;
-  color: transparent;
-}
-
-.customRange::-ms-fill-lower {
-  width: 100%;
-  height: 2px;
-  cursor: pointer;
-  background: transparent;
-  border-top: solid 5px white;
-  border-bottom: solid 5px white;
-}
-
-.customRange::-ms-fill-upper {
-  width: 100%;
-  height: 2px;
-  cursor: pointer;
-  background: transparent;
-  border-top: solid 5px white;
-  border-bottom: solid 5px white;
-}
-
 .App {
   width: 100%;
   height: 100%;
@@ -274,10 +73,16 @@
   max-height: 680px;
   position: fixed;
   top: 53%;
-  transform: translate(0, -50%);
-  -ms-transform: translate(0, -50%);
-  -moz-transform: translate(0, -50%);
   -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.App.darkMode {
+  background-color: #000b23;
+}
+
+.App.darkMode > .window > .rightSide {
+  background-color: #000b23;
 }
 
 /*
@@ -488,6 +293,12 @@
     -webkit-transition: opacity 200ms linear;
     transition: opacity 200ms linear;
   }
+  .App > .window > .leftSide > .formWrapper > .formContainer > .Form > .inputsContainer .RangeInput .textInput {
+    font-size: 3rem;
+  }
+  .App > .window > .leftSide > .formWrapper > .formContainer > .Form > .inputsContainer .SelectInput .select {
+    font-size: 2.6rem;
+  }
   .App > .window > .leftSide > .formWrapper > .formContainer > .Form > .calcButtonWrapper {
     display: block;
   }
@@ -526,10 +337,8 @@
     height: 100%;
     max-height: unset;
     position: static;
-    transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    -moz-transform: translate(0, 0);
     -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
     opacity: 0;
     -webkit-transition: opacity 200ms linear;
     transition: opacity 200ms linear;
@@ -582,19 +391,19 @@
         align-self: center;
     width: 340px;
   }
-  .App.scrollToInfo > .window > .leftSide > .formWrapper > .formContainer > .Form > .inputsContainer {
+  .App.popupInfo > .window > .leftSide > .formWrapper > .formContainer > .Form > .inputsContainer {
     opacity: 0;
   }
-  .App.scrollToInfo > .window > .leftSide > .formWrapper > .formContainer > .Form > .calcButtonWrapper > .calcButton {
+  .App.popupInfo > .window > .leftSide > .formWrapper > .formContainer > .Form > .calcButtonWrapper > .calcButton {
     background-image: url(/src/icons/down_fff.svg);
     background-size: 27px auto;
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
   }
-  .App.scrollToInfo > .window > .rightSide {
+  .App.popupInfo > .window > .rightSide {
     top: 0;
   }
-  .App.scrollToInfo > .window > .rightSide > .infoWrapper {
+  .App.popupInfo > .window > .rightSide > .infoWrapper {
     opacity: 1;
   }
 }
@@ -781,6 +590,19 @@
     left: unset;
     right: 45px;
     bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .App.darkMode > .window > .rightSide > .infoWrapper > .Info {
+    background-color: #000b23 !important;
+  }
+  .App.darkMode > .window > .rightSide > .infoWrapper > .Info > .container > .titleWrapper > .bigText > .costs,
+  .App.darkMode > .window > .rightSide > .infoWrapper > .Info > .container > .titleWrapper > .bigText > .willBe {
+    color: #bbb;
+  }
+  .App.darkMode > .window > .rightSide > .infoWrapper > .Info > .container > .titleWrapper > .bigText > .benefits {
+    color: #3a3;
   }
 }
 /*# sourceMappingURL=App.css.map */
