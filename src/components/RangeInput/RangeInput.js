@@ -12,6 +12,7 @@ export default function RangeInput({
         comment,
         customClasses,
         isDisable,
+        isDarkMode,
         onChange
     }){
 
@@ -116,7 +117,12 @@ export default function RangeInput({
                 </div>
                 <input type="range" className="rangeInput" value={value} min={min} max={max} step={step}
                     onChange={(e) => onRangeInputChange(e.target.value)}
-                    style={{background: 'linear-gradient(to right, #039 0%, #039 ' + percentage + '%, #ddd ' + percentage + '%, #ddd 100%)'}}
+                    style={{
+                        background: 'linear-gradient(to right, ' +
+                        (isDarkMode === 'Yes' ? '#ddd' : '#039') + ' 0%, ' +
+                        (isDarkMode === 'Yes' ? '#ddd' : '#039') + ' ' +
+                        percentage + '%, #ddd ' + percentage + '%, #ddd 100%)'
+                    }}
                     />
                 <div className="rangeInfoWrapper">
                     <a>{minMaxUnit + numberWithCommas(min)}</a>
