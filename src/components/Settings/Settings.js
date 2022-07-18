@@ -1,3 +1,4 @@
+import { toast, Toaster } from 'react-hot-toast';
 import Cookies     from 'universal-cookie';
 import RangeInput  from '../RangeInput/RangeInput';
 import SelectInput from '../SelectInput/SelectInput';
@@ -9,6 +10,7 @@ export default function Settings({
         distance,
         fuelMeasurement,
         fuelCost,
+        isDarkMode,
         onUpdate,
         onClose
     }){
@@ -20,9 +22,64 @@ export default function Settings({
         onUpdate(title, value);
     }
 
+    //getToastStyle:
+    const getToastStyle = (emoji) => {
+        return isDarkMode === 'Yes' ? {
+            icon: emoji,
+            style: {
+                fontSize:     '1.4rem',
+                borderRadius: '6px',
+                background:   '#012',
+                color:        '#fff'
+            }
+        } : {
+            icon: emoji,
+            style: {
+                fontSize:     '1.4rem',
+                borderRadius: '6px',
+                background:   '#fff',
+                color:        '#333'
+            }
+        }
+    }
+
+    //copyTextToClipboard:
+	const copyTextToClipboard = (text) => {
+		if(!navigator.clipboard){
+			fallbackCopyTextToClipboard(text);
+		}else{
+            console.log('navigator.clipboard');
+			navigator.clipboard.writeText(text).then(function(){
+                toast('Email copied', getToastStyle('👍'));
+			},function(err){
+				toast('Cannot copy', getToastStyle('👎'));
+			});
+		}
+	}
+
+	//fallbackCopyTextToClipboard:
+	const fallbackCopyTextToClipboard = (text) => {
+		let textArea = document.createElement("textarea");
+		textArea.value			= text;
+		textArea.style.top		= "0";//avoid scrolling to bottom:
+		textArea.style.left		= "0";
+		textArea.style.position	= "fixed";
+		document.body.appendChild(textArea);
+		textArea.focus();
+		textArea.select();
+		try{
+			document.execCommand('copy');
+            toast('Email copied', getToastStyle('👍'));
+		}catch(err){
+            toast('Cannot copy', getToastStyle('👎'));
+		}
+		document.body.removeChild(textArea);
+	}
+
     //return:
     return (
         <div className={'Settings' + (isVisible === true ? ' visible': '')} onClick={onClose}>
+            <Toaster/>
             <div className='window' onClick={(e)=>e.stopPropagation()}>
                 <input type='button' className='closeButton' onClick={onClose}/>
                 <div className='containersWrapper'>
@@ -89,7 +146,11 @@ export default function Settings({
                         </div>
                         <div className='section'>
                             <a className='name'>Contact</a>
-                            <button className='email'><a className='link'>mostafa.mdzh@gmail.com</a></button>
+                            <input type='button'
+                                className='email'
+                                value='mostafa.mdzh@gmail.com'
+                                onClick={()=>copyTextToClipboard('mostafa.mdzh@gmail.com')}
+                            />
                         </div>
                         <div className='section'>
                             <a className='name'>Copyright</a>

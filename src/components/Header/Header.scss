@@ -59,11 +59,16 @@
                 margin-right: -13px;
                 background-image: url(/src/icons/menu_222.svg);
                 background-size: 28px;
+                transition: all 300ms ease-in-out;
+            }
+            > .menuButton.rotate{
+                transform: rotate(360deg);
             }
         }
     }
 }
 
+//dark mode:
 .darkMode{
     .Header{
         > .appNameWrapper{
