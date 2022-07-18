@@ -137,11 +137,13 @@
   border-radius: 50%;
 }
 
-.Settings > .window > .containerWrapper {
+.Settings > .window > .containersWrapper {
   width: 100%;
   max-width: 940px;
-  height: 100%;
-  max-height: 350px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  max-height: 100%;
   padding: 40px;
   overflow: auto;
   position: absolute;
@@ -162,30 +164,37 @@
   gap: 50px;
 }
 
-.Settings > .window > .containerWrapper > .container {
+.Settings > .window > .containersWrapper > .container {
   width: 50%;
   max-width: 360px;
 }
 
-.Settings > .window > .containerWrapper > .container > .title {
+.Settings > .window > .containersWrapper > .container > .title {
   display: block;
-  margin-bottom: 27px;
   font-size: 2.8rem;
-  line-height: 40px;
   color: #222;
 }
 
-.Settings > .window > .containerWrapper > .settings > .section {
-  margin-top: 18px;
+.Settings > .window > .containersWrapper > .container > .section {
+  margin-top: 25px;
   margin-bottom: 4px;
 }
 
-.Settings > .window > .containerWrapper > .settings > .section > .name {
-  font-size: 1.2rem;
+.Settings > .window > .containersWrapper > .container > .section > .name {
+  display: block;
+  font-size: 1.4rem;
   color: #aaa;
 }
 
-.Settings > .window > .containerWrapper > .about * {
+.Settings > .window > .containersWrapper > .settings > #prices {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.Settings > .window > .containersWrapper > .about * {
+  font-size: 1.6rem;
+  font-weight: normal;
   -webkit-user-select: text;
      -moz-user-select: text;
       -ms-user-select: text;
@@ -193,42 +202,18 @@
   cursor: text;
 }
 
-.Settings > .window > .containerWrapper > .about > #prices {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
-.Settings > .window > .containerWrapper > .about > .madeBy {
-  margin-top: 16px;
-  font-size: 1.6rem;
-  font-weight: normal;
-}
-
-.Settings > .window > .containerWrapper > .about > .version {
-  font-size: 1.4rem;
-}
-
-.Settings > .window > .containerWrapper > .about > .sectionTitle {
-  margin: 27px 0 0 0;
-  display: block;
-  font-size: 1.2rem;
-  color: #aaa;
-}
-
-.Settings > .window > .containerWrapper > .about > p {
-  font-size: 1.4rem;
-}
-
-.Settings > .window > .containerWrapper > .about .link {
+.Settings > .window > .containersWrapper > .about .link {
   font-style: italic;
   color: #027;
 }
 
-.Settings > .window > .containerWrapper > .about .link:hover,
-.Settings > .window > .containerWrapper > .about .link:focus {
+.Settings > .window > .containersWrapper > .about .link:hover, .Settings > .window > .containersWrapper > .about .link:focus {
   text-decoration: underline;
   cursor: pointer;
+}
+
+.Settings > .window > .containersWrapper > .about .email {
+  margin-top: 10px;
 }
 
 .Settings.visible {
@@ -241,22 +226,23 @@
 }
 
 @media only screen and (max-width: 1200px) {
-  .Settings > .window > .containerWrapper {
+  .Settings > .window > .containersWrapper {
     left: 50%;
   }
 }
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 1000px) {
   .Settings > .window {
     height: 80%;
     max-height: 630px;
   }
   .Settings > .window > .closeButton {
-    top: 20px;
-    right: 20px;
+    top: 19px;
+    right: 19px;
     z-index: 10;
   }
-  .Settings > .window > .containerWrapper {
+  .Settings > .window > .containersWrapper {
+    height: 100%;
     max-height: unset;
     padding: 0 25px 40px 25px;
     left: 0;
@@ -272,7 +258,7 @@
             justify-content: start;
     gap: 25px;
   }
-  .Settings > .window > .containerWrapper > .container {
+  .Settings > .window > .containersWrapper > .container {
     width: 100%;
     max-width: unset;
   }
@@ -287,23 +273,23 @@
   background-image: url(/src/icons/down_fff.svg);
 }
 
-.darkMode .Settings > .window > .containerWrapper {
+.darkMode .Settings > .window > .containersWrapper {
   color: #ddd;
 }
 
-.darkMode .Settings > .window > .containerWrapper > .container > .title {
+.darkMode .Settings > .window > .containersWrapper > .container > .title {
   color: #cfcfcf;
 }
 
-.darkMode .Settings > .window > .containerWrapper > .settings > .section > .name {
+.darkMode .Settings > .window > .containersWrapper > .settings > .section > .name {
   color: #888;
 }
 
-.darkMode .Settings > .window > .containerWrapper > .about > .sectionTitle {
+.darkMode .Settings > .window > .containersWrapper > .about > .sectionTitle {
   color: #888;
 }
 
-.darkMode .Settings > .window > .containerWrapper > .about .link {
+.darkMode .Settings > .window > .containersWrapper > .about .link {
   color: #5ad;
 }
 /*# sourceMappingURL=Settings.css.map */

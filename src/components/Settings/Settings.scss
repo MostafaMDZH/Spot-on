@@ -33,11 +33,11 @@
             border-radius: 50%;
             @extend .lightTransparentBackground;
         }
-        > .containerWrapper{
+        > .containersWrapper{
             width: 100%;
             max-width: 940px;
-            height: 100%;
-            max-height: 350px;
+            height: fit-content;
+            max-height: 100%;
             padding: 40px;
             overflow: auto;
             position: absolute;
@@ -53,55 +53,41 @@
                 max-width: 360px;
                 > .title{
                     display: block;
-                    margin-bottom: 27px;
                     font-size: 2.8rem;
-                    line-height: 40px;
                     color: #222;
                 }
-            }
-            > .settings{
                 > .section{
-                    margin-top: 18px;
+                    margin-top: 25px;
                     margin-bottom: 4px;
                     > .name{
-                        font-size: 1.2rem;
+                        display: block;
+                        font-size: 1.4rem;
                         color: #aaa;
                     }
                 }
             }
-            > .about{
-                *{
-                    user-select: text;
-                    cursor: text;
-                }
+            > .settings{
                 > #prices{
                     flex: 1;
                 }
-                > .madeBy{
-                    margin-top: 16px;
+            }
+            > .about{
+                *{
                     font-size: 1.6rem;
                     font-weight: normal;
-                }
-                > .version{
-                    font-size: 1.4rem;
-                }
-                > .sectionTitle{
-                    margin: 27px 0 0 0;
-                    display: block;
-                    font-size: 1.2rem;
-                    color: #aaa;
-                }
-                > p{
-                    font-size: 1.4rem;
+                    user-select: text;
+                    cursor: text;
                 }
                 .link{
                     font-style: italic;
                     color: #027;
                 }
-                .link:hover,
-                .link:focus{
+                .link:hover, .link:focus{
                     text-decoration: underline;
                     cursor: pointer;
+                }
+                .email{
+                    margin-top: 10px;
                 }
             }
         }
@@ -121,24 +107,25 @@
 @media only screen and (max-width: 1200px){
     .Settings{
         > .window{
-            > .containerWrapper{
+            > .containersWrapper{
                 left: 50%;
             }
         }
     }
 }
 
-@media only screen and (max-width: 750px){
+@media only screen and (max-width: 1000px){
     .Settings{
         > .window{
             height: 80%;
             max-height: 630px;
             > .closeButton{
-                top: 20px;
-                right: 20px;
+                top: 19px;
+                right: 19px;
                 z-index: 10;
             }
-            > .containerWrapper{
+            > .containersWrapper{
+                height: 100%;
                 max-height: unset;
                 padding: 0 25px 40px 25px;
                 left: 0;
@@ -165,7 +152,7 @@
                 background-color: #012;
                 background-image: url(/src/icons/down_fff.svg);
             }
-            > .containerWrapper{
+            > .containersWrapper{
                 color: #ddd;
                 > .container{
                     > .title{
