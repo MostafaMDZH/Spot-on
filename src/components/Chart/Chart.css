@@ -1,116 +1,101 @@
-.hrefUnderline:hover,
-.hrefUnderline:focus {
-  text-decoration: underline;
-}
-
-.transBackActEffect {
+/*
+    Background:
+*/
+.lightTransparentBackground {
   -webkit-transition: background-color 150ms;
   transition: background-color 150ms;
 }
 
-.transBackActEffect:enabled:active {
-  background-color: rgba(0, 0, 0, 0.025) !important;
+.lightTransparentBackground:enabled:active {
+  background-color: rgba(0, 0, 0, 0.035) !important;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .transBackActEffect:enabled:hover {
-    background-color: rgba(0, 0, 0, 0.025) !important;
-  }
-  .transBackActEffect:enabled:focus {
+  .lightTransparentBackground:enabled:hover {
     background-color: rgba(0, 0, 0, 0.035) !important;
   }
-  .transBackActEffect:enabled:active {
+  .lightTransparentBackground:enabled:focus {
     background-color: rgba(0, 0, 0, 0.045) !important;
+  }
+  .lightTransparentBackground:enabled:active {
+    background-color: rgba(0, 0, 0, 0.055) !important;
   }
 }
 
-.transBackActEffect:disabled {
+.lightTransparentBackground:disabled {
   opacity: 0.5;
   cursor: default;
 }
 
-.colorBackActEffect {
-  -webkit-transition: -webkit-filter 100ms;
-  transition: -webkit-filter 100ms;
-  transition: filter 100ms;
-  transition: filter 100ms, -webkit-filter 100ms;
+.darkTransparentBackground {
+  -webkit-transition: background-color 200ms ease-in-out;
+  transition: background-color 200ms ease-in-out;
 }
 
-.colorBackActEffect:active {
-  -webkit-filter: brightness(95%);
-          filter: brightness(95%);
+.darkTransparentBackground:enabled:active {
+  background-color: rgba(255, 255, 255, 0.15) !important;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .colorBackActEffect:hover {
-    -webkit-filter: brightness(95%);
-            filter: brightness(95%);
+  .darkTransparentBackground:enabled:hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
   }
-  .colorBackActEffect:focus {
-    -webkit-filter: brightness(90%);
-            filter: brightness(90%);
+  .darkTransparentBackground:enabled:focus {
+    background-color: rgba(255, 255, 255, 0.2) !important;
   }
-  .colorBackActEffect:active {
-    -webkit-filter: brightness(85%);
-            filter: brightness(85%);
+  .darkTransparentBackground:enabled:active {
+    background-color: rgba(255, 255, 255, 0.25) !important;
   }
 }
 
-.threeDotsOverflow, .Chart > .verticalColum > a {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.darkTransparentBackground:disabled {
+  opacity: 0.5;
+  cursor: default;
 }
 
-.notSelectable {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.selectableText {
-  -webkit-touch-callout: default;
-  -webkit-user-select: text;
-  -moz-user-select: text;
-  -ms-user-select: text;
-  user-select: text;
-  cursor: text;
-}
-
-.darkThinScrollbar::-webkit-scrollbar, .notTouchScreen::-webkit-scrollbar, .notTouchScreen ::-webkit-scrollbar {
+/*
+    custom scrollbar
+*/
+.thinScrollbar_light::-webkit-scrollbar, .thinScrollbar_dark::-webkit-scrollbar, .darkMode.notTouchScreen::-webkit-scrollbar, .darkMode.notTouchScreen ::-webkit-scrollbar, .notTouchScreen::-webkit-scrollbar, .notTouchScreen ::-webkit-scrollbar {
   width: 7px;
+  height: 4px;
 }
 
-.darkThinScrollbar::-webkit-scrollbar-track, .notTouchScreen::-webkit-scrollbar-track, .notTouchScreen ::-webkit-scrollbar-track {
+.thinScrollbar_light::-webkit-scrollbar-track, .thinScrollbar_dark::-webkit-scrollbar-track, .darkMode.notTouchScreen::-webkit-scrollbar-track, .darkMode.notTouchScreen ::-webkit-scrollbar-track, .notTouchScreen::-webkit-scrollbar-track, .notTouchScreen ::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.darkThinScrollbar::-webkit-scrollbar-thumb, .notTouchScreen::-webkit-scrollbar-thumb, .notTouchScreen ::-webkit-scrollbar-thumb {
+.thinScrollbar_light::-webkit-scrollbar-thumb, .thinScrollbar_dark::-webkit-scrollbar-thumb, .darkMode.notTouchScreen::-webkit-scrollbar-thumb, .darkMode.notTouchScreen ::-webkit-scrollbar-thumb, .notTouchScreen::-webkit-scrollbar-thumb, .notTouchScreen ::-webkit-scrollbar-thumb {
   background: #c4c4c4;
   border-radius: 20px;
 }
 
-.darkUltraThinScrollbar::-webkit-scrollbar {
-  width: 4px;
+.thinScrollbar_dark::-webkit-scrollbar-thumb, .darkMode.notTouchScreen::-webkit-scrollbar-thumb, .darkMode.notTouchScreen ::-webkit-scrollbar-thumb {
+  background: #888;
 }
 
-.darkUltraThinScrollbar::-webkit-scrollbar-track {
+.ultraThinScrollbar_light::-webkit-scrollbar, .ultraThinScrollbar_dark::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.ultraThinScrollbar_light::-webkit-scrollbar-track, .ultraThinScrollbar_dark::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.darkUltraThinScrollbar::-webkit-scrollbar-thumb {
+.ultraThinScrollbar_light::-webkit-scrollbar-thumb, .ultraThinScrollbar_dark::-webkit-scrollbar-thumb {
   background: #ccc;
   border-radius: 20px;
 }
 
-.noScrollbar::-webkit-scrollbar {
-  width: 0;
+.ultraThinScrollbar_dark::-webkit-scrollbar-thumb {
+  background: #8a8a8a;
 }
 
-.customRange {
+/*
+    custom range input:
+*/
+.customRange_light, .customRange_dark {
   width: 100%;
   -webkit-appearance: none;
   width: 100%;
@@ -118,11 +103,11 @@
   border: none;
 }
 
-.customRange:focus {
+.customRange_light:focus, .customRange_dark:focus {
   outline: none;
 }
 
-.customRange::-webkit-slider-thumb {
+.customRange_light::-webkit-slider-thumb, .customRange_dark::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 16px;
   width: 16px;
@@ -133,7 +118,7 @@
   margin-top: -7px;
 }
 
-.customRange::-moz-range-thumb {
+.customRange_light::-moz-range-thumb, .customRange_dark::-moz-range-thumb {
   height: 12px;
   width: 12px;
   background-color: white;
@@ -142,7 +127,7 @@
   cursor: pointer;
 }
 
-.customRange::-ms-thumb {
+.customRange_light::-ms-thumb, .customRange_dark::-ms-thumb {
   height: 16px;
   width: 16px;
   background-color: white;
@@ -151,7 +136,7 @@
   cursor: pointer;
 }
 
-.customRange::-webkit-slider-runnable-track {
+.customRange_light::-webkit-slider-runnable-track, .customRange_dark::-webkit-slider-runnable-track {
   width: 100%;
   height: 12px;
   cursor: pointer;
@@ -161,7 +146,7 @@
   margin-bottom: -1px;
 }
 
-.customRange::-moz-range-track {
+.customRange_light::-moz-range-track, .customRange_dark::-moz-range-track {
   width: 100%;
   height: 2px;
   cursor: pointer;
@@ -170,7 +155,7 @@
   border-bottom: solid 8px white;
 }
 
-.customRange::-ms-track {
+.customRange_light::-ms-track, .customRange_dark::-ms-track {
   width: 100%;
   height: 2px;
   cursor: pointer;
@@ -181,7 +166,7 @@
   color: transparent;
 }
 
-.customRange::-ms-fill-lower {
+.customRange_light::-ms-fill-lower, .customRange_dark::-ms-fill-lower {
   width: 100%;
   height: 2px;
   cursor: pointer;
@@ -190,13 +175,53 @@
   border-bottom: solid 5px white;
 }
 
-.customRange::-ms-fill-upper {
+.customRange_light::-ms-fill-upper, .customRange_dark::-ms-fill-upper {
   width: 100%;
   height: 2px;
   cursor: pointer;
   background: transparent;
   border-top: solid 5px white;
   border-bottom: solid 5px white;
+}
+
+.customRange_dark::-webkit-slider-thumb {
+  background-color: #000b23;
+  border: 2px solid #ddd;
+}
+
+.customRange_dark::-moz-range-thumb {
+  background-color: #000b23;
+  border: 2px solid #027;
+}
+
+.customRange_dark::-ms-thumb {
+  background-color: #000b23;
+  border: 2px solid #ddd;
+}
+
+.customRange_dark::-webkit-slider-runnable-track {
+  border-top: solid 5px #000b23;
+  border-bottom: solid 5px #000b23;
+}
+
+.customRange_dark::-moz-range-track {
+  border-top: solid 8px #000b23;
+  border-bottom: solid 8px #000b23;
+}
+
+.customRange_dark::-ms-track {
+  border-top: solid 5px #000b23;
+  border-bottom: solid 5px #000b23;
+}
+
+.customRange_dark::-ms-fill-lower {
+  border-top: solid 5px #000b23;
+  border-bottom: solid 5px #000b23;
+}
+
+.customRange_dark::-ms-fill-upper {
+  border-top: solid 5px #000b23;
+  border-bottom: solid 5px #000b23;
 }
 
 .Chart {
@@ -209,7 +234,6 @@
 
 .Chart > .verticalColum {
   height: 100%;
-  padding-right: 5px;
   padding-bottom: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -224,7 +248,7 @@
 }
 
 .Chart > .verticalColum > a {
-  width: 40px;
+  width: 45px;
   display: block;
   color: #bbb;
   font-size: 1.4rem;
@@ -232,6 +256,8 @@
 
 .Chart > .columnsWrapper {
   height: 100%;
+  margin-left: -5px;
+  margin-right: 5px;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -243,7 +269,7 @@
           justify-content: space-between;
 }
 
-.Chart > .columnsWrapper > .barWrapper {
+.Chart > .columnsWrapper > .barContainer {
   width: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -257,41 +283,92 @@
           justify-content: end;
 }
 
-.Chart > .columnsWrapper > .barWrapper > a {
+.Chart > .columnsWrapper > .barContainer > .barWrapper {
   width: 100%;
   padding-bottom: 2px;
-  text-align: center;
-  font-size: 1.4rem;
   color: #bbb;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: visible;
+  position: relative;
+  cursor: default;
 }
 
-.Chart > .columnsWrapper > .barWrapper > a > span {
+.Chart > .columnsWrapper > .barContainer > .barWrapper > .barLabel,
+.Chart > .columnsWrapper > .barContainer > .barWrapper > .columnLabel {
+  padding-bottom: 8px;
+  font-size: 1.4rem;
+  color: #333;
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+  margin-top: -65%;
+  opacity: 0;
+  -webkit-transition: opacity 150ms ease-in-out;
+  transition: opacity 150ms ease-in-out;
+}
+
+.Chart > .columnsWrapper > .barContainer > .barWrapper > .bar {
   width: 27px;
+  height: 0;
   padding-top: 5px;
   border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
   background-color: #e8e8e8;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
-.Chart > .columnsWrapper > .barWrapper > a > span.tallest {
-  background-color: #a25;
+.Chart > .columnsWrapper > .barContainer > .barWrapper:hover > .barLabel,
+.Chart > .columnsWrapper > .barContainer > .barWrapper:focus > .barLabel {
+  opacity: 1;
 }
 
-.Chart > .columnsWrapper > .barWrapper > a:nth-child(2) {
-  display: block;
-  text-align: center;
+.Chart > .columnsWrapper > .barContainer > .columnName {
+  width: 100%;
   margin-top: 7px;
   padding-top: 2px;
-  overflow: hidden;
+  font-size: 1.4rem;
+  color: #aaa;
+  text-align: center;
+  position: relative;
+  cursor: default;
+}
+
+.Chart > .columnsWrapper > .barContainer > .columnName > .columnLabel {
+  font-size: 1.4rem;
+  white-space: nowrap;
+  color: #333;
+  position: absolute;
+  top: calc(-100% - 13px);
+  left: 50%;
+  -webkit-transform: translate(7px, 0) rotate(-90deg);
+          transform: translate(7px, 0) rotate(-90deg);
+  -webkit-transform-origin: left bottom;
+          transform-origin: left bottom;
+  opacity: 0;
+  -webkit-transition: opacity 150ms ease-in-out;
+  transition: opacity 150ms ease-in-out;
+  pointer-events: none;
+}
+
+.Chart > .columnsWrapper > .barContainer > .columnName:hover > .columnLabel,
+.Chart > .columnsWrapper > .barContainer > .columnName:focus > .columnLabel {
+  opacity: 1;
+}
+
+.Chart > .columnsWrapper > .barContainer.tallest > .columnName > .columnLabel {
+  color: #f4f4f4;
+}
+
+.Chart > .columnsWrapper > .barContainer.tallest > .barWrapper > .bar {
+  background-color: #a25;
 }
 /*# sourceMappingURL=Chart.css.map */

@@ -7,55 +7,108 @@
     display: flex;
     > .verticalColum{
         height: 100%;
-        padding-right: 5px;
         padding-bottom: 25px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         > a{
-            width: 40px;
+            width: 45px;
             display: block;
             color: #bbb;
             font-size: 1.4rem;
-            @extend .threeDotsOverflow;
         }
     }
     > .columnsWrapper{
         height: 100%;
+        margin-left: -5px;
+        margin-right: 5px;
         flex: 1;
         display: flex;
         justify-content: space-between;
-        > .barWrapper{
+        > .barContainer{
             width: 40px;
             display: flex;
             flex-direction: column;
             justify-content: end;
-            > a{
+            > .barWrapper{
                 width: 100%;
                 padding-bottom: 2px;
-                text-align: center;
-                font-size: 1.4rem;
                 color: #bbb;
                 display: flex;
-                justify-content: center;
-                > span{
+                flex-direction: column;
+                align-items: center;
+                overflow: visible;
+                position: relative;
+                cursor: default;
+                > .barLabel,
+                > .columnLabel{
+                    padding-bottom: 8px;
+                    font-size: 1.4rem;
+                    color: #333;
+                    white-space: nowrap;
+                    position: absolute;
+                    top: 0;
+                    margin-top: -65%;
+                    opacity: 0;
+                    transition: opacity 150ms ease-in-out;
+                }
+                > .bar{
                     width: 27px;
+                    height: 0;
                     padding-top: 5px;
-                    @include borderRadius(5px);
+                    border-radius: 5px;
                     background-color: #e8e8e8;
                     transition: all 0.5s ease;
                 }
-                > span.tallest{
+            }
+            > .barWrapper:hover,
+            > .barWrapper:focus{
+                > .barLabel{
+                    opacity: 1;
+                }
+            }
+            > .columnName{
+                width: 100%;
+                margin-top: 7px;
+                padding-top: 2px;
+                font-size: 1.4rem;
+                color: #aaa;
+                text-align: center;
+                position: relative;
+                cursor: default;
+                > .columnLabel{
+                    font-size: 1.4rem;
+                    white-space: nowrap;
+                    color: #333;
+                    position: absolute;
+                    top: calc(-100% - 13px);
+                    left: 50%;
+                    transform: translate(7px, 0) rotate(-90deg);
+                    transform-origin: left bottom;
+                    opacity: 0;
+                    transition: opacity 150ms ease-in-out;
+                    pointer-events: none;
+                }
+            }
+            > .columnName:hover,
+            > .columnName:focus{
+                > .columnLabel{
+                    opacity: 1;
+                }
+            }
+        }
+        > .barContainer.tallest{
+            > .columnName{
+                > .columnLabel{
+                    color: #f4f4f4;
+                }
+            }
+            > .barWrapper{
+                > .bar{
                     background-color: #a25;
                 }
             }
-            > a:nth-child(2){
-                display: block;
-                text-align: center;
-                margin-top: 7px;
-                padding-top: 2px;
-                overflow: hidden;
-            }
+
         }
     }
 }
