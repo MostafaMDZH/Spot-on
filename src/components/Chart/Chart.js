@@ -102,9 +102,9 @@ export default function Chart({
     return (
         <div className='Chart'>
             <div className='verticalColum'>
-                <a title={bar3thFloor}>{bar3thFloor}</a>
-                <a title={bar2thFloor}>{bar2thFloor}</a>
-                <a title={bar1stFloor}>{bar1stFloor}</a>
+                <a>{bar3thFloor}</a>
+                <a>{bar2thFloor}</a>
+                <a>{bar1stFloor}</a>
                 <a>0</a>
             </div>
             <div className='columnsWrapper'>{
