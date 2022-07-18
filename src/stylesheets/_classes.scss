@@ -44,12 +44,9 @@
         background-color: rgba(255, 255, 255, 0.25) !important;
     }
 }
-
-//end text overflow with three dots:
-.threeDotsOverflow{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.darkTransparentBackground:disabled{
+     opacity: 0.5;
+     cursor: default;
 }
 
 //not selectable text:
