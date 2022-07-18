@@ -25,7 +25,7 @@ export default function Settings({
         <div className={'Settings' + (isVisible === true ? ' visible': '')} onClick={onClose}>
             <div className='window' onClick={(e)=>e.stopPropagation()}>
                 <input type='button' className='closeButton' onClick={onClose}/>
-                <div className='containerWrapper'>
+                <div className='containersWrapper'>
                     <div className='container settings'>
                         <a className='title'>Settings</a>
                         <div className='section'>
@@ -83,13 +83,19 @@ export default function Settings({
                     </div>
                     <div className='container about'>
                         <a className='title'>About</a>
-                        <h2 className='madeBy'>Made with ❤️ by <a className='link' href='https://github.com/MostafaMDZH'>Mostafa Mohammadzadeh</a></h2>
-                        <p className='version'>Version 1.0.0</p>
-                        <a className='sectionTitle'>Contact</a>
-                        <p className='email'><a className='link' href = "mailto: mostafa.mdzh@gmail.com">mostafa.mdzh@gmail.com</a></p>
-                        <a className='sectionTitle'>Copy Left :)</a>
-                        <p>Released under the <a className='link' href='https://en.wikipedia.org/wiki/MIT_License'>MIT License</a></p>
-                        <p>View the source on <a className='link' href='https://github.com/MostafaMDZH/Depreciation-Calculator'>Github</a></p>
+                        <div className='section'>
+                            <h2 className='madeBy'>Made with ❤️ by <a className='link' href='https://github.com/MostafaMDZH'>Mostafa Mohammadzadeh</a></h2>
+                            <p className='version'>Version 1.0.0</p>
+                        </div>
+                        <div className='section'>
+                            <a className='name'>Contact</a>
+                            <button className='email'><a className='link'>mostafa.mdzh@gmail.com</a></button>
+                        </div>
+                        <div className='section'>
+                            <a className='name'>Copyright</a>
+                            <p>Released under the <a className='link' href='https://en.wikipedia.org/wiki/MIT_License'>MIT License</a></p>
+                            <p>View the source on <a className='link' href='https://github.com/MostafaMDZH/Depreciation-Calculator'>Github</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
