@@ -75,10 +75,9 @@
                 *{
                     font-size: 1.6rem;
                     font-weight: normal;
-                    user-select: text;
-                    cursor: text;
                 }
-                .link{
+                .link,
+                .email{
                     font-style: italic;
                     color: #027;
                 }
@@ -88,6 +87,7 @@
                 }
                 .email{
                     margin-top: 10px;
+                    cursor: pointer;
                 }
             }
         }
@@ -122,7 +122,7 @@
             > .closeButton{
                 top: 19px;
                 right: 19px;
-                z-index: 10;
+                z-index: 1;
             }
             > .containersWrapper{
                 height: 100%;
@@ -158,8 +158,6 @@
                     > .title{
                         color: #cfcfcf;
                     }
-                }
-                > .settings{
                     > .section{
                         > .name{
                             color: #888;
@@ -167,10 +165,8 @@
                     }
                 }
                 > .about{
-                    > .sectionTitle{
-                        color: #888;
-                    }
-                    .link{
+                    .link,
+                    .email{
                         color: #5ad;
                     }
                 }

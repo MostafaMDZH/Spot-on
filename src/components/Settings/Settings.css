@@ -195,14 +195,10 @@
 .Settings > .window > .containersWrapper > .about * {
   font-size: 1.6rem;
   font-weight: normal;
-  -webkit-user-select: text;
-     -moz-user-select: text;
-      -ms-user-select: text;
-          user-select: text;
-  cursor: text;
 }
 
-.Settings > .window > .containersWrapper > .about .link {
+.Settings > .window > .containersWrapper > .about .link,
+.Settings > .window > .containersWrapper > .about .email {
   font-style: italic;
   color: #027;
 }
@@ -214,6 +210,7 @@
 
 .Settings > .window > .containersWrapper > .about .email {
   margin-top: 10px;
+  cursor: pointer;
 }
 
 .Settings.visible {
@@ -239,7 +236,7 @@
   .Settings > .window > .closeButton {
     top: 19px;
     right: 19px;
-    z-index: 10;
+    z-index: 1;
   }
   .Settings > .window > .containersWrapper {
     height: 100%;
@@ -281,15 +278,12 @@
   color: #cfcfcf;
 }
 
-.darkMode .Settings > .window > .containersWrapper > .settings > .section > .name {
+.darkMode .Settings > .window > .containersWrapper > .container > .section > .name {
   color: #888;
 }
 
-.darkMode .Settings > .window > .containersWrapper > .about > .sectionTitle {
-  color: #888;
-}
-
-.darkMode .Settings > .window > .containersWrapper > .about .link {
+.darkMode .Settings > .window > .containersWrapper > .about .link,
+.darkMode .Settings > .window > .containersWrapper > .about .email {
   color: #5ad;
 }
 /*# sourceMappingURL=Settings.css.map */
