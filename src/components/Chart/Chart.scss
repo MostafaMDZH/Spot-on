@@ -1,4 +1,3 @@
-@import '../../stylesheets/mixin';
 @import '../../stylesheets/classes';
 
 .Chart{
@@ -33,7 +32,6 @@
             > .barWrapper{
                 width: 100%;
                 padding-bottom: 2px;
-                color: #bbb;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -108,7 +106,49 @@
                     background-color: #a25;
                 }
             }
+        }
+    }
+}
 
+//dark mode:
+.darkMode{
+    .Chart{
+        > .verticalColum{
+            > a{
+                color: #aaa;
+            }
+        }
+        > .columnsWrapper{
+            > .barContainer{
+                > .barWrapper{
+                    > .barLabel,
+                    > .columnLabel{
+                        color: #ccc;
+                    }
+                    > .bar{
+                        background-color: #ddd;
+                    }
+                }
+                > .columnName{
+                    color: #aaa;
+                    > .columnLabel{
+                        color: #666;
+                    }
+                }
+            }
+            > .barContainer.tallest{
+                > .columnName{
+                    > .columnLabel{
+                        color: #eee;
+                    }
+                }
+                > .barWrapper{
+                    > .bar{
+                        background-color: #a25;
+                    }
+                }
+    
+            }
         }
     }
 }
