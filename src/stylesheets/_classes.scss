@@ -95,16 +95,17 @@
 }
 //not touch screen:
 .notTouchScreen{
-    @extend .darkThinScrollbar;
-    *{
-        @extend .darkThinScrollbar;
-    }
+      @extend .thinScrollbar_light;
+    *{@extend .thinScrollbar_light;}
+}
+.darkMode.notTouchScreen{
+    @extend .thinScrollbar_dark;
+    *{@extend .thinScrollbar_dark;}
 }
 
-//no scrollbar:
-.noScrollbar::-webkit-scrollbar{
-    width: 0;
-}
+/*
+    custom range input:
+*/
 
 //custom range input:
 .customRange{
