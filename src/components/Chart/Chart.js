@@ -48,7 +48,7 @@ export default function Chart({
         if(number >= 1000)
             number = (number / 1000   ) + 'K';
         if(number.length > 4)
-            return number.substring(0, 2) + number.substring(4);
+            return number.substring(0, 3) + number.substring(4);
         return number;
     }
 
@@ -102,21 +102,29 @@ export default function Chart({
     return (
         <div className='Chart'>
             <div className='verticalColum'>
-                <a title={bar3thFloor}>{bar3thFloor}</a>
-                <a title={bar2thFloor}>{bar2thFloor}</a>
-                <a title={bar1stFloor}>{bar1stFloor}</a>
+                <a>{bar3thFloor}</a>
+                <a>{bar2thFloor}</a>
+                <a>{bar1stFloor}</a>
                 <a>0</a>
             </div>
             <div className='columnsWrapper'>{
                 Object.keys(columns).map((key) => {
                     return (
-                        <div className='barWrapper' key={key}>
-                            <a><span
-                                className={columns[key].isTallest ? 'tallest' : ''}
-                                style={{height: (columns[key].height + 'px')}}
-                                title={currency[1] + numberWithCommas(columns[key].value) + ' per year'}
-                            ></span></a>
-                            <a title={columns[key].title}>{columns[key].name}</a>
+                        <div className={'barContainer' + (columns[key].isTallest ? ' tallest' : '')} key={key}>
+                            <button className='barWrapper'>
+                                <a className='barLabel'>
+                                    {currency[1] + addSign(columns[key].value)}
+                                </a>
+                                <span className='bar'
+                                    style={{height: (columns[key].height + 'px')}}
+                                ></span>
+                            </button>
+                            <button className='columnName'>
+                                {columns[key].name}
+                                <a className='columnLabel'>
+                                    {columns[key].title}
+                                </a>
+                            </button>
                         </div>
                     );
                 })
