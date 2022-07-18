@@ -11,8 +11,9 @@ export default function Form({
         distance,
         fuelMeasurement,
         fuelCost,
+        isDarkMode,
         onCalculate,
-        onScrollToInfo
+        onInfoVisible
     }){
 
     //init:
@@ -164,6 +165,7 @@ export default function Form({
                     step         = {1000}
                     unit         = {currency[1]}
                     minMaxUnit   = {currency[1]}
+                    isDarkMode   = {isDarkMode}
                     onChange     = {(name, value) => onChange(name, value, () => setPurchasePrice(value))}
                     comment      = {
                         <SelectInput
@@ -205,6 +207,7 @@ export default function Form({
                     minMaxUnit   = {currency[1]}
                     comment      = {'per month'}
                     isDisable    = {typeOfOwnership !== 'Lease'}
+                    isDarkMode   = {isDarkMode}
                     onChange     = {(name, value) => onChange(name, value, () => setInstalment(value))}
                 />
                 <RangeInput
@@ -215,6 +218,7 @@ export default function Form({
                     unit         = {currency[1]}
                     minMaxUnit   = {currency[1]}
                     comment      = {'per year'}
+                    isDarkMode   = {isDarkMode}
                     onChange     = {(name, value) => onChange(name, value, () => setInsurance(value))}
                 />
                 <RangeInput
@@ -225,6 +229,7 @@ export default function Form({
                     unit         = {currency[1]}
                     minMaxUnit   = {currency[1]}
                     comment      = {'per year'}
+                    isDarkMode   = {isDarkMode}
                     onChange     = {(name, value) => onChange(name, value, () => setWarranty(value))}
                 />
                 <RangeInput
@@ -235,6 +240,7 @@ export default function Form({
                     unit         = {currency[1]}
                     minMaxUnit   = {currency[1]}
                     comment      = {'per year'}
+                    isDarkMode   = {isDarkMode}
                     onChange     = {(name, value) => onChange(name, value, () => setMaintenance(value))}
                 />
                 <RangeInput
@@ -245,6 +251,7 @@ export default function Form({
                     unit         = {distance[1]}
                     minMaxUnit   = {''}
                     comment      = {'per year'}
+                    isDarkMode   = {isDarkMode}
                     onChange     = {(name, value) => onChange(name, value, () => setMileage(value))}
                 />
                 <RangeInput
@@ -255,6 +262,7 @@ export default function Form({
                     unit         = {fuelMeasurement[1]}
                     minMaxUnit   = {''}
                     comment      = {fuelMeasurement[0]}
+                    isDarkMode   = {isDarkMode}
                     onChange     = {(name, value) => onChange(name, value, () => setFuelConsumption(value))}
                 />
                 <RangeInput 
@@ -264,6 +272,7 @@ export default function Form({
                     step         = {50}
                     unit         = {currency[1]}
                     minMaxUnit   = {currency[1]}
+                    isDarkMode   = {isDarkMode}
                     onChange     = {(name, value) => onChange(name, value, () => setServiceAverageCost(value))}
                     comment      = {
                         <SelectInput
@@ -286,13 +295,14 @@ export default function Form({
                     unit         = {currency[1]}
                     minMaxUnit   = {currency[1]}
                     comment      = {'after ' + yearsOfOwnership + ' year' + (yearsOfOwnership > 1 ? 's' : '') + ' and '
-                                + numberWithCommas((mileage * yearsOfOwnership)) + ' ' + distance[0].toLowerCase() + (distance[0] === 'Mile' ? 's' : '')}
+                                 + numberWithCommas((mileage * yearsOfOwnership)) + ' ' + distance[0].toLowerCase() + (distance[0] === 'Mile' ? 's' : '')}
+                    isDarkMode   = {isDarkMode}
                     onChange     = {(name, value) => onChange(name, value, () => setAskingPrice(value))}
                 />
             </div>
             <div className='calcButtonWrapper'>
                 <input type='button' className='calcButton' onClick={() => {
-                    onScrollToInfo();
+                    onInfoVisible();
                     setTimeout(() => {
                         calcCosts();
                     }, 400)
