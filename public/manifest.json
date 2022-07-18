@@ -1,6 +1,6 @@
 {
-  "short_name": "Car Deprecation Calculator",
-  "name": "Car Deprecation Calculator",
+  "short_name": "spot-on",
+  "name": "The car ownership cost calculator",
   "icons": [
     {
       "src": "favicon.ico",
