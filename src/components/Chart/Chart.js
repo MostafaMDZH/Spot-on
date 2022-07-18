@@ -110,13 +110,21 @@ export default function Chart({
             <div className='columnsWrapper'>{
                 Object.keys(columns).map((key) => {
                     return (
-                        <div className='barWrapper' key={key}>
-                            <a><span
-                                className={columns[key].isTallest ? 'tallest' : ''}
-                                style={{height: (columns[key].height + 'px')}}
-                                title={currency[1] + numberWithCommas(columns[key].value) + ' per year'}
-                            ></span></a>
-                            <a title={columns[key].title}>{columns[key].name}</a>
+                        <div className={'barContainer' + (columns[key].isTallest ? ' tallest' : '')} key={key}>
+                            <button className='barWrapper'>
+                                <a className='barLabel'>
+                                    {currency[1] + addSign(columns[key].value)}
+                                </a>
+                                <span className='bar'
+                                    style={{height: (columns[key].height + 'px')}}
+                                ></span>
+                            </button>
+                            <button className='columnName'>
+                                {columns[key].name}
+                                <a className='columnLabel'>
+                                    {columns[key].title}
+                                </a>
+                            </button>
                         </div>
                     );
                 })
