@@ -48,7 +48,7 @@ export default function Chart({
         if(number >= 1000)
             number = (number / 1000   ) + 'K';
         if(number.length > 4)
-            return number.substring(0, 2) + number.substring(4);
+            return number.substring(0, 3) + number.substring(4);
         return number;
     }
 
