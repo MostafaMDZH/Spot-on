@@ -1,11 +1,10 @@
-@import '../../stylesheets/mixin';
 @import '../../stylesheets/classes';
 
 .Info{
     width: 100%;
     height: 100%;
     box-shadow: 3px 10px 35px #DDD;
-    @include borderRadius(20px);
+    border-radius: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -110,7 +109,55 @@
                     > .amount{
                         margin-left: 1px;
                         font-size: 2.2rem;
-                        @extend .threeDotsOverflow;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.darkMode{
+    .Info{
+        background-color: #051835;
+        box-shadow: 3px 10px 35px #010308;
+        > .container{
+            //title:
+            > .titleWrapper{
+                > .bigText{
+                    > .costs,
+                    > .willBe{
+                        color: #bbb;
+                    }
+                    > .benefits{
+                        color: #3a3;
+                    }
+                }
+            }
+            //per distance:
+            > .perDistanceWrapper{
+                > .unit{
+                    color: #2af;
+                }
+                > .amount{
+                    color: #2af;
+                }
+                > .period{
+                    color: #aaa;
+                }
+            }
+            //per time:
+            > .perTimeWrapper{
+                > .timeCostWrapper{
+                    > .period{
+                        color: #999;
+                    }
+                    > .amountWrapper{
+                        > a{
+                            color: #d4d4d4;
+                        }
                     }
                 }
             }

@@ -70,6 +70,11 @@
   border-radius: 20px;
 }
 
+.thinScrollbar_dark::-webkit-scrollbar, .darkMode.notTouchScreen::-webkit-scrollbar, .darkMode.notTouchScreen ::-webkit-scrollbar {
+  width: 6px;
+  height: 4px;
+}
+
 .thinScrollbar_dark::-webkit-scrollbar-thumb, .darkMode.notTouchScreen::-webkit-scrollbar-thumb, .darkMode.notTouchScreen ::-webkit-scrollbar-thumb {
   background: #888;
 }
@@ -90,138 +95,6 @@
 
 .ultraThinScrollbar_dark::-webkit-scrollbar-thumb {
   background: #8a8a8a;
-}
-
-/*
-    custom range input:
-*/
-.customRange_light, .customRange_dark {
-  width: 100%;
-  -webkit-appearance: none;
-  width: 100%;
-  background: transparent;
-  border: none;
-}
-
-.customRange_light:focus, .customRange_dark:focus {
-  outline: none;
-}
-
-.customRange_light::-webkit-slider-thumb, .customRange_dark::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  height: 16px;
-  width: 16px;
-  background-color: white;
-  border: 2px solid #027;
-  border-radius: 50%;
-  cursor: pointer;
-  margin-top: -7px;
-}
-
-.customRange_light::-moz-range-thumb, .customRange_dark::-moz-range-thumb {
-  height: 12px;
-  width: 12px;
-  background-color: white;
-  border: 2px solid #027;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.customRange_light::-ms-thumb, .customRange_dark::-ms-thumb {
-  height: 16px;
-  width: 16px;
-  background-color: white;
-  border: 2px solid #027;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.customRange_light::-webkit-slider-runnable-track, .customRange_dark::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 12px;
-  cursor: pointer;
-  border-top: solid 5px white;
-  border-bottom: solid 5px white;
-  margin-top: -1px;
-  margin-bottom: -1px;
-}
-
-.customRange_light::-moz-range-track, .customRange_dark::-moz-range-track {
-  width: 100%;
-  height: 2px;
-  cursor: pointer;
-  background: transparent;
-  border-top: solid 8px white;
-  border-bottom: solid 8px white;
-}
-
-.customRange_light::-ms-track, .customRange_dark::-ms-track {
-  width: 100%;
-  height: 2px;
-  cursor: pointer;
-  background: transparent;
-  border-top: solid 5px white;
-  border-bottom: solid 5px white;
-  border-color: transparent;
-  color: transparent;
-}
-
-.customRange_light::-ms-fill-lower, .customRange_dark::-ms-fill-lower {
-  width: 100%;
-  height: 2px;
-  cursor: pointer;
-  background: transparent;
-  border-top: solid 5px white;
-  border-bottom: solid 5px white;
-}
-
-.customRange_light::-ms-fill-upper, .customRange_dark::-ms-fill-upper {
-  width: 100%;
-  height: 2px;
-  cursor: pointer;
-  background: transparent;
-  border-top: solid 5px white;
-  border-bottom: solid 5px white;
-}
-
-.customRange_dark::-webkit-slider-thumb {
-  background-color: #000b23;
-  border: 2px solid #ddd;
-}
-
-.customRange_dark::-moz-range-thumb {
-  background-color: #000b23;
-  border: 2px solid #027;
-}
-
-.customRange_dark::-ms-thumb {
-  background-color: #000b23;
-  border: 2px solid #ddd;
-}
-
-.customRange_dark::-webkit-slider-runnable-track {
-  border-top: solid 5px #000b23;
-  border-bottom: solid 5px #000b23;
-}
-
-.customRange_dark::-moz-range-track {
-  border-top: solid 8px #000b23;
-  border-bottom: solid 8px #000b23;
-}
-
-.customRange_dark::-ms-track {
-  border-top: solid 5px #000b23;
-  border-bottom: solid 5px #000b23;
-}
-
-.customRange_dark::-ms-fill-lower {
-  border-top: solid 5px #000b23;
-  border-bottom: solid 5px #000b23;
-}
-
-.customRange_dark::-ms-fill-upper {
-  border-top: solid 5px #000b23;
-  border-bottom: solid 5px #000b23;
 }
 
 .Chart {
@@ -286,7 +159,6 @@
 .Chart > .columnsWrapper > .barContainer > .barWrapper {
   width: 100%;
   padding-bottom: 2px;
-  color: #bbb;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -369,6 +241,35 @@
 }
 
 .Chart > .columnsWrapper > .barContainer.tallest > .barWrapper > .bar {
+  background-color: #a25;
+}
+
+.darkMode .Chart > .verticalColum > a {
+  color: #aaa;
+}
+
+.darkMode .Chart > .columnsWrapper > .barContainer > .barWrapper > .barLabel,
+.darkMode .Chart > .columnsWrapper > .barContainer > .barWrapper > .columnLabel {
+  color: #ccc;
+}
+
+.darkMode .Chart > .columnsWrapper > .barContainer > .barWrapper > .bar {
+  background-color: #ddd;
+}
+
+.darkMode .Chart > .columnsWrapper > .barContainer > .columnName {
+  color: #aaa;
+}
+
+.darkMode .Chart > .columnsWrapper > .barContainer > .columnName > .columnLabel {
+  color: #666;
+}
+
+.darkMode .Chart > .columnsWrapper > .barContainer.tallest > .columnName > .columnLabel {
+  color: #eee;
+}
+
+.darkMode .Chart > .columnsWrapper > .barContainer.tallest > .barWrapper > .bar {
   background-color: #a25;
 }
 /*# sourceMappingURL=Chart.css.map */

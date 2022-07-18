@@ -1,4 +1,3 @@
-@import '../../stylesheets/mixin';
 @import '../../stylesheets/classes';
 
 .CookieAck{
@@ -20,8 +19,8 @@
         position: absolute;
         left: 50%;
         top: 50%;
-        @include transform(-50%, -50%);
-        @include borderRadius(10px);
+        transform: translate(-50%, -50%);
+        border-radius: 10px;
         padding: 20px;
         display: flex;
         justify-content: center;
@@ -83,7 +82,7 @@
                         background-color: rgba(10, 100, 10, 0.2);
                         color: rgb(10, 100, 10);
                         font-size: 1.6rem;
-                        @include borderRadius(7px);
+                        border-radius: 7px;
                         transition: background-color 100ms ease;
                     }
                     > .acceptButton:hover,

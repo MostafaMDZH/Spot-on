@@ -1,5 +1,4 @@
 @import "../../stylesheets/classes";
-@import "../../stylesheets/mixin";
 
 .Header{
     height: 58px;
@@ -41,7 +40,7 @@
             background-color: transparent;
             background-repeat: no-repeat;
             background-position: center;
-            @extend .transBackActEffect;
+            @extend .lightTransparentBackground;
         }
         > .backButton{
             margin-left: -17px;
@@ -52,20 +51,44 @@
         > .endButtonsContainer{
             display: flex;
             gap: 15px;
-            > .lightButton{
-                background-image: url(/src/icons/lightMode_fff.svg);
-                background-size: 24px auto;
-                display: none;
-            }
-            > .darkButton{
+            > .themeButton{
                 background-image: url(/src/icons/moon_111.svg );
                 background-size: 24px auto;
-                display: none;
             }
             > .menuButton{
                 margin-right: -13px;
                 background-image: url(/src/icons/menu_222.svg);
                 background-size: 28px;
+            }
+        }
+    }
+}
+
+.darkMode{
+    .Header{
+        > .appNameWrapper{
+            > .name{
+                color: #eee;
+            }
+            > .description{
+                border-left-color: #a0a0a0;
+                color: #aaa;
+            }
+        }
+        > .menu{
+            input{
+                @extend .darkTransparentBackground;
+            }
+            > .backButton{
+                background-image: url(/src/icons/left_fff.svg);
+            }
+            > .endButtonsContainer{
+                > .themeButton{
+                    background-image: url(/src/icons/sun_fff.svg);
+                }
+                > .menuButton{
+                    background-image: url(/src/icons/menu_e3e3e3.svg);
+                }
             }
         }
     }

@@ -1,202 +1,100 @@
-.hrefUnderline:hover,
-.hrefUnderline:focus {
-  text-decoration: underline;
-}
-
-.transBackActEffect, .Settings > .window > .closeButton {
+/*
+    Background:
+*/
+.lightTransparentBackground, .Settings > .window > .closeButton {
   -webkit-transition: background-color 150ms;
   transition: background-color 150ms;
 }
 
-.transBackActEffect:enabled:active, .Settings > .window > .closeButton:enabled:active {
-  background-color: rgba(0, 0, 0, 0.025) !important;
+.lightTransparentBackground:enabled:active, .Settings > .window > .closeButton:enabled:active {
+  background-color: rgba(0, 0, 0, 0.035) !important;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .transBackActEffect:enabled:hover, .Settings > .window > .closeButton:enabled:hover {
-    background-color: rgba(0, 0, 0, 0.025) !important;
-  }
-  .transBackActEffect:enabled:focus, .Settings > .window > .closeButton:enabled:focus {
+  .lightTransparentBackground:enabled:hover, .Settings > .window > .closeButton:enabled:hover {
     background-color: rgba(0, 0, 0, 0.035) !important;
   }
-  .transBackActEffect:enabled:active, .Settings > .window > .closeButton:enabled:active {
+  .lightTransparentBackground:enabled:focus, .Settings > .window > .closeButton:enabled:focus {
     background-color: rgba(0, 0, 0, 0.045) !important;
+  }
+  .lightTransparentBackground:enabled:active, .Settings > .window > .closeButton:enabled:active {
+    background-color: rgba(0, 0, 0, 0.055) !important;
   }
 }
 
-.transBackActEffect:disabled, .Settings > .window > .closeButton:disabled {
+.lightTransparentBackground:disabled, .Settings > .window > .closeButton:disabled {
   opacity: 0.5;
   cursor: default;
 }
 
-.colorBackActEffect {
-  -webkit-transition: -webkit-filter 100ms;
-  transition: -webkit-filter 100ms;
-  transition: filter 100ms;
-  transition: filter 100ms, -webkit-filter 100ms;
+.darkTransparentBackground {
+  -webkit-transition: background-color 200ms ease-in-out;
+  transition: background-color 200ms ease-in-out;
 }
 
-.colorBackActEffect:active {
-  -webkit-filter: brightness(95%);
-          filter: brightness(95%);
+.darkTransparentBackground:enabled:active {
+  background-color: rgba(255, 255, 255, 0.15) !important;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .colorBackActEffect:hover {
-    -webkit-filter: brightness(95%);
-            filter: brightness(95%);
+  .darkTransparentBackground:enabled:hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
   }
-  .colorBackActEffect:focus {
-    -webkit-filter: brightness(90%);
-            filter: brightness(90%);
+  .darkTransparentBackground:enabled:focus {
+    background-color: rgba(255, 255, 255, 0.2) !important;
   }
-  .colorBackActEffect:active {
-    -webkit-filter: brightness(85%);
-            filter: brightness(85%);
+  .darkTransparentBackground:enabled:active {
+    background-color: rgba(255, 255, 255, 0.25) !important;
   }
 }
 
-.threeDotsOverflow {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.darkTransparentBackground:disabled {
+  opacity: 0.5;
+  cursor: default;
 }
 
-.notSelectable {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.selectableText, .Settings > .window > .containerWrapper > .about * {
-  -webkit-touch-callout: default;
-  -webkit-user-select: text;
-  -moz-user-select: text;
-  -ms-user-select: text;
-  user-select: text;
-  cursor: text;
-}
-
-.darkThinScrollbar::-webkit-scrollbar, .notTouchScreen::-webkit-scrollbar, .notTouchScreen ::-webkit-scrollbar {
+/*
+    custom scrollbar
+*/
+.thinScrollbar_light::-webkit-scrollbar, .thinScrollbar_dark::-webkit-scrollbar, .darkMode.notTouchScreen::-webkit-scrollbar, .darkMode.notTouchScreen ::-webkit-scrollbar, .notTouchScreen::-webkit-scrollbar, .notTouchScreen ::-webkit-scrollbar {
   width: 7px;
+  height: 4px;
 }
 
-.darkThinScrollbar::-webkit-scrollbar-track, .notTouchScreen::-webkit-scrollbar-track, .notTouchScreen ::-webkit-scrollbar-track {
+.thinScrollbar_light::-webkit-scrollbar-track, .thinScrollbar_dark::-webkit-scrollbar-track, .darkMode.notTouchScreen::-webkit-scrollbar-track, .darkMode.notTouchScreen ::-webkit-scrollbar-track, .notTouchScreen::-webkit-scrollbar-track, .notTouchScreen ::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.darkThinScrollbar::-webkit-scrollbar-thumb, .notTouchScreen::-webkit-scrollbar-thumb, .notTouchScreen ::-webkit-scrollbar-thumb {
+.thinScrollbar_light::-webkit-scrollbar-thumb, .thinScrollbar_dark::-webkit-scrollbar-thumb, .darkMode.notTouchScreen::-webkit-scrollbar-thumb, .darkMode.notTouchScreen ::-webkit-scrollbar-thumb, .notTouchScreen::-webkit-scrollbar-thumb, .notTouchScreen ::-webkit-scrollbar-thumb {
   background: #c4c4c4;
   border-radius: 20px;
 }
 
-.darkUltraThinScrollbar::-webkit-scrollbar {
-  width: 4px;
+.thinScrollbar_dark::-webkit-scrollbar, .darkMode.notTouchScreen::-webkit-scrollbar, .darkMode.notTouchScreen ::-webkit-scrollbar {
+  width: 6px;
+  height: 4px;
 }
 
-.darkUltraThinScrollbar::-webkit-scrollbar-track {
+.thinScrollbar_dark::-webkit-scrollbar-thumb, .darkMode.notTouchScreen::-webkit-scrollbar-thumb, .darkMode.notTouchScreen ::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.ultraThinScrollbar_light::-webkit-scrollbar, .ultraThinScrollbar_dark::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.ultraThinScrollbar_light::-webkit-scrollbar-track, .ultraThinScrollbar_dark::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.darkUltraThinScrollbar::-webkit-scrollbar-thumb {
+.ultraThinScrollbar_light::-webkit-scrollbar-thumb, .ultraThinScrollbar_dark::-webkit-scrollbar-thumb {
   background: #ccc;
   border-radius: 20px;
 }
 
-.noScrollbar::-webkit-scrollbar {
-  width: 0;
-}
-
-.customRange {
-  width: 100%;
-  -webkit-appearance: none;
-  width: 100%;
-  background: transparent;
-  border: none;
-}
-
-.customRange:focus {
-  outline: none;
-}
-
-.customRange::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  height: 16px;
-  width: 16px;
-  background-color: white;
-  border: 2px solid #027;
-  border-radius: 50%;
-  cursor: pointer;
-  margin-top: -7px;
-}
-
-.customRange::-moz-range-thumb {
-  height: 12px;
-  width: 12px;
-  background-color: white;
-  border: 2px solid #027;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.customRange::-ms-thumb {
-  height: 16px;
-  width: 16px;
-  background-color: white;
-  border: 2px solid #027;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.customRange::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 12px;
-  cursor: pointer;
-  border-top: solid 5px white;
-  border-bottom: solid 5px white;
-  margin-top: -1px;
-  margin-bottom: -1px;
-}
-
-.customRange::-moz-range-track {
-  width: 100%;
-  height: 2px;
-  cursor: pointer;
-  background: transparent;
-  border-top: solid 8px white;
-  border-bottom: solid 8px white;
-}
-
-.customRange::-ms-track {
-  width: 100%;
-  height: 2px;
-  cursor: pointer;
-  background: transparent;
-  border-top: solid 5px white;
-  border-bottom: solid 5px white;
-  border-color: transparent;
-  color: transparent;
-}
-
-.customRange::-ms-fill-lower {
-  width: 100%;
-  height: 2px;
-  cursor: pointer;
-  background: transparent;
-  border-top: solid 5px white;
-  border-bottom: solid 5px white;
-}
-
-.customRange::-ms-fill-upper {
-  width: 100%;
-  height: 2px;
-  cursor: pointer;
-  background: transparent;
-  border-top: solid 5px white;
-  border-bottom: solid 5px white;
+.ultraThinScrollbar_dark::-webkit-scrollbar-thumb {
+  background: #8a8a8a;
 }
 
 .Settings {
@@ -220,18 +118,10 @@
   position: absolute;
   left: 50%;
   bottom: -100%;
-  transform: translate(-50%, 0);
-  -ms-transform: translate(-50%, 0);
-  -moz-transform: translate(-50%, 0);
   -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
   border-top-left-radius: 17px;
-  -webkit-border-top-left-radius: 17px;
-  -moz-border-top-left-radius: 17px;
-  -ms-border-top-left-radius: 17px;
   border-top-right-radius: 17px;
-  -webkit-border-top-right-radius: 17px;
-  -moz-border-top-right-radius: 17px;
-  -ms-border-top-right-radius: 17px;
   background-color: white;
   -webkit-transition: bottom 0.2s ease;
   transition: bottom 0.2s ease;
@@ -243,11 +133,8 @@
   position: absolute;
   top: 15px;
   right: 15px;
-  background: transparent url(/src/icons/down_111.svg) no-repeat center/22px auto;
+  background: white url(/src/icons/down_111.svg) no-repeat center/22px auto;
   border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
 }
 
 .Settings > .window > .containerWrapper {
@@ -260,10 +147,8 @@
   position: absolute;
   left: 49%;
   top: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -298,6 +183,14 @@
 .Settings > .window > .containerWrapper > .settings > .section > .name {
   font-size: 1.2rem;
   color: #aaa;
+}
+
+.Settings > .window > .containerWrapper > .about * {
+  -webkit-user-select: text;
+     -moz-user-select: text;
+      -ms-user-select: text;
+          user-select: text;
+  cursor: text;
 }
 
 .Settings > .window > .containerWrapper > .about > #prices {
@@ -361,7 +254,6 @@
   .Settings > .window > .closeButton {
     top: 20px;
     right: 20px;
-    background-color: white;
     z-index: 10;
   }
   .Settings > .window > .containerWrapper {
@@ -369,10 +261,8 @@
     padding: 0 25px 40px 25px;
     left: 0;
     top: 25px;
-    transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    -moz-transform: translate(0, 0);
     -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -386,5 +276,34 @@
     width: 100%;
     max-width: unset;
   }
+}
+
+.darkMode .Settings > .window {
+  background-color: #012;
+}
+
+.darkMode .Settings > .window > .closeButton {
+  background-color: #012;
+  background-image: url(/src/icons/down_fff.svg);
+}
+
+.darkMode .Settings > .window > .containerWrapper {
+  color: #ddd;
+}
+
+.darkMode .Settings > .window > .containerWrapper > .container > .title {
+  color: #cfcfcf;
+}
+
+.darkMode .Settings > .window > .containerWrapper > .settings > .section > .name {
+  color: #888;
+}
+
+.darkMode .Settings > .window > .containerWrapper > .about > .sectionTitle {
+  color: #888;
+}
+
+.darkMode .Settings > .window > .containerWrapper > .about .link {
+  color: #5ad;
 }
 /*# sourceMappingURL=Settings.css.map */

@@ -8,207 +8,103 @@
   src: url(/src/fonts/Ubuntu-regular.ttf);
 }
 
-.hrefUnderline:hover,
-.hrefUnderline:focus {
-  text-decoration: underline;
-}
-
-.transBackActEffect {
+/*
+    Background:
+*/
+.lightTransparentBackground {
   -webkit-transition: background-color 150ms;
   transition: background-color 150ms;
 }
 
-.transBackActEffect:enabled:active {
-  background-color: rgba(0, 0, 0, 0.025) !important;
+.lightTransparentBackground:enabled:active {
+  background-color: rgba(0, 0, 0, 0.035) !important;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .transBackActEffect:enabled:hover {
-    background-color: rgba(0, 0, 0, 0.025) !important;
-  }
-  .transBackActEffect:enabled:focus {
+  .lightTransparentBackground:enabled:hover {
     background-color: rgba(0, 0, 0, 0.035) !important;
   }
-  .transBackActEffect:enabled:active {
+  .lightTransparentBackground:enabled:focus {
     background-color: rgba(0, 0, 0, 0.045) !important;
+  }
+  .lightTransparentBackground:enabled:active {
+    background-color: rgba(0, 0, 0, 0.055) !important;
   }
 }
 
-.transBackActEffect:disabled {
+.lightTransparentBackground:disabled {
   opacity: 0.5;
   cursor: default;
 }
 
-.colorBackActEffect {
-  -webkit-transition: -webkit-filter 100ms;
-  transition: -webkit-filter 100ms;
-  transition: filter 100ms;
-  transition: filter 100ms, -webkit-filter 100ms;
+.darkTransparentBackground {
+  -webkit-transition: background-color 200ms ease-in-out;
+  transition: background-color 200ms ease-in-out;
 }
 
-.colorBackActEffect:active {
-  -webkit-filter: brightness(95%);
-          filter: brightness(95%);
+.darkTransparentBackground:enabled:active {
+  background-color: rgba(255, 255, 255, 0.15) !important;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .colorBackActEffect:hover {
-    -webkit-filter: brightness(95%);
-            filter: brightness(95%);
+  .darkTransparentBackground:enabled:hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
   }
-  .colorBackActEffect:focus {
-    -webkit-filter: brightness(90%);
-            filter: brightness(90%);
+  .darkTransparentBackground:enabled:focus {
+    background-color: rgba(255, 255, 255, 0.2) !important;
   }
-  .colorBackActEffect:active {
-    -webkit-filter: brightness(85%);
-            filter: brightness(85%);
+  .darkTransparentBackground:enabled:active {
+    background-color: rgba(255, 255, 255, 0.25) !important;
   }
 }
 
-.threeDotsOverflow {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.darkTransparentBackground:disabled {
+  opacity: 0.5;
+  cursor: default;
 }
 
-.notSelectable, body h1, body h2, body h3, body h4, body a, body p,
-body input[type="button"],
-body button {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.selectableText {
-  -webkit-touch-callout: default;
-  -webkit-user-select: text;
-  -moz-user-select: text;
-  -ms-user-select: text;
-  user-select: text;
-  cursor: text;
-}
-
-.darkThinScrollbar::-webkit-scrollbar, .notTouchScreen::-webkit-scrollbar, .notTouchScreen ::-webkit-scrollbar {
+/*
+    custom scrollbar
+*/
+.thinScrollbar_light::-webkit-scrollbar, .thinScrollbar_dark::-webkit-scrollbar, .darkMode.notTouchScreen::-webkit-scrollbar, .darkMode.notTouchScreen ::-webkit-scrollbar, .notTouchScreen::-webkit-scrollbar, .notTouchScreen ::-webkit-scrollbar {
   width: 7px;
+  height: 4px;
 }
 
-.darkThinScrollbar::-webkit-scrollbar-track, .notTouchScreen::-webkit-scrollbar-track, .notTouchScreen ::-webkit-scrollbar-track {
+.thinScrollbar_light::-webkit-scrollbar-track, .thinScrollbar_dark::-webkit-scrollbar-track, .darkMode.notTouchScreen::-webkit-scrollbar-track, .darkMode.notTouchScreen ::-webkit-scrollbar-track, .notTouchScreen::-webkit-scrollbar-track, .notTouchScreen ::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.darkThinScrollbar::-webkit-scrollbar-thumb, .notTouchScreen::-webkit-scrollbar-thumb, .notTouchScreen ::-webkit-scrollbar-thumb {
+.thinScrollbar_light::-webkit-scrollbar-thumb, .thinScrollbar_dark::-webkit-scrollbar-thumb, .darkMode.notTouchScreen::-webkit-scrollbar-thumb, .darkMode.notTouchScreen ::-webkit-scrollbar-thumb, .notTouchScreen::-webkit-scrollbar-thumb, .notTouchScreen ::-webkit-scrollbar-thumb {
   background: #c4c4c4;
   border-radius: 20px;
 }
 
-.darkUltraThinScrollbar::-webkit-scrollbar {
-  width: 4px;
+.thinScrollbar_dark::-webkit-scrollbar, .darkMode.notTouchScreen::-webkit-scrollbar, .darkMode.notTouchScreen ::-webkit-scrollbar {
+  width: 6px;
+  height: 4px;
 }
 
-.darkUltraThinScrollbar::-webkit-scrollbar-track {
+.thinScrollbar_dark::-webkit-scrollbar-thumb, .darkMode.notTouchScreen::-webkit-scrollbar-thumb, .darkMode.notTouchScreen ::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.ultraThinScrollbar_light::-webkit-scrollbar, .ultraThinScrollbar_dark::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.ultraThinScrollbar_light::-webkit-scrollbar-track, .ultraThinScrollbar_dark::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.darkUltraThinScrollbar::-webkit-scrollbar-thumb {
+.ultraThinScrollbar_light::-webkit-scrollbar-thumb, .ultraThinScrollbar_dark::-webkit-scrollbar-thumb {
   background: #ccc;
   border-radius: 20px;
 }
 
-.noScrollbar::-webkit-scrollbar {
-  width: 0;
-}
-
-.customRange {
-  width: 100%;
-  -webkit-appearance: none;
-  width: 100%;
-  background: transparent;
-  border: none;
-}
-
-.customRange:focus {
-  outline: none;
-}
-
-.customRange::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  height: 16px;
-  width: 16px;
-  background-color: white;
-  border: 2px solid #027;
-  border-radius: 50%;
-  cursor: pointer;
-  margin-top: -7px;
-}
-
-.customRange::-moz-range-thumb {
-  height: 12px;
-  width: 12px;
-  background-color: white;
-  border: 2px solid #027;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.customRange::-ms-thumb {
-  height: 16px;
-  width: 16px;
-  background-color: white;
-  border: 2px solid #027;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.customRange::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 12px;
-  cursor: pointer;
-  border-top: solid 5px white;
-  border-bottom: solid 5px white;
-  margin-top: -1px;
-  margin-bottom: -1px;
-}
-
-.customRange::-moz-range-track {
-  width: 100%;
-  height: 2px;
-  cursor: pointer;
-  background: transparent;
-  border-top: solid 8px white;
-  border-bottom: solid 8px white;
-}
-
-.customRange::-ms-track {
-  width: 100%;
-  height: 2px;
-  cursor: pointer;
-  background: transparent;
-  border-top: solid 5px white;
-  border-bottom: solid 5px white;
-  border-color: transparent;
-  color: transparent;
-}
-
-.customRange::-ms-fill-lower {
-  width: 100%;
-  height: 2px;
-  cursor: pointer;
-  background: transparent;
-  border-top: solid 5px white;
-  border-bottom: solid 5px white;
-}
-
-.customRange::-ms-fill-upper {
-  width: 100%;
-  height: 2px;
-  cursor: pointer;
-  background: transparent;
-  border-top: solid 5px white;
-  border-bottom: solid 5px white;
+.ultraThinScrollbar_dark::-webkit-scrollbar-thumb {
+  background: #8a8a8a;
 }
 
 html {
@@ -272,5 +168,14 @@ body input:invalid {
 body input[type="button"], body button {
   padding: 0;
   background: none;
+}
+
+body h1, body h2, body h3, body h4, body a, body p,
+body input[type="button"],
+body button {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 /*# sourceMappingURL=index.css.map */
