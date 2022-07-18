@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import Cookies   from 'universal-cookie';
 import DV        from './DefaultValues'
 import Header    from './components/Header/Header';
@@ -76,7 +76,7 @@ export default function App(){
 
     //state listener:
     useEffect(() => {
-        if(cookies.get('Asking Price') == undefined)
+        if(cookies.get('Asking Price') === undefined)
             setTimeout(() => {
                 setCookieAckVisibility(true);
             }, 1000);
