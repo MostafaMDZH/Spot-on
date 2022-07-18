@@ -1,13 +1,7 @@
-import Cookies     from 'universal-cookie';
-import RangeInput  from '../RangeInput/RangeInput';
-import SelectInput from '../SelectInput/SelectInput';
 import './CookieAck.css';
 
 export default function CookieAck({
         isVisible,
-        massage,
-        description,
-        acceptText,
         onAccept
     }){
 
@@ -21,11 +15,11 @@ export default function CookieAck({
                     </div>
                     <div className='bottomArea'>
                         <div className='textsWrapper'>
-                            <h2 className='massage'    >{massage    }</h2>
-                            <p  className='description'>{description}</p>
+                            <h2 className='massage'>This website uses cookies!</h2>
+                            <p  className='description'>We use cookies in order to personalize your site experience.</p>
                         </div>
                         <div className='buttonWrapper'>
-                            <input type='button' className='acceptButton' value={acceptText} onClick={onAccept}/>
+                            <input type='button' className='acceptButton' value='Got it, Allow!' onClick={onAccept}/>
                         </div>
                     </div>
                 </div>

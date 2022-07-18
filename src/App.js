@@ -184,9 +184,6 @@ export default function App(){
             />
             <CookieAck
                 isVisible   = {isCookieAckVisible}
-                massage     = {'This website uses cookies!'}
-                description = {'We use cookies in order to personalize your site experience.'}
-                acceptText  = {'Got it, Allow!'}
                 onAccept    = {()=>handleCookieAckAccept()}
             />
         </div>
