@@ -1,198 +1,104 @@
-$buttonLightHover: rgba(0, 0, 0, 0.025);
-$buttonLightFocus: rgba(0, 0, 0, 0.035);
-$buttonLightActivated: rgba(0, 0, 0, 0.045);
 
-//add underline on urls:
-.hrefUnderline:hover,
-.hrefUnderline:focus{
-    text-decoration: underline;
-}
+/*
+    Background:
+*/
 
-//change transparent background on events:
-.transBackActEffect{
+//light transparent background:
+.lightTransparentBackground{
     transition: background-color 150ms;
 }
-.transBackActEffect:enabled:active{
-    background-color: $buttonLightHover !important;
+.lightTransparentBackground:enabled:active{
+    background-color: rgba(0, 0, 0, 0.035) !important;
 }
 @media (hover: hover) and (pointer: fine){
-    .transBackActEffect:enabled:hover{
-        background-color: $buttonLightHover !important;
+    .lightTransparentBackground:enabled:hover{
+        background-color: rgba(0, 0, 0, 0.035) !important;
     }
-    .transBackActEffect:enabled:focus{
-        background-color: $buttonLightFocus !important;
+    .lightTransparentBackground:enabled:focus{
+        background-color: rgba(0, 0, 0, 0.045) !important;
     }
-    .transBackActEffect:enabled:active{
-        background-color: $buttonLightActivated !important;
+    .lightTransparentBackground:enabled:active{
+        background-color: rgba(0, 0, 0, 0.055) !important;
     }
 }
-.transBackActEffect:disabled{
+.lightTransparentBackground:disabled{
      opacity: 0.5;
      cursor: default;
 }
 
-//change colored background on events:
-.colorBackActEffect{
-    transition: filter 100ms;
+//light transparent background:
+.darkTransparentBackground{
+    transition: background-color 200ms ease-in-out;
 }
-.colorBackActEffect:active{
-    filter: brightness(95%);
+.darkTransparentBackground:enabled:active{
+    background-color: rgba(255, 255, 255, 0.15) !important;
 }
 @media (hover: hover) and (pointer: fine){
-    .colorBackActEffect:hover{
-        filter: brightness(95%);
+    .darkTransparentBackground:enabled:hover{
+        background-color: rgba(255, 255, 255, 0.15) !important;
     }
-    .colorBackActEffect:focus{
-        filter: brightness(90%);
+    .darkTransparentBackground:enabled:focus{
+        background-color: rgba(255, 255, 255, 0.2) !important;
     }
-    .colorBackActEffect:active{
-        filter: brightness(85%);
+    .darkTransparentBackground:enabled:active{
+        background-color: rgba(255, 255, 255, 0.25) !important;
     }
 }
-
-//end text overflow with three dots:
-.threeDotsOverflow{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.darkTransparentBackground:disabled{
+     opacity: 0.5;
+     cursor: default;
 }
 
-//not selectable text:
-.notSelectable{
-    -webkit-tap-highlight-color: transparent; // Android Chrome
-    -webkit-touch-callout:       none;        // iOS Safari
-    -webkit-user-select:         none;        // Safari
-    -khtml-user-select:          none;        // Konqueror HTML
-    -moz-user-select:            none;        // Firefox
-    -ms-user-select:             none;        // Internet Explorer/Edge
-    user-select:                 none;        // non-prefixed version, currently supported by Chrome and Opera
-}
+/*
+    custom scrollbar
+*/
 
-//selectable text:
-.selectableText{
-    -webkit-touch-callout:  default; // iOS Safari
-    -webkit-user-select:    text;    // Safari
-    -khtml-user-select:     text;    // Konqueror HTML
-    -moz-user-select:       text;    // Firefox
-    -ms-user-select:        text;    // Internet Explorer/Edge
-    user-select:            text;    // non-prefixed version, currently supported by Chrome and Opera
-    cursor:                 text;    // general
-}
-
-//custom scrollbar:
-.darkThinScrollbar::-webkit-scrollbar{
+//thinScrollbar_light:
+.thinScrollbar_light::-webkit-scrollbar{
     width: 7px;
+    height: 4px;
 }
-.darkThinScrollbar::-webkit-scrollbar-track{
+.thinScrollbar_light::-webkit-scrollbar-track{
     background: transparent;
 }
-.darkThinScrollbar::-webkit-scrollbar-thumb{
+.thinScrollbar_light::-webkit-scrollbar-thumb{
     background: #c4c4c4;
     border-radius: 20px;
 }
-//custom scrollbar:
-.darkUltraThinScrollbar::-webkit-scrollbar{
-    width: 4px;
+.thinScrollbar_dark{
+    @extend .thinScrollbar_light;
 }
-.darkUltraThinScrollbar::-webkit-scrollbar-track{
+.thinScrollbar_dark::-webkit-scrollbar{
+    width: 6px;
+    height: 4px;
+}
+.thinScrollbar_dark::-webkit-scrollbar-thumb{
+    background: #888;
+}
+//ultraThinScrollbar_light:
+.ultraThinScrollbar_light::-webkit-scrollbar{
+    width: 4px;
+    height: 4px;
+}
+.ultraThinScrollbar_light::-webkit-scrollbar-track{
     background: transparent;
 }
-.darkUltraThinScrollbar::-webkit-scrollbar-thumb{
+.ultraThinScrollbar_light::-webkit-scrollbar-thumb{
     background: #ccc;
     border-radius: 20px;
 }
-
+.ultraThinScrollbar_dark{
+    @extend .ultraThinScrollbar_light;
+}
+.ultraThinScrollbar_dark::-webkit-scrollbar-thumb{
+    background: #8a8a8a;
+}
 //not touch screen:
 .notTouchScreen{
-    @extend .darkThinScrollbar;
-    *{
-        @extend .darkThinScrollbar;
-    }
+      @extend .thinScrollbar_light;
+    *{@extend .thinScrollbar_light;}
 }
-
-//no scrollbar:
-.noScrollbar::-webkit-scrollbar{
-    width: 0;
-}
-
-//custom range input:
-.customRange{
-    width: 100%;
-    -webkit-appearance: none; // hides the slider so that custom slider can be made */
-    width: 100%;              // specific width is required for Firefox. */
-    background: transparent;  // otherwise white in Chrome */
-    border: none
-}
-.customRange:focus{
-    outline: none; // removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
-}
-.customRange::-webkit-slider-thumb{
-    -webkit-appearance: none;
-    height: 16px;
-    width: 16px;
-    background-color: white;
-    border: 2px solid #027;
-    border-radius: 50%;
-    cursor: pointer;
-    margin-top: -7px; // you need to specify a margin in Chrome, but in Firefox and IE it is automatic
-}
-.customRange::-moz-range-thumb{
-    height: 12px;
-    width: 12px;
-    background-color: white;
-    border: 2px solid #027;
-    border-radius: 50%;
-    cursor: pointer;
-}
-.customRange::-ms-thumb{
-    height: 16px;
-    width: 16px;
-    background-color: white;
-    border: 2px solid #027;
-    border-radius: 50%;
-    cursor: pointer;
-}
-//the track:
-.customRange::-webkit-slider-runnable-track{
-    width: 100%;
-    height: 12px;
-    cursor: pointer;
-    border-top: solid 5px white;
-    border-bottom: solid 5px white;
-    margin-top: -1px;
-    margin-bottom: -1px;
-}
-.customRange::-moz-range-track{
-    width: 100%;
-    height: 2px;
-    cursor: pointer;
-    background: transparent;
-    border-top: solid 8px white;
-    border-bottom: solid 8px white;
-}
-.customRange::-ms-track{
-    width: 100%;
-    height: 2px;
-    cursor: pointer;
-    background: transparent;
-    border-top: solid 5px white;
-    border-bottom: solid 5px white;
-    border-color: transparent;
-    color: transparent;
-}
-.customRange::-ms-fill-lower{
-    width: 100%;
-    height: 2px;
-    cursor: pointer;
-    background: transparent;
-    border-top: solid 5px white;
-    border-bottom: solid 5px white;
-}
-.customRange::-ms-fill-upper{
-    width: 100%;
-    height: 2px;
-    cursor: pointer;
-    background: transparent;
-    border-top: solid 5px white;
-    border-bottom: solid 5px white;
+.darkMode.notTouchScreen{
+    @extend .thinScrollbar_dark;
+    *{@extend .thinScrollbar_dark;}
 }
