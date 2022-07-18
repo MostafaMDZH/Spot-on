@@ -61,12 +61,47 @@ export default function App(){
                 break;
         }
     }
+
+    //handleCookieAckAccept
+    const handleCookieAckAccept = () => {
+        setDefaultCookies();
+        setCookieAckVisibility(false);
+        setTimeout(() => {
+            handleSettingsVisibility(true);
+        }, 300);
+    }
+
+    //handleSettingsVisibility:
+    const handleSettingsVisibility = (isVisible) =>{
+        setSettingsVisibility(isVisible);
+        if(isVisible)
+            window.location.hash = 'settings';
+        else
+            window.location.hash = '';
+    }
+
+    //handleInfoVisibility:
+    const handleInfoVisibility = (isVisible) => {
+        setInfoVisibility(isVisible);
+        if(isVisible)
+            window.location.hash = 'info';
+        else
+            window.location.hash = '';
+    }
+
+    //location event:
+    window.addEventListener('hashchange', function(){
+        if(window.location.hash === ''){
+            setInfoVisibility(false);
+            setSettingsVisibility(false);
+        }
+    }, false);
     
     //states:
     const cookies = new Cookies();
-    const [doScrollToInfo     , setScrollToInfo       ] = useState(false                                             );
     const [isCookieAckVisible , setCookieAckVisibility] = useState(false                                             );
     const [isSettingsVisible  , setSettingsVisibility ] = useState(false                                             );
+    const [isInfoVisible      , setInfoVisibility     ] = useState(false                                             );
     const [isDarkMode         , setDarkMode           ] = useState(cookies.get('Is Dark Mode'    ) || DV.IS_DARK_MODE);
     const [currency           , setCurrency           ] = useState(cookies.get('Currency'        ) || [DV.CURRENCY.name, DV.CURRENCY.symbol                ]);
     const [distance           , setDistance           ] = useState(cookies.get('Distance'        ) || [DV.DISTANCE.name, DV.DISTANCE.symbol                ]);
@@ -84,14 +119,19 @@ export default function App(){
 
     //render:
     return (
-        <div className={'App' + (isTouchScreenDevice() ? '' : ' notTouchScreen') + (doScrollToInfo ? ' scrollToInfo' : '')}>
+        <div className={
+            'App' +
+            (!isTouchScreenDevice() ? ' notTouchScreen' : '') +
+            (isInfoVisible          ? ' popupInfo'      : '') +
+            (isDarkMode === 'Yes'   ? ' darkMode'       : '')
+            }>
             <div className='window'>
                 <div className='leftSide'>
                     <div className='headerWrapper'>
                         <Header
                             isDarkMode   = {isDarkMode}
                             onThemeClick = {(isDarkMode)=>setDarkMode(isDarkMode)}
-                            onMenuClick  = {()=>setSettingsVisibility(true)}
+                            onMenuClick  = {()=>handleSettingsVisibility(true)}
                         />
                     </div>
                     <div className='formWrapper'>
@@ -101,8 +141,9 @@ export default function App(){
                                 distance        = {distance}
                                 fuelMeasurement = {fuelMeasurement}
                                 fuelCost        = {fuelCost}
+                                isDarkMode      = {isDarkMode}
                                 onCalculate     = {(data)=>setData(data)}
-                                onScrollToInfo  = {()=>setScrollToInfo(!doScrollToInfo)}
+                                onInfoVisible   = {()=>handleInfoVisibility(!isInfoVisible)}
                             />
                         </div>
                     </div>
@@ -112,8 +153,8 @@ export default function App(){
                         <Header
                             isDarkMode   = {isDarkMode}
                             onThemeClick = {(isDarkMode)=>setDarkMode(isDarkMode)}
-                            onMenuClick  = {()=>setSettingsVisibility(true)}
-                            onBackClick  = {()=>setScrollToInfo(false)}
+                            onMenuClick  = {()=>handleSettingsVisibility(true)}
+                            onBackClick  = {()=>handleInfoVisibility(false)}
                         />
                     </div>
                     <div className='infoWrapper'>
@@ -132,20 +173,14 @@ export default function App(){
                 fuelMeasurement = {fuelMeasurement}
                 fuelCost        = {fuelCost}
                 onUpdate        = {updateSettings}
-                onClose         = {()=>setSettingsVisibility(false)}
+                onClose         = {()=>handleSettingsVisibility(false)}
             />
             <CookieAck
                 isVisible   = {isCookieAckVisible}
                 massage     = {'This website uses cookies!'}
                 description = {'We use cookies in order to personalize your site experience.'}
                 acceptText  = {'Got it, Allow!'}
-                onAccept    = {() => {
-                    setDefaultCookies();
-                    setCookieAckVisibility(false);
-                    setTimeout(() => {
-                        setSettingsVisibility(true);
-                    }, 1000);
-                }}
+                onAccept    = {()=>handleCookieAckAccept()}
             />
         </div>
     );
