@@ -107,18 +107,18 @@
     custom range input:
 */
 
-//custom range input:
-.customRange{
+//customRange_light:
+.customRange_light{
     width: 100%;
     -webkit-appearance: none; // hides the slider so that custom slider can be made */
     width: 100%;              // specific width is required for Firefox. */
     background: transparent;  // otherwise white in Chrome */
     border: none
 }
-.customRange:focus{
+.customRange_light:focus{
     outline: none; // removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
 }
-.customRange::-webkit-slider-thumb{
+.customRange_light::-webkit-slider-thumb{
     -webkit-appearance: none;
     height: 16px;
     width: 16px;
@@ -128,7 +128,7 @@
     cursor: pointer;
     margin-top: -7px; // you need to specify a margin in Chrome, but in Firefox and IE it is automatic
 }
-.customRange::-moz-range-thumb{
+.customRange_light::-moz-range-thumb{
     height: 12px;
     width: 12px;
     background-color: white;
@@ -136,7 +136,7 @@
     border-radius: 50%;
     cursor: pointer;
 }
-.customRange::-ms-thumb{
+.customRange_light::-ms-thumb{
     height: 16px;
     width: 16px;
     background-color: white;
@@ -145,7 +145,7 @@
     cursor: pointer;
 }
 //the track:
-.customRange::-webkit-slider-runnable-track{
+.customRange_light::-webkit-slider-runnable-track{
     width: 100%;
     height: 12px;
     cursor: pointer;
@@ -154,7 +154,7 @@
     margin-top: -1px;
     margin-bottom: -1px;
 }
-.customRange::-moz-range-track{
+.customRange_light::-moz-range-track{
     width: 100%;
     height: 2px;
     cursor: pointer;
@@ -162,7 +162,7 @@
     border-top: solid 8px white;
     border-bottom: solid 8px white;
 }
-.customRange::-ms-track{
+.customRange_light::-ms-track{
     width: 100%;
     height: 2px;
     cursor: pointer;
@@ -172,7 +172,7 @@
     border-color: transparent;
     color: transparent;
 }
-.customRange::-ms-fill-lower{
+.customRange_light::-ms-fill-lower{
     width: 100%;
     height: 2px;
     cursor: pointer;
@@ -180,11 +180,48 @@
     border-top: solid 5px white;
     border-bottom: solid 5px white;
 }
-.customRange::-ms-fill-upper{
+.customRange_light::-ms-fill-upper{
     width: 100%;
     height: 2px;
     cursor: pointer;
     background: transparent;
     border-top: solid 5px white;
     border-bottom: solid 5px white;
+}
+
+//customRange_dark:
+.customRange_dark{
+    @extend .customRange_light;
+}
+.customRange_dark::-webkit-slider-thumb{
+    background-color: #000b23;
+    border: 2px solid #ddd;
+}
+.customRange_dark::-moz-range-thumb{
+    background-color: #000b23;
+    border: 2px solid #027;
+}
+.customRange_dark::-ms-thumb{
+    background-color: #000b23;
+    border: 2px solid #ddd;
+}
+.customRange_dark::-webkit-slider-runnable-track{
+    border-top: solid 5px #000b23;
+    border-bottom: solid 5px #000b23;
+}
+.customRange_dark::-moz-range-track{
+    border-top: solid 8px #000b23;
+    border-bottom: solid 8px #000b23;
+}
+.customRange_dark::-ms-track{
+    border-top: solid 5px #000b23;
+    border-bottom: solid 5px #000b23;
+}
+.customRange_dark::-ms-fill-lower{
+    border-top: solid 5px #000b23;
+    border-bottom: solid 5px #000b23;
+}
+.customRange_dark::-ms-fill-upper{
+    border-top: solid 5px #000b23;
+    border-bottom: solid 5px #000b23;
 }
