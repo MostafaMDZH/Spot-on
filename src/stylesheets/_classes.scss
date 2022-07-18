@@ -1,52 +1,47 @@
-$buttonLightHover: rgba(0, 0, 0, 0.025);
-$buttonLightFocus: rgba(0, 0, 0, 0.035);
-$buttonLightActivated: rgba(0, 0, 0, 0.045);
 
-//add underline on urls:
-.hrefUnderline:hover,
-.hrefUnderline:focus{
-    text-decoration: underline;
-}
+/*
+    Background:
+*/
 
-//change transparent background on events:
-.transBackActEffect{
+//light transparent background:
+.lightTransparentBackground{
     transition: background-color 150ms;
 }
-.transBackActEffect:enabled:active{
-    background-color: $buttonLightHover !important;
+.lightTransparentBackground:enabled:active{
+    background-color: rgba(0, 0, 0, 0.035) !important;
 }
 @media (hover: hover) and (pointer: fine){
-    .transBackActEffect:enabled:hover{
-        background-color: $buttonLightHover !important;
+    .lightTransparentBackground:enabled:hover{
+        background-color: rgba(0, 0, 0, 0.035) !important;
     }
-    .transBackActEffect:enabled:focus{
-        background-color: $buttonLightFocus !important;
+    .lightTransparentBackground:enabled:focus{
+        background-color: rgba(0, 0, 0, 0.045) !important;
     }
-    .transBackActEffect:enabled:active{
-        background-color: $buttonLightActivated !important;
+    .lightTransparentBackground:enabled:active{
+        background-color: rgba(0, 0, 0, 0.055) !important;
     }
 }
-.transBackActEffect:disabled{
+.lightTransparentBackground:disabled{
      opacity: 0.5;
      cursor: default;
 }
 
-//change colored background on events:
-.colorBackActEffect{
-    transition: filter 100ms;
+//light transparent background:
+.darkTransparentBackground{
+    transition: background-color 200ms ease-in-out;
 }
-.colorBackActEffect:active{
-    filter: brightness(95%);
+.darkTransparentBackground:enabled:active{
+    background-color: rgba(255, 255, 255, 0.15) !important;
 }
 @media (hover: hover) and (pointer: fine){
-    .colorBackActEffect:hover{
-        filter: brightness(95%);
+    .darkTransparentBackground:enabled:hover{
+        background-color: rgba(255, 255, 255, 0.15) !important;
     }
-    .colorBackActEffect:focus{
-        filter: brightness(90%);
+    .darkTransparentBackground:enabled:focus{
+        background-color: rgba(255, 255, 255, 0.2) !important;
     }
-    .colorBackActEffect:active{
-        filter: brightness(85%);
+    .darkTransparentBackground:enabled:active{
+        background-color: rgba(255, 255, 255, 0.25) !important;
     }
 }
 
