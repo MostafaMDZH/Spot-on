@@ -178,6 +178,7 @@ export default function App(){
                 distance        = {distance}
                 fuelMeasurement = {fuelMeasurement}
                 fuelCost        = {fuelCost}
+                isDarkMode      = {isDarkMode}
                 onUpdate        = {updateSettings}
                 onClose         = {()=>handleSettingsVisibility(false)}
             />
