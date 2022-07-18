@@ -56,26 +56,43 @@
 //thinScrollbar_light:
 .thinScrollbar_light::-webkit-scrollbar{
     width: 7px;
+    height: 4px;
 }
-.darkThinScrollbar::-webkit-scrollbar-track{
+.thinScrollbar_light::-webkit-scrollbar-track{
     background: transparent;
 }
-.darkThinScrollbar::-webkit-scrollbar-thumb{
+.thinScrollbar_light::-webkit-scrollbar-thumb{
     background: #c4c4c4;
     border-radius: 20px;
 }
-//custom scrollbar:
-.darkUltraThinScrollbar::-webkit-scrollbar{
-    width: 4px;
+.thinScrollbar_dark{
+    @extend .thinScrollbar_light;
 }
-.darkUltraThinScrollbar::-webkit-scrollbar-track{
+.thinScrollbar_dark::-webkit-scrollbar{
+    width: 6px;
+    height: 4px;
+}
+.thinScrollbar_dark::-webkit-scrollbar-thumb{
+    background: #888;
+}
+//ultraThinScrollbar_light:
+.ultraThinScrollbar_light::-webkit-scrollbar{
+    width: 4px;
+    height: 4px;
+}
+.ultraThinScrollbar_light::-webkit-scrollbar-track{
     background: transparent;
 }
-.darkUltraThinScrollbar::-webkit-scrollbar-thumb{
+.ultraThinScrollbar_light::-webkit-scrollbar-thumb{
     background: #ccc;
     border-radius: 20px;
 }
-
+.ultraThinScrollbar_dark{
+    @extend .ultraThinScrollbar_light;
+}
+.ultraThinScrollbar_dark::-webkit-scrollbar-thumb{
+    background: #8a8a8a;
+}
 //not touch screen:
 .notTouchScreen{
     @extend .darkThinScrollbar;
