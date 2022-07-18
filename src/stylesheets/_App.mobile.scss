@@ -79,7 +79,7 @@
                     height: 100%;
                     max-height: unset;
                     position: static;
-                    @include transform(0, 0);
+                    transform: translate(0, 0);
                     opacity: 0;
                     transition: opacity 200ms linear;
                     .Info{
@@ -128,7 +128,7 @@
     }
 
     //result mode:
-    .App.scrollToInfo{
+    .App.popupInfo{
         > .window{
             > .leftSide{
                 > .formWrapper{
@@ -481,4 +481,32 @@
         }
     }
 
+}
+
+//dark mode:
+@media only screen and (max-width: 1000px){
+    .App.darkMode{
+        > .window{
+            > .rightSide{
+                > .infoWrapper{
+                    > .Info{
+                        background-color: #000b23 !important;
+                        > .container{
+                            > .titleWrapper{
+                                > .bigText{
+                                    > .costs,
+                                    > .willBe{
+                                        color: #bbb;
+                                    }
+                                    > .benefits{
+                                        color: #3a3;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
