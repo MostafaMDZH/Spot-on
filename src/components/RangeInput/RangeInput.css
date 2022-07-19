@@ -252,20 +252,20 @@
   color: #afafaf;
 }
 
-.darkMode .RangeInput > .content > .valueWrapper > .comment > .SelectInput.inline > .title {
+.darkMode .RangeInput > .content > .valueWrapper > .comment > .SelectInput > .title {
   color: #afafaf;
 }
 
-.darkMode .RangeInput > .content > .valueWrapper > .comment > .SelectInput.inline > div > .selectWrapper {
+.darkMode .RangeInput > .content > .valueWrapper > .comment > .SelectInput > div > .selectWrapper {
   background-color: #000b23;
 }
 
-.darkMode .RangeInput > .content > .valueWrapper > .comment > .SelectInput.inline > div > .selectWrapper > .select {
+.darkMode .RangeInput > .content > .valueWrapper > .comment > .SelectInput > div > .selectWrapper > .select {
   color: #ddd;
   background-color: #000b23;
 }
 
-.darkMode .RangeInput > .content > .valueWrapper > .comment > .SelectInput.inline > div > .comment {
+.darkMode .RangeInput > .content > .valueWrapper > .comment > .SelectInput > div > .comment {
   color: #afafaf;
 }
 
