@@ -78,9 +78,11 @@ export default function App(){
             window.location.hash = 'settings';
         else
             window.location.hash = '';
-        setTimeout(() => {
-            setMenuRotate(true);
-        }, 200);
+        if(!isVisible){
+            setTimeout(() => {
+                setMenuRotate(true);
+            }, 200);
+        }
     }
 
     //handleInfoVisibility:
