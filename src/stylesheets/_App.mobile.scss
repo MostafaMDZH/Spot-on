@@ -275,6 +275,11 @@
                 }
             }
         }
+        .menu{
+            .endButtonsContainer{
+                gap: 10px;
+            }
+        }
     }
 }
 
@@ -369,7 +374,7 @@
             }
             .menu{
                 .endButtonsContainer{
-                    gap: 8px;
+                    gap: 7px;
                 }
             }
         }
