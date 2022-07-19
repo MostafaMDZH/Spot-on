@@ -88,53 +88,49 @@ export default function Settings({
                         <div className='section'>
                             <a className='name'>Units</a>
                             <SelectInput
-                                title         = {'Currency'}
-                                value         = {currency.join(',')}
-                                options       = {[
+                                title    = {'Currency'}
+                                value    = {currency.join(',')}
+                                options  = {[
                                     [['Euro' , '€'], 'Euro' ],
                                     [['Pound', '£'], 'Pound'],
                                     [['USD'  , '$'], 'USD'  ]
                                 ]}
-                                comment       = {''}
-                                customClasses = {'settings'}
-                                onChange      = {handleChange}
+                                comment  = {''}
+                                onChange = {handleChange}
                             />
                             <SelectInput
-                                title         = {'Distance'}
-                                value         = {distance.join(',')}
-                                options       = {[
+                                title    = {'Distance'}
+                                value    = {distance.join(',')}
+                                options  = {[
                                     [['Km'  , 'Km' ], 'Km'  ],
                                     [['Mile', 'ml.'], 'Mile']
                                 ]}
-                                comment       = {''}
-                                customClasses = {'settings'}
-                                onChange      = {handleChange}
+                                comment  = {''}
+                                onChange = {handleChange}
                             />
                             <SelectInput
-                                name          = {'Fuel Measurement'}
-                                title         = {'Fuel Consumption'}
-                                value         = {fuelMeasurement.join(',')}
-                                options       = {[
+                                name     = {'Fuel Measurement'}
+                                title    = {'Fuel Consumption'}
+                                value    = {fuelMeasurement.join(',')}
+                                options  = {[
                                     [['L/100Km', 'L'], 'L/100Km'],
                                     [['MPG'    , 'G'], 'MPG'    ]
                                 ]}
-                                comment       = {''}
-                                customClasses = {'settings'}
-                                onChange      = {handleChange}
+                                comment  = {''}
+                                onChange = {handleChange}
                             />
                         </div>
                         <div className='section' id='prices'>
                             <a className='name'>Prices</a>
                             <RangeInput
-                                title         = {'Fuel Cost'}
-                                defaultValue  = {fuelCost}
-                                rangeWidth    = {10}
-                                step          = {1}
-                                unit          = {currency[1]}
-                                minMaxUnit    = {currency[1]}
-                                comment       = {'per ' + fuelMeasurement[1]}
-                                customClasses = {'settings'}
-                                onChange      = {handleChange}
+                                title        = {'Fuel Cost'}
+                                defaultValue = {fuelCost}
+                                rangeWidth   = {10}
+                                step         = {1}
+                                unit         = {currency[1]}
+                                minMaxUnit   = {currency[1]}
+                                comment      = {'per ' + fuelMeasurement[1]}
+                                onChange     = {handleChange}
                             />
                         </div>
                     </div>

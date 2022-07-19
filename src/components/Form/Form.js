@@ -169,33 +169,30 @@ export default function Form({
                     onChange     = {(name, value) => onChange(name, value, () => setPurchasePrice(value))}
                     comment      = {
                         <SelectInput
-                            name          = {'Type of Ownership'}
-                            title         = {''}
-                            value         = {typeOfOwnership}
-                            options       = {['Lease', 'Buy']}
-                            comment       = {''}
-                            customClasses = {'inline'}
-                            onChange      = {(name, value) => onChange(name, value, () => setTypeOfOwnership(value))}
+                            name     = {'Type of Ownership'}
+                            title    = {''}
+                            value    = {typeOfOwnership}
+                            options  = {['Lease', 'Buy']}
+                            comment  = {''}
+                            onChange = {(name, value) => onChange(name, value, () => setTypeOfOwnership(value))}
                         />
                     }
                 />
                 <div className='selectorsWrapper'>
                     <SelectInput
-                        name          = {'Years of Ownership'}
-                        title         = {typeOfOwnership === 'Lease' ? 'Lease Term' : 'Years of Ownership'}
-                        value         = {yearsOfOwnership}
-                        options       = {[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]}
-                        comment       = {'years'}
-                        customClasses = {''}
-                        onChange      = {(name, value) => onChange(name, value, ()=>setYearsOfOwnership(value))}
+                        name     = {'Years of Ownership'}
+                        title    = {typeOfOwnership === 'Lease' ? 'Lease Term' : 'Years of Ownership'}
+                        value    = {yearsOfOwnership}
+                        options  = {[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]}
+                        comment  = {'years'}
+                        onChange = {(name, value) => onChange(name, value, ()=>setYearsOfOwnership(value))}
                     />
                     <SelectInput
-                        title         = {'Road Tax'}
-                        value         = {roadTax}
-                        options       = {[0,50,100,150,200,250,300,350,400,450,500,550,600,650,700,750,800,850,900]}
-                        comment       = {currency[1] + ' per year'}
-                        customClasses = {''}
-                        onChange      = {(name, value) => onChange(name, value, () => setRoadTax(value))}
+                        title    = {'Road Tax'}
+                        value    = {roadTax}
+                        options  = {[0,50,100,150,200,250,300,350,400,450,500,550,600,650,700,750,800,850,900]}
+                        comment  = {currency[1] + ' per year'}
+                        onChange = {(name, value) => onChange(name, value, () => setRoadTax(value))}
                     />
                 </div>
                 <RangeInput
@@ -276,13 +273,12 @@ export default function Form({
                     onChange     = {(name, value) => onChange(name, value, () => setServiceAverageCost(value))}
                     comment      = {
                         <SelectInput
-                            name          = {'Service Mileage'}
-                            title         = {'per'}
-                            value         = {serviceMileage}
-                            options       = {[1000,2000,3000,4000,5000,6000,7000,8000,9000,10000,11000,12000,13000,14000,15000,16000,17000,18000,19000,20000]}
-                            comment       = {distance[0].toLowerCase() + (distance[0] === 'Mile' ? 's' : '')}
-                            customClasses = {'inline'}
-                            onChange      = {(name, value) => onChange(name, value, () => setServiceMileage(value))}
+                            name     = {'Service Mileage'}
+                            title    = {'per'}
+                            value    = {serviceMileage}
+                            options  = {[1000,2000,3000,4000,5000,6000,7000,8000,9000,10000,11000,12000,13000,14000,15000,16000,17000,18000,19000,20000]}
+                            comment  = {distance[0].toLowerCase() + (distance[0] === 'Mile' ? 's' : '')}
+                            onChange = {(name, value) => onChange(name, value, () => setServiceMileage(value))}
                         />
                     }
                 />

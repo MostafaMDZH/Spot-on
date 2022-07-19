@@ -6,7 +6,6 @@ export default function SelectInput({
         value,
         options,
         comment,
-        customClasses,
         isDisable,
         onChange
     }){
@@ -24,7 +23,7 @@ export default function SelectInput({
 
     //return:
     return (
-        <div className={'SelectInput ' + (isDisable ? 'disable ': '') + (customClasses || '')}>
+        <div className={'SelectInput ' + (isDisable ? 'disable ': '')}>
             <a className='title'>{title}</a>
             <div>
                 <div className='selectWrapper'>
