@@ -3,21 +3,21 @@
     "CURRENCY"             : { "name" : "Euro"    , "symbol" : "€"  },
     "DISTANCE"             : { "name" : "Km"      , "symbol" : "Km" },
     "FUEL_MEASUREMENT"     : { "name" : "L/100Km" , "symbol" : "L"  },
-    "FUEL_COST"            : "1.25",
+    "FUEL_COST"            : "1.82",
     "IS_DARK_MODE"         : "No",
 
     "TYPE_OF_OWNERSHIP"    : "Lease",
-    "PURCHASE_PRICE"       : "40000",
+    "PURCHASE_PRICE"       : "30000",
     "YEARS_OF_OWNERSHIP"   : "3",
     "ROAD_TAX"             : "500",
-    "INSTALMENT"           : "800",
-    "INSURANCE"            : "1000",
-    "WARRANTY"             : "1000",
-    "MAINTENANCE"          : "2000",
-    "MILEAGE"              : "15000",
-    "FUEL_CONSUMPTION"      : "8",
+    "INSTALMENT"           : "700",
+    "INSURANCE"            : "1500",
+    "WARRANTY"             : "1400",
+    "MAINTENANCE"          : "2300",
+    "MILEAGE"              : "20000",
+    "FUEL_CONSUMPTION"     : "8",
     "SERVICE_AVERAGE_COST" : "400",
-    "SERVICE_MILEAGE"      : "6000",
-    "ASKING_PRICE"         : "60000"
+    "SERVICE_MILEAGE"      : "10000",
+    "ASKING_PRICE"         : "44000"
 
 }
