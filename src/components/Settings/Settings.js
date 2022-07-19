@@ -1,7 +1,7 @@
 import { toast, Toaster } from 'react-hot-toast';
-import Cookies     from 'universal-cookie';
-import RangeInput  from '../RangeInput/RangeInput';
-import SelectInput from '../SelectInput/SelectInput';
+import Cookies            from 'universal-cookie';
+import RangeInput         from '../RangeInput/RangeInput';
+import SelectInput        from '../SelectInput/SelectInput';
 import './Settings.css';
 
 export default function Settings({
