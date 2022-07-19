@@ -181,6 +181,106 @@
   color: #aaa;
 }
 
+.Settings > .window > .containersWrapper > .container > .section > .SelectInput {
+  width: 100%;
+  min-height: unset;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0;
+  margin-top: 8px;
+}
+
+.Settings > .window > .containersWrapper > .container > .section > .SelectInput > .title {
+  font-size: 1.6rem;
+  line-height: 25px;
+  color: #292929;
+  display: unset;
+}
+
+.Settings > .window > .containersWrapper > .container > .section > .SelectInput > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 0;
+}
+
+.Settings > .window > .containersWrapper > .container > .section > .SelectInput > div > .selectWrapper {
+  background-color: transparent;
+}
+
+.Settings > .window > .containersWrapper > .container > .section > .SelectInput > div > .selectWrapper > .select {
+  min-width: 45px;
+  height: 25px;
+  padding-right: 5px;
+  border: none;
+  padding-bottom: 2px;
+  font-size: 1.6rem;
+  text-align: right;
+}
+
+.Settings > .window > .containersWrapper > .container > .section > .SelectInput > div > .comment {
+  display: none;
+}
+
+.Settings > .window > .containersWrapper > .container > .section > .RangeInput {
+  margin-top: 8px;
+}
+
+.Settings > .window > .containersWrapper > .container > .section > .RangeInput > .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.Settings > .window > .containersWrapper > .container > .section > .RangeInput > .content > .title {
+  font-size: 1.6rem;
+  line-height: 25px;
+  color: #292929;
+}
+
+.Settings > .window > .containersWrapper > .container > .section > .RangeInput > .content > .valueWrapper {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.Settings > .window > .containersWrapper > .container > .section > .RangeInput > .content > .valueWrapper > .unit {
+  padding-right: 2px;
+  padding-top: 3px;
+  font-size: 1.4rem;
+}
+
+.Settings > .window > .containersWrapper > .container > .section > .RangeInput > .content > .valueWrapper > .textInput {
+  width: 50px;
+  font-size: 2.1rem;
+}
+
+.Settings > .window > .containersWrapper > .container > .section > .RangeInput > .content > .valueWrapper > .comment {
+  min-width: 40px;
+  position: static;
+  font-size: 1.6rem;
+  text-align: right;
+  line-height: 26px;
+}
+
+.Settings > .window > .containersWrapper > .container > .section > .RangeInput > .content > .rangeInput {
+  display: none;
+}
+
+.Settings > .window > .containersWrapper > .container > .section > .RangeInput > .content > .rangeInfoWrapper {
+  display: none;
+}
+
 .Settings > .window > .containersWrapper > .settings > #prices {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -275,6 +375,32 @@
 
 .darkMode .Settings > .window > .containersWrapper > .container > .section > .name {
   color: #888;
+}
+
+.darkMode .Settings > .window > .containersWrapper > .container > .section > .SelectInput > .title {
+  color: #ddd;
+}
+
+.darkMode .Settings > .window > .containersWrapper > .container > .section > .SelectInput > div > .selectWrapper {
+  background-color: #012;
+}
+
+.darkMode .Settings > .window > .containersWrapper > .container > .section > .SelectInput > div > .selectWrapper > .select {
+  background-color: #012;
+  color: #ddd;
+}
+
+.darkMode .Settings > .window > .containersWrapper > .container > .section > .RangeInput > .content > .title {
+  color: #ddd;
+}
+
+.darkMode .Settings > .window > .containersWrapper > .container > .section > .RangeInput > .content > .valueWrapper > .textInput {
+  width: 50px;
+  font-size: 2.1rem;
+}
+
+.darkMode .Settings > .window > .containersWrapper > .container > .section > .RangeInput > .content > .rangeInfoWrapper {
+  display: none;
 }
 
 .darkMode .Settings > .window > .containersWrapper > .about .link,

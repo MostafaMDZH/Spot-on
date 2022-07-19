@@ -10,7 +10,6 @@ export default function RangeInput({
         unit,
         minMaxUnit,
         comment,
-        customClasses,
         isDisable,
         isDarkMode,
         onChange
@@ -105,7 +104,7 @@ export default function RangeInput({
 
     //return:
     return (
-        <div className={"RangeInput " + (isDisable ? 'disable ': '') + (customClasses || "")}>
+        <div className={"RangeInput " + (isDisable ? 'disable ': '')}>
             <div className='content'>
                 <a className="title">{title}</a>
                 <div className="valueWrapper">

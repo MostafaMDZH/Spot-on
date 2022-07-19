@@ -47,6 +47,40 @@
                 min-height: 20px;
                 font-size: 1.5rem;
                 color: #aaa;
+                > .SelectInput{
+                    width: auto;
+                    min-height: unset;
+                    > .title{
+                        display: inline-flex;
+                        font-size: 1.5rem;
+                        color: #99a;
+                        display: unset;
+                        float: left;
+                        margin-top: 7px;
+                    }
+                    > div{
+                        display: unset;
+                        float: left;
+                        margin-top: 0;
+                        margin-left: -2px;
+                        > .selectWrapper{
+                            float: left;
+                            background-color: white;
+                            > .select{
+                                height: 25px;
+                                border: none;
+                                padding-right: 0;
+                                padding-bottom: 2px;
+                                font-size: 1.6rem !important;
+                            }
+                        }
+                        > .comment{
+                            float: left;
+                            margin-left: 4px;
+                            margin-top: 7px;
+                        }
+                    }
+                }
             }
         }
         > .rangeInput{
@@ -75,47 +109,6 @@
     }
 }
 
-//in settings:
-.RangeInput.settings{
-    margin-top: 8px;
-    > .content{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        > .title{
-            font-size: 1.6rem;
-            line-height: 25px;
-            color: #292929;
-        }
-        > .valueWrapper{
-            margin-top: 0;
-            margin-bottom: 0;
-            > .unit{
-                padding-right: 2px;
-                padding-top: 3px;
-                font-size: 1.4rem;
-            }
-            > .textInput{
-                width: 50px;
-                font-size: 2.1rem;
-            }
-            > .comment{
-                min-width: 40px;
-                position: static;
-                font-size: 1.6rem;
-                text-align: right;
-                line-height: 26px;
-            }
-        }
-        > .rangeInput{
-            display: none;
-        }
-        > .rangeInfoWrapper{
-            display: none;
-        }
-    }
-}
-
 //dark mode:
 .darkMode{
     .RangeInput{
@@ -132,6 +125,23 @@
                 }
                 > .comment{
                     color: #afafaf;
+                    > .SelectInput.inline{
+                        > .title{
+                            color: #afafaf;
+                        }
+                        > div{
+                            > .selectWrapper{
+                                background-color: #000b23;
+                                > .select{
+                                    color: #ddd;
+                                    background-color: #000b23;
+                                }
+                            }
+                            > .comment{
+                                color: #afafaf;
+                            }
+                        }
+                    }
                 }
             }
             > .rangeInput{
@@ -150,27 +160,7 @@
             }
         }
     }
-    
-    //in settings:
-    .RangeInput.settings{
-        > .content{
-            > .title{
-                color: #ddd;
-            }
-            > .valueWrapper{
-                > .textInput{
-                    width: 50px;
-                    font-size: 2.1rem;
-                }
-            }
-            > .rangeInfoWrapper{
-                display: none;
-            }
-        }
-    }
-    
 }
-
 
 /*
     custom range input:

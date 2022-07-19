@@ -64,6 +64,78 @@
                         font-size: 1.4rem;
                         color: #aaa;
                     }
+                    > .SelectInput{
+                        width: 100%;
+                        min-height: unset;
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 0;
+                        margin-top: 8px;
+                        > .title{
+                            font-size: 1.6rem;
+                            line-height: 25px;
+                            color: #292929;
+                            display: unset;
+                        }
+                        > div{
+                            display: flex;
+                            margin-top: 0;
+                            > .selectWrapper{
+                                background-color: transparent;
+                                > .select{
+                                    min-width: 45px;
+                                    height: 25px;
+                                    padding-right: 5px;
+                                    border: none;
+                                    padding-bottom: 2px;
+                                    font-size: 1.6rem;
+                                    text-align: right;
+                                }
+                            }
+                            > .comment{
+                                display: none;
+                            }
+                        }
+                    }
+                    > .RangeInput{
+                        margin-top: 8px;
+                        > .content{
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            > .title{
+                                font-size: 1.6rem;
+                                line-height: 25px;
+                                color: #292929;
+                            }
+                            > .valueWrapper{
+                                margin-top: 0;
+                                margin-bottom: 0;
+                                > .unit{
+                                    padding-right: 2px;
+                                    padding-top: 3px;
+                                    font-size: 1.4rem;
+                                }
+                                > .textInput{
+                                    width: 50px;
+                                    font-size: 2.1rem;
+                                }
+                                > .comment{
+                                    min-width: 40px;
+                                    position: static;
+                                    font-size: 1.6rem;
+                                    text-align: right;
+                                    line-height: 26px;
+                                }
+                            }
+                            > .rangeInput{
+                                display: none;
+                            }
+                            > .rangeInfoWrapper{
+                                display: none;
+                            }
+                        }
+                    }
                 }
             }
             > .settings{
@@ -161,6 +233,36 @@
                     > .section{
                         > .name{
                             color: #888;
+                        }
+                        > .SelectInput{
+                            > .title{
+                                color: #ddd;
+                            }
+                            > div{
+                                > .selectWrapper{
+                                    background-color: #012;
+                                    > .select{
+                                        background-color: #012;
+                                        color: #ddd;
+                                    }
+                                }
+                            }
+                        }
+                        > .RangeInput{
+                            > .content{
+                                > .title{
+                                    color: #ddd;
+                                }
+                                > .valueWrapper{
+                                    > .textInput{
+                                        width: 50px;
+                                        font-size: 2.1rem;
+                                    }
+                                }
+                                > .rangeInfoWrapper{
+                                    display: none;
+                                }
+                            }
                         }
                     }
                 }

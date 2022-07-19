@@ -47,77 +47,6 @@
     pointer-events: none;
 }
 
-//in range input:
-.SelectInput.inline{
-    width: auto;
-    min-height: unset;
-    > .title{
-        display: inline-flex;
-        font-size: 1.5rem;
-        color: #99a;
-        display: unset;
-        float: left;
-        margin-top: 7px;
-    }
-    > div{
-        display: unset;
-        float: left;
-        margin-top: 0;
-        margin-left: -2px;
-        > .selectWrapper{
-            float: left;
-            background-color: white;
-            > .select{
-                height: 25px;
-                border: none;
-                padding-right: 0;
-                padding-bottom: 2px;
-                font-size: 1.6rem !important;
-            }
-        }
-        > .comment{
-            float: left;
-            margin-left: 4px;
-            margin-top: 7px;
-        }
-    }
-}
-
-//in settings:
-.SelectInput.settings{
-    width: 100%;
-    min-height: unset;
-    display: flex;
-    justify-content: space-between;
-    padding: 0;
-    margin-top: 8px;
-    > .title{
-        font-size: 1.6rem;
-        line-height: 25px;
-        color: #292929;
-        display: unset;
-    }
-    > div{
-        display: flex;
-        margin-top: 0;
-        > .selectWrapper{
-            background-color: transparent;
-            > .select{
-                min-width: 45px;
-                height: 25px;
-                padding-right: 5px;
-                border: none;
-                padding-bottom: 2px;
-                font-size: 1.6rem;
-                text-align: right;
-            }
-        }
-        > .comment{
-            display: none;
-        }
-    }
-}
-
 //dark mode:
 .darkMode{
     .SelectInput{
@@ -131,39 +60,6 @@
                     color: #efefef;
                     background-color: #072037;
                     @extend .ultraThinScrollbar_dark;
-                }
-            }
-        }
-    }
-    //in range input:
-    .SelectInput.inline{
-        > .title{
-            color: #afafaf;
-        }
-        > div{
-            > .selectWrapper{
-                background-color: #000b23;
-                > .select{
-                    color: #ddd;
-                    background-color: #000b23;
-                }
-            }
-            > .comment{
-                color: #afafaf;
-            }
-        }
-    }
-    //in settings:
-    .SelectInput.settings{
-        > .title{
-            color: #ddd;
-        }
-        > div{
-            > .selectWrapper{
-                background-color: #012;
-                > .select{
-                    background-color: #012;
-                    color: #ddd;
                 }
             }
         }
