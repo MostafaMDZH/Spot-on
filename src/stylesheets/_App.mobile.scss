@@ -34,14 +34,9 @@
                             > .inputsContainer{
                                 opacity: 1;
                                 transition: opacity 200ms linear;
-                                .RangeInput{
-                                    .textInput{
-                                        font-size: 3rem;
-                                    }
-                                }
                                 .SelectInput{
                                     .select{
-                                        font-size: 2.6rem;
+                                        // font-size: 2.7rem;
                                     }
                                 }
                             }
@@ -105,7 +100,7 @@
                                     > .costs,
                                     > .willBe{
                                         font-size: 3.4rem;
-                                        color: #555;
+                                        color: #3d3d3d;
                                     }
                                     > .benefits{
                                         font-weight: normal;
@@ -494,7 +489,7 @@
             > .rightSide{
                 > .infoWrapper{
                     > .Info{
-                        background-color: #000b23;
+                        background-color: #000b27;
                         > .container{
                             > .titleWrapper{
                                 > .bigText{
