@@ -12,8 +12,11 @@
         > a{
             width: 45px;
             display: block;
-            color: #bbb;
+            color: #aaa;
             font-size: 1.4rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
     > .columnsWrapper{
