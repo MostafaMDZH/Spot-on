@@ -84,6 +84,7 @@
                     transition: opacity 200ms linear;
                     .Info{
                         box-shadow: none;
+                        background-color: transparent !important;
                         > .container{
                             width: fit-content;
                             max-width: unset;
@@ -490,7 +491,7 @@
             > .rightSide{
                 > .infoWrapper{
                     > .Info{
-                        background-color: #000b23 !important;
+                        background-color: #000b23;
                         > .container{
                             > .titleWrapper{
                                 > .bigText{

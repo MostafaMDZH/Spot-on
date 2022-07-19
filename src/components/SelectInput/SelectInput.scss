@@ -17,6 +17,7 @@
         > .selectWrapper{
             background-color: #f5f5f5;
             border-radius: 7px;
+            transition: background-color 200ms ease-in-out;
             > .select{
                 box-sizing: content-box;
                 width: auto;
@@ -31,6 +32,7 @@
                 color: #027;
                 border-radius: 7px;
                 @extend .ultraThinScrollbar_light;
+                transition: background-color 200ms ease-in-out;
             }
         }
         > .comment{
@@ -64,7 +66,7 @@
         margin-left: -2px;
         > .selectWrapper{
             float: left;
-            background-color: transparent;
+            background-color: white;
             > .select{
                 height: 25px;
                 border: none;

@@ -57,7 +57,7 @@
     custom scrollbar
 */
 .thinScrollbar_light::-webkit-scrollbar, .thinScrollbar_dark::-webkit-scrollbar, .darkMode.notTouchScreen::-webkit-scrollbar, .darkMode.notTouchScreen ::-webkit-scrollbar, .notTouchScreen::-webkit-scrollbar, .notTouchScreen ::-webkit-scrollbar {
-  width: 7px;
+  width: 6px;
   height: 4px;
 }
 
@@ -68,11 +68,6 @@
 .thinScrollbar_light::-webkit-scrollbar-thumb, .thinScrollbar_dark::-webkit-scrollbar-thumb, .darkMode.notTouchScreen::-webkit-scrollbar-thumb, .darkMode.notTouchScreen ::-webkit-scrollbar-thumb, .notTouchScreen::-webkit-scrollbar-thumb, .notTouchScreen ::-webkit-scrollbar-thumb {
   background: #c4c4c4;
   border-radius: 20px;
-}
-
-.thinScrollbar_dark::-webkit-scrollbar, .darkMode.notTouchScreen::-webkit-scrollbar, .darkMode.notTouchScreen ::-webkit-scrollbar {
-  width: 6px;
-  height: 4px;
 }
 
 .thinScrollbar_dark::-webkit-scrollbar-thumb, .darkMode.notTouchScreen::-webkit-scrollbar-thumb, .darkMode.notTouchScreen ::-webkit-scrollbar-thumb {
@@ -355,6 +350,8 @@
   border-bottom: solid 5px white;
   margin-top: -1px;
   margin-bottom: -1px;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 
 .customRange_light::-moz-range-track, .RangeInput > .content > .rangeInput::-moz-range-track, .customRange_dark::-moz-range-track, .darkMode .RangeInput > .content > .rangeInput::-moz-range-track {
@@ -364,6 +361,8 @@
   background: transparent;
   border-top: solid 8px white;
   border-bottom: solid 8px white;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 
 .customRange_light::-ms-track, .RangeInput > .content > .rangeInput::-ms-track, .customRange_dark::-ms-track, .darkMode .RangeInput > .content > .rangeInput::-ms-track {
@@ -375,6 +374,8 @@
   border-bottom: solid 5px white;
   border-color: transparent;
   color: transparent;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 
 .customRange_light::-ms-fill-lower, .RangeInput > .content > .rangeInput::-ms-fill-lower, .customRange_dark::-ms-fill-lower, .darkMode .RangeInput > .content > .rangeInput::-ms-fill-lower {
@@ -384,6 +385,8 @@
   background: transparent;
   border-top: solid 5px white;
   border-bottom: solid 5px white;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 
 .customRange_light::-ms-fill-upper, .RangeInput > .content > .rangeInput::-ms-fill-upper, .customRange_dark::-ms-fill-upper, .darkMode .RangeInput > .content > .rangeInput::-ms-fill-upper {
@@ -393,6 +396,8 @@
   background: transparent;
   border-top: solid 5px white;
   border-bottom: solid 5px white;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 
 .customRange_dark::-webkit-slider-thumb, .darkMode .RangeInput > .content > .rangeInput::-webkit-slider-thumb {

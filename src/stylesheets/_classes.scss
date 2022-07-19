@@ -55,7 +55,7 @@
 
 //thinScrollbar_light:
 .thinScrollbar_light::-webkit-scrollbar{
-    width: 7px;
+    width: 6px;
     height: 4px;
 }
 .thinScrollbar_light::-webkit-scrollbar-track{
@@ -67,10 +67,6 @@
 }
 .thinScrollbar_dark{
     @extend .thinScrollbar_light;
-}
-.thinScrollbar_dark::-webkit-scrollbar{
-    width: 6px;
-    height: 4px;
 }
 .thinScrollbar_dark::-webkit-scrollbar-thumb{
     background: #888;
