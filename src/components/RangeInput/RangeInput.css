@@ -236,61 +236,6 @@
   opacity: 0;
 }
 
-.RangeInput.settings {
-  margin-top: 8px;
-}
-
-.RangeInput.settings > .content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.RangeInput.settings > .content > .title {
-  font-size: 1.6rem;
-  line-height: 25px;
-  color: #292929;
-}
-
-.RangeInput.settings > .content > .valueWrapper {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.RangeInput.settings > .content > .valueWrapper > .unit {
-  padding-right: 2px;
-  padding-top: 3px;
-  font-size: 1.4rem;
-}
-
-.RangeInput.settings > .content > .valueWrapper > .textInput {
-  width: 50px;
-  font-size: 2.1rem;
-}
-
-.RangeInput.settings > .content > .valueWrapper > .comment {
-  min-width: 40px;
-  position: static;
-  font-size: 1.6rem;
-  text-align: right;
-  line-height: 26px;
-}
-
-.RangeInput.settings > .content > .rangeInput {
-  display: none;
-}
-
-.RangeInput.settings > .content > .rangeInfoWrapper {
-  display: none;
-}
-
 .darkMode .RangeInput > .content > .title {
   color: #afafaf;
 }
@@ -342,19 +287,6 @@
 .darkMode .RangeInput > .content > .rangeInfoWrapper > a {
   font-size: 1.3rem;
   color: #bbb;
-}
-
-.darkMode .RangeInput.settings > .content > .title {
-  color: #ddd;
-}
-
-.darkMode .RangeInput.settings > .content > .valueWrapper > .textInput {
-  width: 50px;
-  font-size: 2.1rem;
-}
-
-.darkMode .RangeInput.settings > .content > .rangeInfoWrapper {
-  display: none;
 }
 
 /*
