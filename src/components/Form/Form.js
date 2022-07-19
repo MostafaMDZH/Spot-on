@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
-import Cookies             from 'universal-cookie';
-import useWindowDimensions from '../../tools/useWindowDimensions'
-import DV                  from '../../DefaultValues'
-import RangeInput          from '../RangeInput/RangeInput';
-import SelectInput         from '../SelectInput/SelectInput';
+import Cookies                 from 'universal-cookie';
+import useWindowDimensions     from '../../tools/useWindowDimensions'
+import DV                      from '../../DefaultValues'
+import RangeInput              from '../RangeInput/RangeInput';
+import SelectInput             from '../SelectInput/SelectInput';
 import './Form.css';
 
 export default function Form({

@@ -1,9 +1,4 @@
 @font-face {
-  font-family: Ubuntu_Light;
-  src: url(/src/fonts/Ubuntu-light.ttf);
-}
-
-@font-face {
   font-family: Ubuntu_Regular;
   src: url(/src/fonts/Ubuntu-regular.ttf);
 }
