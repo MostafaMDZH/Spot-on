@@ -1,5 +1,6 @@
 .Chart {
   width: 100%;
+  max-width: 360px;
   height: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
