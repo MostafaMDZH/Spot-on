@@ -31,6 +31,10 @@
   bottom: 3%;
   z-index: 1;
   display: none;
+  -webkit-transition: -webkit-box-shadow 200ms ease-in-out;
+  transition: -webkit-box-shadow 200ms ease-in-out;
+  transition: box-shadow 200ms ease-in-out;
+  transition: box-shadow 200ms ease-in-out, -webkit-box-shadow 200ms ease-in-out;
 }
 
 .Form > .calcButtonWrapper > .calcButton {
@@ -38,8 +42,8 @@
   height: 60px;
   background: #027 url(/src/icons/logo_fff.svg) no-repeat center/24px auto;
   border-radius: 50%;
-  -webkit-transition: all 100ms ease-in-out;
-  transition: all 100ms ease-in-out;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 
 .darkMode .Form > .calcButtonWrapper {

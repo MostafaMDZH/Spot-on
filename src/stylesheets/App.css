@@ -11,6 +11,8 @@
       -ms-flex-align: start;
           align-items: flex-start;
   overflow: auto;
+  -webkit-transition: background-color 200ms ease-in-out;
+  transition: background-color 200ms ease-in-out;
 }
 
 .App > .window {
@@ -53,8 +55,8 @@
   width: 570px;
   background-color: white;
   position: relative;
-  -webkit-transition: 200ms width 150ms ease-in-out, 200ms height 150ms ease-in-out, 200ms padding 150ms ease-in-out;
-  transition: 200ms width 150ms ease-in-out, 200ms height 150ms ease-in-out, 200ms padding 150ms ease-in-out;
+  -webkit-transition: 200ms width 150ms ease-in-out, 200ms height 150ms ease-in-out, 200ms padding 150ms ease-in-out, background-color 200ms ease-in-out;
+  transition: 200ms width 150ms ease-in-out, 200ms height 150ms ease-in-out, 200ms padding 150ms ease-in-out, background-color 200ms ease-in-out;
 }
 
 .App > .window > .rightSide .Header {
@@ -346,6 +348,7 @@
   .App > .window > .rightSide > .infoWrapper .Info {
     -webkit-box-shadow: none;
             box-shadow: none;
+    background-color: transparent !important;
   }
   .App > .window > .rightSide > .infoWrapper .Info > .container {
     width: -webkit-fit-content;
@@ -353,7 +356,7 @@
     width: fit-content;
     max-width: unset;
     margin-top: -60px;
-    padding: 8px 0 15px 0;
+    padding: 4px 0 15px 0;
     max-height: 600px;
     gap: 30px;
   }
@@ -492,6 +495,9 @@
   .App .window > .rightSide > .infoWrapper > .Info > .container > .chartWrapper .verticalColum {
     padding-right: 2px;
   }
+  .App .menu .endButtonsContainer {
+    gap: 10px;
+  }
 }
 
 @media only screen and (max-width: 400px) {
@@ -539,7 +545,7 @@
     font-size: 2.1rem;
   }
   .App .window .menu .endButtonsContainer {
-    gap: 8px;
+    gap: 7px;
   }
 }
 
@@ -595,7 +601,7 @@
 
 @media only screen and (max-width: 1000px) {
   .App.darkMode > .window > .rightSide > .infoWrapper > .Info {
-    background-color: #000b23 !important;
+    background-color: #000b23;
   }
   .App.darkMode > .window > .rightSide > .infoWrapper > .Info > .container > .titleWrapper > .bigText > .costs,
   .App.darkMode > .window > .rightSide > .infoWrapper > .Info > .container > .titleWrapper > .bigText > .willBe {

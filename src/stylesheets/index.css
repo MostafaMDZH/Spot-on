@@ -67,7 +67,7 @@
     custom scrollbar
 */
 .thinScrollbar_light::-webkit-scrollbar, .thinScrollbar_dark::-webkit-scrollbar, .darkMode.notTouchScreen::-webkit-scrollbar, .darkMode.notTouchScreen ::-webkit-scrollbar, .notTouchScreen::-webkit-scrollbar, .notTouchScreen ::-webkit-scrollbar {
-  width: 7px;
+  width: 6px;
   height: 4px;
 }
 
@@ -78,11 +78,6 @@
 .thinScrollbar_light::-webkit-scrollbar-thumb, .thinScrollbar_dark::-webkit-scrollbar-thumb, .darkMode.notTouchScreen::-webkit-scrollbar-thumb, .darkMode.notTouchScreen ::-webkit-scrollbar-thumb, .notTouchScreen::-webkit-scrollbar-thumb, .notTouchScreen ::-webkit-scrollbar-thumb {
   background: #c4c4c4;
   border-radius: 20px;
-}
-
-.thinScrollbar_dark::-webkit-scrollbar, .darkMode.notTouchScreen::-webkit-scrollbar, .darkMode.notTouchScreen ::-webkit-scrollbar {
-  width: 6px;
-  height: 4px;
 }
 
 .thinScrollbar_dark::-webkit-scrollbar-thumb, .darkMode.notTouchScreen::-webkit-scrollbar-thumb, .darkMode.notTouchScreen ::-webkit-scrollbar-thumb {
