@@ -47,6 +47,40 @@
                 min-height: 20px;
                 font-size: 1.5rem;
                 color: #aaa;
+                > .SelectInput{
+                    width: auto;
+                    min-height: unset;
+                    > .title{
+                        display: inline-flex;
+                        font-size: 1.5rem;
+                        color: #99a;
+                        display: unset;
+                        float: left;
+                        margin-top: 7px;
+                    }
+                    > div{
+                        display: unset;
+                        float: left;
+                        margin-top: 0;
+                        margin-left: -2px;
+                        > .selectWrapper{
+                            float: left;
+                            background-color: white;
+                            > .select{
+                                height: 25px;
+                                border: none;
+                                padding-right: 0;
+                                padding-bottom: 2px;
+                                font-size: 1.6rem !important;
+                            }
+                        }
+                        > .comment{
+                            float: left;
+                            margin-left: 4px;
+                            margin-top: 7px;
+                        }
+                    }
+                }
             }
         }
         > .rangeInput{
@@ -132,6 +166,23 @@
                 }
                 > .comment{
                     color: #afafaf;
+                    > .SelectInput.inline{
+                        > .title{
+                            color: #afafaf;
+                        }
+                        > div{
+                            > .selectWrapper{
+                                background-color: #000b23;
+                                > .select{
+                                    color: #ddd;
+                                    background-color: #000b23;
+                                }
+                            }
+                            > .comment{
+                                color: #afafaf;
+                            }
+                        }
+                    }
                 }
             }
             > .rangeInput{

@@ -149,48 +149,6 @@
   pointer-events: none;
 }
 
-.SelectInput.inline {
-  width: auto;
-  min-height: unset;
-}
-
-.SelectInput.inline > .title {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  font-size: 1.5rem;
-  color: #99a;
-  display: unset;
-  float: left;
-  margin-top: 7px;
-}
-
-.SelectInput.inline > div {
-  display: unset;
-  float: left;
-  margin-top: 0;
-  margin-left: -2px;
-}
-
-.SelectInput.inline > div > .selectWrapper {
-  float: left;
-  background-color: white;
-}
-
-.SelectInput.inline > div > .selectWrapper > .select {
-  height: 25px;
-  border: none;
-  padding-right: 0;
-  padding-bottom: 2px;
-  font-size: 1.6rem !important;
-}
-
-.SelectInput.inline > div > .comment {
-  float: left;
-  margin-left: 4px;
-  margin-top: 7px;
-}
-
 .SelectInput.settings {
   width: 100%;
   min-height: unset;
@@ -247,23 +205,6 @@
 .darkMode .SelectInput > div > .selectWrapper > .select {
   color: #efefef;
   background-color: #072037;
-}
-
-.darkMode .SelectInput.inline > .title {
-  color: #afafaf;
-}
-
-.darkMode .SelectInput.inline > div > .selectWrapper {
-  background-color: #000b23;
-}
-
-.darkMode .SelectInput.inline > div > .selectWrapper > .select {
-  color: #ddd;
-  background-color: #000b23;
-}
-
-.darkMode .SelectInput.inline > div > .comment {
-  color: #afafaf;
 }
 
 .darkMode .SelectInput.settings > .title {

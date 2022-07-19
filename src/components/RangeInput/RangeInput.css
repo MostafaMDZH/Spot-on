@@ -165,6 +165,48 @@
   color: #aaa;
 }
 
+.RangeInput > .content > .valueWrapper > .comment > .SelectInput {
+  width: auto;
+  min-height: unset;
+}
+
+.RangeInput > .content > .valueWrapper > .comment > .SelectInput > .title {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 1.5rem;
+  color: #99a;
+  display: unset;
+  float: left;
+  margin-top: 7px;
+}
+
+.RangeInput > .content > .valueWrapper > .comment > .SelectInput > div {
+  display: unset;
+  float: left;
+  margin-top: 0;
+  margin-left: -2px;
+}
+
+.RangeInput > .content > .valueWrapper > .comment > .SelectInput > div > .selectWrapper {
+  float: left;
+  background-color: white;
+}
+
+.RangeInput > .content > .valueWrapper > .comment > .SelectInput > div > .selectWrapper > .select {
+  height: 25px;
+  border: none;
+  padding-right: 0;
+  padding-bottom: 2px;
+  font-size: 1.6rem !important;
+}
+
+.RangeInput > .content > .valueWrapper > .comment > .SelectInput > div > .comment {
+  float: left;
+  margin-left: 4px;
+  margin-top: 7px;
+}
+
 .RangeInput > .content > .rangeInput {
   margin: 0;
 }
@@ -262,6 +304,23 @@
 }
 
 .darkMode .RangeInput > .content > .valueWrapper > .comment {
+  color: #afafaf;
+}
+
+.darkMode .RangeInput > .content > .valueWrapper > .comment > .SelectInput.inline > .title {
+  color: #afafaf;
+}
+
+.darkMode .RangeInput > .content > .valueWrapper > .comment > .SelectInput.inline > div > .selectWrapper {
+  background-color: #000b23;
+}
+
+.darkMode .RangeInput > .content > .valueWrapper > .comment > .SelectInput.inline > div > .selectWrapper > .select {
+  color: #ddd;
+  background-color: #000b23;
+}
+
+.darkMode .RangeInput > .content > .valueWrapper > .comment > .SelectInput.inline > div > .comment {
   color: #afafaf;
 }
 
