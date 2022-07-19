@@ -72,7 +72,7 @@ export default function App(){
     }
 
     //handleSettingsVisibility:
-    const handleSettingsVisibility = (isVisible) =>{
+    const handleSettingsVisibility = (isVisible) => {
         setSettingsVisibility(isVisible);
         if(isVisible)
             window.location.hash = 'settings';
