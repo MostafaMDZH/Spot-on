@@ -19,13 +19,13 @@
             color: #aaa;
         }
         > .valueWrapper{
-            position: relative;
             margin-top: 12px;
-            margin-bottom: 3px;
+            margin-bottom: 4px;
             display: flex;
+            justify-content: space-between;
+            gap: 3px;
             > .unit{
-                padding-right: 3px;
-                padding-top: 5px;
+                padding-top: 4px;
                 color: #027;
                 font-size: 1.8rem;
             }
@@ -37,45 +37,41 @@
                 flex: 1;
             }
             > .comment{
-                max-width: 200px;
+                max-width: 60%;
+                align-self: flex-end;
+                margin-bottom: 5px;
                 text-align: right;
-                position: absolute;
-                bottom: 1px;
-                right: 0;
-                min-height: 20px;
                 font-size: 1.5rem;
                 color: #aaa;
                 > .SelectInput{
                     width: auto;
                     min-height: unset;
+                    margin-bottom: -6px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: end;
+                    align-items: center;
+                    padding-top: 0;
                     > .title{
                         display: inline-flex;
                         font-size: 1.5rem;
                         color: #99a;
                         display: unset;
-                        float: left;
-                        margin-top: 7px;
                     }
                     > div{
-                        display: unset;
-                        float: left;
+                        display: flex;
+                        gap: 4px;
                         margin-top: 0;
-                        margin-left: -2px;
                         > .selectWrapper{
-                            float: left;
                             background-color: white;
                             > .select{
                                 height: 25px;
                                 border: none;
                                 padding-right: 0;
+                                padding-left: 0;
                                 padding-bottom: 2px;
                                 font-size: 1.6rem !important;
                             }
-                        }
-                        > .comment{
-                            float: left;
-                            margin-left: 4px;
-                            margin-top: 7px;
                         }
                     }
                 }
@@ -129,10 +125,10 @@
                         }
                         > div{
                             > .selectWrapper{
-                                background-color: #000b23;
+                                background-color: #000b27;
                                 > .select{
                                     color: #ddd;
-                                    background-color: #000b23;
+                                    background-color: #000b27;
                                 }
                             }
                             > .comment{
@@ -256,34 +252,34 @@
     @extend .customRange_light;
 }
 .customRange_dark::-webkit-slider-thumb{
-    background-color: #000b23;
+    background-color: #000b27;
     border: 2px solid #ddd;
 }
 .customRange_dark::-moz-range-thumb{
-    background-color: #000b23;
+    background-color: #000b27;
     border: 2px solid #027;
 }
 .customRange_dark::-ms-thumb{
-    background-color: #000b23;
+    background-color: #000b27;
     border: 2px solid #ddd;
 }
 .customRange_dark::-webkit-slider-runnable-track{
-    border-top: solid 5px #000b23;
-    border-bottom: solid 5px #000b23;
+    border-top: solid 5px #000b27;
+    border-bottom: solid 5px #000b27;
 }
 .customRange_dark::-moz-range-track{
-    border-top: solid 8px #000b23;
-    border-bottom: solid 8px #000b23;
+    border-top: solid 8px #000b27;
+    border-bottom: solid 8px #000b27;
 }
 .customRange_dark::-ms-track{
-    border-top: solid 5px #000b23;
-    border-bottom: solid 5px #000b23;
+    border-top: solid 5px #000b27;
+    border-bottom: solid 5px #000b27;
 }
 .customRange_dark::-ms-fill-lower{
-    border-top: solid 5px #000b23;
-    border-bottom: solid 5px #000b23;
+    border-top: solid 5px #000b27;
+    border-bottom: solid 5px #000b27;
 }
 .customRange_dark::-ms-fill-upper{
-    border-top: solid 5px #000b23;
-    border-bottom: solid 5px #000b23;
+    border-top: solid 5px #000b27;
+    border-bottom: solid 5px #000b27;
 }

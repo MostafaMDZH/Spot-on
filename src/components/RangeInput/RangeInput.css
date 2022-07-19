@@ -35,17 +35,19 @@
 }
 
 .RangeInput > .content > .valueWrapper {
-  position: relative;
   margin-top: 12px;
-  margin-bottom: 3px;
+  margin-bottom: 4px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 3px;
 }
 
 .RangeInput > .content > .valueWrapper > .unit {
-  padding-right: 3px;
-  padding-top: 5px;
+  padding-top: 4px;
   color: #027;
   font-size: 1.8rem;
 }
@@ -61,12 +63,11 @@
 }
 
 .RangeInput > .content > .valueWrapper > .comment {
-  max-width: 200px;
+  max-width: 60%;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-bottom: 5px;
   text-align: right;
-  position: absolute;
-  bottom: 1px;
-  right: 0;
-  min-height: 20px;
   font-size: 1.5rem;
   color: #aaa;
 }
@@ -74,6 +75,21 @@
 .RangeInput > .content > .valueWrapper > .comment > .SelectInput {
   width: auto;
   min-height: unset;
+  margin-bottom: -6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 0;
 }
 
 .RangeInput > .content > .valueWrapper > .comment > .SelectInput > .title {
@@ -83,19 +99,17 @@
   font-size: 1.5rem;
   color: #99a;
   display: unset;
-  float: left;
-  margin-top: 7px;
 }
 
 .RangeInput > .content > .valueWrapper > .comment > .SelectInput > div {
-  display: unset;
-  float: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 4px;
   margin-top: 0;
-  margin-left: -2px;
 }
 
 .RangeInput > .content > .valueWrapper > .comment > .SelectInput > div > .selectWrapper {
-  float: left;
   background-color: white;
 }
 
@@ -103,14 +117,9 @@
   height: 25px;
   border: none;
   padding-right: 0;
+  padding-left: 0;
   padding-bottom: 2px;
   font-size: 1.6rem !important;
-}
-
-.RangeInput > .content > .valueWrapper > .comment > .SelectInput > div > .comment {
-  float: left;
-  margin-left: 4px;
-  margin-top: 7px;
 }
 
 .RangeInput > .content > .rangeInput {
@@ -163,12 +172,12 @@
 }
 
 .darkMode .RangeInput > .content > .valueWrapper > .comment > .SelectInput > div > .selectWrapper {
-  background-color: #000b23;
+  background-color: #000b27;
 }
 
 .darkMode .RangeInput > .content > .valueWrapper > .comment > .SelectInput > div > .selectWrapper > .select {
   color: #ddd;
-  background-color: #000b23;
+  background-color: #000b27;
 }
 
 .darkMode .RangeInput > .content > .valueWrapper > .comment > .SelectInput > div > .comment {
@@ -298,42 +307,42 @@
 }
 
 .customRange_dark::-webkit-slider-thumb, .darkMode .RangeInput > .content > .rangeInput::-webkit-slider-thumb {
-  background-color: #000b23;
+  background-color: #000b27;
   border: 2px solid #ddd;
 }
 
 .customRange_dark::-moz-range-thumb, .darkMode .RangeInput > .content > .rangeInput::-moz-range-thumb {
-  background-color: #000b23;
+  background-color: #000b27;
   border: 2px solid #027;
 }
 
 .customRange_dark::-ms-thumb, .darkMode .RangeInput > .content > .rangeInput::-ms-thumb {
-  background-color: #000b23;
+  background-color: #000b27;
   border: 2px solid #ddd;
 }
 
 .customRange_dark::-webkit-slider-runnable-track, .darkMode .RangeInput > .content > .rangeInput::-webkit-slider-runnable-track {
-  border-top: solid 5px #000b23;
-  border-bottom: solid 5px #000b23;
+  border-top: solid 5px #000b27;
+  border-bottom: solid 5px #000b27;
 }
 
 .customRange_dark::-moz-range-track, .darkMode .RangeInput > .content > .rangeInput::-moz-range-track {
-  border-top: solid 8px #000b23;
-  border-bottom: solid 8px #000b23;
+  border-top: solid 8px #000b27;
+  border-bottom: solid 8px #000b27;
 }
 
 .customRange_dark::-ms-track, .darkMode .RangeInput > .content > .rangeInput::-ms-track {
-  border-top: solid 5px #000b23;
-  border-bottom: solid 5px #000b23;
+  border-top: solid 5px #000b27;
+  border-bottom: solid 5px #000b27;
 }
 
 .customRange_dark::-ms-fill-lower, .darkMode .RangeInput > .content > .rangeInput::-ms-fill-lower {
-  border-top: solid 5px #000b23;
-  border-bottom: solid 5px #000b23;
+  border-top: solid 5px #000b27;
+  border-bottom: solid 5px #000b27;
 }
 
 .customRange_dark::-ms-fill-upper, .darkMode .RangeInput > .content > .rangeInput::-ms-fill-upper {
-  border-top: solid 5px #000b23;
-  border-bottom: solid 5px #000b23;
+  border-top: solid 5px #000b27;
+  border-bottom: solid 5px #000b27;
 }
 /*# sourceMappingURL=RangeInput.css.map */
