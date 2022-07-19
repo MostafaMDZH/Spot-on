@@ -280,7 +280,7 @@
   }
   .App > .window > .leftSide,
   .App > .window > .rightSide {
-    padding: 60px 100px calc(7% + 60px) 100px;
+    padding: 40px 100px calc(7% + 60px) 100px;
   }
   .App > .window > .leftSide {
     height: 100%;
@@ -414,16 +414,19 @@
 @media only screen and (max-width: 800px) {
   .App .window > .leftSide,
   .App .window > .rightSide {
-    padding-top: 55px;
+    padding-top: 30px;
     padding-left: 80px;
     padding-right: 80px;
+  }
+  .App .window > .leftSide {
+    gap: 35px;
   }
 }
 
 @media only screen and (max-width: 700px) {
   .App .window > .leftSide,
   .App .window > .rightSide {
-    padding-top: 45px;
+    padding-top: 25px;
     padding-left: 65px;
     padding-right: 65px;
   }
@@ -432,22 +435,13 @@
 @media only screen and (max-width: 600px) {
   .App .window > .leftSide,
   .App .window > .rightSide {
-    padding-top: 40px;
+    padding-top: 20px;
     padding-left: 50px;
     padding-right: 50px;
-  }
-  .App .window > .leftSide {
-    gap: 35px;
   }
 }
 
 @media only screen and (max-width: 550px) {
-  .App .window > .leftSide,
-  .App .window > .rightSide {
-    padding-top: 30px;
-    padding-left: 43px;
-    padding-right: 43px;
-  }
   .App .window > .leftSide .Header .description,
   .App .window > .rightSide .Header .description {
     display: none;
@@ -458,12 +452,12 @@
 @media only screen and (max-width: 500px) {
   .App .window > .leftSide,
   .App .window > .rightSide {
-    padding-top: 28px;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-top: 15px;
+    padding-left: 35px;
+    padding-right: 35px;
   }
   .App .window > .leftSide {
-    gap: 25px;
+    gap: 20px;
   }
   .App .window > .rightSide > .infoWrapper > .Info > .container {
     width: 100%;
@@ -503,16 +497,18 @@
 @media only screen and (max-width: 400px) {
   .App .window > .leftSide,
   .App .window > .rightSide {
-    padding-top: 25px;
-    padding-left: 36px;
-    padding-right: 36px;
+    padding-top: 12px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 
 @media only screen and (max-width: 380px) {
   .App .window > .leftSide,
   .App .window > .rightSide {
-    padding-top: 20px;
+    padding-top: 10px;
+    padding-left: 27px;
+    padding-right: 27px;
   }
   .App .window > .rightSide > .infoWrapper > .Info > .container > .titleWrapper > .bigText > .costs,
   .App .window > .rightSide > .infoWrapper > .Info > .container > .titleWrapper > .bigText > .willBe {
@@ -529,9 +525,9 @@
 @media only screen and (max-width: 360px) {
   .App .window > .leftSide,
   .App .window > .rightSide {
-    padding-top: 16px;
-    padding-left: 29px;
-    padding-right: 29px;
+    padding-top: 9px;
+    padding-left: 25px;
+    padding-right: 25px;
   }
   .App .window > .leftSide {
     gap: 20px;
@@ -552,9 +548,9 @@
 @media only screen and (max-width: 345px) {
   .App .window > .leftSide,
   .App .window > .rightSide {
-    padding-top: 14px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-top: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   .App .window > .rightSide > .infoWrapper > .Info .Chart .columnsWrapper .barWrapper {
     width: 26px;
