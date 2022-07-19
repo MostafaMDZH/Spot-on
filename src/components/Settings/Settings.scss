@@ -64,6 +64,39 @@
                         font-size: 1.4rem;
                         color: #aaa;
                     }
+                    > .SelectInput{
+                        width: 100%;
+                        min-height: unset;
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 0;
+                        margin-top: 8px;
+                        > .title{
+                            font-size: 1.6rem;
+                            line-height: 25px;
+                            color: #292929;
+                            display: unset;
+                        }
+                        > div{
+                            display: flex;
+                            margin-top: 0;
+                            > .selectWrapper{
+                                background-color: transparent;
+                                > .select{
+                                    min-width: 45px;
+                                    height: 25px;
+                                    padding-right: 5px;
+                                    border: none;
+                                    padding-bottom: 2px;
+                                    font-size: 1.6rem;
+                                    text-align: right;
+                                }
+                            }
+                            > .comment{
+                                display: none;
+                            }
+                        }
+                    }
                 }
             }
             > .settings{
@@ -161,6 +194,20 @@
                     > .section{
                         > .name{
                             color: #888;
+                        }
+                        > .SelectInput{
+                            > .title{
+                                color: #ddd;
+                            }
+                            > div{
+                                > .selectWrapper{
+                                    background-color: #012;
+                                    > .select{
+                                        background-color: #012;
+                                        color: #ddd;
+                                    }
+                                }
+                            }
                         }
                     }
                 }

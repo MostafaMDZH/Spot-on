@@ -149,51 +149,6 @@
   pointer-events: none;
 }
 
-.SelectInput.settings {
-  width: 100%;
-  min-height: unset;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 0;
-  margin-top: 8px;
-}
-
-.SelectInput.settings > .title {
-  font-size: 1.6rem;
-  line-height: 25px;
-  color: #292929;
-  display: unset;
-}
-
-.SelectInput.settings > div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: 0;
-}
-
-.SelectInput.settings > div > .selectWrapper {
-  background-color: transparent;
-}
-
-.SelectInput.settings > div > .selectWrapper > .select {
-  min-width: 45px;
-  height: 25px;
-  padding-right: 5px;
-  border: none;
-  padding-bottom: 2px;
-  font-size: 1.6rem;
-  text-align: right;
-}
-
-.SelectInput.settings > div > .comment {
-  display: none;
-}
-
 .darkMode .SelectInput > .title {
   color: #afafaf;
 }
@@ -205,18 +160,5 @@
 .darkMode .SelectInput > div > .selectWrapper > .select {
   color: #efefef;
   background-color: #072037;
-}
-
-.darkMode .SelectInput.settings > .title {
-  color: #ddd;
-}
-
-.darkMode .SelectInput.settings > div > .selectWrapper {
-  background-color: #012;
-}
-
-.darkMode .SelectInput.settings > div > .selectWrapper > .select {
-  background-color: #012;
-  color: #ddd;
 }
 /*# sourceMappingURL=SelectInput.css.map */
