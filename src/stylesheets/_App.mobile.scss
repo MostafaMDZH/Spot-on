@@ -17,7 +17,7 @@
             gap: 0;
             > .leftSide,
             > .rightSide{
-                padding: 60px 100px calc(7% + 60px) 100px;
+                padding: 40px 100px calc(7% + 60px) 100px;
             }
             > .leftSide{
                 height: 100%;
@@ -166,9 +166,12 @@
         .window{
             > .leftSide,
             > .rightSide{
-                padding-top: 55px;
+                padding-top: 30px;
                 padding-left: 80px;
                 padding-right: 80px;
+            }
+            > .leftSide{
+                gap: 35px;
             }
         }
     }
@@ -180,7 +183,7 @@
         .window{
             > .leftSide,
             > .rightSide{
-                padding-top: 45px;
+                padding-top: 25px;
                 padding-left: 65px;
                 padding-right: 65px;
             }
@@ -194,12 +197,9 @@
         .window{
             > .leftSide,
             > .rightSide{
-                padding-top: 40px;
+                padding-top: 20px;
                 padding-left: 50px;
                 padding-right: 50px;
-            }
-            > .leftSide{
-                gap: 35px;
             }
         }
     }
@@ -211,9 +211,6 @@
         .window{
             > .leftSide,
             > .rightSide{
-                padding-top: 30px;
-                padding-left: 43px;
-                padding-right: 43px;
                 .Header{
                     .description{
                         display: none;
@@ -232,12 +229,12 @@
         .window{
             > .leftSide,
             > .rightSide{
-                padding-top: 28px;
-                padding-left: 40px;
-                padding-right: 40px;
+                padding-top: 15px;
+                padding-left: 35px;
+                padding-right: 35px;
             }
             > .leftSide{
-                gap: 25px;
+                gap: 20px;
             }
             > .rightSide{
                 > .infoWrapper{
@@ -288,9 +285,9 @@
         .window{
             > .leftSide,
             > .rightSide{
-                padding-top: 25px;
-                padding-left: 36px;
-                padding-right: 36px;
+                padding-top: 12px;
+                padding-left: 30px;
+                padding-right: 30px;
             }
         }
     }
@@ -302,7 +299,9 @@
         .window{
             > .leftSide,
             > .rightSide{
-                padding-top: 20px;
+                padding-top: 10px;
+                padding-left: 27px;
+                padding-right: 27px;
             }
             > .rightSide{
                 > .infoWrapper{
@@ -338,9 +337,9 @@
         .window{
             > .leftSide,
             > .rightSide{
-                padding-top: 16px;
-                padding-left: 29px;
-                padding-right: 29px;
+                padding-top: 9px;
+                padding-left: 25px;
+                padding-right: 25px;
             }
             > .leftSide{
                 gap: 20px;
@@ -387,9 +386,9 @@
         .window{
             > .leftSide,
             > .rightSide{
-                padding-top: 14px;
-                padding-left: 25px;
-                padding-right: 25px;
+                padding-top: 7px;
+                padding-left: 20px;
+                padding-right: 20px;
             }
             > .rightSide{
                 > .infoWrapper{

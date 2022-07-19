@@ -1,7 +1,7 @@
 @import "../../stylesheets/classes";
 
 .Header{
-    height: 58px;
+    min-height: 58px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,6 +54,7 @@
             > .themeButton{
                 background-image: url(/src/icons/moon_111.svg );
                 background-size: 24px auto;
+                transition: all 200ms ease-in-out;
             }
             > .menuButton{
                 margin-right: -13px;
@@ -90,6 +91,8 @@
             > .endButtonsContainer{
                 > .themeButton{
                     background-image: url(/src/icons/sun_fff.svg);
+                    // transition: transform(rotate(360deg));
+                    transform: rotate(360deg);
                 }
                 > .menuButton{
                     background-image: url(/src/icons/menu_e3e3e3.svg);
