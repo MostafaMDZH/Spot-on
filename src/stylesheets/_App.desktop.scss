@@ -30,8 +30,8 @@
     @media only screen and (max-width: 1450px){
         .App{
             > .window{
-                padding-top: 50px;
-                gap: 80px;
+                padding-top: 45px;
+                gap: 65px;
                 > .rightSide{
                     width: 540px;
                     > .infoWrapper{
@@ -46,7 +46,8 @@
     @media only screen and (max-width: 1400px){
         .App{
             > .window{
-                padding-top: 45px;
+                padding-top: 40px;
+                gap: 55px;
                 > .rightSide{
                     width: 522px;
                     > .infoWrapper{
@@ -61,10 +62,10 @@
     @media only screen and (max-width: 1360px){
         .App{
             > .window{
-                padding-top: 40px;
+                padding-top: 35px;
                 padding-bottom: 70px;
                 > .leftSide{
-                    gap: 40px;
+                    gap: 35px;
                 }
                 > .rightSide{
                     width: 500px;
@@ -80,7 +81,7 @@
     @media only screen and (max-width: 1330px){
         .App{
             > .window{
-                padding-top: 35px;
+                padding-top: 30px;
                 > .rightSide{
                     width: 498px;
                     > .infoWrapper{
