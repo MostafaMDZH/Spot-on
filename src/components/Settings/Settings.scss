@@ -223,6 +223,7 @@
             > .closeButton{
                 background-color: #012;
                 background-image: url(/src/icons/down_fff.svg);
+                @extend .darkTransparentBackground;
             }
             > .containersWrapper{
                 color: #ddd;
