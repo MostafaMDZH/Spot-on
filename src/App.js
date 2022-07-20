@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import Cookies   from 'universal-cookie';
-import DV        from './DefaultValues'
+import DV        from './defaultValues'
 import Header    from './components/Header/Header';
 import Form      from './components/Form/Form';
 import Info      from './components/Info/Info';
