@@ -16,10 +16,10 @@ export default function Header({
     const handleThemeClick = () => {
         if(isDarkMode === 'No'){
             onThemeClick('Yes');
-            cookies.set('Is Dark Mode', 'Yes', { path: '/' });
+            cookies.set('Is Dark Mode', 'Yes', { path: '/', maxAge: 1000*24*60*60 });
         }else{
             onThemeClick('No');
-            cookies.set('Is Dark Mode', 'No', { path: '/' });
+            cookies.set('Is Dark Mode', 'No',  { path: '/', maxAge: 1000*24*60*60 });
         }
     }
 

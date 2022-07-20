@@ -125,7 +125,7 @@ export default function Form({
         setTimeout(() => {
             let currentTime = Date.now();
             if(currentTime >= (updateTime + 300)){
-                cookies.set(name, value, { path: '/' });
+                cookies.set(name, value, { path: '/', maxAge: 1000*24*60*60 });
                 stateUpdater();
             }
         }, 300);

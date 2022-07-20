@@ -13,25 +13,26 @@ export default function App(){
     //setDefaultCookies:
     const setDefaultCookies = () => {
         //settings:
-        cookies.set('Currency'             , [DV.CURRENCY.name,         DV.CURRENCY.symbol        ] , { path: '/' });
-        cookies.set('Distance'             , [DV.DISTANCE.name,         DV.DISTANCE.symbol        ] , { path: '/' });
-        cookies.set('Fuel Measurement'     , [DV.FUEL_MEASUREMENT.name, DV.FUEL_MEASUREMENT.symbol] , { path: '/' });
-        cookies.set('Fuel Cost'            , DV.FUEL_COST                                           , { path: '/' });
-        cookies.set('Is Dark Mode'         , DV.IS_DARK_MODE                                        , { path: '/' });
+        const maxAge = 1000*24*60*60;
+        cookies.set('Currency'             , [DV.CURRENCY.name,         DV.CURRENCY.symbol        ] , { path: '/', maxAge });
+        cookies.set('Distance'             , [DV.DISTANCE.name,         DV.DISTANCE.symbol        ] , { path: '/', maxAge });
+        cookies.set('Fuel Measurement'     , [DV.FUEL_MEASUREMENT.name, DV.FUEL_MEASUREMENT.symbol] , { path: '/', maxAge });
+        cookies.set('Fuel Cost'            , DV.FUEL_COST                                           , { path: '/', maxAge });
+        cookies.set('Is Dark Mode'         , DV.IS_DARK_MODE                                        , { path: '/', maxAge });
         //form:
-        cookies.set('Type of Ownership'    , DV.TYPE_OF_OWNERSHIP                                   , { path: '/' });
-        cookies.set('Purchase Price'       , DV.PURCHASE_PRICE                                      , { path: '/' });
-        cookies.set('Years of Ownership'   , DV.YEARS_OF_OWNERSHIP                                  , { path: '/' });
-        cookies.set('Road Tax'             , DV.ROAD_TAX                                            , { path: '/' });
-        cookies.set('Instalment'           , DV.INSTALMENT                                          , { path: '/' });
-        cookies.set('Insurance'            , DV.INSURANCE                                           , { path: '/' });
-        cookies.set('Warranty'             , DV.WARRANTY                                            , { path: '/' });
-        cookies.set('Maintenance'          , DV.MAINTENANCE                                         , { path: '/' });
-        cookies.set('Mileage'              , DV.MILEAGE                                             , { path: '/' });
-        cookies.set('Fuel CONSUMPTION'     , DV.FUEL_CONSUMPTION                                    , { path: '/' });
-        cookies.set('Service Average Cost' , DV.SERVICE_AVERAGE_COST                                , { path: '/' });
-        cookies.set('Service Mileage'      , DV.SERVICE_MILEAGE                                     , { path: '/' });
-        cookies.set('Asking Price'         , DV.ASKING_PRICE                                        , { path: '/' });
+        cookies.set('Type of Ownership'    , DV.TYPE_OF_OWNERSHIP                                   , { path: '/', maxAge });
+        cookies.set('Purchase Price'       , DV.PURCHASE_PRICE                                      , { path: '/', maxAge });
+        cookies.set('Years of Ownership'   , DV.YEARS_OF_OWNERSHIP                                  , { path: '/', maxAge });
+        cookies.set('Road Tax'             , DV.ROAD_TAX                                            , { path: '/', maxAge });
+        cookies.set('Instalment'           , DV.INSTALMENT                                          , { path: '/', maxAge });
+        cookies.set('Insurance'            , DV.INSURANCE                                           , { path: '/', maxAge });
+        cookies.set('Warranty'             , DV.WARRANTY                                            , { path: '/', maxAge });
+        cookies.set('Maintenance'          , DV.MAINTENANCE                                         , { path: '/', maxAge });
+        cookies.set('Mileage'              , DV.MILEAGE                                             , { path: '/', maxAge });
+        cookies.set('Fuel CONSUMPTION'     , DV.FUEL_CONSUMPTION                                    , { path: '/', maxAge });
+        cookies.set('Service Average Cost' , DV.SERVICE_AVERAGE_COST                                , { path: '/', maxAge });
+        cookies.set('Service Mileage'      , DV.SERVICE_MILEAGE                                     , { path: '/', maxAge });
+        cookies.set('Asking Price'         , DV.ASKING_PRICE                                        , { path: '/', maxAge });
     }
 
     //isTouchScreenDevice:

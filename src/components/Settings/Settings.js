@@ -18,7 +18,7 @@ export default function Settings({
     //handleChange:
     const handleChange = (title, value) => {
         const cookies = new Cookies();
-        cookies.set(title, value, { path: '/' });
+        cookies.set(title, value, { path: '/', maxAge: 1000*24*60*60 });
         onUpdate(title, value);
     }
 
