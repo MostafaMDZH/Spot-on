@@ -16,8 +16,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
     "test": "react-scripts test",
+    "build": "react-scripts build",
+    "deploy": "react-scripts build && find build -type d -exec chmod 755 {} \\; && find build -type f -exec chmod 644 {} \\;",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
