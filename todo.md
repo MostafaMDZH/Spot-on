@@ -9,6 +9,7 @@
 - domain and publish(robots.txt, readme link)
 
 #### Future:
+- [design] Size animation in cookies window
 - [design] better background effect on activation
 - [design] OS theme
 - [design] counting animation on calculated numbers + range input
