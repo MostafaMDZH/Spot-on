@@ -18,7 +18,7 @@
     "start": "react-scripts start",
     "test": "react-scripts test",
     "build": "react-scripts build",
-    "deploy": "react-scripts build && find build -type d -exec chmod 755 {} \\; && find build -type f -exec chmod 644 {} \\;",
+    "deploy": "react-scripts build && find build -type d -exec chmod 755 {} \\; && find build -type f -exec chmod 644 {} \\; && git add build/ && git commit -m \"deployment auto commit\" && git ftp push",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
