@@ -1,5 +1,5 @@
-.css
-.css.map
+*.css
+*.css.map
 
 # dependencies
 /node_modules
