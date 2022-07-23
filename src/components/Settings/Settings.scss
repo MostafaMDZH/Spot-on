@@ -29,7 +29,7 @@
             position: absolute;
             top: 15px;
             right: 15px;
-            background: white url(/src/icons/down_111.svg) no-repeat center / 22px auto;
+            background: white url(/src/assets/down_111.svg) no-repeat center / 22px auto;
             border-radius: 50%;
             @extend .lightTransparentBackground;
         }
@@ -222,7 +222,7 @@
             background-color: #012;
             > .closeButton{
                 background-color: #012;
-                background-image: url(/src/icons/down_fff.svg);
+                background-image: url(/src/assets/down_fff.svg);
                 @extend .darkTransparentBackground;
             }
             > .containersWrapper{

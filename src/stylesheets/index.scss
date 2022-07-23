@@ -1,5 +1,9 @@
-@import "fonts";
 @import "classes";
+
+@font-face{
+    font-family:Ubuntu_Regular;
+    src:url(/src/assets/Ubuntu-regular.ttf);
+}
 
 html{
     width: 100%;

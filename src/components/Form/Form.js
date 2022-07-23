@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Cookies                 from 'universal-cookie';
-import useWindowDimensions     from '../../tools/useWindowDimensions'
-import DV                      from '../../defaultValues'
+import useWindowDimensions     from '../../hooks/useWindowDimensions'
+import DV                      from '../../data/defaultValues'
 import RangeInput              from '../RangeInput/RangeInput';
 import SelectInput             from '../SelectInput/SelectInput';
 import './Form.css';

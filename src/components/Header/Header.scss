@@ -44,7 +44,7 @@
         }
         > .backButton{
             margin-left: -17px;
-            background-image: url(/src/icons/left_111.svg);
+            background-image: url(/src/assets/left_111.svg);
             background-size: 27px auto;
             display: none;
         }
@@ -52,13 +52,13 @@
             display: flex;
             gap: 15px;
             > .themeButton{
-                background-image: url(/src/icons/moon_111.svg );
+                background-image: url(/src/assets/moon_111.svg );
                 background-size: 24px auto;
                 transition: all 200ms ease-in-out;
             }
             > .menuButton{
                 margin-right: -13px;
-                background-image: url(/src/icons/menu_202020.svg);
+                background-image: url(/src/assets/menu_202020.svg);
                 background-size: 28px;
                 transition: all 300ms ease-in-out;
             }
@@ -86,16 +86,16 @@
                 @extend .darkTransparentBackground;
             }
             > .backButton{
-                background-image: url(/src/icons/left_fff.svg);
+                background-image: url(/src/assets/left_fff.svg);
             }
             > .endButtonsContainer{
                 > .themeButton{
-                    background-image: url(/src/icons/sun_fff.svg);
+                    background-image: url(/src/assets/sun_fff.svg);
                     // transition: transform(rotate(360deg));
                     transform: rotate(360deg);
                 }
                 > .menuButton{
-                    background-image: url(/src/icons/menu_e9e9e9.svg);
+                    background-image: url(/src/assets/menu_e9e9e9.svg);
                 }
             }
         }
