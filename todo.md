@@ -5,7 +5,6 @@
 ## Design:
 
 ## Publish:
-- improve npm build command for deployment
 - domain and publish(robots.txt, readme link)
 
 #### Future:
