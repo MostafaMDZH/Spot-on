@@ -1,10 +1,14 @@
 ## Bug:
+- || -> ??
 
 ## Features:
+- no thanks in cookies
+- load sass files directly
 
 ## Design:
 
 ## Publish:
+- code cleanup
 - domain and publish(robots.txt, readme link)
 
 #### Future:
