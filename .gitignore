@@ -1,9 +1,3 @@
-# markup compiled files
-*.css
-*.css.map
-!/build/static/css/*.css
-!/build/static/css/*.map.css
-
 # dependencies
 /node_modules
 /.pnp
