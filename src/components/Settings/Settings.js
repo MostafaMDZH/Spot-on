@@ -2,7 +2,7 @@ import { toast, Toaster } from 'react-hot-toast';
 import Cookies            from 'universal-cookie';
 import RangeInput         from '../RangeInput/RangeInput';
 import SelectInput        from '../SelectInput/SelectInput';
-import './Settings.css';
+import './Settings.scss';
 
 export default function Settings({
         isVisible,
@@ -48,7 +48,6 @@ export default function Settings({
 		if(!navigator.clipboard){
 			fallbackCopyTextToClipboard(text);
 		}else{
-            console.log('navigator.clipboard');
 			navigator.clipboard.writeText(text).then(function(){
                 toast('Email copied', getToastStyle('👍'));
 			},function(err){

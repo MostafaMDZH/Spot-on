@@ -1,4 +1,4 @@
-import './SelectInput.css';
+import './SelectInput.scss';
 
 export default function SelectInput({
         name,

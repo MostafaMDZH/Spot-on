@@ -1,9 +1,11 @@
 ## Bug:
 - || -> ??
+- feul column first time animation
 
 ## Features:
 - no thanks in cookies
 - load sass files directly
+- buy me a pizza!
 
 ## Design:
 

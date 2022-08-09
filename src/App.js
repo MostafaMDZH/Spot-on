@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import Cookies   from 'universal-cookie';
-import DV        from './data/defaultValues'
+import DV        from './data/defaultValues';
 import Header    from './components/Header/Header';
 import Form      from './components/Form/Form';
 import Info      from './components/Info/Info';
 import Settings  from './components/Settings/Settings';
 import CookieAck from './components/CookieAck/CookieAck';
-import './stylesheets/App.css';
+import './stylesheets/App.scss';
 
 export default function App(){
 

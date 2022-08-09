@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import './RangeInput.css';
+import './RangeInput.scss';
 
 export default function RangeInput({
         name,

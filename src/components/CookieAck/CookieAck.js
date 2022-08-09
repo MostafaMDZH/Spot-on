@@ -1,4 +1,4 @@
-import './CookieAck.css';
+import './CookieAck.scss';
 
 export default function CookieAck({
         isVisible,

@@ -4,7 +4,7 @@ import useWindowDimensions     from '../../hooks/useWindowDimensions'
 import DV                      from '../../data/defaultValues'
 import RangeInput              from '../RangeInput/RangeInput';
 import SelectInput             from '../SelectInput/SelectInput';
-import './Form.css';
+import './Form.scss';
 
 export default function Form({
         currency,

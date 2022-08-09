@@ -1,5 +1,5 @@
 import Chart from '../Chart/Chart';
-import './Info.css';
+import './Info.scss';
 
 export default function Info({
     currency,

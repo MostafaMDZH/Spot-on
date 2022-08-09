@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import './Chart.css';
+import './Chart.scss';
 
 export default function Chart({
     currency,

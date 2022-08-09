@@ -1,5 +1,5 @@
 import Cookies from 'universal-cookie';
-import './Header.css';
+import './Header.scss';
 
 export default function Header({
     isDarkMode,
