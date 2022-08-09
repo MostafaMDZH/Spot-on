@@ -1,7 +1,17 @@
 {
   "name": "spot-on",
+  "description": "Car ownership cost calculator",
   "version": "1.0.0",
+  "author": "Mostafa Mohammadzadeh",
+  "license": "MIT",
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "test": "react-scripts test",
+    "build": "react-scripts build",
+    "deploy": "react-scripts build && find build -type d -exec chmod 755 {} \\; && find build -type f -exec chmod 644 {} \\; && git add build/ && git commit -m \"[deployment auto commit]\" && git ftp push",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -11,15 +21,9 @@
     "react-hot-toast": "^2.3.0",
     "react-scripts": "5.0.1",
     "react-select": "^5.3.2",
+    "sass": "^1.54.3",
     "universal-cookie": "^4.0.4",
     "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "test": "react-scripts test",
-    "build": "react-scripts build",
-    "deploy": "react-scripts build && find build -type d -exec chmod 755 {} \\; && find build -type f -exec chmod 644 {} \\; && git add build/ && git commit -m \"[deployment auto commit]\" && git ftp push",
-    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
