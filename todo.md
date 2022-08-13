@@ -1,13 +1,12 @@
 ## Bug:
 - || -> ??
-- feul column first time animation
+- fuel column first time animation
+- slightly darker colors for labels in dark mode
 
 ## Features:
+- massage the user to add the address on home screen(for the second visit in mobile)
 - no thanks in cookies
-- load sass files directly
 - buy me a pizza!
-
-## Design:
 
 ## Publish:
 - code cleanup
