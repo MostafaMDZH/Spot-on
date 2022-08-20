@@ -2,11 +2,13 @@
 - || -> ??
 - fuel column first time animation
 - slightly darker colors for labels in dark mode
+- smaller font size? specially in settings section names
+- you have to press the back button multiple times on mobile to exit the home app(solution? if there is no hashtag, go back to first nav!)
 
 ## Features:
+- buy me a pizza!
 - massage the user to add the address on home screen(for the second visit in mobile)
 - no thanks in cookies
-- buy me a pizza!
 
 ## Publish:
 - code cleanup
