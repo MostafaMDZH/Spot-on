@@ -13,6 +13,7 @@
 ## Publish:
 - code cleanup
 - domain and publish(robots.txt, readme link)
+- traffic and statistics tracker
 
 #### Future:
 - [design] Size animation in cookies window
