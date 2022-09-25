@@ -1,7 +1,7 @@
-import Cookies            from 'universal-cookie';
-import utils              from '../../utils/utils';
-import RangeInput         from '../RangeInput/RangeInput';
-import SelectInput        from '../SelectInput/SelectInput';
+import Cookies     from 'universal-cookie';
+import utils       from '../../utils/utils';
+import RangeInput  from '../RangeInput/RangeInput';
+import SelectInput from '../SelectInput/SelectInput';
 import './Settings.scss';
 
 export default function Settings({
