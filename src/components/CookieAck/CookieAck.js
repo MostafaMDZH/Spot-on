@@ -7,7 +7,7 @@ export default function CookieAck({
 
     //return:
     return (
-        <div className={'CookieAck' + (isVisible  === true  ? ' visible'    : '')} onClick={(e)=>e.stopPropagation()}>
+        <div className={'CookieAck' + (isVisible ? ' visible' : '')} onClick={(e)=>e.stopPropagation()}>
             <div className='window'>
                 <div className='container'>
                     <div className='imageWrapper'>
