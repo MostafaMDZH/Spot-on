@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import utils from '../../utils/utils'
 import './RangeInput.scss';
 
 export default function RangeInput({
@@ -40,11 +41,6 @@ export default function RangeInput({
     //calcPercentage:
     const calcPercentage = (value, min, max) => {
         return (value-min)/(max-min)*100;
-    }
-
-    //numberWithCommas:
-    const numberWithCommas = (number) => {
-        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
     
     //onTextInputChange:
@@ -109,7 +105,7 @@ export default function RangeInput({
                 <a className="title">{title}</a>
                 <div className="valueWrapper">
                     <a className="unit">{unit}</a>
-                    <input type="text" className="textInput" value={numberWithCommas(value)} placeholder="0"
+                    <input type="text" className="textInput" value={utils.numberWithCommas(value)} placeholder="0"
                         onChange={(e) => onTextInputChange(e.target.value)}//todo: also change with keyUp & keyDown
                         />
                     <div className="comment">{comment}</div>
@@ -124,8 +120,8 @@ export default function RangeInput({
                     }}
                     />
                 <div className="rangeInfoWrapper">
-                    <a>{minMaxUnit + numberWithCommas(min)}</a>
-                    <a>{minMaxUnit + numberWithCommas(max)}</a>
+                    <a>{minMaxUnit + utils.numberWithCommas(min)}</a>
+                    <a>{minMaxUnit + utils.numberWithCommas(max)}</a>
                 </div>
             </div>
         </div>

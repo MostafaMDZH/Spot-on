@@ -1,3 +1,4 @@
+import utils from '../../utils/utils'
 import Chart from '../Chart/Chart';
 import './Info.scss';
 
@@ -7,19 +8,14 @@ export default function Info({
     data
 }){
 
-    //numberWithCommas:
-    const numberWithCommas = (number) => {
-        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    }
-
     //getPerDistance:
     const getPerDistance = () => {
-        return numberWithCommas(Number(data.perDistance < 0 ? -data.perDistance : data.perDistance).toFixed(2))
+        return utils.numberWithCommas(Number(data.perDistance < 0 ? -data.perDistance : data.perDistance).toFixed(2))
     }
 
     //getPerTime:
     const getPerTime = (value) => {
-        return numberWithCommas(value < 0 ? -value : value);
+        return utils.numberWithCommas(value < 0 ? -value : value);
     }
 
     //setDefaultData:

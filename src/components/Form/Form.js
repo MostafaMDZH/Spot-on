@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Cookies                 from 'universal-cookie';
+import utils                   from '../../utils/utils'
 import useWindowDimensions     from '../../hooks/useWindowDimensions'
 import DV                      from '../../data/defaultValues'
 import RangeInput              from '../RangeInput/RangeInput';
@@ -42,11 +43,6 @@ export default function Form({
         if(typeOfOwnership === 'Lease')
             totalInstalment = instalment * yearsOfOwnership * 12;
         return (purchasePrice - askingPrice + totalInstalment) / yearsOfOwnership;
-    }
-
-    //numberWithCommas:
-    const numberWithCommas = (number) => {
-        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
     
     //calcTaxAndInsurance:
@@ -291,7 +287,7 @@ export default function Form({
                     unit         = {currency[1]}
                     minMaxUnit   = {currency[1]}
                     comment      = {'after ' + yearsOfOwnership + ' year' + (yearsOfOwnership > 1 ? 's' : '') + ' and '
-                                 + numberWithCommas((mileage * yearsOfOwnership)) + ' ' + distance[0].toLowerCase() + (distance[0] === 'Mile' ? 's' : '')}
+                                 + utils.numberWithCommas((mileage * yearsOfOwnership)) + ' ' + distance[0].toLowerCase() + (distance[0] === 'Mile' ? 's' : '')}
                     isDarkMode   = {isDarkMode}
                     onChange     = {(name, value) => onChange(name, value, () => setAskingPrice(value))}
                 />
