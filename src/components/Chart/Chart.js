@@ -11,11 +11,6 @@ export default function Chart({
                      - 25  //column name
                      - 5;  //bar padding
 
-    //numberWithCommas:
-    const numberWithCommas = (number) => {
-        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    }
-
     //getMaxValue:
     const getMaxValue = (data) => {
         let maxValue = 0;
