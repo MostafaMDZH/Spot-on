@@ -10,6 +10,7 @@
 - Domain and publish(robots.txt, readme link)
 
 #### Features:
+- Turn(mirror) the menu icon on click
 - Massage the user to add the address on home screen(for the second visit in mobile)
 - No thanks in cookies
 - Buy me a pizza!
