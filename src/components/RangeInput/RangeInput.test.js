@@ -72,3 +72,34 @@ it('should update input value', () => {
     fireEvent.change(slider, { target: { value: 150000 } });
     expect(input.value).toEqual('150,000');
 });
+
+it('should run onChange callback', () => {
+    let name;
+    let value;
+    const handleChange = (na, val) => {
+        name = na;
+        value = val;
+    };
+    render(
+        <RangeInput 
+            name         = {'purchase-price'}
+            title        = {'Down Payment'}
+            defaultValue = {50000}
+            rangeWidth   = {200000}
+            step         = {1000}
+            unit         = {'$'}
+            minMaxUnit   = {'$'}
+            isDarkMode   = {false}
+            onChange     = {(name, value) => handleChange(name, value)}
+            comment      = {'Buy'}
+        />
+    );
+    const input  = screen.getByDisplayValue('50,000');
+    const slider = screen.getByDisplayValue(50000);
+    fireEvent.change(slider, { target: { value: 120000 } });
+    expect(name).toEqual('purchase-price');
+    expect(value).toEqual('120000');
+    fireEvent.change(input, { target: { value: 130000 } });
+    expect(name).toEqual('purchase-price');
+    expect(value).toEqual('130000');
+});
