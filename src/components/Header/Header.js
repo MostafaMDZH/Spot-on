@@ -34,6 +34,7 @@ export default function Header({
                 <input
                     type='button'
                     className='backButton'
+                    title='Back'
                     onClick={onBackClick}
                 />
                 <div className='endButtonsContainer'>
