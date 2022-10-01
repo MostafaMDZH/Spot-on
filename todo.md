@@ -1,4 +1,5 @@
 ## Bug:
+- copy doesn't work
 - || -> ??
 - Fuel column first time animation
 - Slightly darker colors for labels in dark mode
