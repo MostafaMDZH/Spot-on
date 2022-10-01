@@ -1,4 +1,5 @@
 ## Bug:
+- test new robots placement!!
 - copy doesn't work
 - || -> ??
 - Fuel column first time animation
