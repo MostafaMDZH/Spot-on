@@ -1,4 +1,4 @@
-# Depreciation Calculator
+# Spot-on
 A React web app that calculates the actual ownership cost of a car.
 
-## <a href="https://spot-on.demos.mostafa-mdzh.ir">[ demo ]</a>
+## <a href="https://the-spot-on.com">the-spot-on.com</a>
