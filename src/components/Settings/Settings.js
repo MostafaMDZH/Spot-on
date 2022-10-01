@@ -96,7 +96,7 @@ export default function Settings({
                         <div className='section'>
                             <a className='name'>Copyright</a>
                             <p>Released under the <a className='link' href='https://en.wikipedia.org/wiki/MIT_License'>MIT License</a></p>
-                            <p>Checkout the source code on <a className='link' href='https://github.com/MostafaMDZH/Depreciation-Calculator'>Github</a></p>
+                            <p>Checkout the source code on <a className='link' href='https://github.com/MostafaMDZH/Spot-on'>Github</a></p>
                         </div>
                     </div>
                 </div>
