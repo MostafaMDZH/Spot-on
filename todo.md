@@ -2,6 +2,7 @@
 - You have to press the back button multiple times on mobile to exit the home app(solution? if there is no hashtag, go back to first nav!)
 
 #### Features:
+
 - Buy me a coffee
 - Statistics
 - Turn(mirror) the menu icon on click
