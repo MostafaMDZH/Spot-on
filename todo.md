@@ -1,7 +1,4 @@
 ## Bug:
-- test new robots placement!!
-- copy doesn't work
-- || -> ??
 - Fuel column first time animation
 - Slightly darker colors for labels in dark mode
 - Smaller font size? specially in settings section names
