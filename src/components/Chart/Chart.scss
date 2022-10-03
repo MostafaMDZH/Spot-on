@@ -58,7 +58,7 @@
                     padding-top: 5px;
                     border-radius: 5px;
                     background-color: #e8e8e8;
-                    transition: all 0.5s ease;
+                    transition: all 3.5s ease;
                 }
             }
             > .barWrapper:hover,
@@ -96,6 +96,10 @@
                     opacity: 1;
                 }
             }
+        }
+        > .barContainer:last-child{ // due to a css bug!!
+            width: 0;
+            visibility: hidden;
         }
         > .barContainer.tallest{
             > .columnName{

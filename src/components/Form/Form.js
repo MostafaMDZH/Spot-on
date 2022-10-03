@@ -109,6 +109,7 @@ export default function Form({
                 { name: 'Mtn', title: 'Maintenance'     , value: Math.round(maintenance     )},
                 { name: 'Svc', title: 'Service'         , value: Math.round(serviceCost     )},
                 { name: 'Ful', title: 'Fuel'            , value: Math.round(fuelCost        )},
+                { name: 'hdn', title: 'hdn'             , value: Math.round(fuelCost        )},
             ]
         }
         onCalculate(data);

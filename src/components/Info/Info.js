@@ -31,6 +31,7 @@ export default function Info({
                 { name: 'W&M', title: 'Warranty & Maintenance' , value: 0 },
                 { name: 'Ser', title: 'Service'                , value: 0 },
                 { name: 'Fue', title: 'Fuel'                   , value: 0 },
+                { name: 'hdn', title: 'hdn'                    , value: 0 },
             ]
         }
     }
