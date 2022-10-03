@@ -1,5 +1,4 @@
 ## Bug:
-- Fuel column first time animation
 - Slightly darker colors for labels in dark mode
 - Smaller font size? specially in settings section names
 - You have to press the back button multiple times on mobile to exit the home app(solution? if there is no hashtag, go back to first nav!)
