@@ -9,8 +9,8 @@
     "start":  "react-scripts start",
     "test":   "react-scripts test",
     "build":  "react-scripts build",
-    "deploy": "react-scripts build && find build -type d -exec chmod 755 {} \\; && find build -type f -exec chmod 644 {} \\; && cd build && git init && git add -A && git commit -m \"init\" && git config git-ftp.url ftp://ftp.the-spot-on.com:21/public_html && git config git-ftp.user \"thespoto\" && git config git-ftp.password \"mmP3:03189292\" && yes | git ftp push",
-    "eject":  "react-scripts eject"
+    "eject":  "react-scripts eject",
+    "deploy": "npm update && react-scripts build && find build -type d -exec chmod 755 {} \\; && find build -type f -exec chmod 644 {} \\; && cd build && git init && git add -A && git commit -m \"init\" && git config git-ftp.url ftp://ftp.the-spot-on.com:21/public_html && git config git-ftp.user \"thespoto\" && git config git-ftp.password \"mmP3:03189292\" && yes | git ftp push"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
