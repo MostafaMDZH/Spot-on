@@ -83,7 +83,7 @@ export default function Settings({
                         <a className='title'>About</a>
                         <div className='section'>
                             <h2 className='madeBy'>Made with ❤️ by <a className='link' href='https://github.com/MostafaMDZH'>Mostafa Mohammadzadeh</a></h2>
-                            <p className='version'>Version 1.0.0</p>
+                            <p className='coffee'>Buy me a coffee :)</p>
                         </div>
                         <div className='section'>
                             <a className='name'>Contact</a>

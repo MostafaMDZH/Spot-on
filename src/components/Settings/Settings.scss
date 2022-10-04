@@ -148,6 +148,18 @@
                     font-size: 1.6rem;
                     font-weight: normal;
                 }
+                .coffee{
+                    cursor: pointer;
+                }
+                .coffee:after{
+                    content: ")";
+                    opacity: 0;
+                    transition: opacity 200ms ease;
+                }
+                .coffee:hover:after,
+                .coffee:focus:after{
+                    opacity: 1;
+                }
                 .link,
                 .email{
                     font-style: italic;
