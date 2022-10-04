@@ -2,19 +2,14 @@
 - You have to press the back button multiple times on mobile to exit the home app(solution? if there is no hashtag, go back to first nav!)
 
 #### Features:
-- Statistics
+- Traffic and statistics tracker
+- Dynamic url
 - Turn(mirror) the menu icon on click
 - Massage the user to add the address on home screen(for the second visit in mobile)
 - No thanks in cookies
-- Buy me a pizza!
-- Size animation in cookies window
-- Better background effect on activation
-- Traffic and statistics tracker
 - OS theme
 - Counting animation on calculated numbers + range input
-- Animation on theme button
 - Gray cover on loading
-- Dynamic url
 - Bookmark
 - Comparison
 - Login
