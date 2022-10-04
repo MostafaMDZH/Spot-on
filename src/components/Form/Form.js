@@ -99,9 +99,9 @@ export default function Form({
         //return:
         let data = {
             perDistance: perDistance,
-            daily:       (Math.round((total / 365) * 10) / 10),
-            monthly:      Math.round((total / 12)),
-            yearly:       Math.round(total),
+            daily:   (Math.round((total / 365) * 10) / 10),
+            monthly: Math.round((total / 12)),
+            yearly:  Math.round(total),
             chart: [
                 { name: 'Dpr', title: 'Depreciation'    , value: Math.round(depreciation    )},
                 { name: 'T&I', title: 'Tax & Insurance' , value: Math.round(taxAndInsurance )},
