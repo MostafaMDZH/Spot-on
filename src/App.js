@@ -77,10 +77,8 @@ export default function App(){
         setSettingsVisibility(isVisible);
         if(isVisible)
             window.location.hash = 'settings';
-        else{
+        else
             window.history.back();
-            // window.location.hash = '';
-        }
         if(!isVisible){
             setTimeout(() => {
                 setMenuRotate(true);
@@ -90,14 +88,11 @@ export default function App(){
 
     //handleInfoVisibility:
     const handleInfoVisibility = (isVisible) => {
-        // console.log('history', window.history);
         setInfoVisibility(isVisible);
         if(isVisible)
             window.location.hash = 'info';
-        else{
+        else
             window.history.back();
-            // window.location.hash = '';
-        }
     }
 
     //location event:
