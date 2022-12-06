@@ -2,6 +2,7 @@
 - field headers in iphone
 
 ## Features:
+- Load offline with Service Worker
 - Traffic and statistics tracker
 - Message the user to add the address on home screen(for the second visit in mobile)
 - Dynamic url
