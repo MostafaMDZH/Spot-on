@@ -2,6 +2,7 @@
 - field headers in iphone
 
 ## Features:
+- Default theme on dark?
 - Change header color on theme
 - Load offline with Service Worker
 - Traffic and statistics tracker
