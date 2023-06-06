@@ -1,5 +1,5 @@
 ## Bug:
-- Selector headers and footers(iphone and firefox)
+- Selector headers(iphone and firefox)
 - Selector's thumb color on firefox
 - Change browser header color on theme
 
